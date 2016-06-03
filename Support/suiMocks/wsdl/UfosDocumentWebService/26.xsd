@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_NtcClrTpPy/formular" xmlns:ns3="http://www.roskazna.ru/eb/domain/common/entity" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_NtcClrTpPy/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:element name="MSC_NtcClrTpPy" type="tns:tMSC_NtcClrTpPy"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_NtcClrTpPy">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="UF_NtfctnNm" type="xs:string" minOccurs="0"/>
+<xs:element name="UF_AcntNmFO" type="xs:string" minOccurs="0"/>
+<xs:element name="UF_SrcKnd" type="ns2:tMSC_SrcKndComplex" minOccurs="0"/>
+<xs:element name="UF_ClmNmOrFK" type="xs:string" minOccurs="0"/>
+<xs:element name="UF_ClmDt" type="xs:string" minOccurs="0"/>
+<xs:element name="UF_PyPsDtls" type="xs:string" minOccurs="0"/>
+<xs:element name="UF_SgngDt" type="xs:string" minOccurs="0"/>
+<xs:element name="UF_MrkDt" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RegisterInformAccGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RwIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_HdIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RsltPrm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_TxtRsltPrm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_ExctnDt" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RjctnRsn" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RlvncSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="UF_MSC_Infrmtn" type="ns3:tMSC_Infrmtn" minOccurs="0"/>
+<xs:element name="UF_MSC_PBS" type="ns3:tMSC_PBS" minOccurs="0"/>
+<xs:element name="UF_MSC_GRBS" type="ns3:tMSC_GRBS" minOccurs="0"/>
+<xs:element name="UF_MSC_Orgnztn" type="ns3:tMSC_Orgnztn" minOccurs="0"/>
+<xs:element name="UF_MSC_Pyr" type="ns3:tMSC_Pyr" minOccurs="0"/>
+<xs:element name="UF_MSC_Hd" type="ns3:tMSC_Hd" minOccurs="0"/>
+<xs:element name="UF_MSC_RspnExctr" type="ns3:tMSC_RspnExctr" minOccurs="0"/>
+<xs:element name="UF_MSC_HdOrFK" type="ns3:tMSC_Hd" minOccurs="0"/>
+<xs:element name="UF_MSC_RspnExctrOrFK" type="ns3:tMSC_RspnExctr" minOccurs="0"/>
+<xs:element name="UFPP" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UFPP_ITEM" type="tns:tUFPP_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UFPP_N" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UFPP_N_ITEM" type="tns:tUFPP_N_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="StmInfrmtn_TabSI" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TabSI_ITEM" type="tns:tStmInfrmtn_TabSI_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tUFPP_ITEM">
+<xs:sequence>
+<xs:element name="RcrdNm" type="xs:long" minOccurs="0"/>
+<xs:element name="Amnt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="PyPrps" type="xs:string" minOccurs="0"/>
+<xs:element name="RqstNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DtNm" type="xs:string" minOccurs="0"/>
+<xs:element name="Nt" type="xs:string" minOccurs="0"/>
+<xs:element name="MSC_PymntOrdr" type="ns3:tMSC_PymntOrdr" minOccurs="0"/>
+<xs:element name="MSC_IncmAdmn" type="ns3:tMSC_IncmAdmn" minOccurs="0"/>
+<xs:element name="MSC_OKTMO" type="ns3:tMSC_OKTMO" minOccurs="0"/>
+<xs:element name="MSC_KBK" type="ns3:tMSC_KBK" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUFPP_N_ITEM">
+<xs:sequence>
+<xs:element name="RcrdNmNw" type="xs:long" minOccurs="0"/>
+<xs:element name="AmntNw" type="xs:decimal" minOccurs="0"/>
+<xs:element name="PyPrpsNw" type="xs:string" minOccurs="0"/>
+<xs:element name="StSrcKnd" type="ns2:tMSC_StSrcKndComplex" minOccurs="0"/>
+<xs:element name="MSC_Rcpnt" type="ns3:tMSC_Rcpnt" minOccurs="0"/>
+<xs:element name="MSC_OKTMONw" type="ns3:tMSC_OKTMO" minOccurs="0"/>
+<xs:element name="MSC_KBKNw" type="ns3:tMSC_KBK" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tStmInfrmtn_TabSI_ITEM">
+<xs:sequence>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="AccountTransGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="SignUpdate" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUFPP_N">
+<xs:sequence>
+<xs:element name="UFPP_N_ITEM" type="tns:tUFPP_N_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUFPP">
+<xs:sequence>
+<xs:element name="UFPP_ITEM" type="tns:tUFPP_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tStmInfrmtn_TabSI">
+<xs:sequence>
+<xs:element name="TabSI_ITEM" type="tns:tStmInfrmtn_TabSI_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

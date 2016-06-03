@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_Protocol/formular" xmlns:ns3="http://www.roskazna.ru/eb/domain/common/entity" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_Protocol/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:element name="MSC_Protocol" type="tns:tMSC_Protocol"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Protocol">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="GUIDDec" type="xs:string" minOccurs="0"/>
+<xs:element name="LoginUser1" type="xs:string" default="123" minOccurs="0"/>
+<xs:element name="ProtInfo_NumProt" type="xs:string"/>
+<xs:element name="ProtInfo_RecipientCode" type="xs:string" minOccurs="0"/>
+<xs:element name="DocInfo_GUIDDoc" type="xs:string"/>
+<xs:element name="DocInfo_TypeDoc" type="xs:string" minOccurs="0"/>
+<xs:element name="DocInfo_NameDoc" type="ns2:tDecision_TypeDocComplex"/>
+<xs:element name="DocInfo_NumDoc" type="xs:string"/>
+<xs:element name="DocInfo_DateDoc" type="xs:string"/>
+<xs:element name="DocInfo_ConsoleRegCode" type="xs:string"/>
+<xs:element name="DocInfo_UncNmOrg" type="xs:string"/>
+<xs:element name="DocInfo_BudgName" type="xs:string" minOccurs="0"/>
+<xs:element name="DocInfo_FOName" type="xs:string" minOccurs="0"/>
+<xs:element name="DocInfo_ProtType" type="xs:string"/>
+<xs:element name="DocInfo_ProcessDate" type="xs:string"/>
+<xs:element name="DocInfo_Note" type="xs:string" minOccurs="0"/>
+<xs:element name="FKInfo_ProtAssignDate" type="xs:string"/>
+<xs:element name="ListApproval_NmExec" type="xs:string" minOccurs="0"/>
+<xs:element name="ListApproval_PstExec" type="xs:string" minOccurs="0"/>
+<xs:element name="ListApproval_DtSgnngExec" type="xs:string" minOccurs="0"/>
+<xs:element name="ListApproval_NmHdUtv" type="xs:string" minOccurs="0"/>
+<xs:element name="ListApproval_PstHdUtv" type="xs:string" minOccurs="0"/>
+<xs:element name="ListApproval_DtSgnngUtv" type="xs:string" minOccurs="0"/>
+<xs:element name="ListApproval_Approver_Dsc" type="ns2:tAgreementStateComplex" minOccurs="0"/>
+<xs:element name="ListApproval_Nt" type="xs:string" minOccurs="0"/>
+<xs:element name="ProtInfo_MSC_Infrmtn" type="ns3:tMSC_Infrmtn" minOccurs="0"/>
+<xs:element name="ProtInfo_MSC_OrFK_Sender" type="ns3:tMSC_OrFK" minOccurs="0"/>
+<xs:element name="ProtInfo_MSC_OrFK_Recipient" type="ns3:tMSC_OrFK" minOccurs="0"/>
+<xs:element name="DocInfo_MSC_Cstmr" type="ns3:tMSC_Cstmr" minOccurs="0"/>
+<xs:element name="FKInfo_MSC_MrkOrFK" type="ns3:tMSC_MrkOrFK" minOccurs="0"/>
+<xs:element name="BO_AGREER" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="BO_AGREER_ITEM" type="tns:tBO_AGREER_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tBO_AGREER_ITEM">
+<xs:sequence>
+<xs:element name="Agreer_Dsc" type="ns2:tmatching_stateComplex" minOccurs="0"/>
+<xs:element name="Agreer_Note" type="xs:string" minOccurs="0"/>
+<xs:element name="AgrSFP" type="xs:string" minOccurs="0"/>
+<xs:element name="AgrPost" type="xs:string" minOccurs="0"/>
+<xs:element name="Agreer_StartDate" type="xs:string" minOccurs="0"/>
+<xs:element name="Agreer_Date" type="xs:string" minOccurs="0"/>
+<xs:element name="Agreer_State" type="xs:string" minOccurs="0"/>
+<xs:element name="AgrLogin" type="xs:string" minOccurs="0"/>
+<xs:element name="Agr_Order" type="xs:string" minOccurs="0"/>
+<xs:element name="AgrDepartment" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBO_AGREER">
+<xs:sequence>
+<xs:element name="BO_AGREER_ITEM" type="tns:tBO_AGREER_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

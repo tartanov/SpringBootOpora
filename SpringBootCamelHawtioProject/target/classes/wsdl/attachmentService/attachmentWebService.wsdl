@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. -->
+<wsdl:definitions xmlns="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1" xmlns:cc="http://www.otr.ru/ufos/ws/core/common/v1_1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1" name="documentAttachmentsService">
+    <wsdl:types>
+        <xsd:schema>
+            <xsd:import namespace="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1" schemaLocation="xsd/2.xsd"/>
+            <xsd:import namespace="http://www.otr.ru/ufos/ws/core/common/v1_1" schemaLocation="xsd/1.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+
+    <wsdl:message name="listAttachmentsReqMsg">
+        <wsdl:part name="parameters" element="listAttachmentsRequest"/>
+    </wsdl:message>
+    <wsdl:message name="listAttachmentsRespMsg">
+        <wsdl:part name="parameters" element="listAttachmentsResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="getAttachmentReqMsg">
+        <wsdl:part name="parameters" element="getAttachmentRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getAttachmentRespMsg">
+        <wsdl:part name="parameters" element="getAttachmentResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="manageAttachmentsReqMsg">
+        <wsdl:part name="parameters" element="manageAttachmentsRequest"/>
+    </wsdl:message>
+    <wsdl:message name="manageAttachmentsRespMsg">
+        <wsdl:part name="parameters" element="manageAttachmentsResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="invalidGuidFault">
+        <wsdl:part name="fault" element="cc:invalidGuidFault"/>
+    </wsdl:message>
+    <wsdl:message name="documentNotFoundFault">
+        <wsdl:part name="fault" element="cc:documentNotFoundFault"/>
+    </wsdl:message>
+    <wsdl:message name="attachmentNotFoundFault">
+        <wsdl:part name="fault" element="attachmentNotFoundFault"/>
+    </wsdl:message>
+    <wsdl:message name="deletingAttachmentIsSignedFault">
+        <wsdl:part name="fault" element="deletingAttachmentIsSignedFault"/>
+    </wsdl:message>
+
+    <wsdl:portType name="documentAttachmentsPort">
+        <wsdl:documentation>Сервис для работы с вложениями документа.</wsdl:documentation>
+
+        <wsdl:operation name="listAttachments">
+
+            <wsdl:input message="listAttachmentsReqMsg"/>
+            <wsdl:output message="listAttachmentsRespMsg"/>
+
+            <!-- 	<wsdl:fault message="invalidGuidFault" name="invalidGuidFault"/>
+                <wsdl:fault message="documentNotFoundFault" name="documentNotFoundFault"/> -->
+        </wsdl:operation>
+
+        <wsdl:operation name="getAttachment">
+            <wsdl:documentation>Получение содержимого вложения.</wsdl:documentation>
+
+            <wsdl:input message="getAttachmentReqMsg"/>
+            <wsdl:output message="getAttachmentRespMsg"/>
+
+            <wsdl:fault message="invalidGuidFault" name="invalidGuidFault"/>
+            <wsdl:fault message="attachmentNotFoundFault" name="attachmentNotFoundFault"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="manageAttachments">
+            <wsdl:documentation>Управление вложениями для указанного документа: создание и удаление.</wsdl:documentation>
+
+            <wsdl:input message="manageAttachmentsReqMsg"/>
+            <wsdl:output message="manageAttachmentsRespMsg"/>
+
+            <wsdl:fault message="invalidGuidFault" name="invalidGuidFault"/>
+            <wsdl:fault message="deletingAttachmentIsSignedFault" name="deletingAttachmentIsSignedFault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="documentAttachmentsBinding" type="documentAttachmentsPort">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+
+        <wsdl:operation name="listAttachments">
+            <soap:operation soapAction=""/>
+
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+
+
+        </wsdl:operation>
+
+        <wsdl:operation name="getAttachment">
+            <soap:operation soapAction=""/>
+
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+
+            <wsdl:fault name="invalidGuidFault">
+                <soap:fault name="invalidGuidFault" use="literal"/>
+            </wsdl:fault>
+            <wsdl:fault name="attachmentNotFoundFault">
+                <soap:fault name="attachmentNotFoundFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="manageAttachments">
+            <soap:operation soapAction=""/>
+
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="invalidGuidFault">
+                <soap:fault name="invalidGuidFault" use="literal"/>
+            </wsdl:fault>
+            <wsdl:fault name="deletingAttachmentIsSignedFault">
+                <soap:fault name="deletingAttachmentIsSignedFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="documentAttachmentsService">
+        <wsdl:port name="documentAttachmentsPortv1_1" binding="documentAttachmentsBinding">
+            <soap:address location="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

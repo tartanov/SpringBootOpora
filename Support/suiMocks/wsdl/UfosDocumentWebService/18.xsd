@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_RgstrInfrmAc/formular" xmlns:ns3="http://www.roskazna.ru/eb/domain/common/entity" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_RgstrInfrmAc/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:element name="MSC_RgstrInfrmAc" type="tns:tMSC_RgstrInfrmAc"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_RgstrInfrmAc">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="StmInfrmtn_TxtDt" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_TxtRsltPrm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RsltChckDc" type="xs:int" minOccurs="0"/>
+<xs:element name="StmInfrmtn_DcmntQnty" type="xs:int" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RsltRws" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RgstrNmINTEGER" type="xs:int" minOccurs="0"/>
+<xs:element name="StmInfrmtn_ChckGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_ChckGUID2" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_ChckGUID3" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_TOFKMonitorGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_ApplFundsCardGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_TechSign" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_PrevRegInfAccSign" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_OrgCd" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_SymptomReload" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_ProcessingFeature" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_IDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_TOFKCd" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_RgstrNm" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_PrevRegInformAccDate" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_QntAcnts" type="xs:int" minOccurs="0"/>
+<xs:element name="Hdr_DcQnty" type="xs:int" minOccurs="0"/>
+<xs:element name="Hdr_RgstrTp" type="ns2:tMSC_RgstrTpComplex" minOccurs="0"/>
+<xs:element name="Hdr_AcntCds" type="ns2:tMSC_AcntCdsComplex" minOccurs="0"/>
+<xs:element name="Hdr_BlocksType" type="ns2:tMSC_BlocksTypeComplex" minOccurs="0"/>
+<xs:element name="Hdr_TrnsprtnSts" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_FormRegDateTime" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_RcpDateTime" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_PrcsSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_ErMsg" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_PrcsDt" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_PrcsSgnPIAO" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_ErMsgPIAO" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_RegisterInformAccGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_ReceiptPUR_GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_ReceiptPIAO_GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_ViewRegisterPIAO" type="ns2:tMSC_ViewRegisterPIAOComplex" minOccurs="0"/>
+<xs:element name="Hdr_MSC_Infrmtn" type="ns3:tMSC_Infrmtn" minOccurs="0"/>
+<xs:element name="GnrlInf" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="GnrlInf_ITEM" type="tns:tGnrlInf_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DcInfrm" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="DcInfrm_ITEM" type="tns:tDcInfrm_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tGnrlInf_ITEM">
+<xs:sequence>
+<xs:element name="GI_RwIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="GI_HdIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="GI_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="GI_AccountType" type="xs:string" minOccurs="0"/>
+<xs:element name="DcQnty" type="xs:int" minOccurs="0"/>
+<xs:element name="TrnsBdgtDt_DcQnty" type="xs:int" minOccurs="0"/>
+<xs:element name="TrnsBdgtDt_TtlAmnt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TrnsBdgtDt_BAStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TrnsBdgtDt_BAEndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TrnsBdgtDt_LBOStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TrnsBdgtDt_LBOEndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TrnsBdgtDt_POFRStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TrnsBdgtDt_POFREndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TrnsBdgtDt_POFRStBlncCr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TrnsBdgtDt_POFREndBlncCr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BdgtOblgtn_DcQnty" type="xs:int" minOccurs="0"/>
+<xs:element name="BdgtOblgtn_TtlAmnt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BdgtOblgtn_BOStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BdgtOblgtn_BOEndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Oprtns_DcQnty" type="xs:int" minOccurs="0"/>
+<xs:element name="Oprtns_TtlAmnt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Oprtns_ACCStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Oprtns_ACCEndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Oprtns_RECStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Oprtns_RECEndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Oprtns_PAYStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Oprtns_PAYEndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RwPrcsDt" type="xs:string" minOccurs="0"/>
+<xs:element name="RwPrcsSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="RwErMsg" type="xs:string" minOccurs="0"/>
+<xs:element name="RwPrcsDtPIAO" type="xs:string" minOccurs="0"/>
+<xs:element name="RwPrcsSgnPIAO" type="xs:string" minOccurs="0"/>
+<xs:element name="RwErMsgPIAO" type="xs:string" minOccurs="0"/>
+<xs:element name="CardOfAccountGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="TechTabGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="BalanceSign" type="xs:string" minOccurs="0"/>
+<xs:element name="CardBalance" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TechTabCheckGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="KontrolOstLsGUID" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tDcInfrm_ITEM">
+<xs:sequence>
+<xs:element name="RwNmbr" type="xs:int" minOccurs="0"/>
+<xs:element name="DI_GIRwIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="DI_HdIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="NmDcTp" type="xs:string" minOccurs="0"/>
+<xs:element name="SctnCd" type="ns2:tMSC_SctnCdComplex" minOccurs="0"/>
+<xs:element name="DcNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="Amnt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="PrcsDt" type="xs:string" minOccurs="0"/>
+<xs:element name="PrcsSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="ErMsg" type="xs:string" minOccurs="0"/>
+<xs:element name="PrcsDtPIAO" type="xs:string" minOccurs="0"/>
+<xs:element name="PrcsSgnPIAO" type="xs:string" minOccurs="0"/>
+<xs:element name="ErMsgPIAO" type="xs:string" minOccurs="0"/>
+<xs:element name="RjctnRsn" type="xs:string" minOccurs="0"/>
+<xs:element name="TchnclDcTp" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="MSC_Infrmtn" type="ns3:tMSC_Infrmtn" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tDcInfrm">
+<xs:sequence>
+<xs:element name="DcInfrm_ITEM" type="tns:tDcInfrm_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tGnrlInf">
+<xs:sequence>
+<xs:element name="GnrlInf_ITEM" type="tns:tGnrlInf_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

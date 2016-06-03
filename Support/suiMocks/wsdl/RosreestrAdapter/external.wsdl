@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="ExternalWS" targetNamespace="urn:ws.request.pgu.sids.fccland.ru" xmlns:http-conf="http://cxf.apache.org/transports/http/configuration" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:ws.request.pgu.sids.fccland.ru" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified"  xmlns:event="urn:events.pgu.sids.fccland.ru" xmlns:http-conf="http://cxf.apache.org/transports/http/configuration" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:ws.request.pgu.sids.fccland.ru" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+		<xs:import schemaLocation="types.xsd" namespace="urn:ws.request.pgu.sids.fccland.ru"/> 
+
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="loadEventDetailsOutMessage">
+        <wsdl:part element="tns:loadEventDetailsResponse" name="params">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="loadEventDetailsInMessage">
+        <wsdl:part element="tns:loadEventDetails" name="params">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getEventsInMessage">
+        <wsdl:part element="tns:getEvents" name="params">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteEventsInMessage">
+        <wsdl:part element="tns:deleteEvents" name="params">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getEventsOutMessage">
+        <wsdl:part element="tns:getEventsResponse" name="params">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createRequestInMessage">
+        <wsdl:part element="tns:createRequest" name="params">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteEventsOutMessage">
+        <wsdl:part element="tns:deleteEventsResponse" name="params">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createRequestOutMessage">
+        <wsdl:part element="tns:createRequestResponse" name="params">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="ExternalSEI">
+        <wsdl:operation name="createRequest">
+            <wsdl:input message="tns:createRequestInMessage">
+            </wsdl:input>
+            <wsdl:output message="tns:createRequestOutMessage">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getEvents">
+            <wsdl:input message="tns:getEventsInMessage">
+            </wsdl:input>
+            <wsdl:output message="tns:getEventsOutMessage">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteEvents">
+            <wsdl:input message="tns:deleteEventsInMessage">
+            </wsdl:input>
+            <wsdl:output message="tns:deleteEventsOutMessage">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="loadEventDetails">
+            <wsdl:input message="tns:loadEventDetailsInMessage">
+            </wsdl:input>
+            <wsdl:output message="tns:loadEventDetailsOutMessage">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="soap1.1Binding" type="tns:ExternalSEI">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="createRequest">
+            <soap:operation soapAction="urn:ws.request.pgu.sids.fccland.ru/createRequest"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getEvents">
+            <soap:operation soapAction="urn:ws.request.pgu.sids.fccland.ru/getEvents"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteEvents">
+            <soap:operation soapAction="urn:ws.request.pgu.sids.fccland.ru/deleteEvents"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="loadEventDetails">
+            <soap:operation soapAction="urn:ws.request.pgu.sids.fccland.ru/loadEventDetails"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ExternalWS">
+        <wsdl:port binding="tns:soap1.1Binding" name="ExternalWSSoap1.1Port">
+            <soap:address location="http://test-wse-ext.egron.net:8080/cxf/External"/>
+            <http-conf:client ReceiveTimeout="0"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

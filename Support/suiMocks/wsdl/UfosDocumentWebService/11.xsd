@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/REF_KBK10/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/REF_KBK10/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:element name="REF_KBK10" type="tns:tREF_KBK10"/>
+
+<xs:complexType name="tDICT_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="ORGCODE" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ORGVISIBILITY" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_KBK10">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string"/>
+<xs:element name="StartDateActive" type="xs:string"/>
+<xs:element name="EndDateActive" type="xs:string" minOccurs="0"/>
+<xs:element name="Status" type="ns2:tSystem_statusesComplex"/>
+<xs:element name="GlavaCode" type="xs:string"/>
+<xs:element name="RazdelCode" type="xs:string"/>
+<xs:element name="ItemCode" type="xs:string"/>
+<xs:element name="ExpenceTypeCode" type="xs:string"/>
+<xs:element name="KOSGUCode" type="xs:string"/>
+<xs:element name="Code" type="xs:string"/>
+<xs:element name="ShortName" type="xs:string" minOccurs="0"/>
+<xs:element name="FullName" type="xs:string" minOccurs="0"/>
+<xs:element name="KBKType" type="ns2:tREF_KBKTypesComplex" minOccurs="0"/>
+<xs:element name="IsLimit" type="xs:boolean"/>
+<xs:element name="DateInclusion" type="xs:string"/>
+<xs:element name="DateExclusion" type="xs:string" minOccurs="0"/>
+<xs:element name="KBK10Status" type="ns2:tREF_KBKStatusesComplex"/>
+<xs:element name="BudgCode" type="tns:tLpBudgCode" minOccurs="0"/>
+<xs:element name="TOFKCode" type="tns:tLpTOFKCode" minOccurs="0"/>
+<xs:element name="DICT_BASE" type="tns:tDICT_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tLpBudgCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+<xs:element name="Name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpTOFKCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+<xs:element name="ShortName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+</xs:schema>

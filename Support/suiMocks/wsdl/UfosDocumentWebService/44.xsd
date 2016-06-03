@@ -1,0 +1,521 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/EXP_SubsidyAgrmtInfo/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/EXP_SubsidyAgrmtInfo/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:element name="EXP_SubsidyAgrmtInfo" type="tns:tEXP_SubsidyAgrmtInfo"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tEXP_SubsidyAgrmtInfo">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="User1" type="xs:string" minOccurs="0"/>
+<xs:element name="User2" type="xs:string" minOccurs="0"/>
+<xs:element name="OKATO1" type="xs:string" minOccurs="0"/>
+<xs:element name="childDocGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="GUIDASFK" type="xs:string" minOccurs="0"/>
+<xs:element name="FlgFAIP" type="xs:boolean" minOccurs="0"/>
+<xs:element name="ParentDocGuid1" type="xs:string" minOccurs="0"/>
+<xs:element name="TpCrct" type="xs:string" minOccurs="0"/>
+<xs:element name="ConstReestrNum" type="xs:string" minOccurs="0"/>
+<xs:element name="UserUser1" type="xs:string" minOccurs="0"/>
+<xs:element name="UserUser2" type="xs:string" minOccurs="0"/>
+<xs:element name="field" type="xs:string" default="0" minOccurs="0"/>
+<xs:element name="field1" type="xs:string" default="0" minOccurs="0"/>
+<xs:element name="UserFlag1" type="ns2:tStateListComplex" minOccurs="0"/>
+<xs:element name="UserFlag2" type="ns2:tStateListFKComplex" minOccurs="0"/>
+<xs:element name="Login" type="xs:string" minOccurs="0"/>
+<xs:element name="SYSTEM1" type="xs:string" minOccurs="0"/>
+<xs:element name="SYSTEM2" type="xs:string" minOccurs="0"/>
+<xs:element name="LoginUser1" type="xs:string" default="123" minOccurs="0"/>
+<xs:element name="UserInitials" type="xs:string" default="Петров Олег Анатольевич" minOccurs="0"/>
+<xs:element name="PositionUser" type="xs:string" default="Исполнитель2" minOccurs="0"/>
+<xs:element name="UserFlag3" type="xs:string" minOccurs="0"/>
+<xs:element name="UserFlag4" type="xs:string" minOccurs="0"/>
+<xs:element name="ProtocolGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="InfConstNum" type="xs:string" minOccurs="0"/>
+<xs:element name="guidForCounter" type="xs:string" minOccurs="0"/>
+<xs:element name="PrevReestNum" type="xs:string" minOccurs="0"/>
+<xs:element name="SysOrgGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="OrgSysName" type="xs:string" minOccurs="0"/>
+<xs:element name="OrgName" type="xs:string" minOccurs="0"/>
+<xs:element name="SysOrgGUIDHL" type="xs:string" minOccurs="0"/>
+<xs:element name="OrgSysNameHL" type="xs:string" minOccurs="0"/>
+<xs:element name="OrgNameHL" type="xs:string" minOccurs="0"/>
+<xs:element name="CopyINN" type="xs:string" minOccurs="0"/>
+<xs:element name="field3" type="xs:string" minOccurs="0"/>
+<xs:element name="OGRN" type="xs:string" minOccurs="0"/>
+<xs:element name="Code_Composite_Reg" type="xs:string" minOccurs="0"/>
+<xs:element name="accCounter" type="xs:string" minOccurs="0"/>
+<xs:element name="rowCountSved" type="xs:string" minOccurs="0"/>
+<xs:element name="userFlag6" type="xs:string" minOccurs="0"/>
+<xs:element name="regNumASFK" type="xs:string" minOccurs="0"/>
+<xs:element name="impAttr" type="xs:string" minOccurs="0"/>
+<xs:element name="VolumeBudget" type="xs:decimal" minOccurs="0"/>
+<xs:element name="MunicBudgets" type="xs:decimal" minOccurs="0"/>
+<xs:element name="NameTpAct" type="xs:string" minOccurs="0"/>
+<xs:element name="NumberAct" type="xs:string" minOccurs="0"/>
+<xs:element name="DateAdoption" type="xs:string" minOccurs="0"/>
+<xs:element name="NameAct" type="xs:string" minOccurs="0"/>
+<xs:element name="DateExpiration" type="xs:string" minOccurs="0"/>
+<xs:element name="NumberRegistr" type="xs:string" minOccurs="0"/>
+<xs:element name="DateRegistr" type="xs:string" minOccurs="0"/>
+<xs:element name="ExecDepartment" type="xs:string" minOccurs="0"/>
+<xs:element name="Approver_Department" type="xs:string" minOccurs="0"/>
+<xs:element name="Agreer_CommonDsc" type="ns2:tApprovementStateComplex" minOccurs="0"/>
+<xs:element name="Approver_Dsc" type="ns2:tAgreementStateComplex" minOccurs="0"/>
+<xs:element name="Temp_CommonNote" type="xs:string" minOccurs="0"/>
+<xs:element name="CommonNote" type="xs:string" minOccurs="0"/>
+<xs:element name="Approver_StartDate" type="xs:string" minOccurs="0"/>
+<xs:element name="Approver_Date" type="xs:string" minOccurs="0"/>
+<xs:element name="Agreer_SkipAll" type="xs:boolean" minOccurs="0"/>
+<xs:element name="fonarReestr" type="ns2:tfonarReestrComplex" minOccurs="0"/>
+<xs:element name="fonarPub" type="ns2:tfonarPubComplex" minOccurs="0"/>
+<xs:element name="extraField1" type="xs:string" minOccurs="0"/>
+<xs:element name="extraField2" type="xs:string" minOccurs="0"/>
+<xs:element name="extraField3" type="xs:string" minOccurs="0"/>
+<xs:element name="extraField4" type="xs:string" minOccurs="0"/>
+<xs:element name="extraField5" type="xs:string" minOccurs="0"/>
+<xs:element name="ACCGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="constRegNumASFK" type="xs:string" minOccurs="0"/>
+<xs:element name="SystemAttach" type="xs:string" minOccurs="0"/>
+<xs:element name="SystemFilterAcc" type="xs:string" minOccurs="0"/>
+<xs:element name="PersAccType" type="xs:string" minOccurs="0"/>
+<xs:element name="extraField6" type="xs:string" minOccurs="0"/>
+<xs:element name="extraAcc_03" type="xs:string" minOccurs="0"/>
+<xs:element name="extraAcc_14" type="xs:string" minOccurs="0"/>
+<xs:element name="Fzap" type="xs:boolean" minOccurs="0"/>
+<xs:element name="Fzap1" type="xs:boolean" minOccurs="0"/>
+<xs:element name="Fzap2" type="xs:boolean" minOccurs="0"/>
+<xs:element name="Fzap3" type="xs:boolean" minOccurs="0"/>
+<xs:element name="Fzap4" type="xs:boolean" minOccurs="0"/>
+<xs:element name="Fzap5" type="xs:boolean" minOccurs="0"/>
+<xs:element name="Fzap6" type="xs:boolean" minOccurs="0"/>
+<xs:element name="vNewGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="Inf_GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="Inf_NmbrDcmnt" type="xs:string"/>
+<xs:element name="Inf_TpDcmnt" type="xs:string"/>
+<xs:element name="Inf_NmbrLnk" type="xs:string" minOccurs="0"/>
+<xs:element name="Inf_DtDcmnt" type="xs:string"/>
+<xs:element name="Inf_Nt" type="xs:string" minOccurs="0"/>
+<xs:element name="Inf_NtCncl" type="xs:string" minOccurs="0"/>
+<xs:element name="Inf_impNb" type="xs:string" minOccurs="0"/>
+<xs:element name="Inf_errEPBS" type="xs:boolean" default="false" minOccurs="0"/>
+<xs:element name="Inf_DateEPBS" type="xs:string" minOccurs="0"/>
+<xs:element name="Inf_ErrCodeEPBS" type="xs:string" minOccurs="0"/>
+<xs:element name="Inf_Src" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsGRBS_CdGRBSPPP" type="xs:string"/>
+<xs:element name="DtlsGRBS_CdGRBS" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsGRBS_NmGRBS" type="xs:string"/>
+<xs:element name="DtlsGRBS_ShrtNmGRBS" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsGRBS_CdGRBSOKOPF" type="xs:string"/>
+<xs:element name="DtlsGRBS_NmbrAccnt" type="xs:string"/>
+<xs:element name="DtlsGRBS_CdTOFK" type="xs:string"/>
+<xs:element name="DtlsGRBS_NmTOFK" type="xs:string"/>
+<xs:element name="DtlsGRBS_INN" type="xs:string"/>
+<xs:element name="DtlsGRBS_KPP" type="xs:string"/>
+<xs:element name="DtlsGRBS_DtRgstrtn" type="xs:string"/>
+<xs:element name="DtlsGRBS_RgsCode" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsGRBS_FllNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsGRBS_UncCd" type="xs:string" minOccurs="0"/>
+<xs:element name="SgnngGRBS_NmHd" type="xs:string"/>
+<xs:element name="SgnngGRBS_PstHd" type="xs:string"/>
+<xs:element name="SgnngGRBS_DtSgnng" type="xs:string"/>
+<xs:element name="SgnngGRBS_NmRspnsbl" type="xs:string" minOccurs="0"/>
+<xs:element name="SgnngGRBS_PstRspnsbl" type="xs:string" minOccurs="0"/>
+<xs:element name="SgnngGRBS_DtSgnngChrg" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_NmCntr" type="xs:string"/>
+<xs:element name="StGRBS_CdCntry" type="xs:string"/>
+<xs:element name="StGRBS_NmSbjct" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_CdSbjct" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_NmMnc" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_NmTwn" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_NmLclty" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_CdLcltyOKTMO" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_TpPlnStrctr" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_TpPlnRd" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_TpNmBld" type="xs:string"/>
+<xs:element name="StGRBS_TpNmRm" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_CdZp" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_TpLclty" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_TpObjct" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_NmTwn_1" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_NmTwn_2" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_NmTwn_3" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_TpNmBld1" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_TpNmBld2" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_TpNmBld3" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_TpNmBld4" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_TpNmBld5" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_TpNmBld6" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_TpNmBld7" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_TpNmBld8" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_NmTwn_4" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_NmTwn_5" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBS_NmTwn_6" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsAct_CdCntrct" type="xs:string"/>
+<xs:element name="DtlsAct_NmCntrct" type="xs:string"/>
+<xs:element name="DtlsAct_UniqueNumGZ" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsAct_NmbrLvl" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsAct_RmAct" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsAct_DtCntrct" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsAct_CrrntDt" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsAct_DtExprtn" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsAct_NmLglAct" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsAct_NmbrRgstrtn" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsAct_DtRgstrtn" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsAct_SmSbsds" type="xs:decimal"/>
+<xs:element name="DtlsAct_CdCrrnc" type="xs:string" default="RUB"/>
+<xs:element name="DtlsAct_NmCrrnc" type="xs:string" default="Российский рубль"/>
+<xs:element name="DtlsAct_RtCrrnc" type="xs:decimal"/>
+<xs:element name="DtlsAct_SmSbsdRUB" type="xs:decimal"/>
+<xs:element name="DtlsAct_TpAct" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsAct_NmNPA" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsAct_NmTp" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsAct_InfSz" type="xs:decimal" minOccurs="0"/>
+<xs:element name="DtlsAct_InfVlm" type="xs:decimal" minOccurs="0"/>
+<xs:element name="UnqNmbr_RstrNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="UnqNmbr_DtInclsn" type="xs:string" minOccurs="0"/>
+<xs:element name="UnqNmbr_SrlNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="InfBO_NmbrBO" type="xs:string" minOccurs="0"/>
+<xs:element name="InfBO_DtRgstr" type="xs:string" minOccurs="0"/>
+<xs:element name="InfBO_NmDr" type="xs:string" minOccurs="0"/>
+<xs:element name="InfBO_PstLbl" type="xs:string" minOccurs="0"/>
+<xs:element name="InfBO_DtSgnng" type="xs:string" minOccurs="0"/>
+<xs:element name="StGRBSfl_NmSbjct" type="xs:boolean" minOccurs="0"/>
+<xs:element name="StGRBSfl_CdSbjct" type="xs:boolean" minOccurs="0"/>
+<xs:element name="StGRBSfl_CdZp" type="xs:boolean" minOccurs="0"/>
+<xs:element name="StGRBSfl_TpLclty" type="xs:boolean" minOccurs="0"/>
+<xs:element name="StGRBSfl_NmLclty" type="xs:boolean" minOccurs="0"/>
+<xs:element name="StGRBSfl_CdLcltyOKTMO" type="xs:boolean" minOccurs="0"/>
+<xs:element name="StGRBSfl_TpPlnStrctr" type="xs:boolean" minOccurs="0"/>
+<xs:element name="StGRBSfl_TpPlnRd" type="xs:boolean" minOccurs="0"/>
+<xs:element name="StGRBSfl_TpObjct" type="xs:boolean" minOccurs="0"/>
+<xs:element name="NPA_NameTpAct" type="xs:string" minOccurs="0"/>
+<xs:element name="NPA_NumberAct" type="xs:string" minOccurs="0"/>
+<xs:element name="NPA_DateAdoption" type="xs:string" minOccurs="0"/>
+<xs:element name="NPA_NameAct" type="xs:string" minOccurs="0"/>
+<xs:element name="TbSbsds" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TbSbsds_ITEM" type="tns:tTbSbsds_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Pmnts" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Pmnts_ITEM" type="tns:tPmnts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Rslts" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Rslts_ITEM" type="tns:tRslts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UserDetails" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UserDetails_ITEM" type="tns:tUserDetails_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="NameSubsidies" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="NameSubsidies_ITEM" type="tns:tNameSubsidies_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="RS_AGREER" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RS_AGREER_ITEM" type="tns:tRS_AGREER_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="EXP_SAI_ListConstr" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="EXP_SAI_ListConstr_ITEM" type="tns:tEXP_SAI_ListConstr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tTbSbsds_ITEM">
+<xs:sequence>
+<xs:element name="SgnFrgnEnt" type="xs:boolean" minOccurs="0"/>
+<xs:element name="Nb" type="xs:string" minOccurs="0"/>
+<xs:element name="CdTerrtr" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+<xs:element name="FllNm" type="xs:string" minOccurs="0"/>
+<xs:element name="ShrtNm" type="xs:string" minOccurs="0"/>
+<xs:element name="FllNmLtn" type="xs:string" minOccurs="0"/>
+<xs:element name="ShrtNmLtn" type="xs:string" minOccurs="0"/>
+<xs:element name="CdOKOPF" type="xs:string" minOccurs="0"/>
+<xs:element name="SVR" type="xs:string" minOccurs="0"/>
+<xs:element name="CdCmpst" type="xs:string" minOccurs="0"/>
+<xs:element name="NmbrAccnt" type="xs:string" minOccurs="0"/>
+<xs:element name="DtRcrd" type="xs:string" minOccurs="0"/>
+<xs:element name="NameBudgetSubjectRF" type="xs:string" minOccurs="0"/>
+<xs:element name="CdTer" type="xs:string" minOccurs="0"/>
+<xs:element name="NmSbjct" type="xs:string" minOccurs="0"/>
+<xs:element name="CdSbjct" type="xs:string" minOccurs="0"/>
+<xs:element name="NmOKSM" type="xs:string" minOccurs="0"/>
+<xs:element name="CdZp" type="xs:string" minOccurs="0"/>
+<xs:element name="TpLclty" type="xs:string" minOccurs="0"/>
+<xs:element name="CdLclty" type="xs:string" minOccurs="0"/>
+<xs:element name="NmLclt" type="xs:string" minOccurs="0"/>
+<xs:element name="CdTxpr" type="xs:string" minOccurs="0"/>
+<xs:element name="TpPln" type="xs:string" minOccurs="0"/>
+<xs:element name="TpPlnRd" type="xs:string" minOccurs="0"/>
+<xs:element name="TpObjct" type="xs:string" minOccurs="0"/>
+<xs:element name="SbjctNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SbjctCd" type="xs:string" minOccurs="0"/>
+<xs:element name="ZpCd" type="xs:string" minOccurs="0"/>
+<xs:element name="LcltyTp" type="xs:string" minOccurs="0"/>
+<xs:element name="CdOKTMO" type="xs:string" minOccurs="0"/>
+<xs:element name="PntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="StrctrTp" type="xs:string" minOccurs="0"/>
+<xs:element name="RdTp" type="xs:string" minOccurs="0"/>
+<xs:element name="ObjctTp" type="xs:string" minOccurs="0"/>
+<xs:element name="field1" type="xs:string" minOccurs="0"/>
+<xs:element name="OGRN" type="xs:string" minOccurs="0"/>
+<xs:element name="SignText" type="xs:string" minOccurs="0"/>
+<xs:element name="FieldHidden1" type="xs:string" minOccurs="0"/>
+<xs:element name="FieldHidden2" type="xs:string" minOccurs="0"/>
+<xs:element name="FieldHidden3" type="xs:string" minOccurs="0"/>
+<xs:element name="FieldHidden4" type="xs:string" minOccurs="0"/>
+<xs:element name="FieldHidden5" type="xs:string" minOccurs="0"/>
+<xs:element name="FieldHidden6" type="xs:string" minOccurs="0"/>
+<xs:element name="FieldHidden7" type="xs:string" minOccurs="0"/>
+<xs:element name="TipHidden11" type="xs:string" minOccurs="0"/>
+<xs:element name="TipHidden12" type="xs:string" minOccurs="0"/>
+<xs:element name="TipHidden21" type="xs:string" minOccurs="0"/>
+<xs:element name="TipHidden22" type="xs:string" minOccurs="0"/>
+<xs:element name="TipHidden31" type="xs:string" minOccurs="0"/>
+<xs:element name="TipHidden32" type="xs:string" minOccurs="0"/>
+<xs:element name="TipHidden33" type="xs:string" minOccurs="0"/>
+<xs:element name="TipHidden34" type="xs:string" minOccurs="0"/>
+<xs:element name="TipHidden35" type="xs:string" minOccurs="0"/>
+<xs:element name="TipHidden36" type="xs:string" minOccurs="0"/>
+<xs:element name="TipHidden37" type="xs:string" minOccurs="0"/>
+<xs:element name="CdCntr" type="xs:string" minOccurs="0"/>
+<xs:element name="NmCntr" type="xs:string" minOccurs="0"/>
+<xs:element name="CdCntry" type="xs:string" minOccurs="0"/>
+<xs:element name="NmMnc" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmRm" type="xs:string" minOccurs="0"/>
+<xs:element name="NmCntrF" type="xs:string" minOccurs="0"/>
+<xs:element name="CdCntryF" type="xs:string" minOccurs="0"/>
+<xs:element name="NmMncF" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwnF" type="xs:string" minOccurs="0"/>
+<xs:element name="NmElmnt" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBldF" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmRmF" type="xs:string" minOccurs="0"/>
+<xs:element name="PhnNmbrF" type="xs:string" minOccurs="0"/>
+<xs:element name="AdrssEmlF" type="xs:string" minOccurs="0"/>
+<xs:element name="RgsCode" type="xs:string" minOccurs="0"/>
+<xs:element name="CdOKSM" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn_1Tab" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn_2Tab" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn_3Tab" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn_4Tab" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn_5Tab" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn_6Tab" type="xs:string" minOccurs="0"/>
+<xs:element name="FllNmGRBS" type="xs:string" minOccurs="0"/>
+<xs:element name="UncCd" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld1" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld2" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld3" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld4" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld5" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld6" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld7" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld8" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld1_F" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld2_F" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld3_F" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld4_F" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld5_F" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld6_F" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld7_F" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNmBld8_F" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn_4" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn_11Tab" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn_21Tab" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn_31Tab" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn_41Tab" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn_51Tab" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTwn_61Tab" type="xs:string" minOccurs="0"/>
+<xs:element name="NmbrBnkAccnt" type="xs:string" minOccurs="0"/>
+<xs:element name="NameBnk" type="xs:string" minOccurs="0"/>
+<xs:element name="BIKBnk" type="xs:string" minOccurs="0"/>
+<xs:element name="CorrespndntAccnt" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tPmnts_ITEM">
+<xs:sequence>
+<xs:element name="NmLn" type="xs:string"/>
+<xs:element name="SgnFAIP" type="xs:boolean" minOccurs="0"/>
+<xs:element name="NmFAIP" type="xs:string" minOccurs="0"/>
+<xs:element name="CdFAIP" type="xs:string" minOccurs="0"/>
+<xs:element name="TpGrnt" type="xs:string" minOccurs="0"/>
+<xs:element name="KBK" type="xs:string" minOccurs="0"/>
+<xs:element name="AnltcCd" type="xs:string" minOccurs="0"/>
+<xs:element name="SmptmPmnt" type="ns2:tSympAbsltnssPmntComplex" minOccurs="0"/>
+<xs:element name="SmLblt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SmLblts" type="xs:decimal" minOccurs="0"/>
+<xs:element name="DrctnSpndng" type="xs:string" minOccurs="0"/>
+<xs:element name="SmJnr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmFbrr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmMrch" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmAprl" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmMay" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmJne" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmJl" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmAgst" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmSptmbr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmOctbr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmNvmbr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmDcmbr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="AmntYr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmFrstYr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmScndYr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmThrdYr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmFrthYr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmNxtYr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="Note" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRslts_ITEM">
+<xs:sequence>
+<xs:element name="RsltsR7" type="xs:string" minOccurs="0"/>
+<xs:element name="RsltsR9" type="xs:string" minOccurs="0"/>
+<xs:element name="RsltsR8" type="xs:string" minOccurs="0"/>
+<xs:element name="RsltsR1" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RsltsR2" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RsltsR3" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RsltsR4" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RsltsR5" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RsltsR6" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SmJnr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmFbrr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmMrch" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmAprl" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmMay" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmJne" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmJl" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmAgst" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmSptmbr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmOctbr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmNvmbr" type="xs:decimal" default="0.00" minOccurs="0"/>
+<xs:element name="SmDcmbr" type="xs:decimal" default="0.00" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUserDetails_ITEM">
+<xs:sequence>
+<xs:element name="UserLogin" type="xs:string" minOccurs="0"/>
+<xs:element name="UsrNm" type="xs:string" minOccurs="0"/>
+<xs:element name="PstnUsr" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tNameSubsidies_ITEM">
+<xs:sequence>
+<xs:element name="NumberRow" type="xs:string" minOccurs="0"/>
+<xs:element name="NamSubs" type="xs:string" minOccurs="0"/>
+<xs:element name="UnitValue" type="xs:string" minOccurs="0"/>
+<xs:element name="ValuePerfor" type="xs:string" minOccurs="0"/>
+<xs:element name="Year" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRS_AGREER_ITEM">
+<xs:sequence>
+<xs:element name="AgrLogin" type="xs:string" minOccurs="0"/>
+<xs:element name="AgrSFP" type="xs:string" minOccurs="0"/>
+<xs:element name="AgrPost" type="xs:string" minOccurs="0"/>
+<xs:element name="Agr_Order" type="xs:string" minOccurs="0"/>
+<xs:element name="Agreer_Dsc" type="ns2:tmatching_stateComplex" minOccurs="0"/>
+<xs:element name="Agreer_Note" type="xs:string" minOccurs="0"/>
+<xs:element name="Agreer_StartDate" type="xs:string" minOccurs="0"/>
+<xs:element name="Agreer_Date" type="xs:string" minOccurs="0"/>
+<xs:element name="AgrDepartment" type="xs:string" minOccurs="0"/>
+<xs:element name="Agreer_State" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tEXP_SAI_ListConstr_ITEM">
+<xs:sequence>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+<xs:element name="Adrss" type="xs:string" minOccurs="0"/>
+<xs:element name="PwrObjct" type="xs:string" minOccurs="0"/>
+<xs:element name="Prc" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRS_AGREER">
+<xs:sequence>
+<xs:element name="RS_AGREER_ITEM" type="tns:tRS_AGREER_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUserDetails">
+<xs:sequence>
+<xs:element name="UserDetails_ITEM" type="tns:tUserDetails_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tPmnts">
+<xs:sequence>
+<xs:element name="Pmnts_ITEM" type="tns:tPmnts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRslts">
+<xs:sequence>
+<xs:element name="Rslts_ITEM" type="tns:tRslts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tTbSbsds">
+<xs:sequence>
+<xs:element name="TbSbsds_ITEM" type="tns:tTbSbsds_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tNameSubsidies">
+<xs:sequence>
+<xs:element name="NameSubsidies_ITEM" type="tns:tNameSubsidies_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tEXP_SAI_ListConstr">
+<xs:sequence>
+<xs:element name="EXP_SAI_ListConstr_ITEM" type="tns:tEXP_SAI_ListConstr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

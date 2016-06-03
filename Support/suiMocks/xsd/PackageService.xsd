@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/PackageService" xmlns:tns="http://www.example.org/PackageService" elementFormDefault="qualified">
+
+    <element name="packageRequest" type="tns:packageRequestType"></element>
+    
+    <element name="packageResponse" type="tns:packageResponseType"></element>
+    
+    <complexType name="packageRequestType">
+    	<sequence>
+    		<element ref="tns:attachment" maxOccurs="unbounded" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="packageResponseType">
+    	<sequence>
+    		<element name="zipFile" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="attachment" type="tns:attachmentType"></element>
+    
+    <complexType name="attachmentType">
+    	<sequence>
+    		<element name="name" type="string"></element>
+    		<element name="content" type="string"></element>
+    		<element name="signContent" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_CrdOfAcnt/formular" xmlns:ns3="http://www.roskazna.ru/eb/domain/common/entity" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_CrdOfAcnt/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:element name="MSC_CrdOfAcnt" type="tns:tMSC_CrdOfAcnt"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_CrdOfAcnt">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="OpBalance" type="xs:decimal" minOccurs="0"/>
+<xs:element name="DateToCompare" type="xs:string" minOccurs="0"/>
+<xs:element name="BalanceResult" type="xs:string" minOccurs="0"/>
+<xs:element name="GnrlInfrmtn_CardType" type="ns2:tMSC_CardTypeComplex" minOccurs="0"/>
+<xs:element name="AcntInfrmtn_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntInfrmtn_AcntTp" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntInfrmtn_OpngDt" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntInfrmtn_TOFKCd" type="xs:string" minOccurs="0"/>
+<xs:element name="ClntInfrmtn_ClntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="ClntInfrmtn_OrgCd" type="xs:string" minOccurs="0"/>
+<xs:element name="ClntInfrmtn_UBPCd" type="xs:string" minOccurs="0"/>
+<xs:element name="StCntrct_HrchLvl" type="xs:string" minOccurs="0"/>
+<xs:element name="StCntrct_OrgNm" type="xs:string" minOccurs="0"/>
+<xs:element name="StCntrct_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="StCntrct_TOFKCd" type="xs:string" minOccurs="0"/>
+<xs:element name="StsAcnt_StrtBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_EndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlRcpts" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlRtrn" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlPmnts" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlRcvryCsh" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlOtstndngBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BrghtBdgtDt_FilterYear" type="xs:string" minOccurs="0"/>
+<xs:element name="BudgetaryCommitments_FilterYear" type="xs:string" minOccurs="0"/>
+<xs:element name="GnrlInfrmtn_MSC_Infrmtn" type="ns3:tMSC_Infrmtn" minOccurs="0"/>
+<xs:element name="AcntInfrmtn_MSC_OrFK" type="ns3:tMSC_OrFK" minOccurs="0"/>
+<xs:element name="ClntInfrmtn_Bdgt" type="ns3:tMSC_Bdgt" minOccurs="0"/>
+<xs:element name="ClntInfrmtn_GRBS" type="ns3:tMSC_GRBS" minOccurs="0"/>
+<xs:element name="ClntInfrmtn_PBS_UBP" type="ns3:tMSC_PBS_UBP" minOccurs="0"/>
+<xs:element name="StCntrct_MSC_StCntrct" type="ns3:tMSC_StCntrct" minOccurs="0"/>
+<xs:element name="StsAcnt_StsAcnt" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="StsAcnt_ITEM" type="tns:tStsAcnt_StsAcnt_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="BrghtBdgtDt_TrnKBK" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TrnKBK_ITEM" type="tns:tBrghtBdgtDt_TrnKBK_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="BrghtBdgtDt_TotalSum" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TotalSum_ITEM" type="tns:tBrghtBdgtDt_TotalSum_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="BudgetaryCommitments_TranBOKBK" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TranBOKBK_ITEM" type="tns:tBudgetaryCommitments_TranBOKBK_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="BudgetaryCommitments_TotalSummBO" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TotalSummBO_ITEM" type="tns:tBudgetaryCommitments_TotalSummBO_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tStsAcnt_StsAcnt_ITEM">
+<xs:sequence>
+<xs:element name="KBK_KOSGU" type="xs:string" minOccurs="0"/>
+<xs:element name="GrTrgtCd" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIPObjCd" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Rcpts" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RtrnRcpts" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Pmnts" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RcvryCsh" type="xs:decimal" minOccurs="0"/>
+<xs:element name="OtstndngBO" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBrghtBdgtDt_TrnKBK_ITEM">
+<xs:sequence>
+<xs:element name="IDRw" type="xs:string" minOccurs="0"/>
+<xs:element name="IDRwTtlSmm" type="xs:string" minOccurs="0"/>
+<xs:element name="Year" type="xs:string" minOccurs="0"/>
+<xs:element name="KBK" type="xs:string" minOccurs="0"/>
+<xs:element name="GrTrgtCd" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIPObjCd" type="xs:string" minOccurs="0"/>
+<xs:element name="SmmBA" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SmmLBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SmmPOFR" type="xs:decimal" minOccurs="0"/>
+<xs:element name="UnsdBA" type="xs:decimal" minOccurs="0"/>
+<xs:element name="UnsdLBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="UnsdPOFR" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBrghtBdgtDt_TotalSum_ITEM">
+<xs:sequence>
+<xs:element name="IDRwSmm" type="xs:string" minOccurs="0"/>
+<xs:element name="Year1" type="xs:string" minOccurs="0"/>
+<xs:element name="TtlBAYr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TtlLBOYr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TtlPOFRYr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TtlUnsdBAYr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TtlUnsdLBOYr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TtlUnsdPOFRYr" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBudgetaryCommitments_TranBOKBK_ITEM">
+<xs:sequence>
+<xs:element name="IDRow" type="xs:string" minOccurs="0"/>
+<xs:element name="IDRwTtlSmm" type="xs:string" minOccurs="0"/>
+<xs:element name="Year" type="xs:string" minOccurs="0"/>
+<xs:element name="KBK" type="xs:string" minOccurs="0"/>
+<xs:element name="GrTrgtCd" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIPCd" type="xs:string" minOccurs="0"/>
+<xs:element name="PutsOnTheAccBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="DoneBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="OutstandingBO" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBudgetaryCommitments_TotalSummBO_ITEM">
+<xs:sequence>
+<xs:element name="IDRwSmmBO" type="xs:string" minOccurs="0"/>
+<xs:element name="Year1" type="xs:string" minOccurs="0"/>
+<xs:element name="TotalBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TotalDoneBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="TotalUnfulfilledBO" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBrghtBdgtDt_TotalSum">
+<xs:sequence>
+<xs:element name="TotalSum_ITEM" type="tns:tBrghtBdgtDt_TotalSum_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBudgetaryCommitments_TotalSummBO">
+<xs:sequence>
+<xs:element name="TotalSummBO_ITEM" type="tns:tBudgetaryCommitments_TotalSummBO_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tStsAcnt_StsAcnt">
+<xs:sequence>
+<xs:element name="StsAcnt_ITEM" type="tns:tStsAcnt_StsAcnt_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBrghtBdgtDt_TrnKBK">
+<xs:sequence>
+<xs:element name="TrnKBK_ITEM" type="tns:tBrghtBdgtDt_TrnKBK_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBudgetaryCommitments_TranBOKBK">
+<xs:sequence>
+<xs:element name="TranBOKBK_ITEM" type="tns:tBudgetaryCommitments_TranBOKBK_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

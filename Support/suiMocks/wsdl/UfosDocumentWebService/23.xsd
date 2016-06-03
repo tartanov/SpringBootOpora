@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/common">
+
+<xs:complexType name="tFormular" abstract="true">
+<xs:sequence>
+<xs:element name="extra-data" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute name="metaType" type="tns:tFormularTypes"/>
+</xs:complexType>
+
+<xs:complexType name="extraData">
+<xs:sequence>
+<xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="tFormularTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="formular"/>
+<xs:enumeration value="dictionary"/>
+<xs:enumeration value="service"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

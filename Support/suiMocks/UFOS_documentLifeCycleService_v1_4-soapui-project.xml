@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="UFOS_documentLifeCycleService_v1_4" resourceRoot="${projectDir}" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" id="aadc7ec9-528c-431d-b514-004b3364025e" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="documentLifeCycleBinding" type="wsdl" bindingName="{http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4}documentLifeCycleBinding" soapVersion="1_1" anonymous="optional" definition="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4?wsdl" id="36586ee5-df09-4038-a747-25f8740db78c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4?wsdl"><con:part><con:url>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4?wsdl</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5.-->
+<wsdl:definitions targetNamespace="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" xsi:schemaLocation="http://ufos.otr.ru/ws/core/common/v1_2 http://ufos.otr.ru/ws/core/common/v1_2/core-common.xsd                                       http://ufos.otr.ru/core/user-context/v1 http://ufos.otr.ru/core/user-context/v1/user-context.xsd" name="documentLifeCycleService" xmlns="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" xmlns:cc="http://ufos.otr.ru/ws/core/common/v1_2" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:uc="http://ufos.otr.ru/core/user-context/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" schemaLocation="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4?xsd=3"/>
+      <xsd:import namespace="http://ufos.otr.ru/ws/core/common/v1_2" schemaLocation="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4?xsd=2"/>
+      <xsd:import namespace="http://ufos.otr.ru/core/user-context/v1" schemaLocation="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4?xsd=1"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="storeDocumentReqMsg">
+    <wsdl:part name="parameters" element="storeDocumentRequest"/>
+    <wsdl:part name="userContext" element="uc:user-context"/>
+  </wsdl:message>
+  <wsdl:message name="storeDocumentRespMsg">
+    <wsdl:part name="parameters" element="storeDocumentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="invalidGuidFault">
+    <wsdl:part name="fault" element="cc:invalidGuidFault"/>
+  </wsdl:message>
+  <wsdl:message name="incorrectMappingConfigurationFault">
+    <wsdl:part name="fault" element="incorrectMappingConfigurationFault"/>
+  </wsdl:message>
+  <wsdl:message name="noSuitableConversionFault">
+    <wsdl:part name="fault" element="noSuitableConversionFault"/>
+  </wsdl:message>
+  <wsdl:message name="editPolicyProhibitionFault">
+    <wsdl:part name="fault" element="editPolicyProhibitionFault"/>
+  </wsdl:message>
+  <wsdl:message name="transitionExecutionFault">
+    <wsdl:part name="fault" element="transitionExecutionFault"/>
+  </wsdl:message>
+  <wsdl:message name="mismatchDocumentTypeFault">
+    <wsdl:part name="fault" element="mismatchDocumentTypeFault"/>
+  </wsdl:message>
+  <wsdl:message name="securityFault">
+    <wsdl:part name="fault" element="securityFault"/>
+  </wsdl:message>
+  <wsdl:message name="executeTransitionReqMsg">
+    <wsdl:part name="parameters" element="executeTransitionRequest"/>
+    <wsdl:part name="userContext" element="uc:user-context"/>
+  </wsdl:message>
+  <wsdl:message name="executeTransitionRespMsg">
+    <wsdl:part name="parameters" element="executeTransitionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="documentNotFoundFault">
+    <wsdl:part name="fault" element="documentNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="transitionNotFoundFault">
+    <wsdl:part name="fault" element="transitionNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="pushDocumentStateReqMsg">
+    <wsdl:part name="parameters" element="pushDocumentStateRequest"/>
+    <wsdl:part name="userContext" element="uc:user-context"/>
+  </wsdl:message>
+  <wsdl:message name="pushDocumentStateRespMsg">
+    <wsdl:part name="parameters" element="pushDocumentStateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ambiguousTransitionFault">
+    <wsdl:part name="fault" element="ambiguousTransitionFault"/>
+  </wsdl:message>
+  <wsdl:message name="getStateReqMsg">
+    <wsdl:part name="parameters" element="getStateRequest"/>
+    <wsdl:part name="userContext" element="uc:user-context"/>
+  </wsdl:message>
+  <wsdl:message name="getStateRespMsg">
+    <wsdl:part name="parameters" element="getStateResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="documentLifeCyclePort">
+    <wsdl:operation name="storeDocument" parameterOrder="parameters userContext">
+      <wsdl:documentation>Операция сохранения документа.
+				Документ может быть новый или уже существующий.
+				Если документ новый, то он будет создан либо с указанным глобальным идентификатором, либо будет сгенерирован новый идентификатор.
+				Если документ с указанным идентификатором уже зарегистрирован в системе, то будет произведена попытка обновить его.
+				Глобальный идентификатор может быть задан внутри содержимого документа, либо в запросе.</wsdl:documentation>
+      <wsdl:input message="storeDocumentReqMsg"/>
+      <wsdl:output message="storeDocumentRespMsg"/>
+      <wsdl:fault name="invalidGuidFault" message="invalidGuidFault">
+        <wsdl:documentation>Ошибка при некорректности формата указанного в запросе глобального идентификатора.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="incorrectMappingConfigurationFault" message="incorrectMappingConfigurationFault">
+        <wsdl:documentation>Ошибка при невозможности конвертирвоать документ в XML (или обратно):
+					- отсутствует описание mapping;
+					- некорректное описание mapping;
+					- невозможность выбрать нужный mapping из имеющихся;
+					- отсутствие прикладного класса, используемого при конвертации;
+					- некорректная структура прикладного класса или местоположение;
+					- прочие системные ошибки, ввызванные некорретностью описания процесса конвертирования документа в XML и обратно.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="noSuitableConversionFault" message="noSuitableConversionFault">
+        <wsdl:documentation>Ошибка при невозможности конвертирвоать документ в XML (или обратно):
+					- если для обработки XML представления отсутствуют необходимые JAXB классы;</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="editPolicyProhibitionFault" message="editPolicyProhibitionFault">
+        <wsdl:documentation>Ошибка в случае, если политика редактирования документа, определенная в декларативном жизненном цикле текущего документа, не позволяет
+					выполнять запрошенные изменения документа.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="transitionExecutionFault" message="transitionExecutionFault">
+        <wsdl:documentation>Ошибка в случае невозмозможности выполнить переход ДЖЦ.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="mismatchDocumentTypeFault" message="mismatchDocumentTypeFault">
+        <wsdl:documentation>Ошибка в случае несовпадения типа у обновляемого документа и переданного в запросе типа.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="securityFault" message="securityFault">
+        <wsdl:documentation>Ошибка при невозможности получить доступ к документу.</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="executeTransition" parameterOrder="parameters userContext">
+      <wsdl:documentation>Операция вызова указанного перехода для документа с заданным глобальным идентификатором.</wsdl:documentation>
+      <wsdl:input message="executeTransitionReqMsg"/>
+      <wsdl:output message="executeTransitionRespMsg"/>
+      <wsdl:fault name="invalidGuidFault" message="invalidGuidFault">
+        <wsdl:documentation>Ошибка при некорректности формата указанного в запросе глобального идентификатора.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="documentNotFoundFault" message="documentNotFoundFault">
+        <wsdl:documentation>Ошибка в случае, когда документ не был найден в системе.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="transitionNotFoundFault" message="transitionNotFoundFault">
+        <wsdl:documentation>Ошибка в случае, когда в ЖЦ документа нет указанного перехода.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="transitionExecutionFault" message="transitionExecutionFault">
+        <wsdl:documentation>Ошибка в случае невозмозможности выполнить переход ДЖЦ.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="editPolicyProhibitionFault" message="editPolicyProhibitionFault">
+        <wsdl:documentation>Ошибка в случае, если политика редактирования документа, определенная в декларативном жизненном цикле текущего документа, не позволяет
+					выполнять запрошенные изменения документа.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="securityFault" message="securityFault">
+        <wsdl:documentation>Ошибка при невозможности получить доступ к документу.</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pushDocumentState" parameterOrder="parameters userContext">
+      <wsdl:documentation>Операция вызова следующего перехода, который определен однозначно, для документа с заданным глобальным идентификатором.</wsdl:documentation>
+      <wsdl:input message="pushDocumentStateReqMsg"/>
+      <wsdl:output message="pushDocumentStateRespMsg"/>
+      <wsdl:fault name="invalidGuidFault" message="invalidGuidFault">
+        <wsdl:documentation>Ошибка при некорректности формата указанного в запросе глобального идентификатора.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="documentNotFoundFault" message="documentNotFoundFault">
+        <wsdl:documentation>Ошибка в случае, когда документ не был найден в системе.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="ambiguousTransitionFault" message="ambiguousTransitionFault">
+        <wsdl:documentation>Ошибка в случае, когда не удалось подобрать однозначный переход для документа.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="transitionExecutionFault" message="transitionExecutionFault">
+        <wsdl:documentation>Ошибка в случае невозмозможности выполнить переход ДЖЦ.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="editPolicyProhibitionFault" message="editPolicyProhibitionFault">
+        <wsdl:documentation>Ошибка в случае, если политика редактирования документа, определенная в декларативном жизненном цикле текущего документа, не позволяет
+					выполнять запрошенные изменения документа.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="securityFault" message="securityFault">
+        <wsdl:documentation>Ошибка при невозможности получить доступ к документу.</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getState">
+      <wsdl:documentation>Сервис для получения статуса документа.</wsdl:documentation>
+      <wsdl:input message="getStateReqMsg"/>
+      <wsdl:output message="getStateRespMsg"/>
+      <wsdl:fault name="invalidGuidFault" message="invalidGuidFault">
+        <wsdl:documentation>Ошибка при некорректности формата указанного в запросе глобального идентификатора.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="documentNotFoundFault" message="documentNotFoundFault">
+        <wsdl:documentation>Ошибка в случае, когда документ не был найден в системе.</wsdl:documentation>
+      </wsdl:fault>
+      <wsdl:fault name="securityFault" message="securityFault">
+        <wsdl:documentation>Ошибка при невозможности получить доступ к документу.</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="documentLifeCycleBinding" type="documentLifeCyclePort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="storeDocument">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters"/>
+        <soap:header message="storeDocumentReqMsg" part="userContext" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="invalidGuidFault">
+        <soap:fault name="invalidGuidFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="incorrectMappingConfigurationFault">
+        <soap:fault name="incorrectMappingConfigurationFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="noSuitableConversionFault">
+        <soap:fault name="noSuitableConversionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="editPolicyProhibitionFault">
+        <soap:fault name="editPolicyProhibitionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="transitionExecutionFault">
+        <soap:fault name="transitionExecutionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="mismatchDocumentTypeFault">
+        <soap:fault name="mismatchDocumentTypeFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="securityFault">
+        <soap:fault name="securityFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="executeTransition">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters"/>
+        <soap:header message="executeTransitionReqMsg" part="userContext" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="invalidGuidFault">
+        <soap:fault name="invalidGuidFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="documentNotFoundFault">
+        <soap:fault name="documentNotFoundFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="transitionNotFoundFault">
+        <soap:fault name="transitionNotFoundFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="transitionExecutionFault">
+        <soap:fault name="transitionExecutionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="editPolicyProhibitionFault">
+        <soap:fault name="editPolicyProhibitionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="securityFault">
+        <soap:fault name="securityFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="pushDocumentState">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters"/>
+        <soap:header message="pushDocumentStateReqMsg" part="userContext" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="invalidGuidFault">
+        <soap:fault name="invalidGuidFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="documentNotFoundFault">
+        <soap:fault name="documentNotFoundFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ambiguousTransitionFault">
+        <soap:fault name="ambiguousTransitionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="transitionExecutionFault">
+        <soap:fault name="transitionExecutionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="editPolicyProhibitionFault">
+        <soap:fault name="editPolicyProhibitionFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="securityFault">
+        <soap:fault name="securityFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getState">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal" parts="parameters"/>
+        <soap:header message="getStateReqMsg" part="userContext" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="invalidGuidFault">
+        <soap:fault name="invalidGuidFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="documentNotFoundFault">
+        <soap:fault name="documentNotFoundFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="securityFault">
+        <soap:fault name="securityFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="documentLifeCycleService">
+    <wsdl:port name="documentLifeCyclePort_v1_4" binding="documentLifeCycleBinding">
+      <soap:address location="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4?xsd=3</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5.-->
+<xsd:schema targetNamespace="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" elementFormDefault="qualified" attributeFormDefault="unqualified" jaxb:version="2.1" version="1.0" xmlns="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" xmlns:c="http://ufos.otr.ru/core/common/v1" xmlns:cc="http://ufos.otr.ru/ws/core/common/v1_2" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://ufos.otr.ru/ws/core/common/v1_2" schemaLocation="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4?xsd=2"/>
+  <xsd:import namespace="http://ufos.otr.ru/core/common/v1" schemaLocation="http://ufos.otr.ru/core/common/v1/common.xsd"/>
+  <xsd:element name="storeDocumentRequest" type="storeDocumentRequest"/>
+  <xsd:element name="storeDocumentResponse" type="storeDocumentResponse"/>
+  <xsd:element name="incorrectMappingConfigurationFault" type="incorrectMappingConfigurationFaultBean"/>
+  <xsd:element name="noSuitableConversionFault" type="noSuitableConversionFaultBean"/>
+  <xsd:element name="editPolicyProhibitionFault" type="cc:commonCoreFaultBean">
+    <xsd:annotation>
+      <xsd:documentation>Ошибка в случае, если политика редактирования документа, определенная в декларативном жизненном цикле текущего документа, не позволяет
+				выполнять запрошенные изменения документа.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="transitionExecutionFault" type="cc:commonCoreFaultBean">
+    <xsd:annotation>
+      <xsd:documentation>Ошибка в случае невозмозможности выполнить переход ДЖЦ.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="mismatchDocumentTypeFault" type="cc:commonCoreFaultBean">
+    <xsd:annotation>
+      <xsd:documentation>Ошибка в случае несовпадения типа у обновляемого документа и переданного в запросе типа</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="executeTransitionRequest" type="executeTransitionRequest"/>
+  <xsd:element name="executeTransitionResponse" type="executeTransitionResponse"/>
+  <xsd:element name="documentNotFoundFault" type="cc:commonCoreFaultBean"/>
+  <xsd:element name="transitionNotFoundFault" type="cc:commonCoreFaultBean"/>
+  <xsd:element name="securityFault" type="cc:commonCoreFaultBean"/>
+  <xsd:element name="pushDocumentStateRequest" type="pushDocumentStateRequest"/>
+  <xsd:element name="pushDocumentStateResponse" type="pushDocumentStateResponse"/>
+  <xsd:element name="ambiguousTransitionFault" type="cc:commonCoreFaultBean"/>
+  <xsd:element name="getStateRequest" type="getStateRequest"/>
+  <xsd:element name="getStateResponse" type="getStateResponse"/>
+  <xsd:complexType name="storeDocumentRequest">
+    <xsd:annotation>
+      <xsd:documentation>Запрос на сохранение документа.
+				Документ может быть новый или уже существующий.
+				Если документ новый, то он будет создан либо с указанным глобальным идентификатором, либо будет сгенерирован новый идентификатор.
+				Если документ с указанным идентификатором уже зарегистрирован в системе, то будет произведена попытка обновить его.
+				Глобальный идентификатор может быть задан внутри содержимого документа, либо в запросе.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="parameters" type="c:parameters" minOccurs="0"/>
+      <xsd:element name="document" type="incomeDocument" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="incomeDocument">
+    <xsd:annotation>
+      <xsd:documentation>Документ, включающий в себя стандартный перечень системных атрибутов и произвольное содержимое (в зависимости от типа документа).
+				Может содержать вложения в зависимости от того, нужны ли и присутствуют ли они.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any processContents="skip">
+        <xsd:annotation>
+          <xsd:documentation>Тег, содержащий данные экземпляра записи справочника в соответствии с XSD, описанным в студии.
+						Теги должны быть одноименные, структуры - однотипные, т.е. в одном запросе может прийти информация только по одному типу справочника.</xsd:documentation>
+          <xsd:appinfo>
+            <jaxb:property name="content"/>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:any>
+    </xsd:sequence>
+    <xsd:attribute name="document-type" type="xsd:token" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Тип документа, экземпляр которого передаются в запросе.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="guid" type="c:guid" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Глобальный идентификатор экземпляра документа. Должен совпадать со значением глобального идентификатора внутри передаваемой any-структуры
+					(если в ней он имеется). Несовпадение трактуется как ошибка.
+					Значение не обязательно. В этом случае система сгенерирует случайное значение.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="document-state" type="xsd:string" use="optional"/>
+  </xsd:complexType>
+  <xsd:complexType name="storeDocumentResponse">
+    <xsd:annotation>
+      <xsd:documentation>Ответ на запрос о сохранении документов.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="documents" type="outcomeDocuments"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="outcomeDocuments">
+    <xsd:annotation>
+      <xsd:documentation>Общий тип для перечисления произвольных параметров, состоящих из наименования и значения.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="document" type="outcomeDocument" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="outcomeDocument">
+    <xsd:attribute name="guid" type="c:guid" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Глобальный идентификатор созданного или обновленного документа.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="state" type="xsd:token" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Статус документа, полученный в результате выполнения перехода жизненного цикла.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="created" type="xsd:boolean" use="required">
+      <xsd:annotation>
+        <xsd:documentation>True, если в результате обработки вызова был создан новый документ; false, если был обновлен имеющийся.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="incorrectMappingConfigurationFaultBean">
+    <xsd:annotation>
+      <xsd:documentation>Ошибка при невозможности конвертирвоать документ в XML (или обратно):
+				- отсутствует описание mapping;
+				- некорректное описание mapping;
+				- невозможность выбрать нужный mapping из имеющихся;
+				- отсутствие прикладного класса, используемого при конвертации;
+				- некорректная структура прикладного класса или местоположение;
+				- прочие системные ошибки, ввызванные некорретностью описания процесса конвертирования документа в XML и обратно.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="cc:commonCoreFaultBean"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="noSuitableConversionFaultBean">
+    <xsd:annotation>
+      <xsd:documentation>Ошибка при невозможности конвертирвоать документ в XML (или обратно):
+				- если для обработки XML представления отсутствуют необходимые JAXB классы;</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="cc:commonCoreFaultBean"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="executeTransitionRequest">
+    <xsd:annotation>
+      <xsd:documentation>Запрос на выполнение указанного перехода для документа с заданным глобальным идентификатором.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="parameters" type="c:parameters" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attribute name="guid" type="c:guid">
+      <xsd:annotation>
+        <xsd:documentation>Глобальный идентификатор документа, для которого вызывается переход.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="transition-id" type="xsd:NCName" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Идентификатор перехода, который требуется запустить для документа.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="executeTransitionResponse">
+    <xsd:annotation>
+      <xsd:documentation>Ответ на запрос на выполнение указанного перехода для документа с заданным глобальным идентификатором.
+				Содержит статус, который документ получил в результате выполнения перехода.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="state" type="xsd:token" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Статус документа, полученный в результате выполнения перехода жизненного цикла.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="pushDocumentStateRequest">
+    <xsd:annotation>
+      <xsd:documentation>Запрос на подбор и выполнение перехода для документа с заданным глобальным идентификатором.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="parameters" type="c:parameters" minOccurs="0"/>
+    </xsd:sequence>
+    <xsd:attribute name="guid" type="c:guid">
+      <xsd:annotation>
+        <xsd:documentation>Глобальный идентификатор документа, для которого подбирается и вызывается переход.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="pushDocumentStateResponse">
+    <xsd:annotation>
+      <xsd:documentation>Ответ на запрос на подбор и выполнение перехода для документа с заданным глобальным идентификатором.
+				Содержит статус, который документ получил в результате выполнения перехода.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="state" type="xsd:token" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Статус документа, полученный в результате выполнения перехода жизненного цикла.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="getStateRequest">
+    <xsd:annotation>
+      <xsd:documentation>Запрос статуса для документа с заданным глобальным идентификатором.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="guid" type="c:guid" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="getStateResponse">
+    <xsd:annotation>
+      <xsd:documentation>Ответ на запрос статуса для документа с заданным глобальным идентификатором.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="state" type="xsd:token" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Текущий статус запрашиваемого документа.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4?xsd=2</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5.-->
+<xsd:schema targetNamespace="http://ufos.otr.ru/ws/core/common/v1_2" elementFormDefault="qualified" attributeFormDefault="unqualified" jaxb:version="2.1" version="1.0" xmlns="http://ufos.otr.ru/ws/core/common/v1_2" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="invalidGuidFault" type="commonCoreFaultBean">
+    <xsd:annotation>
+      <xsd:documentation>Ошибка при некорректности формата указанного в запросе глобального идентификатора.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="documentNotFoundFault" type="commonCoreFaultBean"/>
+  <xsd:complexType name="commonCoreFaultBean">
+    <xsd:annotation>
+      <xsd:documentation>Общая ошибка.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="message" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Сообщение об ошибке.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timeStamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Время формирования ошибки.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="payloads" type="faultPayloads" minOccurs="0">
+        <xsd:unique name="unique-payload-id">
+          <xsd:selector xpath="*"/>
+          <xsd:field xpath="@id"/>
+        </xsd:unique>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="faultPayloads">
+    <xsd:annotation>
+      <xsd:documentation>Набор произвольных данных, включенных в ответ с ошибкой.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:annotation>
+        <xsd:appinfo>
+          <jaxb:property name="payloads"/>
+        </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:element name="payload" type="faultPayload" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="faultPayload">
+    <xsd:annotation>
+      <xsd:documentation>Произвольные данные, включенные в ответ с ошибкой. Состоят из обязательного идентификатора и содержимого.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="content" type="xsd:anyType">
+        <xsd:annotation>
+          <xsd:documentation>Произвольное содержимое, приложенное к ошибке.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:NCName" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Идентификатор данных, приложенных к ошибке. Должен быть уникален в наборе.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://ufos.otr.ru/core/common/v1/common.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://ufos.otr.ru/core/common/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" jaxb:version="2.1" version="1.0" xmlns="http://ufos.otr.ru/core/common/v1" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="parameters" type="parameters"/>
+  <xsd:simpleType name="guid">
+    <xsd:annotation>
+      <xsd:documentation>Глобальный идентификатор. http://tools.ietf.org/html/rfc4122</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="parameters">
+    <xsd:annotation>
+      <xsd:documentation>Общий тип для перечисления произвольных параметров, состоящих из наименования и значения.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="parameter" type="parameter" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="parameter">
+    <xsd:annotation>
+      <xsd:documentation>Параметр, характеризующийся обязательным наименованием и необязательным значением.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="name" type="xsd:token" use="required"/>
+    <xsd:attribute name="value" type="xsd:string" use="optional"/>
+    <xsd:attribute name="type" type="fieldType" use="optional" default="STRING"/>
+  </xsd:complexType>
+  <xsd:simpleType name="fieldType">
+    <xsd:annotation>
+      <xsd:documentation>Тип поля, параметра - базовый тип в УФОС.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="STRING">
+        <xsd:annotation>
+          <xsd:documentation>Строка символов</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ENUM">
+        <xsd:annotation>
+          <xsd:documentation>Элемент перечисления</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TEXT">
+        <xsd:annotation>
+          <xsd:documentation>Большая строка символов</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BOOLEAN">
+        <xsd:annotation>
+          <xsd:documentation>Логический</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BYTE">
+        <xsd:annotation>
+          <xsd:documentation>Целое число со знаком (размерность ±2^7)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SHORT">
+        <xsd:annotation>
+          <xsd:documentation>Целое число со знаком (размерность ±2^15)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="INTEGER">
+        <xsd:annotation>
+          <xsd:documentation>Целое число со знаком (размерность ±2^31)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LONG">
+        <xsd:annotation>
+          <xsd:documentation>Целое число со знаком (размерность ±2^63)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DECIMAL">
+        <xsd:annotation>
+          <xsd:documentation>Число с фиксированной точностью (например, для процентов)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MONEY">
+        <xsd:annotation>
+          <xsd:documentation>Денежная величина</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CURRENCY">
+        <xsd:annotation>
+          <xsd:documentation>Код валюты по ISO 4217</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DATE">
+        <xsd:annotation>
+          <xsd:documentation>Дата (без времени)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DATETIME">
+        <xsd:annotation>
+          <xsd:documentation>Дата/время</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="UUID">
+        <xsd:annotation>
+          <xsd:documentation>UUID - неизменный универсальный уникальный идентификатор</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4?xsd=1</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5.-->
+<xsd:schema targetNamespace="http://ufos.otr.ru/core/user-context/v1" elementFormDefault="qualified" version="1.0" xmlns="http://ufos.otr.ru/core/user-context/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="user-context" type="userContext"/>
+  <xsd:complexType name="userContext">
+    <xsd:annotation>
+      <xsd:documentation>Контекст пользователя с информацией о нем и организации, от лица которой он работает в данный момент.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="user" type="user" minOccurs="0"/>
+      <xsd:element name="organization" type="organization"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="user">
+    <xsd:annotation>
+      <xsd:documentation>Информация о текущем пользователе.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="username" type="xsd:token" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Логин пользователя.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="organization">
+    <xsd:annotation>
+      <xsd:documentation>Организация, от лица которой работает пользователь в данный момент.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="uid" type="xsd:token">
+      <xsd:annotation>
+        <xsd:documentation>Глобальный идентификатор организации.
+					В данный момент на стороне УФОС используется для идентификации организации и соответствует ее системному имени.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="code" type="xsd:normalizedString">
+      <xsd:annotation>
+        <xsd:documentation>Код организации. Однозначно не ясно, что под ним подразумевалось при описании схемы. Вероятно, это бизнес-код справочника.
+					В данный момент на стороне УФОС не используется.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="name" type="xsd:normalizedString">
+      <xsd:annotation>
+        <xsd:documentation>Наименование организации.
+					В данный момент на стороне УФОС используется для задания наименования создаваемой при первом запросе организации.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4</con:endpoint><con:endpoint>http://iMac-Artem.local:8080/dlcMockService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="executeTransition" bindingOperationName="executeTransition" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="501761f0-b176-4682-976c-953241e08567"><con:settings/><con:call name="Request 1" id="8bdf4b91-d956-457d-b701-e6342aa1def1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ufos.otr.ru/core/user-context/v1" xmlns:v11="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" xmlns:v12="http://ufos.otr.ru/core/common/v1">
+   <soapenv:Header>
+      <v1:user-context>
+         <!--Optional:-->
+         <v1:user username="?"/>
+         <v1:organization uid="?" code="?" name="?"/>
+      </v1:user-context>
+   </soapenv:Header>
+   <soapenv:Body>
+      <v11:executeTransitionRequest guid="?" transition-id="?">
+         <!--Optional:-->
+         <v11:parameters>
+            <!--1 or more repetitions:-->
+            <v12:parameter name="?" value="?" type="STRING"/>
+         </v11:parameters>
+      </v11:executeTransitionRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4/documentLifeCyclePort/executeTransitionRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getState" bindingOperationName="getState" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="eb0a0041-db6b-4603-b7ad-1c404366df2a"><con:settings/><con:call name="Request 1" id="4fd51d6d-0e4a-4e1f-a3b3-8c3db7d9f8a9"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ufos.otr.ru/core/user-context/v1" xmlns:v11="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4">
+   <soapenv:Header>
+      <v1:user-context>
+         <!--Optional:-->
+         <v1:user username="?"/>
+         <v1:organization uid="?" code="?" name="?"/>
+      </v1:user-context>
+   </soapenv:Header>
+   <soapenv:Body>
+      <v11:getStateRequest guid="?"/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4/documentLifeCyclePort/getStateRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="pushDocumentState" bindingOperationName="pushDocumentState" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="3b7b201c-bce1-49bc-9aca-629fdccaa4f8"><con:settings/><con:call name="Request 1" id="a7f99b89-419a-41e8-91b3-39785215de40"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ufos.otr.ru/core/user-context/v1" xmlns:v11="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" xmlns:v12="http://ufos.otr.ru/core/common/v1">
+   <soapenv:Header>
+      <v1:user-context>
+         <!--Optional:-->
+         <v1:user username="?"/>
+         <v1:organization uid="?" code="?" name="?"/>
+      </v1:user-context>
+   </soapenv:Header>
+   <soapenv:Body>
+      <v11:pushDocumentStateRequest guid="?">
+         <!--Optional:-->
+         <v11:parameters>
+            <!--1 or more repetitions:-->
+            <v12:parameter name="?" value="?" type="STRING"/>
+         </v11:parameters>
+      </v11:pushDocumentStateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4/documentLifeCyclePort/pushDocumentStateRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="storeDocument" bindingOperationName="storeDocument" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="5b4b0141-56cc-4341-b483-9e97fcbdbcb3"><con:settings/><con:call name="Request 1" id="ba8cb2d2-ce11-4c7f-adb7-920ad55069e0"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ufos.otr.ru/core/user-context/v1" xmlns:v11="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" xmlns:v12="http://ufos.otr.ru/core/common/v1">
+   <soapenv:Header>
+      <v1:user-context>
+         <!--Optional:-->
+         
+         <v1:organization code="TEST_182" name="Тестовая запись для ФНС (тестовый контур)"/>
+      </v1:user-context>
+   </soapenv:Header>
+   <soapenv:Body>
+      <v11:storeDocumentRequest>
+        
+          <v11:document document-type="EXP_SubsidyCurrState" guid="03765E28-D374-5AD2-E053-CDC61FAC6F3B">
+            <formular:SbsdCrntSt xmlns:formular="http://www.roskazna.ru/eb/domain/SbsdCrntSt/formular" xmlns:service="http://www.roskazna.ru/eb/soa/exp/EXPSOA_RSCF_CurrentStateMigrateService/types">
+           <DtlsGRBS_CdGRBSPPP xmlns="">S</DtlsGRBS_CdGRBSPPP>
+    <DtlsGRBS_NmGRBS xmlns="">Z5JZ2-MlH0dKFv0uNkMOtqRNI9ndCQ-O6dP0ueqLnXCfujL2Wb5E5sNnBgRl3FSpCa:3is1Csa8OwKGIBBQbFEoOvAQZ3CI1V6UXecALt0R5_2:UNCUAJC7bmhUKzvBo_Cuk3EUFXp_jUe8OJ57hgwOASJq2sUPP97HH7bDYo4KY4zCfw3zcGGveUFit.IPTrKc6iJE80SGy.vmelrJaAWf1GOnD8jQVVLXECKCE26oqSMA:b0Ct5EIZJyIIW9FXKf4d7ARsNI_FY3ojHgbmePomGh6rsAVSh32:uy5yFVaADKdjOz9VNh9XlMlFp7:T5Dd8YJBAXuOD.Q1ME-h1Zys3kzwHC7yoBNKuOsalxv6lWMQV_k39GrdC3fVnkTb1TywIl2-.gMfUwXkZDdoe1dJai4u_LzlpPjMgyPxFhIslLZcLNO.28PniiA7CBUTrUp8ys3S4m:eacVsiCbI-W4jOcTNxAg2KBRlSVzV_T1HnbtvUPAsZK7zYZ6M:__6zmnO7vQxKRv-IOlauq_f32n1ayXc_khvX7G_IVevcFlxshPObmnID.aU8T9yvyYj2P0rWhDwccHq0:aBoQq-rl84ayPoPF9Oz.jpVXaY2AHclazvHER9T:b7LorCU1xO7ax8XeOunm4z_ZLLTDCfXJp.0hfBYqatCSPKaYbG.8PpsOk_-wGN_I2</DtlsGRBS_NmGRBS>
+    <DtlsGRBS_CdGRBSOKOPF xmlns="">wD</DtlsGRBS_CdGRBSOKOPF>
+    <DtlsGRBS_NmbrAccnt xmlns="">yV</DtlsGRBS_NmbrAccnt>
+    <DtlsGRBS_CdTOFK xmlns="">gK</DtlsGRBS_CdTOFK>
+    <DtlsGRBS_NmTOFK xmlns="">IvQMS71yZe7vNC</DtlsGRBS_NmTOFK>
+    <DtlsGRBS_INN xmlns="">dR05NI-</DtlsGRBS_INN>
+    <DtlsGRBS_KPP xmlns="">w</DtlsGRBS_KPP>
+    <DtlsGRBS_DtRgstrtn xmlns="">2016-01-15</DtlsGRBS_DtRgstrtn>
+    <DtlsAct_CdCntrct xmlns="">H</DtlsAct_CdCntrct>
+    <DtlsAct_NmCntrct xmlns="">eteXhksbjAgwYUM8iZ_ptXv9hCh:SsUxeY1jAmFyyB5jpFAYc4ahPwvvs:VtJjeLQ5VmrU6LqoRfzQrctKM1iLLh_x0vMtVci1w.rxL8r1CvoLoH.q3-AFGw9tjn_O:HNWPsluJ0luRgDOCyJ5416_wiYDZot:VqL8WenOQdRy4fhioe1f4dFeQvRfkHeGsuvEMaiM.LgSIaQUYB5Q.cCRMOzaz0G56TT-q7tk-SEGDs39TNE1h_uYzWyVndCOO_sjoiz12827avN0QEDnOKyATxAoaVvfzNW.PcpFpsljYLpbjS7G0LLaMUcb4XKjw-_XgHXO7DauNFKvz8v._.HIG_URv7k:xdQ.bxp9kEToqjP-e0hISC52UcjJiZXA52raDogZG8sqX5garPbs8L2bJ-PeCgmqna:pcBZZ825GgV6KSt9Bh:Ymso_vY-grgWrhzxIIFj8BbpOS0D0IGN4P4ro6P4W8BiqWLftOyaVohotlePDesH_g44bu2de6SfZUNieJCLIelcG63HNisdQyzXZl.kCYJ6vTx4GtwSkPfBrTvUphc_T1uYFFuSp3.dC2CHlw1QoDi1O6pLfE.QC0Yr-2izOtHSIkW7-V1YOJQcrl4kTF0ksVMPCncEkwzy8h21DebYDV5x1Ut_7:7M22SMoilJ73AEcPJnvpKyK8P8YE5aC</DtlsAct_NmCntrct>
+    <DtlsAct_SmSbsds xmlns="">-81857780.07</DtlsAct_SmSbsds>
+    <DtlsAct_CdCrrnc xmlns="">RUB</DtlsAct_CdCrrnc>
+    <DtlsAct_NmCrrnc xmlns="">Российский рубль</DtlsAct_NmCrrnc>
+    <DtlsAct_RtCrrnc xmlns="">-1882735424.2071</DtlsAct_RtCrrnc>
+    <DtlsAct_SmSbsdRUB xmlns="">-1428810169.58</DtlsAct_SmSbsdRUB>
+            
+            </formular:SbsdCrntSt>
+         </v11:document>
+      </v11:storeDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4/documentLifeCyclePort/storeDocumentRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="SubsidyCurrState" id="a5e13d8e-3dc9-4bdf-a33f-78d23ed82551"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ufos.otr.ru/core/user-context/v1" xmlns:v11="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" xmlns:v12="http://ufos.otr.ru/core/common/v1">
+   <soapenv:Header>
+      <v1:user-context>
+         <!--Optional:-->
+         
+         <v1:organization code="TEST_182" name="Тестовая запись для ФНС (тестовый контур)"/>
+      </v1:user-context>
+   </soapenv:Header>
+   <soapenv:Body>
+      <v11:storeDocumentRequest>
+        
+          <v11:document document-type="EXP_SubsidyCurrState" guid="03765E28-D374-5AD2-E053-CDC61FAC6F3B">
+            <formular:SbsdCrntSt xmlns:formular="http://www.roskazna.ru/eb/domain/SbsdCrntSt/formular" xmlns:service="http://www.roskazna.ru/eb/soa/exp/EXPSOA_RSCF_CurrentStateMigrateService/types">
+           <DtlsGRBS_CdGRBSPPP xmlns="">S</DtlsGRBS_CdGRBSPPP>
+    <DtlsGRBS_NmGRBS xmlns="">Z5JZ2-MlH0dKFv0uNkMOtqRNI9ndCQ-O6dP0ueqLnXCfujL2Wb5E5sNnBgRl3FSpCa:3is1Csa8OwKGIBBQbFEoOvAQZ3CI1V6UXecALt0R5_2:UNCUAJC7bmhUKzvBo_Cuk3EUFXp_jUe8OJ57hgwOASJq2sUPP97HH7bDYo4KY4zCfw3zcGGveUFit.IPTrKc6iJE80SGy.vmelrJaAWf1GOnD8jQVVLXECKCE26oqSMA:b0Ct5EIZJyIIW9FXKf4d7ARsNI_FY3ojHgbmePomGh6rsAVSh32:uy5yFVaADKdjOz9VNh9XlMlFp7:T5Dd8YJBAXuOD.Q1ME-h1Zys3kzwHC7yoBNKuOsalxv6lWMQV_k39GrdC3fVnkTb1TywIl2-.gMfUwXkZDdoe1dJai4u_LzlpPjMgyPxFhIslLZcLNO.28PniiA7CBUTrUp8ys3S4m:eacVsiCbI-W4jOcTNxAg2KBRlSVzV_T1HnbtvUPAsZK7zYZ6M:__6zmnO7vQxKRv-IOlauq_f32n1ayXc_khvX7G_IVevcFlxshPObmnID.aU8T9yvyYj2P0rWhDwccHq0:aBoQq-rl84ayPoPF9Oz.jpVXaY2AHclazvHER9T:b7LorCU1xO7ax8XeOunm4z_ZLLTDCfXJp.0hfBYqatCSPKaYbG.8PpsOk_-wGN_I2</DtlsGRBS_NmGRBS>
+    <DtlsGRBS_CdGRBSOKOPF xmlns="">wD</DtlsGRBS_CdGRBSOKOPF>
+    <DtlsGRBS_NmbrAccnt xmlns="">yV</DtlsGRBS_NmbrAccnt>
+    <DtlsGRBS_CdTOFK xmlns="">gK</DtlsGRBS_CdTOFK>
+    <DtlsGRBS_NmTOFK xmlns="">IvQMS71yZe7vNC</DtlsGRBS_NmTOFK>
+    <DtlsGRBS_INN xmlns="">dR05NI-</DtlsGRBS_INN>
+    <DtlsGRBS_KPP xmlns="">w</DtlsGRBS_KPP>
+    <DtlsGRBS_DtRgstrtn xmlns="">2016-01-15</DtlsGRBS_DtRgstrtn>
+    <DtlsAct_CdCntrct xmlns="">H</DtlsAct_CdCntrct>
+    <DtlsAct_NmCntrct xmlns="">eteXhksbjAgwYUM8iZ_ptXv9hCh:SsUxeY1jAmFyyB5jpFAYc4ahPwvvs:VtJjeLQ5VmrU6LqoRfzQrctKM1iLLh_x0vMtVci1w.rxL8r1CvoLoH.q3-AFGw9tjn_O:HNWPsluJ0luRgDOCyJ5416_wiYDZot:VqL8WenOQdRy4fhioe1f4dFeQvRfkHeGsuvEMaiM.LgSIaQUYB5Q.cCRMOzaz0G56TT-q7tk-SEGDs39TNE1h_uYzWyVndCOO_sjoiz12827avN0QEDnOKyATxAoaVvfzNW.PcpFpsljYLpbjS7G0LLaMUcb4XKjw-_XgHXO7DauNFKvz8v._.HIG_URv7k:xdQ.bxp9kEToqjP-e0hISC52UcjJiZXA52raDogZG8sqX5garPbs8L2bJ-PeCgmqna:pcBZZ825GgV6KSt9Bh:Ymso_vY-grgWrhzxIIFj8BbpOS0D0IGN4P4ro6P4W8BiqWLftOyaVohotlePDesH_g44bu2de6SfZUNieJCLIelcG63HNisdQyzXZl.kCYJ6vTx4GtwSkPfBrTvUphc_T1uYFFuSp3.dC2CHlw1QoDi1O6pLfE.QC0Yr-2izOtHSIkW7-V1YOJQcrl4kTF0ksVMPCncEkwzy8h21DebYDV5x1Ut_7:7M22SMoilJ73AEcPJnvpKyK8P8YE5aC</DtlsAct_NmCntrct>
+    <DtlsAct_SmSbsds xmlns="">-81857780.07</DtlsAct_SmSbsds>
+    <DtlsAct_CdCrrnc xmlns="">RUB</DtlsAct_CdCrrnc>
+    <DtlsAct_NmCrrnc xmlns="">Российский рубль</DtlsAct_NmCrrnc>
+    <DtlsAct_RtCrrnc xmlns="">-1882735424.2071</DtlsAct_RtCrrnc>
+    <DtlsAct_SmSbsdRUB xmlns="">-1428810169.58</DtlsAct_SmSbsdRUB>
+            
+            </formular:SbsdCrntSt>
+         </v11:document>
+      </v11:storeDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4/documentLifeCyclePort/storeDocumentRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Copy of SubsidyCurrState" id="b708fbed-ef26-40fc-a03e-a6aa5527a126"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ufos.otr.ru/core/user-context/v1" xmlns:v11="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" xmlns:v12="http://ufos.otr.ru/core/common/v1">
+   <soapenv:Header>
+      <v1:user-context>
+         <!--Optional:-->
+         <v1:organization code="TEST_182" name="Тестовая запись для ФНС (тестовый контур)"/>
+      </v1:user-context>
+   </soapenv:Header>
+   <soapenv:Body>
+      <v11:storeDocumentRequest>
+         <v11:document document-type="EXP_SubsidyCurrState" guid="19b86610-fcbf-4fe7-9597-00d5c704fe5d">
+            <formular:SbsdCrntSt xmlns:formular="http://www.roskazna.ru/eb/domain/SbsdCrntSt/formular">
+               <NameSubsidies/>
+               <NameTpAct>Приказ</NameTpAct>
+               <NumberAct>1</NumberAct>
+               <DateAdoption>2016-02-01</DateAdoption>
+               <NameAct>Приказ</NameAct>
+               <DateExpiration>2016-02-01</DateExpiration>
+               <NumberRegistr>12</NumberRegistr>
+               <DateRegistr>2016-02-01</DateRegistr>
+               <ParentDocGuid1>87166845-e0e9-4de6-8935-813043ffdc60</ParentDocGuid1>
+               <GUIDASFK>2cbe8cbd-b67d-0344-e053-0a5f08268377</GUIDASFK>
+               <counterAgr>029</counterAgr>
+               <constReestNum>50116011000</constReestNum>
+               <SgnDspl>1</SgnDspl>
+               <countFlagAgr0>START-018|GRBS_NAME-0|GRBS_PLACE-1|GRBS_INN-0|GRBS_CODE-0|GRBS_LS-0|REC_NAME-1|REC_PLACE-1|REC_INN-1|REC_BUDGET-1|DOCOSN_VID-1|DOCOSN_REC-0|DOCOSN_TIME-0|DOCOSN_NAME-0|DOCOSN_SUM-1|DOCOSN_RESULT-0|OD-1|AMOUNT-1|KBK-1|ATT-1</countFlagAgr0>
+               <AccGuid>19b86610-fcbf-4fe7-9597-00d5c704fe5d</AccGuid>
+               <guid_for_counter>02319e9b-a3d4-4174-9116-11153d0227ae</guid_for_counter>
+               <prevRegNumASFK>50116009000017</prevRegNumASFK>
+               <regNumASFK>50116009000023</regNumASFK>
+               <DtlsGRBS_CdGRBSPPP>501</DtlsGRBS_CdGRBSPPP>
+               <DtlsGRBS_CdGRBS>001TS040</DtlsGRBS_CdGRBS>
+               <DtlsGRBS_NmGRBS>Ф ГРБС 1 ТЕСТ</DtlsGRBS_NmGRBS>
+               <DtlsGRBS_ShrtNmGRBS>Ф ГРБС 1 ТЕСТ</DtlsGRBS_ShrtNmGRBS>
+               <DtlsGRBS_CdGRBSOKOPF>75000</DtlsGRBS_CdGRBSOKOPF>
+               <DtlsGRBS_NmbrAccnt>14951TS0400</DtlsGRBS_NmbrAccnt>
+               <DtlsGRBS_CdTOFK>9500</DtlsGRBS_CdTOFK>
+               <DtlsGRBS_NmTOFK>Межрегиональное операционное управление Федерального казначейства</DtlsGRBS_NmTOFK>
+               <DtlsGRBS_INN>7710568763</DtlsGRBS_INN>
+               <DtlsGRBS_KPP>771001001</DtlsGRBS_KPP>
+               <DtlsGRBS_DtRgstrtn>2011-03-11</DtlsGRBS_DtRgstrtn>
+               <StGRBS_NmSbjct>Москва</StGRBS_NmSbjct>
+               <StGRBS_CdSbjct>77</StGRBS_CdSbjct>
+               <StGRBS_CdSbjct>77</StGRBS_CdSbjct>
+               <StGRBS_CdZp>109100</StGRBS_CdZp>
+               <StGRBS_TpLclty>Город</StGRBS_TpLclty>
+               <StGRBS_NmLclty>Че</StGRBS_NmLclty>
+               <StGRBS_CdLcltyOKTMO>45904000</StGRBS_CdLcltyOKTMO>
+               <StGRBS_TpPlnRd>ул Ильинка</StGRBS_TpPlnRd>
+               <StGRBS_TpPlnRd>ул Ильинка</StGRBS_TpPlnRd>
+               <DtlsAct_CdCntrct>005</DtlsAct_CdCntrct>
+               <DtlsAct_NmCntrct>Соглашения о предоставлении субсидий бюджетным и автономным учреждениям на иные цели, в том числе грантов</DtlsAct_NmCntrct>
+               <DtlsAct_TpAct>121</DtlsAct_TpAct>
+               <DtlsAct_SrlNmbr>029</DtlsAct_SrlNmbr>
+               <DtlsAct_RmAct>Тест3</DtlsAct_RmAct>
+               <DtlsAct_DtCntrct>2016-02-01</DtlsAct_DtCntrct>
+               <DtlsAct_CrrntDt>2016-02-26</DtlsAct_CrrntDt>
+               <DtlsAct_DtExprtn>2016-03-04</DtlsAct_DtExprtn>
+               <DtlsAct_SmSbsds>200</DtlsAct_SmSbsds>
+               <DtlsAct_CdCrrnc>RUB</DtlsAct_CdCrrnc>
+               <DtlsAct_NmCrrnc>Российский рубль</DtlsAct_NmCrrnc>
+               <DtlsAct_RtCrrnc>1.0000</DtlsAct_RtCrrnc>
+               <DtlsAct_SmSbsdRUB>200.00</DtlsAct_SmSbsdRUB>
+               <AgrmntDtls_NmTp>Соглашения (договоры), заключенные ГРБС о предоставлении субсидий из федерального бюджета юридическим лицам.</AgrmntDtls_NmTp>
+               <UnqNmbr_RsNm>50116011000</UnqNmbr_RsNm>
+               <UnqNmbr_DtInclsn>2016-02-27</UnqNmbr_DtInclsn>
+               <UnqNmbr_PrvsNmbr>50116011000</UnqNmbr_PrvsNmbr>
+               <InfrmtnBO_NmbrBO>000TS04016950000014</InfrmtnBO_NmbrBO>
+               <InfrmtnBO_DtRgstrBO>2016-02-27</InfrmtnBO_DtRgstrBO>
+               <InfrmtnBO_NmExctv>Т.И. Мартемьянова</InfrmtnBO_NmExctv>
+               <InfrmtnBO_PstExctv>Внедренец</InfrmtnBO_PstExctv>
+               <InfrmtnBO_DtSgnng>2016-02-27</InfrmtnBO_DtSgnng>
+               <AgrmntDtls_DtInclsn>2016-02-27</AgrmntDtls_DtInclsn>
+               <LstDcmnt xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:suf="http://www.roskazna.ru/eb/soa/proxy/suf"/>
+               <TbSbsds>
+                  <TbSbsds_ITEM>
+                     <FllNm>ТЕРРИТОРИАЛЬНОЕ УПРАВЛЕНИЕ ФЕДЕРАЛЬНОЙ СЛУЖБЫ ФИНАНСОВО-БЮДЖЕТНОГО НАДЗОРА В АСТРАХАНСКОЙ ОБЛАСТИ</FllNm>
+                     <ShrtNm>ТУ РОСФИННАДЗОРА В АСТРАХАНСКОЙ ОБЛАСТИ</ShrtNm>
+                     <CdOKOPF>75104</CdOKOPF>
+                     <CdCmpst>77660</CdCmpst>
+                     <INN>3015066190</INN>
+                     <KPP>301501001</KPP>
+                     <DtRcrd>2004-07-19</DtRcrd>
+                     <NmSbjct>АСТРАХАНСКАЯ</NmSbjct>
+                     <CdSbjct>30</CdSbjct>
+                     <CdZp>414000</CdZp>
+                     <LcltyTp>Город</LcltyTp>
+                     <CdLclty>45904000</CdLclty>
+                     <NmLclt>Че</NmLclt>
+                     <TpPlnRd>ул НИКОЛЬСКАЯ</TpPlnRd>
+                     <TpObjct>ул НИКОЛЬСКАЯ</TpObjct>
+                     <SgnFrgnEntt>false</SgnFrgnEntt>
+                     <NmbrLn>1</NmbrLn>
+                  </TbSbsds_ITEM>
+               </TbSbsds>
+               <Pmnts>
+                  <Pmnts_ITEM>
+                     <NmbrLn>1</NmbrLn>
+                     <NmFAIP>Тестовая запись ФАИП</NmFAIP>
+                     <CdFAIP>00000000000001</CdFAIP>
+                     <KBK>50109051150059525241</KBK>
+                     <TpGrnt>1</TpGrnt>
+                     <DrctnSpndng>Суб</DrctnSpndng>
+                     <SmptmPmnt code="Unconditional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:suf="http://www.roskazna.ru/eb/soa/proxy/suf">Безусловный</SmptmPmnt>
+                     <SmLblt>0</SmLblt>
+                     <SmLblts>0</SmLblts>
+                     <SmJnr>0</SmJnr>
+                     <SmFbrr>100</SmFbrr>
+                     <SmMrch>0</SmMrch>
+                     <SmAprl>0</SmAprl>
+                     <SmMay>0</SmMay>
+                     <SmJne>0</SmJne>
+                     <SmJl>0</SmJl>
+                     <SmAgst>0</SmAgst>
+                     <SmSptmbr>0</SmSptmbr>
+                     <SmOctbr>0</SmOctbr>
+                     <SmNvmbr>0</SmNvmbr>
+                     <SmDcmbr>0</SmDcmbr>
+                     <AmntYr>100</AmntYr>
+                     <SmFrstYr>0</SmFrstYr>
+                     <SmScndYr>0</SmScndYr>
+                     <SmThrdYr>0</SmThrdYr>
+                     <SmNxtYr>0</SmNxtYr>
+                  </Pmnts_ITEM>
+                  <Pmnts_ITEM>
+                     <NmbrLn>2</NmbrLn>
+                     <NmFAIP>Тестовая запись ФАИП 2</NmFAIP>
+                     <CdFAIP>10000000000002</CdFAIP>
+                     <KBK>50109051150059525242</KBK>
+                     <TpGrnt>1</TpGrnt>
+                     <DrctnSpndng>Суб1</DrctnSpndng>
+                     <SmptmPmnt code="Conditional" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:suf="http://www.roskazna.ru/eb/soa/proxy/suf">Условный</SmptmPmnt>
+                     <SmLblt>0</SmLblt>
+                     <SmLblts>0</SmLblts>
+                     <SmJnr>0</SmJnr>
+                     <SmFbrr>0</SmFbrr>
+                     <SmMrch>100</SmMrch>
+                     <SmAprl>0</SmAprl>
+                     <SmMay>0</SmMay>
+                     <SmJne>0</SmJne>
+                     <SmJl>0</SmJl>
+                     <SmAgst>0</SmAgst>
+                     <SmSptmbr>0</SmSptmbr>
+                     <SmOctbr>0</SmOctbr>
+                     <SmNvmbr>0</SmNvmbr>
+                     <SmDcmbr>0</SmDcmbr>
+                     <AmntYr>100</AmntYr>
+                     <SmFrstYr>0</SmFrstYr>
+                     <SmScndYr>0</SmScndYr>
+                     <SmThrdYr>0</SmThrdYr>
+                     <SmNxtYr>0</SmNxtYr>
+                  </Pmnts_ITEM>
+               </Pmnts>
+               <Rslts>
+                  <Rslts_ITEM>
+                     <RsltsR7>1</RsltsR7>
+                     <RsltsR9>10000000000002</RsltsR9>
+                     <RsltsR8>Тестовая запись ФАИП 2</RsltsR8>
+                     <RsltsR1>100</RsltsR1>
+                     <RsltsR2>0</RsltsR2>
+                     <RsltsR3>0</RsltsR3>
+                     <RsltsR4>0</RsltsR4>
+                     <RsltsR6>0</RsltsR6>
+                     <SmJnr>0</SmJnr>
+                     <SmFbrr>0</SmFbrr>
+                     <SmMrch>100</SmMrch>
+                     <SmAprl>0</SmAprl>
+                     <SmMay>0</SmMay>
+                     <SmJne>0</SmJne>
+                     <SmJl>0</SmJl>
+                     <SmAgst>0</SmAgst>
+                     <SmSptmbr>0</SmSptmbr>
+                     <SmOctbr>0</SmOctbr>
+                     <SmNvmbr>0</SmNvmbr>
+                     <SmDcmbr>0</SmDcmbr>
+                  </Rslts_ITEM>
+                  <Rslts_ITEM>
+                     <RsltsR7>2</RsltsR7>
+                     <RsltsR9>00000000000001</RsltsR9>
+                     <RsltsR8>Тестовая запись ФАИП</RsltsR8>
+                     <RsltsR1>100</RsltsR1>
+                     <RsltsR2>0</RsltsR2>
+                     <RsltsR3>0</RsltsR3>
+                     <RsltsR4>0</RsltsR4>
+                     <RsltsR6>0</RsltsR6>
+                     <SmJnr>0</SmJnr>
+                     <SmFbrr>100</SmFbrr>
+                     <SmMrch>0</SmMrch>
+                     <SmAprl>0</SmAprl>
+                     <SmMay>0</SmMay>
+                     <SmJne>0</SmJne>
+                     <SmJl>0</SmJl>
+                     <SmAgst>0</SmAgst>
+                     <SmSptmbr>0</SmSptmbr>
+                     <SmOctbr>0</SmOctbr>
+                     <SmNvmbr>0</SmNvmbr>
+                     <SmDcmbr>0</SmDcmbr>
+                  </Rslts_ITEM>
+               </Rslts>
+               <LstVrsns>
+                  <LstVrsns_ITEM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:suf="http://www.roskazna.ru/eb/soa/proxy/suf">
+                     <GUIDInfAgrmnt>02319e9b-a3d4-4174-9116-11153d0227ae</GUIDInfAgrmnt>
+                     <NmbrInfAgrmnt>501_01_175</NmbrInfAgrmnt>
+                     <DcmntDt>2016-02-27T00:00:00+03:00</DcmntDt>
+                     <TpRSS>Первичный</TpRSS>
+                     <NmbrUnq>50116011000018</NmbrUnq>
+                     <DtInclsnRgstr>2016-02-27T00:00:00+03:00</DtInclsnRgstr>
+                     <ChngHstr>START-000|GRBS_NAME-1|GRBS_PLACE-1|GRBS_INN-1|GRBS_CODE-1|GRBS_LS-1|REC_NAME-1|REC_PLACE-1|REC_INN-1|REC_BUDGET-1|DOCOSN_VID-1|DOCOSN_REC-1|DOCOSN_TIME-1|DOCOSN_NAME-1|DOCOSN_SUM-1|DOCOSN_RESULT-0|OD-1|AMOUNT-1|KBK-1|ATT-1</ChngHstr>
+                     <NbLn>0</NbLn>
+                  </LstVrsns_ITEM>
+                  <LstVrsns_ITEM>
+                     <GUIDInfAgrmnt>87166845-e0e9-4de6-8935-813043ffdc60</GUIDInfAgrmnt>
+                     <NmbrInfAgrmnt>501_01_176</NmbrInfAgrmnt>
+                     <DcmntDt>2016-02-27</DcmntDt>
+                     <TpRSS>Изменение</TpRSS>
+                     <NmbrUnq>50116011000029</NmbrUnq>
+                     <DtInclsnRgstr>2016-02-27</DtInclsnRgstr>
+                     <ChngHstr>START-018|GRBS_NAME-0|GRBS_PLACE-1|GRBS_INN-0|GRBS_CODE-0|GRBS_LS-0|REC_NAME-1|REC_PLACE-1|REC_INN-1|REC_BUDGET-1|DOCOSN_VID-1|DOCOSN_REC-0|DOCOSN_TIME-0|DOCOSN_NAME-0|DOCOSN_SUM-1|DOCOSN_RESULT-0|OD-1|AMOUNT-1|KBK-1|ATT-1</ChngHstr>
+                     <NbLn>1</NbLn>
+                  </LstVrsns_ITEM>
+               </LstVrsns>
+               <RSRegNums>
+                  <RSRegNums_ITEM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:suf="http://www.roskazna.ru/eb/soa/proxy/suf">
+                     <RegNumEB>50116011000018</RegNumEB>
+                     <RegNumASFK>50116009000017</RegNumASFK>
+                  </RSRegNums_ITEM>
+                  <RSRegNums_ITEM>
+                     <RegNumEB>50116011000029</RegNumEB>
+                     <RegNumASFK>50116009000023</RegNumASFK>
+                  </RSRegNums_ITEM>
+               </RSRegNums>
+            </formular:SbsdCrntSt>
+         </v11:document>
+      </v11:storeDocumentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4/documentLifeCyclePort/storeDocumentRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService port="8089" path="/mockdocumentLifeCyclePort" host="localhost" name="documentLifeCycleBinding MockService" id="c6ae1590-55d2-4264-9b5d-2196c0b29152" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="executeTransition" interface="documentLifeCycleBinding" operation="executeTransition" id="513d6f8e-545d-4d41-99a8-6fc03bc89390"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" id="f9d00697-3066-4418-84c6-a98c2b6a4c9b" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:executeTransitionResponse state="?"/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4/documentLifeCyclePort/executeTransitionResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="getState" interface="documentLifeCycleBinding" operation="getState" id="cdec8dd3-c17d-4352-b4f8-8b09a966be67"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" id="cf7320fa-e3b5-4bde-8dd8-fd2c235c992e" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getStateResponse state="?"/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4/documentLifeCyclePort/getStateResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="pushDocumentState" interface="documentLifeCycleBinding" operation="pushDocumentState" id="d8d49466-6a8f-48f2-b283-43363bcbc25f"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" id="316c0ab3-f500-4e16-a490-16080a6dd39c" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:pushDocumentStateResponse state="?"/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4/documentLifeCyclePort/pushDocumentStateResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="storeDocument" interface="documentLifeCycleBinding" operation="storeDocument" id="c70c4dca-679b-4dfc-8bf4-3bdbc7abb022"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" id="2eaf0a7a-72d3-425b-a85c-262a2cc2ddac" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:storeDocumentResponse>
+         <v1:documents>
+            <!--1 or more repetitions:-->
+            <v1:document guid="?" state="?" created="?"/>
+         </v1:documents>
+      </v1:storeDocumentResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4/documentLifeCyclePort/storeDocumentResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

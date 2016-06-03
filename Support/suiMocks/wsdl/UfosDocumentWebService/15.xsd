@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/NtcExcdBdgtrOblgtns/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common" xmlns:ns1="http://www.roskazna.ru/eb/domain/common/entity" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/NtcExcdBdgtrOblgtns/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="NtcExcdBdgtrOblgtns" type="tns:tNtcExcdBdgtrOblgtns"/>
+
+<xs:complexType name="tNtcExcdBdgtrOblgtns">
+<xs:complexContent>
+<xs:extension base="ns2:tFormular">
+<xs:sequence>
+<xs:element name="BU_OblgtNm" type="xs:string"/>
+<xs:element name="BU_DtRgs" type="xs:string"/>
+<xs:element name="BU_SgngDt" type="xs:string"/>
+<xs:element name="BU_Nt" type="xs:string" minOccurs="0"/>
+<xs:element name="BU_GRBSCode" type="xs:string" minOccurs="0"/>
+<xs:element name="BU_PBSCode" type="xs:string" minOccurs="0"/>
+<xs:element name="BUOSN_VD" type="xs:string"/>
+<xs:element name="BUOSN_Nmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="BUOSN_Dt" type="xs:string"/>
+<xs:element name="BUOSN_StrtDt" type="xs:string" minOccurs="0"/>
+<xs:element name="BUOSN_EndDt" type="xs:string" minOccurs="0"/>
+<xs:element name="BUOSN_AmntLblts" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BUOSN_AmntRb" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BUOSN_AdvncPy" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BUOSN_AmntAdvPy" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BUIDOC_Nmbr50" type="xs:string" minOccurs="0"/>
+<xs:element name="BUIDOC_DctDt" type="xs:string" minOccurs="0"/>
+<xs:element name="BUIDOC_FullNm" type="xs:string" minOccurs="0"/>
+<xs:element name="BUIDOC_Amnt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BUIDOC_NmbrNtfctns" type="xs:string" minOccurs="0"/>
+<xs:element name="BUIDOC_DtNtf" type="xs:string" minOccurs="0"/>
+<xs:element name="BUEXREQ_MthdPlc" type="xs:string" minOccurs="0"/>
+<xs:element name="BUEXREQ_DtSm" type="xs:string" minOccurs="0"/>
+<xs:element name="BUEXREQ_TpDoc" type="xs:string" minOccurs="0"/>
+<xs:element name="BUEXREQ_NmbrDc" type="xs:string" minOccurs="0"/>
+<xs:element name="BUEXREQ_DctDt" type="xs:string" minOccurs="0"/>
+<xs:element name="BUEXREQ_NmbrRgs" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RegisterInformAccGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RwIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_HdIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RsltPrm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_TxtRsltPrm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_ExctnDt" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RjctnRsn" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RlvncSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_GUID_SBO" type="xs:string" minOccurs="0"/>
+<xs:element name="BU_MSC_Infrmtn" type="ns1:tMSC_Infrmtn" minOccurs="0"/>
+<xs:element name="BU_MSC_TOFK" type="ns1:tMSC_TOFK" minOccurs="0"/>
+<xs:element name="BU_MSC_GRBS" type="ns1:tMSC_GRBS" minOccurs="0"/>
+<xs:element name="BU_MSC_PBS" type="ns1:tMSC_PBS" minOccurs="0"/>
+<xs:element name="BU_MSC_Bdgt" type="ns1:tMSC_Bdgt" minOccurs="0"/>
+<xs:element name="BU_MSC_FnclInst" type="ns1:tMSC_FnclInst" minOccurs="0"/>
+<xs:element name="BU_MSC_Hd" type="ns1:tMSC_Hd" minOccurs="0"/>
+<xs:element name="BU_MSC_Amount1" type="ns1:tMSC_Amount" minOccurs="0"/>
+<xs:element name="BU_MSC_Amount2" type="ns1:tMSC_Amount" minOccurs="0"/>
+<xs:element name="BU_MSC_Amount3" type="ns1:tMSC_Amount" minOccurs="0"/>
+<xs:element name="BUOSN_MSC_OKV" type="ns1:tMSC_OKV" minOccurs="0"/>
+<xs:element name="BUDESCR" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="BUDESCR_ITEM" type="tns:tBUDESCR_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="BUCONTR_TabBUCONTR" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TabBUCONTR_ITEM" type="tns:tBUCONTR_TabBUCONTR_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="StmInfrmtn_TabSI" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TabSI_ITEM" type="tns:tStmInfrmtn_TabSI_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tBUDESCR_ITEM">
+<xs:sequence>
+<xs:element name="NmPP" type="xs:int"/>
+<xs:element name="TpFnd" type="xs:string"/>
+<xs:element name="SbjDcBs" type="xs:string"/>
+<xs:element name="Nt" type="xs:string" minOccurs="0"/>
+<xs:element name="MSC_KBK" type="ns1:tMSC_KBK" minOccurs="0"/>
+<xs:element name="MSC_Amount4" type="ns1:tMSC_Amount" minOccurs="0"/>
+<xs:element name="MSC_Amount5" type="ns1:tMSC_Amount" minOccurs="0"/>
+<xs:element name="MSC_Amount6" type="ns1:tMSC_Amount" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBUCONTR_TabBUCONTR_ITEM">
+<xs:sequence>
+<xs:element name="FullNm" type="xs:string"/>
+<xs:element name="INN12" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+<xs:element name="NmCntr" type="xs:string" minOccurs="0"/>
+<xs:element name="CdOKSM" type="xs:string" minOccurs="0"/>
+<xs:element name="Adrss" type="xs:string" minOccurs="0"/>
+<xs:element name="Tlphn" type="xs:string" minOccurs="0"/>
+<xs:element name="Stts" type="xs:string" minOccurs="0"/>
+<xs:element name="MSC_Bnk20" type="ns1:tMSC_Bnk20" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tStmInfrmtn_TabSI_ITEM">
+<xs:sequence>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="AccountTransGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="SignUpdate" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBUDESCR">
+<xs:sequence>
+<xs:element name="BUDESCR_ITEM" type="tns:tBUDESCR_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tStmInfrmtn_TabSI">
+<xs:sequence>
+<xs:element name="TabSI_ITEM" type="tns:tStmInfrmtn_TabSI_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBUCONTR_TabBUCONTR">
+<xs:sequence>
+<xs:element name="TabBUCONTR_ITEM" type="tns:tBUCONTR_TabBUCONTR_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

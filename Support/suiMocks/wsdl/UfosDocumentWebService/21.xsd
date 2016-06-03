@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_REPORTS/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common" xmlns:ns1="http://www.roskazna.ru/eb/domain/common/entity" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_REPORTS/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="MSC_REPORTS" type="tns:tMSC_REPORTS"/>
+
+<xs:complexType name="tMSC_REPORTS">
+<xs:complexContent>
+<xs:extension base="ns2:tFormular">
+<xs:sequence>
+<xs:element name="SsDtls_GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="SsDtls_DtTm" type="xs:string" minOccurs="0"/>
+<xs:element name="SsDtls_RgNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SsDtls_RepState" type="xs:string" minOccurs="0"/>
+<xs:element name="SsDtls_SysDetA" type="xs:string" minOccurs="0"/>
+<xs:element name="SsDtls_SysDetB" type="xs:string" minOccurs="0"/>
+<xs:element name="SsDtls_SysDetC" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_RprtDt" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_PrvDctDt" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_FrmCd" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_FrmNm" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_UBPCd" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_CodeRegis" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_FullNm" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_OKEI" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_HdrDtA" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_HdrDtB" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_HdrDtC" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_FnclInst" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_OKPOCd" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_CrtIfEmpt" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_ShwLNZr" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_ExcUsr" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_AddPrmA" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_AddPrmB" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_AddPrmC" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_Pstn" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_FllNm" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_Tlphn" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_MSC_OrFK" type="ns1:tMSC_OrFK" minOccurs="0"/>
+<xs:element name="RprtTtl_MSC_GRBS" type="ns1:tMSC_GRBS" minOccurs="0"/>
+<xs:element name="RprtTtl_MSC_RBS" type="ns1:tMSC_PBS_UBP" minOccurs="0"/>
+<xs:element name="RprtTtl_MSC_Bdgt" type="ns1:tMSC_Bdgt" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:schema>

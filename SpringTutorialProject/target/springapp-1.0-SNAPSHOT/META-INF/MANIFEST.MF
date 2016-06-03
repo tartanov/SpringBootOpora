@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: tartanov.mikhail
+Class-Path: lib/commons-logging-1.1.1.jar lib/spring-core-4.2.5.RELEAS
+ E.jar lib/spring-context-4.2.5.RELEASE.jar lib/spring-aop-4.2.5.RELEA
+ SE.jar lib/aopalliance-1.0.jar lib/spring-beans-4.2.5.RELEASE.jar lib
+ /spring-expression-4.2.5.RELEASE.jar
+Created-By: Apache Maven 3.0.5
+Build-Jdk: 1.8.0_31
+Main-Class: ru.otr.spring.tutorial.HelloWorldSpringApp
+

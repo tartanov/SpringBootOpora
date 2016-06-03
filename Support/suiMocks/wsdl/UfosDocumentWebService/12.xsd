@@ -1,0 +1,2375 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/common/applied" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/common/applied">
+
+<xs:complexType name="tStateListComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tStateList"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tStateListFKComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tStateListFK"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tApprovementStateComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tApprovementState"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tAgreementStateComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tAgreementState"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tfonarReestrComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tfonarReestr"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tfonarPubComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tfonarPub"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tSympAbsltnssPmntComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tSympAbsltnssPmnt"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tmatching_stateComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tmatching_state"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tDcmntTpComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tDcmntTp"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tDecision_TypeDocComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tDecision_TypeDoc"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tSystem_statusesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tSystem_statuses"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_OKChangeTypesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_OKChangeTypes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_OKEISubsectionsComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_OKEISubsections"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_PPOTypesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_PPOTypes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_PPOStatusesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_PPOStatuses"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_KBKTypesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_KBKTypes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_KBKStatusesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_KBKStatuses"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tTypes_of_contourComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tTypes_of_contour"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_TOFKStatusesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_TOFKStatuses"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tReasons_of_updateComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tReasons_of_update"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tStatesApproveRGZComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tStatesApproveRGZ"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tRGZ_InclusionRegisterComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tRGZ_InclusionRegister"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tRGZ_PublicationComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tRGZ_Publication"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_FndsSrcComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_FndsSrc"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_BKTp10_20Complex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_BKTp10_20"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_BKTpComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_BKTp"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_BKTp20Complex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_BKTp20"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_AdvnPySgnComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_AdvnPySgn"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_ShrtPyKndComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_ShrtPyKnd"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_RqstTpComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_RqstTp"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_BsPySgnComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_BsPySgn"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_ScrcSgnComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_ScrcSgn"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_RfOprKndComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_RfOprKnd"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_SrcKndComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_SrcKnd"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_StSrcKndComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_StSrcKnd"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_PyKndComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_PyKnd"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_PrntKPPSgnComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_PrntKPPSgn"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_ExplnSgnComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_ExplnSgn"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_IndicatorStateComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_IndicatorState"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_RgstrTpComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_RgstrTp"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_CardTypeComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_CardType"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_AcntCdsComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_AcntCds"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_BlocksTypeComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_BlocksType"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_ViewRegisterPIAOComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_ViewRegisterPIAO"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_SctnCdComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_SctnCd"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_GMUBudgetTypesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_GMUBudgetTypes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_AuthTypesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_AuthTypes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_UBPStatusesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_UBPStatuses"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tValidValuesDecisionComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tValidValuesDecision"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tTypes_of_requestsComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tTypes_of_requests"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_AcntTpComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_AcntTp"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tAccountSchemeComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tAccountScheme"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tChckTpComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tChckTp"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_KLADRStatusesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_KLADRStatuses"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_OrgStatusesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_OrgStatuses"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tYearsComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tYears"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tTypes_of_contour_for_SPZComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tTypes_of_contour_for_SPZ"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_RegionMFRFStatusesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_RegionMFRFStatuses"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_ClientTypesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_ClientTypes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tRltnTxtComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tRltnTxt"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_AccountStatusesSEDComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_AccountStatusesSED"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tPosNegDecisionComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tPosNegDecision"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tRS_ChckVlsRsltComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tRS_ChckVlsRslt"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_FLGENDERComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_FLGENDER"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREFIconsComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREFIcons"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_YesNoTextComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_YesNoText"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tYsNComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tYsN"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_BranchTypesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_BranchTypes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tOprTpComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tOprTp"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tDecisionTypeComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tDecisionType"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_AuthUseTypesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_AuthUseTypes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tSgnAdvncPmntComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tSgnAdvncPmnt"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_RfndDcComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_RfndDc"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tTpKBKComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tTpKBK"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_RegistrationTypesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_RegistrationTypes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_UchrezhTypesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_UchrezhTypes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tCtrlStComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tCtrlSt"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tlistsComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tlists"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_TypeISComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_TypeIS"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_OKVEDLetterTypesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_OKVEDLetterTypes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tTypes_of_registry_for_SvRComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tTypes_of_registry_for_SvR"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tPmntIndxTpComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tPmntIndxTp"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tOrderPyComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tOrderPy"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_BKTp10Complex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_BKTp10"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tStatesApproveEXPComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tStatesApproveEXP"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tAccount_statusesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tAccount_statuses"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tTypeDcmntComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tTypeDcmnt"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tStatusREFComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tStatusREF"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_AccountTypesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_AccountTypes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tStatesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tStates"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_GMUStatusesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_GMUStatuses"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tOperationIndicatorComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tOperationIndicator"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tRGZ_TESTComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tRGZ_TEST"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tPrmTpComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tPrmTp"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_OrderTypeComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_OrderType"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_ClientTypes_v1Complex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_ClientTypes_v1"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tAuthorities_statusesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tAuthorities_statuses"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tTpOfPmntComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tKBKSystemTypeComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tKBKSystemType"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_TypesChangeOKComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_TypesChangeOK"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tFOConsiderationStateComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tFOConsiderationState"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tTpOfCntrlComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tTpOfCntrl"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_CenterStatusesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_CenterStatuses"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tSigComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tSig"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tChangeListKindComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tChangeListKind"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_PDIStatusesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_PDIStatuses"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tPyStsComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tPySts"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMFConsiderationStateComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMFConsiderationState"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_CODE_OBRComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_CODE_OBR"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tStOfRprtTpComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tStOfRprtTp"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tTpVsbltyComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tTpVsblty"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tTpOfChngComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tTpOfChng"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tTpPrdComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_CODE_VID_IPComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_CODE_VID_IP"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_SpcInstCdComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_SpcInstCd"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tCommonSignComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tCommonSign"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_BudgetLevelComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_BudgetLevel"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tAnnulmentStateComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tAnnulmentState"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tTpRsltComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tTpRslt"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tSrcComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tSrc"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_PyDrctnComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tMSC_PyDrctn"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tRprtngPrdComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tRprtngPrd"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tCdOfTpBdgtComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tCdOfTpBdgt"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tRptTypeComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tRptType"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tFEAConsiderationStateComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tFEAConsiderationState"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tTpDcmntComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tTpDcmnt"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_OrgListTypesComplex">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="code" type="xs:NCName"/>
+<xs:attribute name="value" type="tns:tREF_OrgListTypes"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:simpleType name="tStateList">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Требует согласования"/>
+<xs:enumeration value="Направлен на согласование"/>
+<xs:enumeration value="Согласован"/>
+<xs:enumeration value="Отменен"/>
+<xs:enumeration value="На доработку"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tStateListFK">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Требует согласования"/>
+<xs:enumeration value="Согласован"/>
+<xs:enumeration value="Отменен"/>
+<xs:enumeration value="Направлен на согласование"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tApprovementState">
+<xs:restriction base="xs:string">
+<xs:enumeration value="На утверждении"/>
+<xs:enumeration value="Утверждено"/>
+<xs:enumeration value="Отклонено"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tAgreementState">
+<xs:restriction base="xs:string">
+<xs:enumeration value="На согласовании"/>
+<xs:enumeration value="Согласовано"/>
+<xs:enumeration value="Отклонено"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tfonarReestr">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Ожидает включения в реестр"/>
+<xs:enumeration value="Включен в реестр"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tfonarPub">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Публикация"/>
+<xs:enumeration value="Требуется публикация"/>
+<xs:enumeration value="Ожидание публикации"/>
+<xs:enumeration value="Ошибка публикации"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tSympAbsltnssPmnt">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tmatching_state">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Решение не сформировано"/>
+<xs:enumeration value="Требует согласования"/>
+<xs:enumeration value="Направлен на согласование"/>
+<xs:enumeration value="Не требует согласования"/>
+<xs:enumeration value="Согласован"/>
+<xs:enumeration value="Не согласован"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tDcmntTp">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Задание"/>
+<xs:enumeration value="Отчет"/>
+<xs:enumeration value="Распределение"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tDecision_TypeDoc">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Сведения о соглашении и БО"/>
+<xs:enumeration value="Сведения о БО и ГК"/>
+<xs:enumeration value="Сведения о БО"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tSystem_statuses">
+<xs:restriction base="xs:string">
+<xs:enumeration value="ACTIVE"/>
+<xs:enumeration value="ARCHIVE"/>
+<xs:enumeration value="CREATED"/>
+<xs:enumeration value="DELETED"/>
+<xs:enumeration value="PREACTIVE"/>
+<xs:enumeration value="ERROR"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_OKChangeTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+<xs:enumeration value="0"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_OKEISubsections">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+<xs:enumeration value="4"/>
+<xs:enumeration value="5"/>
+<xs:enumeration value="6"/>
+<xs:enumeration value="7"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_PPOTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+<xs:enumeration value="4"/>
+<xs:enumeration value="8"/>
+<xs:enumeration value="9"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_PPOStatuses">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_KBKTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="10"/>
+<xs:enumeration value="11"/>
+<xs:enumeration value="12"/>
+<xs:enumeration value="20"/>
+<xs:enumeration value="21"/>
+<xs:enumeration value="30"/>
+<xs:enumeration value="31"/>
+<xs:enumeration value="32"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_KBKStatuses">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tTypes_of_contour">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Закрытый"/>
+<xs:enumeration value="Открытый"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_TOFKStatuses">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tReasons_of_update">
+<xs:restriction base="xs:string">
+<xs:enumeration value="по данным УО"/>
+<xs:enumeration value="по данным ЕГРЮЛ"/>
+<xs:enumeration value="по данным Л/С"/>
+<xs:enumeration value="по данным МФ"/>
+<xs:enumeration value="по данным СвР"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tStatesApproveRGZ">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Требует согласования"/>
+<xs:enumeration value="Направлен на согласование"/>
+<xs:enumeration value="Согласован"/>
+<xs:enumeration value="Отменен"/>
+<xs:enumeration value="На доработку"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tRGZ_InclusionRegister">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Включен в реестр"/>
+<xs:enumeration value="Требуется включение в реестр"/>
+<xs:enumeration value="Ошибка выгрузки"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tRGZ_Publication">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Публикация"/>
+<xs:enumeration value="Требуется публикация"/>
+<xs:enumeration value="Ожидание публикации"/>
+<xs:enumeration value="Ошибка публикации"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_FndsSrc">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="3"/>
+<xs:enumeration value="4"/>
+<xs:enumeration value="5"/>
+<xs:enumeration value="6"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_BKTp10_20">
+<xs:restriction base="xs:string">
+<xs:enumeration value="10"/>
+<xs:enumeration value="20"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_BKTp">
+<xs:restriction base="xs:string">
+<xs:enumeration value="10"/>
+<xs:enumeration value="20"/>
+<xs:enumeration value="31"/>
+<xs:enumeration value="32"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_BKTp20">
+<xs:restriction base="xs:string">
+<xs:enumeration value="20"/>
+<xs:enumeration value="31"/>
+<xs:enumeration value="32"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_AdvnPySgn">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_ShrtPyKnd">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="4"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_RqstTp">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_BsPySgn">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_ScrcSgn">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_RfOprKnd">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+<xs:enumeration value="4"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_SrcKnd">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="3"/>
+<xs:enumeration value="4"/>
+<xs:enumeration value="5"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_StSrcKnd">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="3"/>
+<xs:enumeration value="4"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_PyKnd">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="4"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_PrntKPPSgn">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_ExplnSgn">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_IndicatorState">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Пусто"/>
+<xs:enumeration value="Принят"/>
+<xs:enumeration value="Частично принят"/>
+<xs:enumeration value="Отклонен"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_RgstrTp">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_CardType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Тестовая"/>
+<xs:enumeration value="Рабочая"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_AcntCds">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+<xs:enumeration value="4"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_BlocksType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Все"/>
+<xs:enumeration value="Без Операций"/>
+<xs:enumeration value="Только «Операции»"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_ViewRegisterPIAO">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_SctnCd">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tKBKSystemType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tPmntIndxTp">
+<xs:restriction base="xs:string">
+<xs:enumeration value="ВЗ — уплата взноса"/>
+<xs:enumeration value="ПЕ — уплата пени"/>
+<xs:enumeration value="АШ — административные штрафы"/>
+<xs:enumeration value="ИШ — иные штрафы"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_GMUBudgetTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="01"/>
+<xs:enumeration value="02"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_AccountTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="01"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_AuthTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+<xs:enumeration value="4"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_UBPStatuses">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tFEAConsiderationState">
+<xs:restriction base="xs:string">
+<xs:enumeration value="На рассмотрении в ответственном ФОИВ"/>
+<xs:enumeration value="Принято к рассмотрению"/>
+<xs:enumeration value="Положительное решение"/>
+<xs:enumeration value="Отрицательное решение"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMFConsiderationState">
+<xs:restriction base="xs:string">
+<xs:enumeration value="На рассмотрении в Минфине России"/>
+<xs:enumeration value="Положительное решение"/>
+<xs:enumeration value="Отрицательное решение"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_BudgetLevel">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+<xs:enumeration value="4"/>
+<xs:enumeration value="5"/>
+<xs:enumeration value="6"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tValidValuesDecision">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Согласовать"/>
+<xs:enumeration value="Отклонить"/>
+<xs:enumeration value="Не принято"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_OrderType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Открытие"/>
+<xs:enumeration value="Закрытие"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tStatusREF">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Новый"/>
+<xs:enumeration value="Актуализировано"/>
+<xs:enumeration value="Архив"/>
+<xs:enumeration value="Включена"/>
+<xs:enumeration value="Условно включена"/>
+<xs:enumeration value="Исключена"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tPosNegDecision">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Положительное решение"/>
+<xs:enumeration value="Отрицательное решение"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tTypes_of_requests">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Включение"/>
+<xs:enumeration value="Изменение"/>
+<xs:enumeration value="Исключение"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tTypeDcmnt">
+<xs:restriction base="xs:string">
+<xs:enumeration value="первичный"/>
+<xs:enumeration value="изменение"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_AcntTp">
+<xs:restriction base="xs:string">
+<xs:enumeration value="03"/>
+<xs:enumeration value="14"/>
+<xs:enumeration value="41"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tAccountScheme">
+<xs:restriction base="xs:string">
+<xs:enumeration value="001"/>
+<xs:enumeration value="002"/>
+<xs:enumeration value="003"/>
+<xs:enumeration value="004"/>
+<xs:enumeration value="F01"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_SpcInstCd">
+<xs:restriction base="xs:string">
+<xs:enumeration value="01"/>
+<xs:enumeration value="02"/>
+<xs:enumeration value="03"/>
+<xs:enumeration value="05"/>
+<xs:enumeration value="06"/>
+<xs:enumeration value="07"/>
+<xs:enumeration value="08"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_TypesChangeOK">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+<xs:enumeration value="0"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tChckTp">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Блокирующий"/>
+<xs:enumeration value="Ошибка"/>
+<xs:enumeration value="Предупреждающий"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_KLADRStatuses">
+<xs:restriction base="xs:string">
+<xs:enumeration value="00"/>
+<xs:enumeration value="01"/>
+<xs:enumeration value="51"/>
+<xs:enumeration value="52"/>
+<xs:enumeration value="99"/>
+<xs:enumeration value="02"/>
+<xs:enumeration value="53"/>
+<xs:enumeration value="03"/>
+<xs:enumeration value="04"/>
+<xs:enumeration value="05"/>
+<xs:enumeration value="06"/>
+<xs:enumeration value="07"/>
+<xs:enumeration value="08"/>
+<xs:enumeration value="09"/>
+<xs:enumeration value="10"/>
+<xs:enumeration value="11"/>
+<xs:enumeration value="12"/>
+<xs:enumeration value="13"/>
+<xs:enumeration value="14"/>
+<xs:enumeration value="15"/>
+<xs:enumeration value="16"/>
+<xs:enumeration value="17"/>
+<xs:enumeration value="18"/>
+<xs:enumeration value="19"/>
+<xs:enumeration value="20"/>
+<xs:enumeration value="21"/>
+<xs:enumeration value="22"/>
+<xs:enumeration value="23"/>
+<xs:enumeration value="24"/>
+<xs:enumeration value="25"/>
+<xs:enumeration value="26"/>
+<xs:enumeration value="27"/>
+<xs:enumeration value="28"/>
+<xs:enumeration value="29"/>
+<xs:enumeration value="30"/>
+<xs:enumeration value="31"/>
+<xs:enumeration value="32"/>
+<xs:enumeration value="33"/>
+<xs:enumeration value="34"/>
+<xs:enumeration value="35"/>
+<xs:enumeration value="36"/>
+<xs:enumeration value="37"/>
+<xs:enumeration value="38"/>
+<xs:enumeration value="39"/>
+<xs:enumeration value="40"/>
+<xs:enumeration value="41"/>
+<xs:enumeration value="42"/>
+<xs:enumeration value="43"/>
+<xs:enumeration value="44"/>
+<xs:enumeration value="45"/>
+<xs:enumeration value="46"/>
+<xs:enumeration value="47"/>
+<xs:enumeration value="48"/>
+<xs:enumeration value="49"/>
+<xs:enumeration value="50"/>
+<xs:enumeration value="54"/>
+<xs:enumeration value="55"/>
+<xs:enumeration value="56"/>
+<xs:enumeration value="57"/>
+<xs:enumeration value="58"/>
+<xs:enumeration value="59"/>
+<xs:enumeration value="60"/>
+<xs:enumeration value="61"/>
+<xs:enumeration value="62"/>
+<xs:enumeration value="63"/>
+<xs:enumeration value="64"/>
+<xs:enumeration value="65"/>
+<xs:enumeration value="66"/>
+<xs:enumeration value="67"/>
+<xs:enumeration value="68"/>
+<xs:enumeration value="69"/>
+<xs:enumeration value="70"/>
+<xs:enumeration value="71"/>
+<xs:enumeration value="72"/>
+<xs:enumeration value="73"/>
+<xs:enumeration value="74"/>
+<xs:enumeration value="75"/>
+<xs:enumeration value="76"/>
+<xs:enumeration value="77"/>
+<xs:enumeration value="78"/>
+<xs:enumeration value="79"/>
+<xs:enumeration value="80"/>
+<xs:enumeration value="81"/>
+<xs:enumeration value="82"/>
+<xs:enumeration value="83"/>
+<xs:enumeration value="84"/>
+<xs:enumeration value="85"/>
+<xs:enumeration value="86"/>
+<xs:enumeration value="87"/>
+<xs:enumeration value="88"/>
+<xs:enumeration value="89"/>
+<xs:enumeration value="90"/>
+<xs:enumeration value="91"/>
+<xs:enumeration value="92"/>
+<xs:enumeration value="93"/>
+<xs:enumeration value="94"/>
+<xs:enumeration value="95"/>
+<xs:enumeration value="96"/>
+<xs:enumeration value="97"/>
+<xs:enumeration value="98"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_OrgStatuses">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+<xs:enumeration value="4"/>
+<xs:enumeration value="5"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tYears">
+<xs:restriction base="xs:string">
+<xs:enumeration value="2016"/>
+<xs:enumeration value="2015"/>
+<xs:enumeration value="2014"/>
+<xs:enumeration value="2013"/>
+<xs:enumeration value="2012"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tTypes_of_contour_for_SPZ">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_OrgListTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_CenterStatuses">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_RegionMFRFStatuses">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_ClientTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="5"/>
+<xs:enumeration value="6"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tRltnTxt">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Равно"/>
+<xs:enumeration value="Не равно"/>
+<xs:enumeration value="Входит в"/>
+<xs:enumeration value="Не входит в"/>
+<xs:enumeration value="Содержит"/>
+<xs:enumeration value="Не содержит"/>
+<xs:enumeration value="Начинается с"/>
+<xs:enumeration value="Заканчивается на"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_CODE_VID_IP">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tYsN">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0 - нет"/>
+<xs:enumeration value="1 - да"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_FLGENDER">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tTpOfChng">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Создание новой записи"/>
+<xs:enumeration value="Изменение записи"/>
+<xs:enumeration value="Удаление записи"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_AccountStatusesSED">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tRS_ChckVlsRslt">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Положительный"/>
+<xs:enumeration value="Отрицательный"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREFIcons">
+<xs:restriction base="xs:string">
+<xs:enumeration value="CREATED"/>
+<xs:enumeration value="APPROVED_MF"/>
+<xs:enumeration value="REWORK_MF"/>
+<xs:enumeration value="INCLUDED"/>
+<xs:enumeration value="DRAFT_MF"/>
+<xs:enumeration value="CREATED_MF"/>
+<xs:enumeration value="AGREED_MF"/>
+<xs:enumeration value="SEND_FOR_APP_MF"/>
+<xs:enumeration value="INCLUDED_SRC"/>
+<xs:enumeration value="TEMPL_FOR_FA"/>
+<xs:enumeration value="ELEBOR_FEA"/>
+<xs:enumeration value="SEND_TO_FEA"/>
+<xs:enumeration value="APPROVED_FEA"/>
+<xs:enumeration value="ELEBOR_FA"/>
+<xs:enumeration value="APPROVED_FA"/>
+<xs:enumeration value="DRAFT_FEA"/>
+<xs:enumeration value="CREATED_FEA"/>
+<xs:enumeration value="SEND_FOR_AGR_FEA"/>
+<xs:enumeration value="AGREED_FEA"/>
+<xs:enumeration value="REWORK_FEA"/>
+<xs:enumeration value="INCLUDED_PAYM"/>
+<xs:enumeration value="DRAFT"/>
+<xs:enumeration value="CREATED_AO"/>
+<xs:enumeration value="SIGN_AO"/>
+<xs:enumeration value="FT_VERIFICATION"/>
+<xs:enumeration value="FT_REJECTED"/>
+<xs:enumeration value="REWORK"/>
+<xs:enumeration value="ACCEPT_CHANGES"/>
+<xs:enumeration value="SEND_FOR_AGR_MF"/>
+<xs:enumeration value="DONE"/>
+<xs:enumeration value="DRAFT_FA"/>
+<xs:enumeration value="CREATED_FA"/>
+<xs:enumeration value="SEND_FOR_AGR_FA"/>
+<xs:enumeration value="REWORK_FA"/>
+<xs:enumeration value="AGREED_FA"/>
+<xs:enumeration value="SEND_FOR_APP_FA"/>
+<xs:enumeration value="ELEBOR_CAFB"/>
+<xs:enumeration value="SIGN_CAFB"/>
+<xs:enumeration value="ELEBOR_AFB"/>
+<xs:enumeration value="SIGN_AFB"/>
+<xs:enumeration value="RS_NEWBCCR"/>
+<xs:enumeration value="SEND_FOR_AGR_IFTS"/>
+<xs:enumeration value="SEND_FOR_AGR_FTTA"/>
+<xs:enumeration value="AGREED_IFTS"/>
+<xs:enumeration value="AGREED_FTTA"/>
+<xs:enumeration value="PLF_REJECTED_IFTS"/>
+<xs:enumeration value="PLF_REJECTED_FTA"/>
+<xs:enumeration value="APPROVED"/>
+<xs:enumeration value="UNDER_CONSID_YO"/>
+<xs:enumeration value="UR_SEND_FOR_APPROVE"/>
+<xs:enumeration value="APPROVMENT_PROGRESS"/>
+<xs:enumeration value="REJECTED"/>
+<xs:enumeration value="AL_TRUE"/>
+<xs:enumeration value="AL_FALSE"/>
+<xs:enumeration value="AL_WAITING"/>
+<xs:enumeration value="SIGN_SEND_FOR_AGREED"/>
+<xs:enumeration value="SEND_FOR_APP"/>
+<xs:enumeration value="EMPTY"/>
+<xs:enumeration value="AGREED"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_YesNoText">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Да"/>
+<xs:enumeration value="Нет"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_CODE_OBR">
+<xs:restriction base="xs:string">
+<xs:enumeration value="01"/>
+<xs:enumeration value="52"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tRptType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Первичный"/>
+<xs:enumeration value="Сводный"/>
+<xs:enumeration value="Консолидированный"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_BranchTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="01"/>
+<xs:enumeration value="02"/>
+<xs:enumeration value="03"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tOprTp">
+<xs:restriction base="xs:string">
+<xs:enumeration value="VDK"/>
+<xs:enumeration value="MDK"/>
+<xs:enumeration value="SAVE"/>
+<xs:enumeration value="FLK"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tDecisionType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Принятие"/>
+<xs:enumeration value="Отказ"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_RegistrationTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="S"/>
+<xs:enumeration value="F"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_AuthUseTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="РУБП"/>
+<xs:enumeration value="НУБП"/>
+<xs:enumeration value="ПУБП"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tSgnAdvncPmnt">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0 - платеж не является авансовым"/>
+<xs:enumeration value="1 - платеж является авансовым"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_PyDrctn">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tPySts">
+<xs:restriction base="xs:string">
+<xs:enumeration value="01 - налогоплательщик (плательщик сборов) - юридическое лицо"/>
+<xs:enumeration value="02 - налоговый агент"/>
+<xs:enumeration value="03 - организация федеральной почтовой связи, составившая распоряжение о переводе денежных средств по каждому платежу физического лица"/>
+<xs:enumeration value="04 - налоговый орган"/>
+<xs:enumeration value="05 - территориальные органы Федеральной службы судебных приставов"/>
+<xs:enumeration value="06 - участник внешнеэкономической деятельности - юридическое лицо"/>
+<xs:enumeration value="07 - таможенный орган"/>
+<xs:enumeration value="08 - плательщик - юридическое лицо (индивидуальный предприниматель), осуществляющее перевод денежных средств в уплату страховых взносов и иных платежей в бюджетную систему Российской Федерации"/>
+<xs:enumeration value="09 - налогоплательщик (плательщик сборов) - индивидуальный предприниматель"/>
+<xs:enumeration value="10 - налогоплательщик (плательщик сборов) - нотариус, занимающийся частной практикой"/>
+<xs:enumeration value="11 - налогоплательщик (плательщик сборов) - адвокат, учредивший адвокатский кабинет"/>
+<xs:enumeration value="12 - налогоплательщик (плательщик сборов) - глава крестьянского (фермерского) хозяйства"/>
+<xs:enumeration value="13 - налогоплательщик (плательщик сборов) - иное физическое лицо - клиент банка (владелец счета)"/>
+<xs:enumeration value="14 - налогоплательщик, производящий выплаты физическим лицам"/>
+<xs:enumeration value="15 - кредитная организация (филиал кредитной организации), платежный агент, организация федеральной почтовой связи, составившие платежное поручение на общую сумму с реестром на перевод денежных средств, принятых от плательщиков - физических лиц"/>
+<xs:enumeration value="16 - участник внешнеэкономической деятельности - физическое лицо"/>
+<xs:enumeration value="17 - участник внешнеэкономической деятельности - индивидуальный предприниматель"/>
+<xs:enumeration value="18 - плательщик таможенных платежей, не являющийся декларантом, на которого законодательством Российской Федерации возложена обязанность по уплате таможенных платежей"/>
+<xs:enumeration value="19 - организации и их филиалы (далее - организации), составившие распоряжение о переводе денежных средств, удержанных из заработной платы (дохода) должника - физического лица в счет погашения задолженности по платежам в бюджетную систему Российской Федерации на основании исполнительного документа, направленного в организацию в установленном порядке"/>
+<xs:enumeration value="20 - кредитная организация (филиал кредитной организации), платежный агент, составившие распоряжение о переводе денежных средств по каждому платежу физического лица"/>
+<xs:enumeration value="21 - ответственный участник консолидированной группы налогоплательщиков"/>
+<xs:enumeration value="22 - участник консолидированной группы налогоплательщиков"/>
+<xs:enumeration value="23 - органы контроля за уплатой страховых взносов"/>
+<xs:enumeration value="24 - плательщик - физическое лицо, осуществляющее перевод денежных средств в уплату страховых взносов и иных платежей в бюджетную систему Российской Федерации"/>
+<xs:enumeration value="25 - банки-гаранты, составившие распоряжение о переводе денежных средств в бюджетную систему Российской Федерации при возврате налога на добавленную стоимость, излишне полученной налогоплательщиком (зачтенной ему) в заявительном порядке, а также при уплате акцизов, исчисленных по операциям реализации подакцизных товаров за пределы территории Российской Федерации, и акцизов по алкогольной и (или) подакцизной спиртосодержащей продукции"/>
+<xs:enumeration value="26 - учредители (участники) должника, собственники имущества должника - унитарного предприятия или третьи лица, составившие распоряжение о переводе денежных средств на погашение требований к должнику по уплате обязательных платежей, включенных в реестр требований кредиторов, в ходе процедур, применяемых в деле о банкротстве."/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_RfndDc">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Заявка на возврат"/>
+<xs:enumeration value="Заявка на кассовый расход"/>
+<xs:enumeration value="Заявка на получение наличных денег"/>
+<xs:enumeration value="Заявка на получение денежных средств, перечисляемых на карту"/>
+<xs:enumeration value="Платежное поручение"/>
+<xs:enumeration value="Бухгалтерская справка ф. 0504833"/>
+<xs:enumeration value="Уведомление об уточнении операций клиента"/>
+<xs:enumeration value="Сводная заявка на кассовый расход (для уплаты налогов)"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tTpKBK">
+<xs:restriction base="xs:string">
+<xs:enumeration value="10 - «расходы»"/>
+<xs:enumeration value="20 - «доходы»"/>
+<xs:enumeration value="31 - «ИВФДБ»"/>
+<xs:enumeration value="32 - «ИВнФДБ»"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_UchrezhTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tCtrlSt">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Не требуется"/>
+<xs:enumeration value="Не проводился"/>
+<xs:enumeration value="Пройден"/>
+<xs:enumeration value="Есть ошибки"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tlists">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0-Да"/>
+<xs:enumeration value="1-Нет"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_TypeIS">
+<xs:restriction base="xs:string">
+<xs:enumeration value="01"/>
+<xs:enumeration value="02"/>
+<xs:enumeration value="03"/>
+<xs:enumeration value="04"/>
+<xs:enumeration value="05"/>
+<xs:enumeration value="06"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_OKVEDLetterTypes">
+<xs:restriction base="xs:string">
+<xs:enumeration value="С"/>
+<xs:enumeration value="О"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tTypes_of_registry_for_SvR">
+<xs:restriction base="xs:string">
+<xs:enumeration value="ПУБП"/>
+<xs:enumeration value="НУБП"/>
+<xs:enumeration value="РУБП"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tOrderPy">
+<xs:restriction base="xs:string">
+<xs:enumeration value="0"/>
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="3"/>
+<xs:enumeration value="4"/>
+<xs:enumeration value="5"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tMSC_BKTp10">
+<xs:restriction base="xs:string">
+<xs:enumeration value="10"/>
+<xs:enumeration value="31"/>
+<xs:enumeration value="32"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tStatesApproveEXP">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Требует согласования"/>
+<xs:enumeration value="Направлен на согласование"/>
+<xs:enumeration value="Согласован"/>
+<xs:enumeration value="Отменен"/>
+<xs:enumeration value="На доработку"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tAccount_statuses">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tStates">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Требует согласования"/>
+<xs:enumeration value="Согласован"/>
+<xs:enumeration value="Внесены предложения"/>
+<xs:enumeration value="Направлен на согласование"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_GMUStatuses">
+<xs:restriction base="xs:string">
+<xs:enumeration value="800"/>
+<xs:enumeration value="801"/>
+<xs:enumeration value="865"/>
+<xs:enumeration value="888"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tOperationIndicator">
+<xs:restriction base="xs:string">
+<xs:enumeration value="NoChange"/>
+<xs:enumeration value="Changed"/>
+<xs:enumeration value="Deleted"/>
+<xs:enumeration value="Added"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tRGZ_TEST">
+<xs:restriction base="xs:string">
+<xs:enumeration value="RGZ_A"/>
+<xs:enumeration value="RGZ_B"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tPrmTp">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Константа"/>
+<xs:enumeration value="Поле документа"/>
+<xs:enumeration value="Массив строк"/>
+<xs:enumeration value="Сумма по графе"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_ClientTypes_v1">
+<xs:restriction base="xs:string">
+<xs:enumeration value="НУБП"/>
+<xs:enumeration value="АУ"/>
+<xs:enumeration value="БУ"/>
+<xs:enumeration value="УП"/>
+<xs:enumeration value="ЮЛ"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tAuthorities_statuses">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+<xs:enumeration value="4"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tFOConsiderationState">
+<xs:restriction base="xs:string">
+<xs:enumeration value="На рассмотрении в ФО"/>
+<xs:enumeration value="Положительное решение"/>
+<xs:enumeration value="Отрицательное решение"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tTpOfCntrl">
+<xs:restriction base="xs:string">
+<xs:enumeration value="МДК"/>
+<xs:enumeration value="ВДК"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tSig">
+<xs:restriction base="xs:string">
+<xs:enumeration value="ФБ"/>
+<xs:enumeration value="МФ"/>
+<xs:enumeration value="ГВФ"/>
+<xs:enumeration value="СБ"/>
+<xs:enumeration value="ФБ ЗК"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tChangeListKind">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Основной документ"/>
+<xs:enumeration value="Внесение изменений"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tREF_PDIStatuses">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tStOfRprtTp">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Бюджетная"/>
+<xs:enumeration value="Бухгалтерская"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tTpVsblty">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Видимо"/>
+<xs:enumeration value="Невидимо"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tCommonSign">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Устаревший"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tAnnulmentState">
+<xs:restriction base="xs:string">
+<xs:enumeration value="На аннулировании"/>
+<xs:enumeration value="Утверждено"/>
+<xs:enumeration value="Доработать"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tTpRslt">
+<xs:restriction base="xs:string">
+<xs:enumeration value="None"/>
+<xs:enumeration value="Field"/>
+<xs:enumeration value="Calculate"/>
+<xs:enumeration value="Constant"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tSrc">
+<xs:restriction base="xs:string">
+<xs:enumeration value="1 - «средства бюджета»"/>
+<xs:enumeration value="3 - «средства дополнительного бюджетного финансирования»"/>
+<xs:enumeration value="4 - «средства для финансирования мероприятий по оперативно-розыскной деятельности»"/>
+<xs:enumeration value="5 - «средства, поступающие во временное распоряжение казенных учреждений»"/>
+<xs:enumeration value="6 - «средства юридических лиц»"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tRprtngPrd">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Месячная"/>
+<xs:enumeration value="Квартальная"/>
+<xs:enumeration value="Годовая"/>
+<xs:enumeration value="На определенную дату по требованию"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tCdOfTpBdgt">
+<xs:restriction base="xs:string">
+<xs:enumeration value="01 - федеральный бюджет"/>
+<xs:enumeration value="02 - бюджет субъекта РФ"/>
+<xs:enumeration value="03 - местный бюджет"/>
+<xs:enumeration value="04 - бюджет городского округа"/>
+<xs:enumeration value="05 - бюджет муниципального района"/>
+<xs:enumeration value="06 - бюджет пенсионного фонда РФ"/>
+<xs:enumeration value="07 - бюджет фонда социального страхования РФ"/>
+<xs:enumeration value="08 - бюджет федерального фонда обязательного медицинского страхования РФ"/>
+<xs:enumeration value="09 - бюджет территориального фонда обязательного медицинского страхования"/>
+<xs:enumeration value="10 - бюджет поселения"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tTpDcmnt">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Сведения о соглашении"/>
+<xs:enumeration value="Информация о перечислении субсидии"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

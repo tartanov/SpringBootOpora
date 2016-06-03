@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xsd:schema xmlns="http://ufos.otr.ru/core/user-context/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ufos.otr.ru/core/user-context/v1" elementFormDefault="qualified" version="1.0">
+	<xsd:element name="user-context" type="userContext"/>
+
+	<xsd:complexType name="userContext">
+		<xsd:annotation>
+			<xsd:documentation>Контекст пользователя с информацией о нем и организации, от лица которой он работает в данный момент.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="user" type="user" minOccurs="0"/>
+			<xsd:element name="organization" type="organization"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="user">
+		<xsd:annotation>
+			<xsd:documentation>Информация о текущем пользователе.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:attribute name="username" type="xsd:token" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Логин пользователя.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="organization">
+		<xsd:annotation>
+			<xsd:documentation>Организация, от лица которой работает пользователь в данный момент.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:attribute name="uid" type="xsd:token">
+			<xsd:annotation>
+				<xsd:documentation>
+					Глобальный идентификатор организации.
+					В данный момент на стороне УФОС используется для идентификации организации и соответствует ее системному имени.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="code" type="xsd:normalizedString">
+			<xsd:annotation>
+				<xsd:documentation>
+					Код организации. Однозначно не ясно, что под ним подразумевалось при описании схемы. Вероятно, это бизнес-код справочника.
+					В данный момент на стороне УФОС не используется.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="name" type="xsd:normalizedString">
+			<xsd:annotation>
+				<xsd:documentation>
+					Наименование организации.
+					В данный момент на стороне УФОС используется для задания наименования создаваемой при первом запросе организации.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+</xsd:schema>

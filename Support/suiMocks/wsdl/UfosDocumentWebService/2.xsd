@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/Registryaccount/formular" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/Registryaccount/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="Registryaccount" type="tns:tRegistryaccount"/>
+
+<xs:complexType name="tRegistryaccount">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="Hdr_GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_DtTm" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_TOFKCd" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_GUIDRgs" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_GeneralInf" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="GeneralInf_ITEM" type="tns:tHdr_GeneralInf_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tHdr_GeneralInf_ITEM">
+<xs:sequence>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocInformAcc" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="DocInformAcc_ITEM" type="tns:tDocInformAcc_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tDocInformAcc_ITEM">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="SttsDc" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tHdr_GeneralInf">
+<xs:sequence>
+<xs:element name="GeneralInf_ITEM" type="tns:tHdr_GeneralInf_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tDocInformAcc">
+<xs:sequence>
+<xs:element name="DocInformAcc_ITEM" type="tns:tDocInformAcc_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

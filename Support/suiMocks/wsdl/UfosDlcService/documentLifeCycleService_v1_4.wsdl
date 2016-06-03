@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><wsdl:definitions xmlns="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" xmlns:cc="http://ufos.otr.ru/ws/core/common/v1_2" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:uc="http://ufos.otr.ru/core/user-context/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" xsi:schemaLocation="http://ufos.otr.ru/ws/core/common/v1_2 http://ufos.otr.ru/ws/core/common/v1_2/core-common.xsd                                       http://ufos.otr.ru/core/user-context/v1 http://ufos.otr.ru/core/user-context/v1/user-context.xsd" name="documentLifeCycleService">
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" schemaLocation="4.xsd"/>
+			<xsd:import namespace="http://ufos.otr.ru/ws/core/common/v1_2" schemaLocation="3.xsd"/>
+			<xsd:import namespace="http://ufos.otr.ru/core/user-context/v1" schemaLocation="2.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="storeDocumentReqMsg">
+		<wsdl:part name="parameters" element="storeDocumentRequest"/>
+		<wsdl:part name="userContext" element="uc:user-context"/>
+	</wsdl:message>
+	<wsdl:message name="storeDocumentRespMsg">
+		<wsdl:part name="parameters" element="storeDocumentResponse"/>
+	</wsdl:message>
+	<wsdl:message name="invalidGuidFault">
+		<wsdl:part name="fault" element="cc:invalidGuidFault"/>
+	</wsdl:message>
+	<wsdl:message name="incorrectMappingConfigurationFault">
+		<wsdl:part name="fault" element="incorrectMappingConfigurationFault"/>
+	</wsdl:message>
+	<wsdl:message name="noSuitableConversionFault">
+		<wsdl:part name="fault" element="noSuitableConversionFault"/>
+	</wsdl:message>
+	<wsdl:message name="editPolicyProhibitionFault">
+		<wsdl:part name="fault" element="editPolicyProhibitionFault"/>
+	</wsdl:message>
+	<wsdl:message name="transitionExecutionFault">
+		<wsdl:part name="fault" element="transitionExecutionFault"/>
+	</wsdl:message>
+	<wsdl:message name="mismatchDocumentTypeFault">
+		<wsdl:part name="fault" element="mismatchDocumentTypeFault"/>
+	</wsdl:message>
+	<wsdl:message name="securityFault">
+		<wsdl:part name="fault" element="securityFault"/>
+	</wsdl:message>
+
+	<wsdl:message name="executeTransitionReqMsg">
+		<wsdl:part name="parameters" element="executeTransitionRequest"/>
+		<wsdl:part name="userContext" element="uc:user-context"/>
+	</wsdl:message>
+	<wsdl:message name="executeTransitionRespMsg">
+		<wsdl:part name="parameters" element="executeTransitionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="documentNotFoundFault">
+		<wsdl:part name="fault" element="documentNotFoundFault"/>
+	</wsdl:message>
+	<wsdl:message name="transitionNotFoundFault">
+		<wsdl:part name="fault" element="transitionNotFoundFault"/>
+	</wsdl:message>
+
+	<wsdl:message name="pushDocumentStateReqMsg">
+		<wsdl:part name="parameters" element="pushDocumentStateRequest"/>
+		<wsdl:part name="userContext" element="uc:user-context"/>
+	</wsdl:message>
+	<wsdl:message name="pushDocumentStateRespMsg">
+		<wsdl:part name="parameters" element="pushDocumentStateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ambiguousTransitionFault">
+		<wsdl:part name="fault" element="ambiguousTransitionFault"/>
+	</wsdl:message>
+
+	<wsdl:message name="getStateReqMsg">
+		<wsdl:part name="parameters" element="getStateRequest"/>
+		<wsdl:part name="userContext" element="uc:user-context"/>
+	</wsdl:message>
+	<wsdl:message name="getStateRespMsg">
+		<wsdl:part name="parameters" element="getStateResponse"/>
+	</wsdl:message>
+
+	<wsdl:portType name="documentLifeCyclePort">
+		<wsdl:operation name="storeDocument" parameterOrder="parameters userContext">
+			<wsdl:documentation>
+				Операция сохранения документа.
+				Документ может быть новый или уже существующий.
+				Если документ новый, то он будет создан либо с указанным глобальным идентификатором, либо будет сгенерирован новый идентификатор.
+				Если документ с указанным идентификатором уже зарегистрирован в системе, то будет произведена попытка обновить его.
+				Глобальный идентификатор может быть задан внутри содержимого документа, либо в запросе.
+			</wsdl:documentation>
+
+			<wsdl:input message="storeDocumentReqMsg"/>
+			<wsdl:output message="storeDocumentRespMsg"/>
+
+			<wsdl:fault name="invalidGuidFault" message="invalidGuidFault">
+				<wsdl:documentation>Ошибка при некорректности формата указанного в запросе глобального идентификатора.</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="incorrectMappingConfigurationFault" message="incorrectMappingConfigurationFault">
+				<wsdl:documentation>
+					Ошибка при невозможности конвертирвоать документ в XML (или обратно):
+					- отсутствует описание mapping;
+					- некорректное описание mapping;
+					- невозможность выбрать нужный mapping из имеющихся;
+					- отсутствие прикладного класса, используемого при конвертации;
+					- некорректная структура прикладного класса или местоположение;
+					- прочие системные ошибки, ввызванные некорретностью описания процесса конвертирования документа в XML и обратно.
+				</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="noSuitableConversionFault" message="noSuitableConversionFault">
+				<wsdl:documentation>
+					Ошибка при невозможности конвертирвоать документ в XML (или обратно):
+					- если для обработки XML представления отсутствуют необходимые JAXB классы;
+				</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="editPolicyProhibitionFault" message="editPolicyProhibitionFault">
+				<wsdl:documentation>
+					Ошибка в случае, если политика редактирования документа, определенная в декларативном жизненном цикле текущего документа, не позволяет
+					выполнять запрошенные изменения документа.
+				</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="transitionExecutionFault" message="transitionExecutionFault">
+				<wsdl:documentation>Ошибка в случае невозмозможности выполнить переход ДЖЦ.</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="mismatchDocumentTypeFault" message="mismatchDocumentTypeFault">
+				<wsdl:documentation>Ошибка в случае несовпадения типа у обновляемого документа и переданного в запросе типа.</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="securityFault" message="securityFault">
+				<wsdl:documentation>Ошибка при невозможности получить доступ к документу.</wsdl:documentation>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="executeTransition" parameterOrder="parameters userContext">
+			<wsdl:documentation>Операция вызова указанного перехода для документа с заданным глобальным идентификатором.</wsdl:documentation>
+
+			<wsdl:input message="executeTransitionReqMsg"/>
+			<wsdl:output message="executeTransitionRespMsg"/>
+
+			<wsdl:fault name="invalidGuidFault" message="invalidGuidFault">
+				<wsdl:documentation>Ошибка при некорректности формата указанного в запросе глобального идентификатора.</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="documentNotFoundFault" message="documentNotFoundFault">
+				<wsdl:documentation>Ошибка в случае, когда документ не был найден в системе.</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="transitionNotFoundFault" message="transitionNotFoundFault">
+				<wsdl:documentation>Ошибка в случае, когда в ЖЦ документа нет указанного перехода.</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="transitionExecutionFault" message="transitionExecutionFault">
+				<wsdl:documentation>Ошибка в случае невозмозможности выполнить переход ДЖЦ.</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="editPolicyProhibitionFault" message="editPolicyProhibitionFault">
+				<wsdl:documentation>
+					Ошибка в случае, если политика редактирования документа, определенная в декларативном жизненном цикле текущего документа, не позволяет
+					выполнять запрошенные изменения документа.
+				</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="securityFault" message="securityFault">
+				<wsdl:documentation>Ошибка при невозможности получить доступ к документу.</wsdl:documentation>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="pushDocumentState" parameterOrder="parameters userContext">
+			<wsdl:documentation>
+				Операция вызова следующего перехода, который определен однозначно, для документа с заданным глобальным идентификатором.
+			</wsdl:documentation>
+
+			<wsdl:input message="pushDocumentStateReqMsg"/>
+			<wsdl:output message="pushDocumentStateRespMsg"/>
+
+			<wsdl:fault name="invalidGuidFault" message="invalidGuidFault">
+				<wsdl:documentation>Ошибка при некорректности формата указанного в запросе глобального идентификатора.</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="documentNotFoundFault" message="documentNotFoundFault">
+				<wsdl:documentation>Ошибка в случае, когда документ не был найден в системе.</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="ambiguousTransitionFault" message="ambiguousTransitionFault">
+				<wsdl:documentation>Ошибка в случае, когда не удалось подобрать однозначный переход для документа.</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="transitionExecutionFault" message="transitionExecutionFault">
+				<wsdl:documentation>Ошибка в случае невозмозможности выполнить переход ДЖЦ.</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="editPolicyProhibitionFault" message="editPolicyProhibitionFault">
+				<wsdl:documentation>
+					Ошибка в случае, если политика редактирования документа, определенная в декларативном жизненном цикле текущего документа, не позволяет
+					выполнять запрошенные изменения документа.
+				</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="securityFault" message="securityFault">
+				<wsdl:documentation>Ошибка при невозможности получить доступ к документу.</wsdl:documentation>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="getState">
+			<wsdl:documentation>Сервис для получения статуса документа.</wsdl:documentation>
+
+			<wsdl:input message="getStateReqMsg"/>
+			<wsdl:output message="getStateRespMsg"/>
+
+			<wsdl:fault name="invalidGuidFault" message="invalidGuidFault">
+				<wsdl:documentation>Ошибка при некорректности формата указанного в запросе глобального идентификатора.</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="documentNotFoundFault" message="documentNotFoundFault">
+				<wsdl:documentation>Ошибка в случае, когда документ не был найден в системе.</wsdl:documentation>
+			</wsdl:fault>
+			<wsdl:fault name="securityFault" message="securityFault">
+				<wsdl:documentation>Ошибка при невозможности получить доступ к документу.</wsdl:documentation>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="documentLifeCycleBinding" type="documentLifeCyclePort">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+
+		<wsdl:operation name="storeDocument">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal" parts="parameters"/>
+				<soap:header message="storeDocumentReqMsg" part="userContext" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+
+			<wsdl:fault name="invalidGuidFault">
+				<soap:fault name="invalidGuidFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="incorrectMappingConfigurationFault">
+				<soap:fault name="incorrectMappingConfigurationFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="noSuitableConversionFault">
+				<soap:fault name="noSuitableConversionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="editPolicyProhibitionFault">
+				<soap:fault name="editPolicyProhibitionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="transitionExecutionFault">
+				<soap:fault name="transitionExecutionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="mismatchDocumentTypeFault">
+				<soap:fault name="mismatchDocumentTypeFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="securityFault">
+				<soap:fault name="securityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="executeTransition">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal" parts="parameters"/>
+				<soap:header message="executeTransitionReqMsg" part="userContext" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+
+			<wsdl:fault name="invalidGuidFault">
+				<soap:fault name="invalidGuidFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="documentNotFoundFault">
+				<soap:fault name="documentNotFoundFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="transitionNotFoundFault">
+				<soap:fault name="transitionNotFoundFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="transitionExecutionFault">
+				<soap:fault name="transitionExecutionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="editPolicyProhibitionFault">
+				<soap:fault name="editPolicyProhibitionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="securityFault">
+				<soap:fault name="securityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="pushDocumentState">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal" parts="parameters"/>
+				<soap:header message="pushDocumentStateReqMsg" part="userContext" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+
+			<wsdl:fault name="invalidGuidFault">
+				<soap:fault name="invalidGuidFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="documentNotFoundFault">
+				<soap:fault name="documentNotFoundFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="ambiguousTransitionFault">
+				<soap:fault name="ambiguousTransitionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="transitionExecutionFault">
+				<soap:fault name="transitionExecutionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="editPolicyProhibitionFault">
+				<soap:fault name="editPolicyProhibitionFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="securityFault">
+				<soap:fault name="securityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="getState">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal" parts="parameters"/>
+				<soap:header message="getStateReqMsg" part="userContext" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+
+			<wsdl:fault name="invalidGuidFault">
+				<soap:fault name="invalidGuidFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="documentNotFoundFault">
+				<soap:fault name="documentNotFoundFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="securityFault">
+				<soap:fault name="securityFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="documentLifeCycleService">
+		<wsdl:port name="documentLifeCyclePort_v1_4" binding="documentLifeCycleBinding">
+			<soap:address location="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/documentLifeCycleService_v1_4"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

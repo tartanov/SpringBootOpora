@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/EXP_Receipt/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common" xmlns:ns1="http://www.roskazna.ru/eb/domain/common/applied" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/EXP_Receipt/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="EXP_Receipt" type="tns:tEXP_Receipt"/>
+
+<xs:complexType name="tEXP_Receipt">
+<xs:complexContent>
+<xs:extension base="ns2:tFormular">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="DtTm" type="xs:string" minOccurs="0"/>
+<xs:element name="DcmntTp" type="ns1:tDcmntTpComplex" minOccurs="0"/>
+<xs:element name="DocGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="SrcGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="RStatus" type="xs:string" minOccurs="0"/>
+<xs:element name="SttTskNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="CnsldtdRgstrCd" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+<xs:element name="NxtFnnclPrd" type="xs:string" minOccurs="0"/>
+<xs:element name="FrstYrFnnclPrd" type="xs:string" minOccurs="0"/>
+<xs:element name="ScndYrFnnclPrd" type="xs:string" minOccurs="0"/>
+<xs:element name="errMsg" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="errMsg_ITEM" type="tns:terrMsg_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="terrMsg_ITEM">
+<xs:sequence>
+<xs:element name="errCode" type="xs:string" minOccurs="0"/>
+<xs:element name="errText" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="terrMsg">
+<xs:sequence>
+<xs:element name="errMsg_ITEM" type="tns:terrMsg_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

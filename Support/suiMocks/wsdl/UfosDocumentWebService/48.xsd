@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/EXP_InformationAbout/formular" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/EXP_InformationAbout/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="EXP_InformationAbout" type="tns:tEXP_InformationAbout"/>
+
+<xs:complexType name="tEXP_InformationAbout">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="GenInfo_DateTimeCreate" type="xs:string" minOccurs="0"/>
+<xs:element name="PublicationInf_RegisterNumber" type="xs:string" minOccurs="0"/>
+<xs:element name="PublicationInf_PublicStatus" type="xs:string" minOccurs="0"/>
+<xs:element name="PublicationInf_PublicDateTime" type="xs:string" minOccurs="0"/>
+<xs:element name="PublicationInf_SystemCode" type="xs:string" minOccurs="0"/>
+<xs:element name="TecReq_GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="TecReq_GUIDInfoState" type="xs:string" minOccurs="0"/>
+<xs:element name="TecReq_GUIDRegisPublic" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:schema>

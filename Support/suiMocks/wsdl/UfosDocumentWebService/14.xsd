@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/REF_Budgets/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/REF_Budgets/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:element name="REF_Budgets" type="tns:tREF_Budgets"/>
+
+<xs:complexType name="tDICT_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="ORGCODE" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ORGVISIBILITY" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_Budgets">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string"/>
+<xs:element name="OpenDate" type="xs:string"/>
+<xs:element name="CloseDate" type="xs:string" minOccurs="0"/>
+<xs:element name="StartDateActive" type="xs:string"/>
+<xs:element name="EndDateActive" type="xs:string" minOccurs="0"/>
+<xs:element name="BudgetStatus" type="xs:string"/>
+<xs:element name="Status" type="ns2:tSystem_statusesComplex"/>
+<xs:element name="Code" type="xs:string"/>
+<xs:element name="lName" type="xs:string"/>
+<xs:element name="TOFKName" type="xs:string" minOccurs="0"/>
+<xs:element name="TOFKCode" type="tns:tLpTOFKCode" minOccurs="0"/>
+<xs:element name="ParentCode" type="tns:tLpParentCode" minOccurs="0"/>
+<xs:element name="BudgLevelCode" type="tns:tLpBudgLevelCode" minOccurs="0"/>
+<xs:element name="BudgTypeCode" type="tns:tLpBudgTypeCode" minOccurs="0"/>
+<xs:element name="OKATOCode" type="tns:tLpOKATOCode" minOccurs="0"/>
+<xs:element name="OKTMOCode" type="tns:tLpOKTMOCode" minOccurs="0"/>
+<xs:element name="FOOrgCode" type="tns:tLpFOOrgCode" minOccurs="0"/>
+<xs:element name="FOOrgCodeUBP" type="tns:tLpFOOrgCodeUBP" minOccurs="0"/>
+<xs:element name="DICT_BASE" type="tns:tDICT_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tLpTOFKCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpParentCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpBudgLevelCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpBudgTypeCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOKATOCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOKTMOCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpFOOrgCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpFOOrgCodeUBP">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+</xs:schema>

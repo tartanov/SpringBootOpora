@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/Test_Pavel/formular" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/Test_Pavel/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="Test_Pavel" type="tns:tTest_Pavel"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tTest_Pavel">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="SysInfo_GUIDTest1" type="xs:string" minOccurs="0"/>
+<xs:element name="SysInfo_CreatDate" type="xs:string" minOccurs="0"/>
+<xs:element name="PersonalInfo_FIOTest" type="xs:string" minOccurs="0"/>
+<xs:element name="PersonalInfo_PositionHead" type="xs:string" minOccurs="0"/>
+<xs:element name="PersonalInfo_TelephoneHead" type="xs:string" minOccurs="0"/>
+<xs:element name="MainInfo_NameOrganization" type="xs:string" minOccurs="0"/>
+<xs:element name="MainInfo_TelephonOrganization" type="xs:string" minOccurs="0"/>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:schema>

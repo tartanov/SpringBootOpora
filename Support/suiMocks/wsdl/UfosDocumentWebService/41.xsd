@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_AcStmnt/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/entity" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_AcStmnt/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:element name="MSC_AcStmnt" type="tns:tMSC_AcStmnt"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_AcStmnt">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="SPD_AccStateNum" type="xs:string" minOccurs="0"/>
+<xs:element name="SPD_StrctSbdvsn" type="xs:string" minOccurs="0"/>
+<xs:element name="SPD_DcNum" type="xs:string" minOccurs="0"/>
+<xs:element name="SPD_DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SPD_CrtnDt" type="xs:string" minOccurs="0"/>
+<xs:element name="SPD_NameReg" type="xs:string" minOccurs="0"/>
+<xs:element name="SPD_FIOBuh" type="xs:string" minOccurs="0"/>
+<xs:element name="SPD_TypeDoc" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RegisterInformAccGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RwIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_HdIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RsltPrm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_TxtRsltPrm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_ExctnDt" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RjctnRsn" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RlvncSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="SPD_MSC_Infrmtn" type="ns2:tMSC_Infrmtn" minOccurs="0"/>
+<xs:element name="SPD_MSC_HdrInst" type="ns2:tMSC_HdrInst" minOccurs="0"/>
+<xs:element name="SPD_MSC_InfrmtnBD" type="ns2:tMSC_Infrmtn" minOccurs="0"/>
+<xs:element name="SPD_MSC_RspnExctr" type="ns2:tMSC_RspnExctr" minOccurs="0"/>
+<xs:element name="SPD_MSC_Hd" type="ns2:tMSC_Hd" minOccurs="0"/>
+<xs:element name="SPRR" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="SPRR_ITEM" type="tns:tSPRR_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="StmInfrmtn_TabSI" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TabSI_ITEM" type="tns:tStmInfrmtn_TabSI_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tSPRR_ITEM">
+<xs:sequence>
+<xs:element name="OprtnNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DcNum" type="xs:string" minOccurs="0"/>
+<xs:element name="DateDocBU" type="xs:string" minOccurs="0"/>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="Dbt" type="xs:string" minOccurs="0"/>
+<xs:element name="TargetCodeDebit" type="xs:string" minOccurs="0"/>
+<xs:element name="NumLSDebit" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIPObjCodeDebit" type="xs:string" minOccurs="0"/>
+<xs:element name="Crdt" type="xs:string" minOccurs="0"/>
+<xs:element name="TargetCodeCredit" type="xs:string" minOccurs="0"/>
+<xs:element name="NumLSCredit" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIPObjCodeCredit" type="xs:string" minOccurs="0"/>
+<xs:element name="Amnt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="KBKdebit" type="xs:string" minOccurs="0"/>
+<xs:element name="KBKcredit" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tStmInfrmtn_TabSI_ITEM">
+<xs:sequence>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="AccountTransGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="SignUpdate" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tStmInfrmtn_TabSI">
+<xs:sequence>
+<xs:element name="TabSI_ITEM" type="tns:tStmInfrmtn_TabSI_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tSPRR">
+<xs:sequence>
+<xs:element name="SPRR_ITEM" type="tns:tSPRR_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

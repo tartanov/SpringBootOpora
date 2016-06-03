@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_CurrStatLBO/formular" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_CurrStatLBO/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="MSC_CurrStatLBO" type="tns:tMSC_CurrStatLBO"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_CurrStatLBO">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="DateTimeCreate" type="xs:string" minOccurs="0"/>
+<xs:element name="AccountNum" type="xs:string" minOccurs="0"/>
+<xs:element name="CodeCR" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_CardOfAccountGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="LBO" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="LBO_ITEM" type="tns:tLBO_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tLBO_ITEM">
+<xs:sequence>
+<xs:element name="Year" type="xs:string" minOccurs="0"/>
+<xs:element name="CBC" type="xs:string" minOccurs="0"/>
+<xs:element name="TrgtCd" type="xs:string" minOccurs="0"/>
+<xs:element name="LBO" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLBO">
+<xs:sequence>
+<xs:element name="LBO_ITEM" type="tns:tLBO_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

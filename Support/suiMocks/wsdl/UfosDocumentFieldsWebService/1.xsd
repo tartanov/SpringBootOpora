@@ -1,0 +1,336 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.otr.ru/ufos/ws/core/facade" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.otr.ru/ufos/ws/core/facade">
+
+<xs:element name="DictionaryNotFoundFault" nillable="true" type="tns:lifecycleFaultBean"/>
+
+<xs:element name="DocumentLoadFault" nillable="true" type="tns:lifecycleFaultBean"/>
+
+<xs:element name="DocumentNotFoundFault" nillable="true" type="tns:lifecycleFaultBean"/>
+
+<xs:element name="DocumentSaveFault" nillable="true" type="tns:lifecycleFaultBean"/>
+
+<xs:element name="FieldNotFoundFault" nillable="true" type="tns:lifecycleFaultBean"/>
+
+<xs:element name="GetAttribs" type="tns:GetAttribs"/>
+
+<xs:element name="GetAttribsResponse" type="tns:GetAttribsResponse"/>
+
+<xs:element name="GetDictionaryValuesRequest" type="tns:GetDictionaryValuesRequest"/>
+
+<xs:element name="GetDictionaryValuesResponse" type="tns:GetDictionaryValuesResponse"/>
+
+<xs:element name="GetDocInfoRequest" type="tns:GetDocInfoRequest"/>
+
+<xs:element name="GetDocInfoResponse" type="tns:GetDocInfoResponse"/>
+
+<xs:element name="GetFieldValuesRequest" type="tns:GetFieldValuesRequest"/>
+
+<xs:element name="GetFieldValuesResponse" type="tns:GetFieldValuesResponse"/>
+
+<xs:element name="GetFilteredDictionaryValuesRequest" type="tns:GetFilteredDictionaryValuesRequest"/>
+
+<xs:element name="GetFilteredDictionaryValuesResponse" type="tns:GetFilteredDictionaryValuesResponse"/>
+
+<xs:element name="GetFilteredTableValuesRequest" type="tns:GetFilteredTableValuesRequest"/>
+
+<xs:element name="GetFilteredTableValuesResponse" type="tns:GetFilteredTableValuesResponse"/>
+
+<xs:element name="GetTableValuesRequest" type="tns:GetTableValuesRequest"/>
+
+<xs:element name="GetTableValuesResponse" type="tns:GetTableValuesResponse"/>
+
+<xs:element name="InvalidFieldValueFault" nillable="true" type="tns:fieldValueErrorContainer"/>
+
+<xs:element name="InvalidFieldValueFormatFault" nillable="true" type="tns:lifecycleFaultBean"/>
+
+<xs:element name="InvalidGuidFault" nillable="true" type="tns:lifecycleFaultBean"/>
+
+<xs:element name="SetFieldValuesRequest" type="tns:SetFieldValuesRequest"/>
+
+<xs:element name="SetFieldValuesResponse" type="tns:SetFieldValuesResponse"/>
+
+<xs:element name="SetTableValuesRequest" type="tns:SetTableValuesRequest"/>
+
+<xs:element name="SetTableValuesResponse" type="tns:SetTableValuesResponse"/>
+
+<xs:element name="SetTablesValuesRequest" type="tns:SetTablesValuesRequest"/>
+
+<xs:element name="SetTablesValuesResponse" type="tns:SetTablesValuesResponse"/>
+
+<xs:element name="TableNotFoundFault" nillable="true" type="tns:lifecycleFaultBean"/>
+
+<xs:element name="TableRowOutOfRangeFault" nillable="true" type="tns:lifecycleFaultBean"/>
+
+<xs:element name="dataSourceNotFoundFault" nillable="true" type="tns:lifecycleFaultBean"/>
+
+<xs:element name="listRelatedDocumentsRequest" type="tns:listRelatedDocumentsRequest"/>
+
+<xs:element name="listRelatedDocumentsResponse" type="tns:listRelatedDocumentsResponse"/>
+
+<xs:complexType name="GetFilteredDictionaryValuesRequest">
+<xs:sequence>
+<xs:element name="name" type="xs:string" form="qualified" minOccurs="0"/>
+<xs:element name="values" type="tns:tablePathWrapper" form="qualified" minOccurs="0"/>
+<xs:element name="tableValues" type="tns:tableValues" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tablePathWrapper">
+<xs:sequence>
+<xs:element name="rows" type="tns:rowPathWrapper" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="rowPathWrapper">
+<xs:sequence>
+<xs:element name="row" type="tns:fieldsValueWrapper" form="qualified" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fieldsValueWrapper">
+<xs:sequence>
+<xs:element name="value" type="tns:fieldValueWrapper" form="qualified" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+<xs:attribute name="index" type="xs:int"/>
+</xs:complexType>
+
+<xs:complexType name="fieldValueWrapper">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="path" type="xs:string" use="required"/>
+<xs:attribute name="desc" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="tableValues">
+<xs:sequence>
+<xs:element name="table" type="tns:table" form="qualified" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="table">
+<xs:sequence>
+<xs:element name="rows" type="tns:rowValueWrapper" form="qualified"/>
+</xs:sequence>
+<xs:attribute name="tableName" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="rowValueWrapper">
+<xs:sequence>
+<xs:element name="row" type="tns:fieldsValueWrapper" form="qualified" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetFilteredDictionaryValuesResponse">
+<xs:sequence>
+<xs:element name="GetFilteredDictionaryValuesResponse" type="tns:tableValueWrapper" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tableValueWrapper">
+<xs:sequence>
+<xs:element name="rows" type="tns:rowValueWrapper" form="qualified"/>
+<xs:element name="tableName" type="xs:string" form="qualified" minOccurs="0"/>
+<xs:element name="hostTableAndRow" type="tns:hostTableAndRow" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hostTableAndRow">
+<xs:sequence>
+<xs:element name="tableName" type="xs:string" form="qualified"/>
+<xs:element name="rowIndex" type="xs:int" form="qualified"/>
+<xs:element name="hostTableAndRow" type="tns:hostTableAndRow" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="lifecycleFaultBean">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="possibleTransitions">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="key" minOccurs="0" type="xs:string"/>
+<xs:element name="value" minOccurs="0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="timeStamp" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetAttribs">
+<xs:sequence>
+<xs:element name="dictionary" type="xs:boolean" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetAttribsResponse">
+<xs:sequence>
+<xs:element name="GetAttribsResponse" type="xs:string" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDictionaryValuesRequest">
+<xs:sequence>
+<xs:element name="name" type="xs:string" form="qualified" minOccurs="0"/>
+<xs:element name="values" type="tns:tablePathWrapper" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDictionaryValuesResponse">
+<xs:sequence>
+<xs:element name="GetDictionaryValuesResponse" type="tns:tableValueWrapper" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetTablesValuesRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" form="qualified" minOccurs="0"/>
+<xs:element name="values" type="tns:tableValueWrapper" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetTablesValuesResponse">
+<xs:sequence>
+<xs:element name="fields" type="tns:tableValueWrapper" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fieldValueErrorContainer">
+<xs:sequence>
+<xs:element name="errors" type="tns:fieldValueErrorList" form="qualified"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fieldValueErrorList">
+<xs:sequence>
+<xs:element name="error" type="tns:fieldValueError" form="qualified" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fieldValueError">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="fieldName" type="xs:string" use="required"/>
+<xs:attribute name="fieldDesc" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="listRelatedDocumentsRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" form="qualified" minOccurs="0"/>
+<xs:element name="datasource" type="xs:string" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listRelatedDocumentsResponse">
+<xs:sequence>
+<xs:element name="listRelatedDocumentsResponse" type="tns:documentWrapper" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="documentWrapper">
+<xs:sequence>
+<xs:element name="document" type="tns:fieldsValueWrapper" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetTableValuesRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" form="qualified" minOccurs="0"/>
+<xs:element name="tableName" type="xs:string" form="qualified" minOccurs="0"/>
+<xs:element name="values" type="tns:tableValueWrapper" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetTableValuesResponse">
+<xs:sequence>
+<xs:element name="fields" type="tns:tableValueWrapper" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetFieldValuesRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" form="qualified" minOccurs="0"/>
+<xs:element name="values" type="tns:fieldsValueWrapper" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetFieldValuesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:fieldsValueWrapper" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetFieldValuesRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" form="qualified" minOccurs="0"/>
+<xs:element name="fields" type="tns:fieldsPathWrapper" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fieldsPathWrapper">
+<xs:sequence>
+<xs:element name="field" type="tns:fieldPathWrapper" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fieldPathWrapper">
+<xs:sequence/>
+<xs:attribute name="path" type="xs:string" use="required"/>
+<xs:attribute name="desc" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="GetFieldValuesResponse">
+<xs:sequence>
+<xs:element name="fields" type="tns:fieldsValueWrapper" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetTableValuesRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" form="qualified" minOccurs="0"/>
+<xs:element name="tableName" type="xs:string" form="qualified" minOccurs="0"/>
+<xs:element name="fields" type="tns:tableValueWrapper" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetTableValuesResponse">
+<xs:sequence>
+<xs:element name="fields" type="tns:tableValueWrapper" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetFilteredTableValuesRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" form="qualified" minOccurs="0"/>
+<xs:element name="tableName" type="xs:string" form="qualified" minOccurs="0"/>
+<xs:element name="values" type="tns:tablePathWrapper" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetFilteredTableValuesResponse">
+<xs:sequence>
+<xs:element name="GetFilteredTableValuesResponse" type="tns:tableValueWrapper" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDocInfoRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDocInfoResponse">
+<xs:sequence>
+<xs:element name="GetDocInfoResponse" type="xs:string" form="qualified" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

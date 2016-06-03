@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_ExpndblSchdl/formular" xmlns:ns3="http://www.roskazna.ru/eb/domain/common/entity" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_ExpndblSchdl/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:element name="MSC_ExpndblSchdl" type="tns:tMSC_ExpndblSchdl"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_ExpndblSchdl">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="AP_GUIDFKR" type="xs:string" minOccurs="0"/>
+<xs:element name="AP_LSUBP" type="xs:string" minOccurs="0"/>
+<xs:element name="AP_NAMEBUD" type="xs:string" minOccurs="0"/>
+<xs:element name="AP_DATESIGNRR" type="xs:string" minOccurs="0"/>
+<xs:element name="AP_DOCDATEBU" type="xs:string" minOccurs="0"/>
+<xs:element name="AP_SIGNINGDATEISP" type="xs:string" minOccurs="0"/>
+<xs:element name="APRC_NmRR" type="xs:string" minOccurs="0"/>
+<xs:element name="APRC_DctDtUTV" type="xs:string" minOccurs="0"/>
+<xs:element name="APRC_ScrcSgn" type="ns2:tMSC_ScrcSgnComplex" minOccurs="0"/>
+<xs:element name="APRC_AcntNmUBP" type="xs:string" minOccurs="0"/>
+<xs:element name="APRC_TtlAmntPOF1" type="xs:decimal" minOccurs="0"/>
+<xs:element name="APRC_RqstNm" type="xs:string" minOccurs="0"/>
+<xs:element name="APRC_DctDtPP" type="xs:string" minOccurs="0"/>
+<xs:element name="APRC_DctDtUTVBA" type="xs:string" minOccurs="0"/>
+<xs:element name="APRC_DctDtUTVLBO" type="xs:string" minOccurs="0"/>
+<xs:element name="APRC_DctDtUTVPOF" type="xs:string" minOccurs="0"/>
+<xs:element name="APREORG_TOFKCd" type="xs:string" minOccurs="0"/>
+<xs:element name="APREORG_DtNgExpSch" type="xs:string" minOccurs="0"/>
+<xs:element name="APREORG_NmbrNgExpSch" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RegisterInformAccGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RwIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_HdIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RsltPrm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_TxtRsltPrm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_ExctnDt" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RjctnRsn" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RlvncSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="AP_RBSPBSAIFDB" type="ns3:tMSC_PBS_UBP" minOccurs="0"/>
+<xs:element name="AP_APGRBS" type="ns3:tMSC_GRBS" minOccurs="0"/>
+<xs:element name="AP_APTOFK" type="ns3:tMSC_OrFK" minOccurs="0"/>
+<xs:element name="AP_FO" type="ns3:tMSC_FnclInst" minOccurs="0"/>
+<xs:element name="AP_APHead" type="ns3:tMSC_Hd" minOccurs="0"/>
+<xs:element name="AP_RespEx" type="ns3:tMSC_RspnExctr" minOccurs="0"/>
+<xs:element name="APRC_MSC_Infrmtn" type="ns3:tMSC_Infrmtn" minOccurs="0"/>
+<xs:element name="APRC_MSC_PBS_UBP" type="ns3:tMSC_PBS_UBP" minOccurs="0"/>
+<xs:element name="APRC_MSC_OrFK" type="ns3:tMSC_OrFK" minOccurs="0"/>
+<xs:element name="APRC_MSC_SpclInst" type="ns3:tMSC_SpclInst" minOccurs="0"/>
+<xs:element name="APRC_MSC_KBK" type="ns3:tMSC_KBK" minOccurs="0"/>
+<xs:element name="APRC_MSC_AmntBA" type="ns3:tMSC_Amount" minOccurs="0"/>
+<xs:element name="APRC_MSC_AmntLBO" type="ns3:tMSC_Amount" minOccurs="0"/>
+<xs:element name="APREORG_MSC_PBS_UBP" type="ns3:tMSC_PBS_UBP" minOccurs="0"/>
+<xs:element name="APREORG_MSC_UBP" type="ns3:tMSC_PBS_UBP" minOccurs="0"/>
+<xs:element name="APBASTR" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="APBASTR_ITEM" type="tns:tAPBASTR_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="APLBOSTR" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="APLBOSTR_ITEM" type="tns:tAPLBOSTR_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="APPOFSTR" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="APPOFSTR_ITEM" type="tns:tAPPOFSTR_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="StmInfrmtn_TabSI" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TabSI_ITEM" type="tns:tStmInfrmtn_TabSI_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tAPBASTR_ITEM">
+<xs:sequence>
+<xs:element name="NtBA" type="xs:string" minOccurs="0"/>
+<xs:element name="SI_CurrentYear1" type="xs:string" minOccurs="0"/>
+<xs:element name="SI_FirstPlanYear1" type="xs:string" minOccurs="0"/>
+<xs:element name="SI_SecondPlanYear1" type="xs:string" minOccurs="0"/>
+<xs:element name="MSC_KBKAmntBA" type="ns3:tMSC_KBKAmount" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tAPLBOSTR_ITEM">
+<xs:sequence>
+<xs:element name="NtLBO" type="xs:string" minOccurs="0"/>
+<xs:element name="SI_CurrentYear2" type="xs:string" minOccurs="0"/>
+<xs:element name="SI_FirstPlanYear2" type="xs:string" minOccurs="0"/>
+<xs:element name="SI_SecondPlanYear2" type="xs:string" minOccurs="0"/>
+<xs:element name="MSC_KBKAmntLBO" type="ns3:tMSC_KBKAmount" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tAPPOFSTR_ITEM">
+<xs:sequence>
+<xs:element name="Amnt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Nt" type="xs:string" minOccurs="0"/>
+<xs:element name="SI_CurrentYear3" type="xs:string" minOccurs="0"/>
+<xs:element name="MSC_KBK" type="ns3:tMSC_KBK" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tStmInfrmtn_TabSI_ITEM">
+<xs:sequence>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="AccountTransGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="SignUpdate" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tAPBASTR">
+<xs:sequence>
+<xs:element name="APBASTR_ITEM" type="tns:tAPBASTR_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tAPLBOSTR">
+<xs:sequence>
+<xs:element name="APLBOSTR_ITEM" type="tns:tAPLBOSTR_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tAPPOFSTR">
+<xs:sequence>
+<xs:element name="APPOFSTR_ITEM" type="tns:tAPPOFSTR_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tStmInfrmtn_TabSI">
+<xs:sequence>
+<xs:element name="TabSI_ITEM" type="tns:tStmInfrmtn_TabSI_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

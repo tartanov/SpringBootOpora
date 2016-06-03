@@ -1,0 +1,580 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_REP_LSPBS/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common" xmlns:ns1="http://www.roskazna.ru/eb/domain/common/entity" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_REP_LSPBS/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="MSC_REP_LSPBS" type="tns:tMSC_REP_LSPBS"/>
+
+<xs:complexType name="tMSC_REPORTS">
+<xs:complexContent>
+<xs:extension base="ns2:tFormular">
+<xs:sequence>
+<xs:element name="SsDtls_GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="SsDtls_DtTm" type="xs:string" minOccurs="0"/>
+<xs:element name="SsDtls_RgNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SsDtls_RepState" type="xs:string" minOccurs="0"/>
+<xs:element name="SsDtls_SysDetA" type="xs:string" minOccurs="0"/>
+<xs:element name="SsDtls_SysDetB" type="xs:string" minOccurs="0"/>
+<xs:element name="SsDtls_SysDetC" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_RprtDt" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_PrvDctDt" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_FrmCd" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_FrmNm" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_UBPCd" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_CodeRegis" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_FullNm" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_OKEI" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_HdrDtA" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_HdrDtB" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_HdrDtC" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_FnclInst" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_OKPOCd" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_CrtIfEmpt" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_ShwLNZr" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_ExcUsr" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_AddPrmA" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_AddPrmB" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_AddPrmC" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_Pstn" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_FllNm" type="xs:string" minOccurs="0"/>
+<xs:element name="AddtOpt_Tlphn" type="xs:string" minOccurs="0"/>
+<xs:element name="RprtTtl_MSC_OrFK" type="ns1:tMSC_OrFK" minOccurs="0"/>
+<xs:element name="RprtTtl_MSC_GRBS" type="ns1:tMSC_GRBS" minOccurs="0"/>
+<xs:element name="RprtTtl_MSC_RBS" type="ns1:tMSC_PBS_UBP" minOccurs="0"/>
+<xs:element name="RprtTtl_MSC_Bdgt" type="ns1:tMSC_Bdgt" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_REP_LSPBS">
+<xs:complexContent>
+<xs:extension base="ns2:tFormular">
+<xs:sequence>
+<xs:element name="RmPrsAcc_RmRpDtG2" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmEndDyG2" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmRpDtG3" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmEndDyG3" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmRpDtG4" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmEndDyG4" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmRpDtG5" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmEndDyG5" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmRpDtG6" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmEndDyG6" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmRpDtG7" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmEndDyG7" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmRpDtG8" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmEndDyG8" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmRpDtG9" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RmPrsAcc_RmEndDyG9" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BdgtDt_BAG3T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BdgtDt_BAG4T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BdgtDt_BAG5T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BdgtDt_LBOG6T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BdgtDt_LBOG7T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BdgtDt_LBOG8t" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BdgtDt_LimLBOG9T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BdgtDt_LimLBOG10T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LBOCrrYr_SummG3T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LBOCrrYr_SummG4T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LmFnd_SummG3T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LBO_SummG3T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LBO_SummG4T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LBO_SummG5T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LBOCrrYrD_SummG3T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LBOCrrYrD_SummG4T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AccChngBl_RecBOSDG2" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AccChngBl_RecBOEDG2" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AccChngBl_RecBOSDG3" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AccChngBl_RecBOEDG3" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AccChngBl_RecBOSDG4" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AccChngBl_RecBOEDG4" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AccChngBl_IncSDG5" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AccChngBl_IncEDG5" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AccChngBl_PymsSDG6" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AccChngBl_PymEDG6" type="xs:decimal" minOccurs="0"/>
+<xs:element name="IncRUB_SummG5T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="IncCrr_SummRRG7T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="PmRUB_SummG7T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="PmCrr_SummRRG9T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RBO_SummG5T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RBO_SummG6T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RBO_SummG7T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RBOCrr_SummG8T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RBOCrr_SummG9T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RBOCrr_SummG10T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChRmPrsAcc_ChBDG2" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChRmPrsAcc_ChEDG2" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChRmPrsAcc_ChBDG3" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChRmPrsAcc_ChEDG3" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChRmPrsAcc_ChBDG4" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChRmPrsAcc_ChEDG4" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChRmPrsAcc_ChBDG5" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChRmPrsAcc_ChEDG5" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChRmPrsAcc_ChBDG6" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChRmPrsAcc_ChEDG6" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChRmPrsAcc_ChBDG67" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChRmPrsAcc_ChEDG7" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BDBO_LBOG3T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BDBO_LimG4T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BDBO_RcSmmBOG6T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Oprtns_IncG5T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Oprtns_PmG6T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Incm_IncG5T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Incm_RTG6T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BdgtDt_BdgtDt" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="BdgtDt_ITEM" type="tns:tBdgtDt_BdgtDt_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="LBOCrrYr_LBOCrrYr" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="LBOCrrYr_ITEM" type="tns:tLBOCrrYr_LBOCrrYr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="LmFnd_LmFnd" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="LmFnd_ITEM" type="tns:tLmFnd_LmFnd_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="LBO_LBO" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="LBO_ITEM" type="tns:tLBO_LBO_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="LBOCrrYrD_LBOCrrYrD" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="LBOCrrYrD_ITEM" type="tns:tLBOCrrYrD_LBOCrrYrD_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="IncRUB_IncRUB" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="IncRUB_ITEM" type="tns:tIncRUB_IncRUB_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="IncCrr_IncCrr" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="IncCrr_ITEM" type="tns:tIncCrr_IncCrr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="IncCrr_IncCrrT" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="IncCrrT_ITEM" type="tns:tIncCrr_IncCrrT_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="PmRUB_PmRUB" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="PmRUB_ITEM" type="tns:tPmRUB_PmRUB_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="PmCrr_PmCrr" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="PmCrr_ITEM" type="tns:tPmCrr_PmCrr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="PmCrr_PmCrrT" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="PmCrrT_ITEM" type="tns:tPmCrr_PmCrrT_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="RBO_RBO" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RBO_ITEM" type="tns:tRBO_RBO_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="RBO_RBOT" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RBOT_ITEM" type="tns:tRBO_RBOT_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="RBOCrr_RBOcrr" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RBOcrr_ITEM" type="tns:tRBOCrr_RBOcrr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="RBOCrr_RBOcrrTN" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RBOcrrTN_ITEM" type="tns:tRBOCrr_RBOcrrTN_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="RBOCrr_RBOcrrTC" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RBOcrrTC_ITEM" type="tns:tRBOCrr_RBOcrrTC_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="BDBO_BDBO" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="BDBO_ITEM" type="tns:tBDBO_BDBO_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Oprtns_Oprt" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Oprt_ITEM" type="tns:tOprtns_Oprt_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Incm_Incm" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Incm_ITEM" type="tns:tIncm_Incm_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="MSC_REPORTS" type="tns:tMSC_REPORTS" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tBdgtDt_BdgtDt_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="BAG3" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BAG4" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BAG5" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LBOG6" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LBOG7" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LBOG8" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LimLBOG9" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LimLBOG10" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLBOCrrYr_LBOCrrYr_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="SummG3" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG4" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLmFnd_LmFnd_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="SummG3" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLBO_LBO_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="SummG3" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG4" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG5" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLBOCrrYrD_LBOCrrYrD_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="SummG3" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG4" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tIncRUB_IncRUB_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIPObjCd" type="xs:string" minOccurs="0"/>
+<xs:element name="TrgtCd" type="xs:string" minOccurs="0"/>
+<xs:element name="SummG5" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tIncCrr_IncCrr_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIPObjCd" type="xs:string" minOccurs="0"/>
+<xs:element name="CdOKV" type="xs:string" minOccurs="0"/>
+<xs:element name="SummCG5" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RateCurG6" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummRRG7" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tIncCrr_IncCrrT_ITEM">
+<xs:sequence>
+<xs:element name="CdOKVT" type="xs:string" minOccurs="0"/>
+<xs:element name="SummCG5T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummRRG7T" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tPmRUB_PmRUB_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="DcNmPBS" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDatePBS" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIPObjCd" type="xs:string" minOccurs="0"/>
+<xs:element name="TrgtCd" type="xs:string" minOccurs="0"/>
+<xs:element name="SummG7" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tPmCrr_PmCrr_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="DcNmPBS" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDatePBS" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIPObjCd" type="xs:string" minOccurs="0"/>
+<xs:element name="CdOKV" type="xs:string" minOccurs="0"/>
+<xs:element name="SummCG7" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RateCurG8" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummRRG9" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tPmCrr_PmCrrT_ITEM">
+<xs:sequence>
+<xs:element name="CdOKV" type="xs:string" minOccurs="0"/>
+<xs:element name="SummCG7" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummRRG9" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRBO_RBO_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="RcrdNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIPObjCd" type="xs:string" minOccurs="0"/>
+<xs:element name="SummG5" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG6" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG7" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRBO_RBOT_ITEM">
+<xs:sequence>
+<xs:element name="SummG5T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG6T" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG7T" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRBOCrr_RBOcrr_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="RcrdNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIPObjCd" type="xs:string" minOccurs="0"/>
+<xs:element name="CdOKV" type="xs:string" minOccurs="0"/>
+<xs:element name="SummCG6" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RateCurG7" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG8" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG9" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG10" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRBOCrr_RBOcrrTN_ITEM">
+<xs:sequence>
+<xs:element name="SummG8TN" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG9TN" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG10TN" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRBOCrr_RBOcrrTC_ITEM">
+<xs:sequence>
+<xs:element name="CdOKVTC" type="xs:string" minOccurs="0"/>
+<xs:element name="SummCG6TC" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG8TC" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG9TC" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SummG10TC" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBDBO_BDBO_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="LBOG3" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LimG4" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RcBOG5" type="xs:string" minOccurs="0"/>
+<xs:element name="RcSmmBOG6" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tOprtns_Oprt_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="DcNmPBS" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDatePBS" type="xs:string" minOccurs="0"/>
+<xs:element name="IncG5" type="xs:decimal" minOccurs="0"/>
+<xs:element name="PmG6" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tIncm_Incm_ITEM">
+<xs:sequence>
+<xs:element name="DcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="DcNmADB" type="xs:string" minOccurs="0"/>
+<xs:element name="DocDateADB" type="xs:string" minOccurs="0"/>
+<xs:element name="IncG5" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RtG6" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRBOCrr_RBOcrr">
+<xs:sequence>
+<xs:element name="RBOcrr_ITEM" type="tns:tRBOCrr_RBOcrr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tIncCrr_IncCrrT">
+<xs:sequence>
+<xs:element name="IncCrrT_ITEM" type="tns:tIncCrr_IncCrrT_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLBO_LBO">
+<xs:sequence>
+<xs:element name="LBO_ITEM" type="tns:tLBO_LBO_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tIncCrr_IncCrr">
+<xs:sequence>
+<xs:element name="IncCrr_ITEM" type="tns:tIncCrr_IncCrr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tOprtns_Oprt">
+<xs:sequence>
+<xs:element name="Oprt_ITEM" type="tns:tOprtns_Oprt_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRBO_RBO">
+<xs:sequence>
+<xs:element name="RBO_ITEM" type="tns:tRBO_RBO_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRBO_RBOT">
+<xs:sequence>
+<xs:element name="RBOT_ITEM" type="tns:tRBO_RBOT_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tPmRUB_PmRUB">
+<xs:sequence>
+<xs:element name="PmRUB_ITEM" type="tns:tPmRUB_PmRUB_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLBOCrrYrD_LBOCrrYrD">
+<xs:sequence>
+<xs:element name="LBOCrrYrD_ITEM" type="tns:tLBOCrrYrD_LBOCrrYrD_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRBOCrr_RBOcrrTC">
+<xs:sequence>
+<xs:element name="RBOcrrTC_ITEM" type="tns:tRBOCrr_RBOcrrTC_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tPmCrr_PmCrrT">
+<xs:sequence>
+<xs:element name="PmCrrT_ITEM" type="tns:tPmCrr_PmCrrT_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tIncm_Incm">
+<xs:sequence>
+<xs:element name="Incm_ITEM" type="tns:tIncm_Incm_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tPmCrr_PmCrr">
+<xs:sequence>
+<xs:element name="PmCrr_ITEM" type="tns:tPmCrr_PmCrr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLmFnd_LmFnd">
+<xs:sequence>
+<xs:element name="LmFnd_ITEM" type="tns:tLmFnd_LmFnd_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tIncRUB_IncRUB">
+<xs:sequence>
+<xs:element name="IncRUB_ITEM" type="tns:tIncRUB_IncRUB_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRBOCrr_RBOcrrTN">
+<xs:sequence>
+<xs:element name="RBOcrrTN_ITEM" type="tns:tRBOCrr_RBOcrrTN_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBDBO_BDBO">
+<xs:sequence>
+<xs:element name="BDBO_ITEM" type="tns:tBDBO_BDBO_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tBdgtDt_BdgtDt">
+<xs:sequence>
+<xs:element name="BdgtDt_ITEM" type="tns:tBdgtDt_BdgtDt_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLBOCrrYr_LBOCrrYr">
+<xs:sequence>
+<xs:element name="LBOCrrYr_ITEM" type="tns:tLBOCrrYr_LBOCrrYr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

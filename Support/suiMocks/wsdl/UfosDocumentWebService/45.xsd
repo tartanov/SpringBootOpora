@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/TechnicalTableAccounts/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/entity" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/TechnicalTableAccounts/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:element name="TechnicalTableAccounts" type="tns:tTechnicalTableAccounts"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tTechnicalTableAccounts">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="checkSign" type="xs:string" minOccurs="0"/>
+<xs:element name="OpBalance" type="xs:decimal" minOccurs="0"/>
+<xs:element name="DateToCompare" type="xs:string" minOccurs="0"/>
+<xs:element name="BalanceResult" type="xs:string" minOccurs="0"/>
+<xs:element name="opGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntInfrmtn_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlBA" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlLBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlPOFR" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlRcpts" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlRtrn" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlPmnts" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlRcvryCsh" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlUnsdBA" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlUnsdLBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlUnsdPOFR" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_TtlOtstndngBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_StrtBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="StsAcnt_EndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Hdr_MSC_Infrmtn" type="ns2:tMSC_Infrmtn" minOccurs="0"/>
+<xs:element name="AccountTransaction" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="AccountTransaction_ITEM" type="tns:tAccountTransaction_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="StsAcnt_StsAcnt" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="StsAcnt_ITEM" type="tns:tStsAcnt_StsAcnt_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tAccountTransaction_ITEM">
+<xs:sequence>
+<xs:element name="IDRw" type="xs:string" minOccurs="0"/>
+<xs:element name="ActvtSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="NameCI" type="xs:string" minOccurs="0"/>
+<xs:element name="bdjt" type="xs:string" minOccurs="0"/>
+<xs:element name="BdgtClssfctn" type="xs:string" minOccurs="0"/>
+<xs:element name="KndActvt" type="xs:string" minOccurs="0"/>
+<xs:element name="IndxLS" type="xs:string" minOccurs="0"/>
+<xs:element name="TOFKCd" type="xs:string" minOccurs="0"/>
+<xs:element name="Crct" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SbrdntInstttns" type="xs:string" minOccurs="0"/>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="TpBK" type="xs:string" minOccurs="0"/>
+<xs:element name="OKTMOCd" type="xs:string" minOccurs="0"/>
+<xs:element name="Rsrv" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIP" type="xs:string" minOccurs="0"/>
+<xs:element name="Rsrv3" type="xs:string" minOccurs="0"/>
+<xs:element name="AmntDbt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AmntKrdt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_CurrentYear" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_FirstPlanYear" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_SecondPlanYear" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_NextPlanYear" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_Summ" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_YearCalc" type="xs:string" minOccurs="0"/>
+<xs:element name="DtAN" type="xs:string" minOccurs="0"/>
+<xs:element name="GUIDDc" type="xs:string" minOccurs="0"/>
+<xs:element name="DcTp" type="xs:string" minOccurs="0"/>
+<xs:element name="SctnCd" type="xs:string" minOccurs="0"/>
+<xs:element name="RegisterInformAccGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="RulesOfCalculation" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntTp" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tStsAcnt_StsAcnt_ITEM">
+<xs:sequence>
+<xs:element name="KBK_KOSGU" type="xs:string" minOccurs="0"/>
+<xs:element name="GrTrgtCd" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIPObjCd" type="xs:string" minOccurs="0"/>
+<xs:element name="BA" type="xs:decimal" minOccurs="0"/>
+<xs:element name="LBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="POFR" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AcntBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Rcpts" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RtrnRcpts" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Pmnts" type="xs:decimal" minOccurs="0"/>
+<xs:element name="RcvryCsh" type="xs:decimal" minOccurs="0"/>
+<xs:element name="UnsdBA" type="xs:decimal" minOccurs="0"/>
+<xs:element name="UnsdLBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="UnsdPOFR" type="xs:decimal" minOccurs="0"/>
+<xs:element name="OtstndngBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="docTypeName" type="xs:string" minOccurs="0"/>
+<xs:element name="selfDocGUID" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tAccountTransaction">
+<xs:sequence>
+<xs:element name="AccountTransaction_ITEM" type="tns:tAccountTransaction_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tStsAcnt_StsAcnt">
+<xs:sequence>
+<xs:element name="StsAcnt_ITEM" type="tns:tStsAcnt_StsAcnt_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

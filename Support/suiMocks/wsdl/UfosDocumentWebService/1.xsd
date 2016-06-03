@@ -1,0 +1,372 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/common/entity" xmlns:ns1="http://www.roskazna.ru/eb/domain/common/applied" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/common/entity">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:complexType name="tMSC_OrFK">
+<xs:sequence>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_GRBS">
+<xs:sequence>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPCd" type="xs:string" minOccurs="0"/>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_PBS_UBP">
+<xs:sequence>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Bdgt">
+<xs:sequence>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Infrmtn">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="CrtnDt" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Cstmr">
+<xs:sequence>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="FullNm" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_MrkOrFK">
+<xs:sequence>
+<xs:element name="RqstNm" type="xs:string" minOccurs="0"/>
+<xs:element name="RgsDt" type="xs:string" minOccurs="0"/>
+<xs:element name="Pstn" type="xs:string" minOccurs="0"/>
+<xs:element name="FllNm" type="xs:string" minOccurs="0"/>
+<xs:element name="Tlphn" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_FlNm">
+<xs:sequence>
+<xs:element name="Srnm" type="xs:string" minOccurs="0"/>
+<xs:element name="SubNm" type="xs:string" minOccurs="0"/>
+<xs:element name="MdlNm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Hd">
+<xs:sequence>
+<xs:element name="Pstn" type="xs:string" minOccurs="0"/>
+<xs:element name="FllNm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_RspnExctr">
+<xs:sequence>
+<xs:element name="Pstn" type="xs:string" minOccurs="0"/>
+<xs:element name="FllNm" type="xs:string" minOccurs="0"/>
+<xs:element name="Tlphn" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_KBK10_20">
+<xs:sequence>
+<xs:element name="KBK" type="xs:string" minOccurs="0"/>
+<xs:element name="TrgtCd" type="xs:string" minOccurs="0"/>
+<xs:element name="BKTp" type="ns1:tMSC_BKTp10_20Complex" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_FnclInst">
+<xs:sequence>
+<xs:element name="FnclInst" type="xs:string" minOccurs="0"/>
+<xs:element name="OKPOCd" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_TOFK">
+<xs:sequence>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Psprt">
+<xs:sequence>
+<xs:element name="IDDcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="IDDcNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="FullNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DctDt" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_KBK">
+<xs:sequence>
+<xs:element name="KBK" type="xs:string" minOccurs="0"/>
+<xs:element name="TrgtCd" type="xs:string" minOccurs="0"/>
+<xs:element name="BKTp" type="ns1:tMSC_BKTpComplex" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Orgnztn">
+<xs:sequence>
+<xs:element name="MSC_OrFK" type="tns:tMSC_OrFK" minOccurs="0"/>
+<xs:element name="MSC_Bdgt" type="tns:tMSC_Bdgt" minOccurs="0"/>
+<xs:element name="FnclInst" type="tns:tMSC_FnclInst" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_KBK20">
+<xs:sequence>
+<xs:element name="KBK" type="xs:string" minOccurs="0"/>
+<xs:element name="TrgtCd" type="xs:string" minOccurs="0"/>
+<xs:element name="BKTp" type="ns1:tMSC_BKTp20Complex" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_OKTMO">
+<xs:sequence>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_OKV">
+<xs:sequence>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Pmnt">
+<xs:sequence>
+<xs:element name="AdvnPySgn" type="ns1:tMSC_AdvnPySgnComplex" minOccurs="0"/>
+<xs:element name="Prt" type="xs:string" minOccurs="0"/>
+<xs:element name="Knd" type="ns1:tMSC_ShrtPyKndComplex" minOccurs="0"/>
+<xs:element name="Prps" type="xs:string" minOccurs="0"/>
+<xs:element name="Tp" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_ShrtDcBs2">
+<xs:sequence>
+<xs:element name="Knd" type="xs:string" minOccurs="0"/>
+<xs:element name="DcNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="DctDt" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Cntrctr20">
+<xs:sequence>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="MSC_Bnk" type="tns:tMSC_Bnk20" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Bnk20">
+<xs:sequence>
+<xs:element name="AcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="BIK" type="xs:string" minOccurs="0"/>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+<xs:element name="CrAccNm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_IncmAdmn">
+<xs:sequence>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_ShrtDcBs">
+<xs:sequence>
+<xs:element name="Knd" type="xs:string" minOccurs="0"/>
+<xs:element name="DcNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="DctDt" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_PrtExctn">
+<xs:sequence>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="Exctn" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Cntrctr">
+<xs:sequence>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="MSC_Bnk" type="tns:tMSC_Bnk" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Bnk">
+<xs:sequence>
+<xs:element name="AcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+<xs:element name="BIK" type="xs:string" minOccurs="0"/>
+<xs:element name="CrAccNm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_DcBs">
+<xs:sequence>
+<xs:element name="BsPySgn" type="ns1:tMSC_BsPySgnComplex" minOccurs="0"/>
+<xs:element name="Knd" type="xs:string" minOccurs="0"/>
+<xs:element name="DcNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="DctDt" type="xs:string" minOccurs="0"/>
+<xs:element name="Sbjct" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_PBS">
+<xs:sequence>
+<xs:element name="AcntNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="MSC_PBS_UBP" type="tns:tMSC_PBS_UBP" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Amount">
+<xs:sequence>
+<xs:element name="AmntCrYr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AmntFrstYr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AmntScndYr" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_SpclInst">
+<xs:sequence>
+<xs:element name="SpclInst" type="xs:string" minOccurs="0"/>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_KBKAmount">
+<xs:sequence>
+<xs:element name="KBK" type="xs:string" minOccurs="0"/>
+<xs:element name="TrgtCd" type="xs:string" minOccurs="0"/>
+<xs:element name="AmntCrYr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AmntFrstYr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AmntScndYr" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_HdrInst">
+<xs:sequence>
+<xs:element name="FullNm" type="xs:string" minOccurs="0"/>
+<xs:element name="OKPOCd" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Pyr">
+<xs:sequence>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+<xs:element name="ChckngAc" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_PymntOrdr">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+<xs:element name="OrdrNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="DctDt" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_Rcpnt">
+<xs:sequence>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_PyrBk">
+<xs:sequence>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+<xs:element name="ChckngAc" type="xs:string" minOccurs="0"/>
+<xs:element name="MSC_Bnk" type="tns:tMSC_Bnk20" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_PmntFl">
+<xs:sequence>
+<xs:element name="AdvnPySgn" type="ns1:tMSC_AdvnPySgnComplex" minOccurs="0"/>
+<xs:element name="Prt" type="xs:string" minOccurs="0"/>
+<xs:element name="Knd" type="ns1:tMSC_PyKndComplex" minOccurs="0"/>
+<xs:element name="Prps" type="xs:string" minOccurs="0"/>
+<xs:element name="Tp" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_StCntrct">
+<xs:sequence>
+<xs:element name="ID" type="xs:string" minOccurs="0"/>
+<xs:element name="ContrNm" type="xs:string" minOccurs="0"/>
+<xs:element name="CntrDt" type="xs:string" minOccurs="0"/>
+<xs:element name="CdKprc" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tPeriod">
+<xs:sequence>
+<xs:element name="StrtDt" type="xs:string" minOccurs="0"/>
+<xs:element name="EndDt" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_HdrOrg">
+<xs:sequence>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="OGRN" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+<xs:element name="ShrtNm" type="xs:string" minOccurs="0"/>
+<xs:element name="FullNm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_KBK10">
+<xs:sequence>
+<xs:element name="KBK" type="xs:string" minOccurs="0"/>
+<xs:element name="TrgtCd" type="xs:string" minOccurs="0"/>
+<xs:element name="BKTp" type="ns1:tMSC_BKTp10Complex" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tMSC_OKPD">
+<xs:sequence>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="Nm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

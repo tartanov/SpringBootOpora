@@ -1,0 +1,614 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.otr.ru/ufos/ws/core/facade" xmlns:ns1="http://www.otr.ru/ufos/ws/core/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.otr.ru/ufos/ws/core/facade">
+
+<xs:import namespace="http://www.otr.ru/ufos/ws/core/common" schemaLocation="54.xsd"/>
+
+<xs:element name="CheckOperationOnStateRequest" type="tns:CheckOperationOnStateRequest"/>
+
+<xs:element name="CheckOperationOnStateResponse" type="tns:CheckOperationOnStateResponse"/>
+
+<xs:element name="ConvertationFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="CreateChildDocumentFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="CreateChildDocumentRequest" type="tns:CreateChildDocumentRequest"/>
+
+<xs:element name="CreateChildDocumentResponse" type="tns:CreateChildDocumentResponse"/>
+
+<xs:element name="DictionaryNotFoundFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="DocTypeNotFoundFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="DocumentNotFoundFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="ExecuteOperationRequest" type="tns:ExecuteOperationRequest"/>
+
+<xs:element name="ExecuteOperationResponse" type="tns:ExecuteOperationResponse"/>
+
+<xs:element name="FieldNotFoundFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="GetAttribsRequest" type="tns:GetAttribsRequest"/>
+
+<xs:element name="GetAttribsResponse" type="tns:GetAttribsResponse"/>
+
+<xs:element name="GetDictionaryValuesRequest" type="tns:GetDictionaryValuesRequest"/>
+
+<xs:element name="GetDictionaryValuesResponse" type="tns:GetDictionaryValuesResponse"/>
+
+<xs:element name="GetFieldValuesRequest" type="tns:GetFieldValuesRequest"/>
+
+<xs:element name="GetFieldValuesResponse" type="tns:GetFieldValuesResponse"/>
+
+<xs:element name="GetFilteredDictionaryValuesRequest" type="tns:GetFilteredDictionaryValuesRequest"/>
+
+<xs:element name="GetFilteredDictionaryValuesResponse" type="tns:GetFilteredDictionaryValuesResponse"/>
+
+<xs:element name="GetFilteredTableValuesRequest" type="tns:GetFilteredTableValuesRequest"/>
+
+<xs:element name="GetFilteredTableValuesResponse" type="tns:GetFilteredTableValuesResponse"/>
+
+<xs:element name="GetStateRequest" type="tns:GetStateRequest"/>
+
+<xs:element name="GetStateResponse" type="tns:GetStateResponse"/>
+
+<xs:element name="GetTableValuesRequest" type="tns:GetTableValuesRequest"/>
+
+<xs:element name="GetTableValuesResponse" type="tns:GetTableValuesResponse"/>
+
+<xs:element name="IllegalOperationForDocumentFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="IllegalStateFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="IncorrectMappingConfigurationFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="InvalidFieldValueFault" type="tns:fieldValueErrorContainer"/>
+
+<xs:element name="InvalidFieldValueFormatFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="InvalidGuidFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="NoChildFillingFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="SecurityFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="SetDictionaryStateRequest" type="tns:SetStateRequest"/>
+
+<xs:element name="SetDictionaryStateResponse" type="tns:SetStateResponse"/>
+
+<xs:element name="SetFieldValuesRequest" type="tns:SetFieldValuesRequest"/>
+
+<xs:element name="SetFieldValuesResponse" type="tns:SetFieldValuesResponse"/>
+
+<xs:element name="SetStateRequest" type="tns:SetStateRequest"/>
+
+<xs:element name="SetStateResponse" type="tns:SetStateResponse"/>
+
+<xs:element name="SetTableValuesRequest" type="tns:SetTableValuesRequest"/>
+
+<xs:element name="SetTableValuesResponse" type="tns:SetTableValuesResponse"/>
+
+<xs:element name="StateNotFoundFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="TableNotFoundFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="TableRowOutOfRangeFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="createDocumentFromTableRowsRequest" type="tns:createDocumentFromTableRowsRequest"/>
+
+<xs:element name="createDocumentFromTableRowsResponse" type="tns:createDocumentFromTableRowsResponse"/>
+
+<xs:element name="dataSourceNotFoundFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:element name="listRelatedDocumentsRequest" type="tns:listRelatedDocumentsRequest"/>
+
+<xs:element name="listRelatedDocumentsResponse" type="tns:listRelatedDocumentsResponse"/>
+
+<xs:element name="loadDictionariesRequest" type="tns:loadDictionariesRequest"/>
+
+<xs:element name="loadDictionariesResponse" type="tns:loadDictionariesResponse"/>
+
+<xs:element name="loadDocumentsRequest" type="tns:loadDocumentsRequest"/>
+
+<xs:element name="loadDocumentsResponse" type="tns:loadDocumentsResponse"/>
+
+<xs:element name="parentDocumentTableNotFoundFault" type="ns1:commonCoreFaultBean"/>
+
+<xs:complexType name="dictionary">
+<xs:sequence>
+<xs:element name="user-creator" type="xs:string" minOccurs="0"/>
+<xs:element name="last-modify-user" type="xs:string" minOccurs="0"/>
+<xs:element name="content" type="xs:anyType"/>
+<xs:element name="attachments" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="attachment" type="tns:attachmentWithContent" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute name="guid" type="xs:string" use="required"/>
+<xs:attribute name="type" type="xs:NCName" use="required"/>
+<xs:attribute name="type-version" type="xs:string" use="required"/>
+<xs:attribute name="create-date" type="xs:dateTime" use="required"/>
+<xs:attribute name="last-modify-date" type="xs:dateTime"/>
+<xs:attribute name="priority" type="xs:int"/>
+<xs:attribute name="check-level" type="tns:checkLevel"/>
+<xs:attribute name="organization-creator" type="xs:string"/>
+<xs:attribute name="state" type="xs:NCName"/>
+<xs:attribute name="archive" type="xs:integer"/>
+<xs:attribute name="received" type="xs:boolean"/>
+<xs:attribute name="visibility-scope" type="tns:dictionaryVisibilityScope" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="attachmentWithContent">
+<xs:complexContent>
+<xs:extension base="tns:attachment">
+<xs:sequence>
+<xs:element xmlns:ns2="http://www.w3.org/2005/05/xmlmime" name="content" ns2:expectedContentTypes="application/octet-stream" type="xs:base64Binary"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="attachment">
+<xs:sequence>
+<xs:element name="comment" type="xs:string" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+<xs:element name="organization-creator" type="xs:string" minOccurs="0"/>
+<xs:element name="user-creator" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="guid" type="xs:string" use="required"/>
+<xs:attribute name="mime-type" type="xs:string"/>
+<xs:attribute name="file-name" type="xs:string"/>
+<xs:attribute name="file-date" type="xs:dateTime"/>
+<xs:attribute name="file-size" type="xs:nonNegativeInteger"/>
+<xs:attribute name="file-path" type="xs:Name"/>
+<xs:attribute name="business-type" type="xs:Name"/>
+<xs:attribute name="ordinal-number" type="xs:nonNegativeInteger" use="required"/>
+<xs:attribute name="actual-date" type="xs:dateTime"/>
+<xs:attribute name="viewable" type="xs:boolean"/>
+<xs:attribute name="status" type="xs:Name"/>
+<xs:attribute name="temporary" type="xs:boolean"/>
+<xs:attribute name="service" type="xs:boolean"/>
+</xs:complexType>
+
+<xs:complexType name="ExecuteOperationRequest">
+<xs:sequence>
+<xs:element name="OperationId" type="xs:NCName" minOccurs="0"/>
+<xs:element name="GlobalDocId" type="xs:NCName" minOccurs="0"/>
+<xs:element name="Parameters" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="value" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createDocumentFromTableRowsResponse">
+<xs:sequence>
+<xs:element name="document" nillable="true" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence/>
+<xs:attribute name="guid" type="xs:string" use="required"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tablePathWrapper">
+<xs:sequence>
+<xs:element name="rows">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="row" type="tns:fieldsValueWrapper" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fieldsValueWrapper">
+<xs:sequence>
+<xs:element name="value" type="tns:fieldValueWrapper" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+<xs:attribute name="index" type="xs:integer"/>
+</xs:complexType>
+
+<xs:complexType name="fieldValueWrapper">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="path" type="xs:string" use="required"/>
+<xs:attribute name="desc" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="hostTableAndRow">
+<xs:sequence>
+<xs:element name="tableName" type="xs:string"/>
+<xs:element name="rowIndex" type="xs:int"/>
+<xs:element name="host" type="tns:hostTableAndRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="documentState">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="systemName" type="xs:NCName" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loadDictionaryParameters">
+<xs:sequence/>
+<xs:attribute name="guid" type="xs:string" use="required"/>
+<xs:attribute name="attachmentsRequired" type="xs:boolean"/>
+</xs:complexType>
+
+<xs:complexType name="SetStateRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="DocState" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fieldValueErrorContainer">
+<xs:sequence>
+<xs:element name="errors">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="error" type="tns:fieldValueError" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fieldValueError">
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute name="fieldName" type="xs:string" use="required"/>
+<xs:attribute name="fieldDesc" type="xs:string"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="SetStateResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="loadDocumentsRequest">
+<xs:sequence>
+<xs:element name="document" type="tns:loadDocumentParameters" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loadDocumentParameters">
+<xs:sequence/>
+<xs:attribute name="guid" type="xs:string" use="required"/>
+<xs:attribute name="attachmentsRequired" type="xs:boolean"/>
+</xs:complexType>
+
+<xs:complexType name="createDocumentFromTableRowsRequest">
+<xs:sequence>
+<xs:element name="rows" type="tns:tableRows"/>
+</xs:sequence>
+<xs:attribute name="documentType" type="xs:NCName" use="required"/>
+<xs:attribute name="parentGuid" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="tableRows">
+<xs:sequence>
+<xs:element name="row" type="tns:tableRow" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+<xs:attribute name="table" type="xs:NCName" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="tableRow">
+<xs:sequence>
+<xs:element name="rows" type="tns:tableRows" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="index" type="xs:int"/>
+</xs:complexType>
+
+<xs:complexType name="SetTableValuesResponse">
+<xs:sequence>
+<xs:element name="fields" type="tns:tableValueWrapper" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tableValueWrapper">
+<xs:sequence>
+<xs:element name="rows">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="row" type="tns:fieldsValueWrapper" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="tableName" type="xs:string"/>
+<xs:element name="host" type="tns:hostTableAndRow" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loadDictionariesResponse">
+<xs:sequence>
+<xs:element name="dictionary" type="tns:dictionary" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetTableValuesResponse">
+<xs:sequence>
+<xs:element name="fields" type="tns:tableValueWrapper" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CreateChildDocumentResponse">
+<xs:sequence>
+<xs:element name="UUID" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CheckOperationOnStateRequest">
+<xs:sequence>
+<xs:element name="docType" type="xs:NCName" minOccurs="0"/>
+<xs:element name="docState" type="xs:NCName" minOccurs="0"/>
+<xs:element name="docOperation" type="xs:NCName" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetAttribsResponse">
+<xs:sequence>
+<xs:element name="GetAttribsResponse" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetTableValuesRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="tableName" type="xs:string" minOccurs="0"/>
+<xs:element name="values" type="tns:tableValueWrapper" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetFilteredDictionaryValuesRequest">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="values" type="tns:tablePathWrapper" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetStateResponse">
+<xs:sequence>
+<xs:element name="DocumentState" type="tns:documentState" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetStateRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loadDocumentsResponse">
+<xs:sequence>
+<xs:element name="document" type="tns:document" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="document">
+<xs:sequence>
+<xs:element name="user-creator" type="xs:string" minOccurs="0"/>
+<xs:element name="last-modify-user" type="xs:string" minOccurs="0"/>
+<xs:element name="content" type="xs:anyType"/>
+<xs:element name="attachments" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="attachment" type="tns:attachmentWithContent" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute name="guid" type="xs:string" use="required"/>
+<xs:attribute name="type" type="xs:NCName" use="required"/>
+<xs:attribute name="type-version" type="xs:string" use="required"/>
+<xs:attribute name="access-level" type="tns:accessLevel" use="required"/>
+<xs:attribute name="organization-creator" type="xs:string"/>
+<xs:attribute name="check-level" type="tns:checkLevel"/>
+<xs:attribute name="create-date" type="xs:dateTime" use="required"/>
+<xs:attribute name="state" type="xs:NCName"/>
+<xs:attribute name="last-modify-date" type="xs:dateTime"/>
+<xs:attribute name="last-print-date" type="xs:dateTime"/>
+<xs:attribute name="printed" type="xs:boolean"/>
+<xs:attribute name="received" type="xs:boolean"/>
+<xs:attribute name="approval-state" type="tns:approvalState"/>
+<xs:attribute name="priority" type="xs:int"/>
+<xs:attribute name="archive" type="xs:integer"/>
+<xs:attribute name="export-status" type="tns:exportStatus"/>
+<xs:attribute name="has-attachments" type="xs:boolean"/>
+<xs:attribute name="attachment-count" type="xs:int"/>
+<xs:attribute name="attachment-size" type="xs:int"/>
+<xs:attribute name="signature-count" type="xs:int"/>
+</xs:complexType>
+
+<xs:complexType name="SetFieldValuesRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="values" type="tns:fieldsValueWrapper" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetFieldValuesResponse">
+<xs:sequence>
+<xs:element name="fields" type="tns:fieldsValueWrapper" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetAttribsRequest">
+<xs:sequence>
+<xs:element name="dictionary" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetFilteredTableValuesRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="tableName" type="xs:string" minOccurs="0"/>
+<xs:element name="values" type="tns:tablePathWrapper" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetFieldValuesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:fieldsValueWrapper" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDictionaryValuesRequest">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="values" type="tns:tablePathWrapper" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetFilteredDictionaryValuesResponse">
+<xs:sequence>
+<xs:element name="GetFilteredDictionaryValuesResponse" type="tns:tableValueWrapper" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDictionaryValuesResponse">
+<xs:sequence>
+<xs:element name="GetDictionaryValuesResponse" type="tns:tableValueWrapper" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loadDictionariesRequest">
+<xs:sequence>
+<xs:element name="dictionary" type="tns:loadDictionaryParameters" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listRelatedDocumentsRequest">
+<xs:sequence/>
+<xs:attribute ref="tns:guid" use="required"/>
+<xs:attribute name="datasource" type="xs:NCName"/>
+</xs:complexType>
+
+<xs:complexType name="CheckOperationOnStateResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="CreateChildDocumentRequest">
+<xs:sequence>
+<xs:element name="ChildDocType" type="xs:NCName"/>
+<xs:element name="ParentDocType" type="xs:NCName" minOccurs="0"/>
+<xs:element name="ParentGlobalDocId" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetTableValuesRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="tableName" type="xs:string" minOccurs="0"/>
+<xs:element name="fields" type="tns:tableValueWrapper" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listRelatedDocumentsResponse">
+<xs:sequence>
+<xs:element name="document" type="tns:fieldsValueWrapper" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetFieldValuesRequest">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="fields" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="field" type="tns:fieldPathWrapper" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fieldPathWrapper">
+<xs:sequence/>
+<xs:attribute name="path" type="xs:string" use="required"/>
+<xs:attribute name="desc" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="ExecuteOperationResponse">
+<xs:sequence>
+<xs:element name="DocumentState" type="tns:documentState" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetFilteredTableValuesResponse">
+<xs:sequence>
+<xs:element name="GetFilteredTableValuesResponse" type="tns:tableValueWrapper" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="documentFieldsFaultBean">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="timeStamp" type="xs:dateTime" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="checkLevel">
+<xs:restriction base="xs:string">
+<xs:enumeration value="UNDEFINED"/>
+<xs:enumeration value="SUCCESS"/>
+<xs:enumeration value="WARNING"/>
+<xs:enumeration value="ERROR"/>
+<xs:enumeration value="BLOCKER"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="dictionaryVisibilityScope">
+<xs:restriction base="xs:string">
+<xs:enumeration value="COMMON"/>
+<xs:enumeration value="OWNER"/>
+<xs:enumeration value="CHILDREN"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="accessLevel">
+<xs:restriction base="xs:string">
+<xs:enumeration value="NO_SECRET"/>
+<xs:enumeration value="OFFICE"/>
+<xs:enumeration value="SECRET"/>
+<xs:enumeration value="TOP_SECRET"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="approvalState">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Undefined"/>
+<xs:enumeration value="NotApproved"/>
+<xs:enumeration value="OnApproval"/>
+<xs:enumeration value="Approved"/>
+<xs:enumeration value="ApprovalError"/>
+<xs:enumeration value="PartiallyApproved"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="exportStatus">
+<xs:restriction base="xs:string">
+<xs:enumeration value="NOT_EXPORTED"/>
+<xs:enumeration value="AUTO_EXPORT_SUCCESSFUL"/>
+<xs:enumeration value="AUTO_EXPORT_ERROR"/>
+<xs:enumeration value="MANUAL_EXPORT_SUCCESSFUL"/>
+<xs:enumeration value="MANUAL_EXPORT_ERROR"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:attribute name="guid" type="xs:string"/>
+</xs:schema>

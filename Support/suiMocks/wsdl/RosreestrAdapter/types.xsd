@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:ws.request.pgu.sids.fccland.ru" xmlns:event="urn:events.pgu.sids.fccland.ru" xmlns:http-conf="http://cxf.apache.org/transports/http/configuration" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:ws.request.pgu.sids.fccland.ru" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+            <xsd:element name="createRequest" type="tns:createRequestIn"/>
+            <xsd:element name="createRequestResponse" type="tns:createRequestOut"/>
+
+
+            <xsd:element name="getEvents" type="tns:getEventsIn"/>
+            <xsd:element name="getEventsResponse" type="tns:getEventsOut"/>
+
+
+            <xsd:element name="deleteEvents" type="tns:deleteEventsIn"/>
+            <xsd:element name="deleteEventsResponse" type="tns:deleteEventsOut"/>
+
+            <xsd:element name="loadEventDetails" type="tns:loadEventDetailsIn"/>
+            <xsd:element name="loadEventDetailsResponse" type="tns:loadEventDetailsOut"/>
+
+
+            <xsd:complexType name="createRequestIn">
+                <xsd:sequence>
+                    <xsd:element name="region" type="xsd:string">
+                        <xsd:annotation>
+                            <xs:documentation>
+                                Код региона Код Расшифровка
+                                02 			респ. Башкортостан
+                                16			респ. Татарстан
+                                23 			Краснодарский край
+                                24 			Красноярский край
+                                38 			Иркутская область
+                                39 			Калининградская область
+                                40 			Калужская область
+                                42 			Кемеровская область
+                                43 			Кировская область
+                                52 			Нижегородская область
+                                61 			Ростовская область
+                                69	 		Тверская область
+                            </xs:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+
+                    <xsd:element name="okato" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="oktmo" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+
+                    <xsd:element name="requestData" ns1:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns1="http://www.w3.org/2005/05/xmlmime">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                "Портал услуг, требования по доработке учетных систем 1.4 и выше"
+                                описывает требования к пакету.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+
+
+                    <xsd:element name="requestType" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Приказ ВХ/МИН/00930/10 от 07.04.2010
+                                Об установлении порядка предоставления сведений, внесённых в государственный кадастр недвижимости
+                                смотреть в схеме dRequest_Type.xsd
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+
+                </xsd:sequence>
+            </xsd:complexType>
+
+
+            <xsd:complexType name="createRequestOut">
+                <xsd:sequence>
+                    <xsd:element name="requestNumber" type="xsd:string"/>
+                    <xsd:element name="status" type="tns:operationStatus"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+
+
+            <xsd:complexType name="getEventsIn">
+                <xsd:sequence>
+                    <xsd:element name="lastEventID" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                lastEventID идентификатор последнего полученного события
+                                В случае, если нам надо получить все события, необходимо указать пустую строку.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="getEventsOut">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="events" type="tns:eventStruct"/>
+                    <xsd:element name="status" type="tns:operationStatus"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+
+
+            <xsd:complexType name="deleteEventsIn">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="eventIDs" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="deleteEventsOut">
+                <xsd:sequence>
+                    <xsd:element name="status" type="tns:operationStatus"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+
+
+
+            <xsd:complexType name="loadEventDetailsIn">
+                <xsd:sequence>
+                    <xsd:element name="eventID" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="loadEventDetailsOut">
+                <xsd:sequence>
+                    <xsd:element name="detailsXML" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                status.xsd
+                                outdoc.xsd
+                                receipt.xsd
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="binary" ns1:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns1="http://www.w3.org/2005/05/xmlmime">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                для типа события 'STATUS' бинарника не будет
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="status" type="tns:operationStatus"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+
+
+
+            <xsd:complexType name="eventStruct">
+                <xsd:sequence>
+                    <xsd:element name="eventID" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Внешний идентификатор события
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="eventType" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Тип события
+                                STATUS
+                                OUTDOC
+                                RECEIPT
+                                ...
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+
+
+                    <xsd:element name="eventDate" type="xsd:dateTime"/>
+
+                    <xsd:element name="requestNumber" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Номер заявки
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+
+
+            <xsd:complexType name="operationStatus">
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:boolean">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Результат выполнения
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="message" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Зависит от результата выполнения
+                                true - OK
+                                false - подробное сообщение
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+
+        </xs:schema>

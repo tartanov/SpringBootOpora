@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/SbsdASFKApprvlRprt/formular" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/SbsdASFKApprvlRprt/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="SbsdASFKApprvlRprt" type="tns:tSbsdASFKApprvlRprt"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tSbsdASFKApprvlRprt">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="TOFK" type="xs:string" minOccurs="0"/>
+<xs:element name="GUID_ASFK" type="xs:string" minOccurs="0"/>
+<xs:element name="ParentDocGuid1" type="xs:string" minOccurs="0"/>
+<xs:element name="TpCrct" type="xs:string" minOccurs="0"/>
+<xs:element name="UnqNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+<xs:element name="CdGRBSPPP" type="xs:string" minOccurs="0"/>
+<xs:element name="Info_PrtclDcNb" type="xs:string" minOccurs="0"/>
+<xs:element name="Info_PrtclPrtclNb" type="xs:string" minOccurs="0"/>
+<xs:element name="Info_PrtclPrtclTp" type="xs:string" minOccurs="0"/>
+<xs:element name="BoInfo_PrtclBONb" type="xs:string" minOccurs="0"/>
+<xs:element name="BoInfo_PrtclBODt" type="xs:string" minOccurs="0"/>
+<xs:element name="FKCheck_PrtclCpct" type="xs:string" minOccurs="0"/>
+<xs:element name="FKCheck_PrtclSnDfntn" type="xs:string" minOccurs="0"/>
+<xs:element name="FKCheck_PrtclRgDt" type="xs:string" minOccurs="0"/>
+<xs:element name="ErrorInfo" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ErrorInfo_ITEM" type="tns:tErrorInfo_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tErrorInfo_ITEM">
+<xs:sequence>
+<xs:element name="PrtclErCd" type="xs:string" minOccurs="0"/>
+<xs:element name="PrtclErTp" type="xs:string" minOccurs="0"/>
+<xs:element name="PrtclErNm" type="xs:string" minOccurs="0"/>
+<xs:element name="PrtclErDsc" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tErrorInfo">
+<xs:sequence>
+<xs:element name="ErrorInfo_ITEM" type="tns:tErrorInfo_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

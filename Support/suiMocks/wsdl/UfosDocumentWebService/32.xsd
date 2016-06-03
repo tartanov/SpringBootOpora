@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_CprtnSchm/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/entity" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_CprtnSchm/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:element name="MSC_CprtnSchm" type="tns:tMSC_CprtnSchm"/>
+
+<xs:complexType name="tDICT_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="StrtDt" type="xs:string" minOccurs="0"/>
+<xs:element name="EndDt" type="xs:string" minOccurs="0"/>
+<xs:element name="CdDct" type="xs:string" minOccurs="0"/>
+<xs:element name="NmDct" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_CprtnSchm">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="DctGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="BscInfrmtn_HrchLvl" type="xs:string" minOccurs="0"/>
+<xs:element name="BscInfrmtn_ActvtSgn" type="xs:boolean" minOccurs="0"/>
+<xs:element name="BscInfrmtn_Stts" type="xs:string" minOccurs="0"/>
+<xs:element name="BscInfrmtn_TOFKCd" type="xs:string" minOccurs="0"/>
+<xs:element name="Orgnztn_GRBSCd" type="xs:string" minOccurs="0"/>
+<xs:element name="Orgnztn_PrvORGAcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="Orgnztn_AgrORGAcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SystemInformation_PrntAcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="BscInfrmtn_Prd" type="ns2:tPeriod" minOccurs="0"/>
+<xs:element name="Orgnztn_Bdgt" type="ns2:tMSC_Bdgt" minOccurs="0"/>
+<xs:element name="Orgnztn_StCntrct" type="ns2:tMSC_StCntrct" minOccurs="0"/>
+<xs:element name="DICT_BASE" type="tns:tDICT_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:schema>

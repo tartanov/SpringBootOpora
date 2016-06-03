@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/REF_PersAccount/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/REF_PersAccount/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:element name="REF_PersAccount" type="tns:tREF_PersAccount"/>
+
+<xs:complexType name="tDICT_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="ORGCODE" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ORGVISIBILITY" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_PersAccount">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string"/>
+<xs:element name="StartDateActive" type="xs:string"/>
+<xs:element name="EndDateActive" type="xs:string" minOccurs="0"/>
+<xs:element name="Status" type="ns2:tSystem_statusesComplex"/>
+<xs:element name="PersAccountType" type="xs:string"/>
+<xs:element name="OpenTOFKRegCode" type="xs:string"/>
+<xs:element name="BudgType" type="xs:string"/>
+<xs:element name="UchetNum" type="xs:string"/>
+<xs:element name="ControlNum" type="xs:string"/>
+<xs:element name="PersAccountNum" type="xs:string"/>
+<xs:element name="ClientCode" type="xs:string"/>
+<xs:element name="OrgCode" type="xs:string" minOccurs="0"/>
+<xs:element name="OwnerFullName" type="xs:string" minOccurs="0"/>
+<xs:element name="OwnerShortName" type="xs:string" minOccurs="0"/>
+<xs:element name="ContourType" type="ns2:tTypes_of_contourComplex"/>
+<xs:element name="OperationContour" type="ns2:tTypes_of_contourComplex"/>
+<xs:element name="OpenDate" type="xs:string"/>
+<xs:element name="CloseDate" type="xs:string" minOccurs="0"/>
+<xs:element name="PersAccntStatus" type="xs:string"/>
+<xs:element name="record_GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="BudgCode" type="tns:tLpBudgCode" minOccurs="0"/>
+<xs:element name="KBKGlavaCode" type="tns:tLpKBKGlavaCode" minOccurs="0"/>
+<xs:element name="OpenTOFKCode" type="tns:tLpOpenTOFKCode" minOccurs="0"/>
+<xs:element name="ServiceTOFKCode" type="tns:tLpServiceTOFKCode" minOccurs="0"/>
+<xs:element name="CreateTOFKCode" type="tns:tLpCreateTOFKCode" minOccurs="0"/>
+<xs:element name="DICT_BASE" type="tns:tDICT_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tLpBudgCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+<xs:element name="Name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpKBKGlavaCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+<xs:element name="ShortName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOpenTOFKCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+<xs:element name="FullName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpServiceTOFKCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+<xs:element name="FullName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpCreateTOFKCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+<xs:element name="FullName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+</xs:schema>

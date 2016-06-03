@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/SbsdAgrmnt/formular" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/SbsdAgrmnt/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="SbsdAgrmnt" type="tns:tSbsdAgrmnt"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tSbsdAgrmnt">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="ParentDocGuid1" type="xs:string" minOccurs="0"/>
+<xs:element name="GUID_ASFK" type="xs:string" minOccurs="0"/>
+<xs:element name="TpCrct" type="xs:string" minOccurs="0"/>
+<xs:element name="regNumASFK" type="xs:string" minOccurs="0"/>
+<xs:element name="INFO_LINK" type="xs:string" minOccurs="0"/>
+<xs:element name="INFO_UNIQUE_NUMBER" type="xs:string" minOccurs="0"/>
+<xs:element name="INFO_NUMBER_2" type="xs:string" minOccurs="0"/>
+<xs:element name="INFO_DATE_2" type="xs:string" minOccurs="0"/>
+<xs:element name="INFO_NAME_GRBS" type="xs:string" minOccurs="0"/>
+<xs:element name="INFO_DATE_3" type="xs:string" minOccurs="0"/>
+<xs:element name="INFO_SUMMA_1" type="xs:decimal" minOccurs="0"/>
+<xs:element name="INFO_NumberBO" type="xs:string" minOccurs="0"/>
+<xs:element name="INFO_DtRgstrBO" type="xs:string" minOccurs="0"/>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:schema>

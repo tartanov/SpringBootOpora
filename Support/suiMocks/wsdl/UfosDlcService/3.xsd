@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xsd:schema xmlns="http://ufos.otr.ru/ws/core/common/v1_2" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ufos.otr.ru/ws/core/common/v1_2" elementFormDefault="qualified" attributeFormDefault="unqualified" jaxb:version="2.1" version="1.0">
+	<xsd:element name="invalidGuidFault" type="commonCoreFaultBean">
+		<xsd:annotation>
+			<xsd:documentation>Ошибка при некорректности формата указанного в запросе глобального идентификатора.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="documentNotFoundFault" type="commonCoreFaultBean"/>
+
+	<xsd:complexType name="commonCoreFaultBean">
+		<xsd:annotation>
+			<xsd:documentation>Общая ошибка.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="message" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>Сообщение об ошибке.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="timeStamp" type="xsd:dateTime" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Время формирования ошибки.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="payloads" type="faultPayloads" minOccurs="0">
+				<xsd:unique name="unique-payload-id">
+					<xsd:selector xpath="*"/>
+					<xsd:field xpath="@id"/>
+				</xsd:unique>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="faultPayloads">
+		<xsd:annotation>
+			<xsd:documentation>Набор произвольных данных, включенных в ответ с ошибкой.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:annotation>
+				<xsd:appinfo>
+					<jaxb:property name="payloads"/>
+				</xsd:appinfo>
+			</xsd:annotation>
+
+			<xsd:element name="payload" type="faultPayload" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="faultPayload">
+		<xsd:annotation>
+			<xsd:documentation>Произвольные данные, включенные в ответ с ошибкой. Состоят из обязательного идентификатора и содержимого.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="content" type="xsd:anyType">
+				<xsd:annotation>
+					<xsd:documentation>Произвольное содержимое, приложенное к ошибке.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+
+		<xsd:attribute name="id" type="xsd:NCName" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Идентификатор данных, приложенных к ошибке. Должен быть уникален в наборе.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+</xsd:schema>

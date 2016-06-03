@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xsd:schema xmlns="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" xmlns:c="http://ufos.otr.ru/core/common/v1" xmlns:cc="http://ufos.otr.ru/ws/core/common/v1_2" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" elementFormDefault="qualified" attributeFormDefault="unqualified" jaxb:version="2.1" version="1.0">
+	<xsd:import namespace="http://ufos.otr.ru/ws/core/common/v1_2" schemaLocation="3.xsd"/>
+	<xsd:import namespace="http://ufos.otr.ru/core/common/v1" schemaLocation="1.xsd"/>
+
+	<xsd:element name="storeDocumentRequest" type="storeDocumentRequest"/>
+	<xsd:element name="storeDocumentResponse" type="storeDocumentResponse"/>
+
+	<xsd:element name="incorrectMappingConfigurationFault" type="incorrectMappingConfigurationFaultBean"/>
+	<xsd:element name="noSuitableConversionFault" type="noSuitableConversionFaultBean"/>
+	<xsd:element name="editPolicyProhibitionFault" type="cc:commonCoreFaultBean">
+		<xsd:annotation>
+			<xsd:documentation>
+				Ошибка в случае, если политика редактирования документа, определенная в декларативном жизненном цикле текущего документа, не позволяет
+				выполнять запрошенные изменения документа.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="transitionExecutionFault" type="cc:commonCoreFaultBean">
+		<xsd:annotation>
+			<xsd:documentation>Ошибка в случае невозмозможности выполнить переход ДЖЦ.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="mismatchDocumentTypeFault" type="cc:commonCoreFaultBean">
+		<xsd:annotation>
+			<xsd:documentation>Ошибка в случае несовпадения типа у обновляемого документа и переданного в запросе типа</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="executeTransitionRequest" type="executeTransitionRequest"/>
+	<xsd:element name="executeTransitionResponse" type="executeTransitionResponse"/>
+	<xsd:element name="documentNotFoundFault" type="cc:commonCoreFaultBean"/>
+	<xsd:element name="transitionNotFoundFault" type="cc:commonCoreFaultBean"/>
+	<xsd:element name="securityFault" type="cc:commonCoreFaultBean"/>
+
+	<xsd:element name="pushDocumentStateRequest" type="pushDocumentStateRequest"/>
+	<xsd:element name="pushDocumentStateResponse" type="pushDocumentStateResponse"/>
+	<xsd:element name="ambiguousTransitionFault" type="cc:commonCoreFaultBean"/>
+
+	<xsd:element name="getStateRequest" type="getStateRequest"/>
+	<xsd:element name="getStateResponse" type="getStateResponse"/>
+
+	<xsd:complexType name="storeDocumentRequest">
+		<xsd:annotation>
+			<xsd:documentation>
+				Запрос на сохранение документа.
+				Документ может быть новый или уже существующий.
+				Если документ новый, то он будет создан либо с указанным глобальным идентификатором, либо будет сгенерирован новый идентификатор.
+				Если документ с указанным идентификатором уже зарегистрирован в системе, то будет произведена попытка обновить его.
+				Глобальный идентификатор может быть задан внутри содержимого документа, либо в запросе.
+			</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="parameters" type="c:parameters" minOccurs="0"/>
+			<xsd:element name="document" type="incomeDocument" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="incomeDocument">
+		<xsd:annotation>
+			<xsd:documentation>
+				Документ, включающий в себя стандартный перечень системных атрибутов и произвольное содержимое (в зависимости от типа документа).
+				Может содержать вложения в зависимости от того, нужны ли и присутствуют ли они.
+			</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:any processContents="skip">
+				<xsd:annotation>
+					<xsd:documentation>
+						Тег, содержащий данные экземпляра записи справочника в соответствии с XSD, описанным в студии.
+						Теги должны быть одноименные, структуры - однотипные, т.е. в одном запросе может прийти информация только по одному типу справочника.
+					</xsd:documentation>
+
+					<xsd:appinfo>
+						<jaxb:property name="content"/>
+					</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:any>
+		</xsd:sequence>
+
+		<xsd:attribute name="document-type" type="xsd:token" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Тип документа, экземпляр которого передаются в запросе.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="guid" type="c:guid" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>
+					Глобальный идентификатор экземпляра документа. Должен совпадать со значением глобального идентификатора внутри передаваемой any-структуры
+					(если в ней он имеется). Несовпадение трактуется как ошибка.
+					Значение не обязательно. В этом случае система сгенерирует случайное значение.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="document-state" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="storeDocumentResponse">
+		<xsd:annotation>
+			<xsd:documentation>Ответ на запрос о сохранении документов.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="documents" type="outcomeDocuments"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="outcomeDocuments">
+		<xsd:annotation>
+			<xsd:documentation>Общий тип для перечисления произвольных параметров, состоящих из наименования и значения.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="document" type="outcomeDocument" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="outcomeDocument">
+		<xsd:attribute name="guid" type="c:guid" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Глобальный идентификатор созданного или обновленного документа.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="state" type="xsd:token" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Статус документа, полученный в результате выполнения перехода жизненного цикла.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="created" type="xsd:boolean" use="required">
+			<xsd:annotation>
+				<xsd:documentation>True, если в результате обработки вызова был создан новый документ; false, если был обновлен имеющийся.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="incorrectMappingConfigurationFaultBean">
+		<xsd:annotation>
+			<xsd:documentation>
+				Ошибка при невозможности конвертирвоать документ в XML (или обратно):
+				- отсутствует описание mapping;
+				- некорректное описание mapping;
+				- невозможность выбрать нужный mapping из имеющихся;
+				- отсутствие прикладного класса, используемого при конвертации;
+				- некорректная структура прикладного класса или местоположение;
+				- прочие системные ошибки, ввызванные некорретностью описания процесса конвертирования документа в XML и обратно.
+			</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:complexContent>
+			<xsd:extension base="cc:commonCoreFaultBean"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="noSuitableConversionFaultBean">
+		<xsd:annotation>
+			<xsd:documentation>
+				Ошибка при невозможности конвертирвоать документ в XML (или обратно):
+				- если для обработки XML представления отсутствуют необходимые JAXB классы;
+			</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:complexContent>
+			<xsd:extension base="cc:commonCoreFaultBean"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="executeTransitionRequest">
+		<xsd:annotation>
+			<xsd:documentation>Запрос на выполнение указанного перехода для документа с заданным глобальным идентификатором.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="parameters" type="c:parameters" minOccurs="0"/>
+		</xsd:sequence>
+
+		<xsd:attribute name="guid" type="c:guid">
+			<xsd:annotation>
+				<xsd:documentation>Глобальный идентификатор документа, для которого вызывается переход.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="transition-id" type="xsd:NCName" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Идентификатор перехода, который требуется запустить для документа.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="executeTransitionResponse">
+		<xsd:annotation>
+			<xsd:documentation>
+				Ответ на запрос на выполнение указанного перехода для документа с заданным глобальным идентификатором.
+				Содержит статус, который документ получил в результате выполнения перехода.
+			</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:attribute name="state" type="xsd:token" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Статус документа, полученный в результате выполнения перехода жизненного цикла.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="pushDocumentStateRequest">
+		<xsd:annotation>
+			<xsd:documentation>Запрос на подбор и выполнение перехода для документа с заданным глобальным идентификатором.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="parameters" type="c:parameters" minOccurs="0"/>
+		</xsd:sequence>
+
+		<xsd:attribute name="guid" type="c:guid">
+			<xsd:annotation>
+				<xsd:documentation>Глобальный идентификатор документа, для которого подбирается и вызывается переход.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="pushDocumentStateResponse">
+		<xsd:annotation>
+			<xsd:documentation>
+				Ответ на запрос на подбор и выполнение перехода для документа с заданным глобальным идентификатором.
+				Содержит статус, который документ получил в результате выполнения перехода.
+			</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:attribute name="state" type="xsd:token" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Статус документа, полученный в результате выполнения перехода жизненного цикла.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="getStateRequest">
+		<xsd:annotation>
+			<xsd:documentation>Запрос статуса для документа с заданным глобальным идентификатором.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:attribute name="guid" type="c:guid" use="required"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="getStateResponse">
+		<xsd:annotation>
+			<xsd:documentation>Ответ на запрос статуса для документа с заданным глобальным идентификатором.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:attribute name="state" type="xsd:token" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Текущий статус запрашиваемого документа.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+</xsd:schema>

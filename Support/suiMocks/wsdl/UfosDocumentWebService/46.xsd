@@ -1,0 +1,757 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/EXP_RegisPublicServices/formular" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/EXP_RegisPublicServices/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="EXP_RegisPublicServices" type="tns:tEXP_RegisPublicServices"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tEXP_RegisPublicServices">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="constReestNum" type="xs:string" minOccurs="0"/>
+<xs:element name="counterConcat" type="xs:string" minOccurs="0"/>
+<xs:element name="dateFlag1" type="xs:string" minOccurs="0"/>
+<xs:element name="guidForCounter" type="xs:string" minOccurs="0"/>
+<xs:element name="Inf_UnqNmbr" type="xs:string"/>
+<xs:element name="Inf_DtUpdtngRcrd" type="xs:string"/>
+<xs:element name="Inf_GdRcrdRgstr" type="xs:string" minOccurs="0"/>
+<xs:element name="Inf_GdPrntlDcmnt" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsFndr_GRBSFllNm" type="xs:string"/>
+<xs:element name="DtlsFndr_GRBSShrtNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsFndr_OKOPFCd" type="xs:string"/>
+<xs:element name="DtlsFndr_OKOPFNm" type="xs:string"/>
+<xs:element name="DtlsFndr_BKCd" type="xs:string"/>
+<xs:element name="DtlsFndr_CnsldtdRgstrCd" type="xs:string"/>
+<xs:element name="DtlsFndr_INN" type="xs:string"/>
+<xs:element name="DtlsFndr_KPP" type="xs:string"/>
+<xs:element name="DtlsFndr_TaxAutorityRegistrationDate" type="xs:string"/>
+<xs:element name="LctnGRBS_CntrNm" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnGRBS_CntrCd" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnGRBS_RssnFdrtnTrrtrlSbjctNm" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnGRBS_RssnFdrtnTrrtrlSbjctCd" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnGRBS_DstrctNm" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnGRBS_LctnNm" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnGRBS_SttlmntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnGRBS_SttlmntCd" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnGRBS_PlnnngStrctrElmntTp" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnGRBS_StrtNtwrkObjctTp" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnGRBS_ObjAddresType" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnGRBS_AprtmntTp" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsOrgnztn_OrgnztnFllNm" type="xs:string"/>
+<xs:element name="DtlsOrgnztn_OrganizationShortName" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsOrgnztn_OKOPFCd" type="xs:string"/>
+<xs:element name="DtlsOrgnztn_OKOPFNm" type="xs:string"/>
+<xs:element name="DtlsOrgnztn_CnsldtdRgstrCd" type="xs:string"/>
+<xs:element name="DtlsOrgnztn_INN" type="xs:string"/>
+<xs:element name="DtlsOrgnztn_KPP" type="xs:string"/>
+<xs:element name="DtlsOrgnztn_TxAtrtRgstrtnDt" type="xs:string"/>
+<xs:element name="DtlsOrgnztn_FdAgncyNm" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsOrgnztn_FdAgncCd" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnOrgnztn_CntrNm" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnOrgnztn_CntrCd" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnOrgnztn_RssnFdrtnTrrtrlSbjctNm" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnOrgnztn_RssnFdrtnTrrtrlSbjctCd" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnOrgnztn_DstrctNm" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnOrgnztn_LctnNm" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnOrgnztn_SttlmntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnOrgnztn_SttlmntCd" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnOrgnztn_PlnnngStrctrElmntTp" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnOrgnztn_StrtNtwrkObjctTp" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnOrgnztn_ObjAddresType" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnOrgnztn_AprtmntTp" type="xs:string" minOccurs="0"/>
+<xs:element name="ImprntTsk_DtSttmntTsk" type="xs:string"/>
+<xs:element name="ImprntTsk_SttTskNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="ImprntTsk_SttTskApprvrNm" type="xs:string" minOccurs="0"/>
+<xs:element name="ImprntTsk_SttTskApprvrFNm" type="xs:string" minOccurs="0"/>
+<xs:element name="ImprntTsk_SttTskApprvrSNm" type="xs:string" minOccurs="0"/>
+<xs:element name="ImprntTsk_SttTskApprvrPstn" type="xs:string" minOccurs="0"/>
+<xs:element name="ImprntTsk_CrrntFnnclPrd" type="xs:string" minOccurs="0"/>
+<xs:element name="ImprntTsk_NxtFnnclPrd" type="xs:string"/>
+<xs:element name="ImprntTsk_FrstYrFnnclPrd" type="xs:string" minOccurs="0"/>
+<xs:element name="ImprntTsk_ScndYrFnnclPrd" type="xs:string" minOccurs="0"/>
+<xs:element name="ImprntTsk_PrRlzRpCmpl" type="xs:string" minOccurs="0"/>
+<xs:element name="RGZInformationPublicService" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZInformationPublicService_ITEM" type="tns:tRGZInformationPublicService_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="RGZFakeGUIDTable" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZFakeGUIDTable_ITEM" type="tns:tRGZFakeGUIDTable_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DtlsOrgnztn_OKVED" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="OKVED_ITEM" type="tns:tDtlsOrgnztn_OKVED_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ImprntTsk_RGZRInfDlvrRprts" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZRInfDlvrRprts_ITEM" type="tns:tImprntTsk_RGZRInfDlvrRprts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ImprntTsk_RGZInfrRprts" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZInfrRprts_ITEM" type="tns:tImprntTsk_RGZInfrRprts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="InfContrl_BaseInfCntr" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="BaseInfCntr_ITEM" type="tns:tInfContrl_BaseInfCntr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="InfContrl_InfoCntrol" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="InfoCntrol_ITEM" type="tns:tInfContrl_InfoCntrol_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="I_RGZPblcSrvcs" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZPblcSrvcs_ITEM" type="tns:tI_RGZPblcSrvcs_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="I_RGZIndexQuality" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZIndexQuality_ITEM" type="tns:tI_RGZIndexQuality_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="I_RGZInfIndxVlm" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZInfIndxVlm_ITEM" type="tns:tI_RGZInfIndxVlm_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="I_RGZInfNPA" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZInfNPA_ITEM" type="tns:tI_RGZInfNPA_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="I_RGZInfOrdrNPA" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZInfOrdrNPA_ITEM" type="tns:tI_RGZInfOrdrNPA_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="I_RGZInfoOrdr" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZInfoOrdr_ITEM" type="tns:tI_RGZInfoOrdr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="I_RGZPublicWork" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZPublicWork_ITEM" type="tns:tI_RGZPublicWork_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="I_RGZIndQualWrk" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZIndQualWrk_ITEM" type="tns:tI_RGZIndQualWrk_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="I_RGZInfIndxVlmWrk" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZInfIndxVlmWrk_ITEM" type="tns:tI_RGZInfIndxVlmWrk_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="R_RGZPblcSrvcs" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZPblcSrvcs_ITEM" type="tns:tR_RGZPblcSrvcs_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="R_RGZIndexQuality" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZIndexQuality_ITEM" type="tns:tR_RGZIndexQuality_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="R_RGZInfIndxVlm" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZInfIndxVlm_ITEM" type="tns:tR_RGZInfIndxVlm_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="R_RGZPublicWork" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZPublicWork_ITEM" type="tns:tR_RGZPublicWork_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="R_RGZIndQualWrk" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZIndQualWrk_ITEM" type="tns:tR_RGZIndQualWrk_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="R_RGZInfIndxVlmWrk" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZInfIndxVlmWrk_ITEM" type="tns:tR_RGZInfIndxVlmWrk_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="D_OP" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="OP_ITEM" type="tns:tD_OP_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tRGZInformationPublicService_ITEM">
+<xs:sequence>
+<xs:element name="GUIDAssociatedDocument" type="xs:string" minOccurs="0"/>
+<xs:element name="TypeDocument" type="xs:string" minOccurs="0"/>
+<xs:element name="DateApprovelPublicService" type="xs:string" minOccurs="0"/>
+<xs:element name="RepPeriod" type="xs:string" minOccurs="0"/>
+<xs:element name="RepDate" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRGZFakeGUIDTable_ITEM">
+<xs:sequence>
+<xs:element name="guidSved" type="xs:string" minOccurs="0"/>
+<xs:element name="uniqReesNum" type="xs:string" minOccurs="0"/>
+<xs:element name="dateReg" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tDtlsOrgnztn_OKVED_ITEM">
+<xs:sequence>
+<xs:element name="OKVEDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="OKVEDNm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tImprntTsk_RGZRInfDlvrRprts_ITEM">
+<xs:sequence>
+<xs:element name="LnNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="PrvwCmpltDt" type="xs:string" minOccurs="0"/>
+<xs:element name="SttTskRlztn" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tImprntTsk_RGZInfrRprts_ITEM">
+<xs:sequence>
+<xs:element name="LnNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="DtRprtngPrd" type="xs:string" minOccurs="0"/>
+<xs:element name="DtDlvr" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tInfContrl_BaseInfCntr_ITEM">
+<xs:sequence>
+<xs:element name="LnNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="EarlyTrmInfNm" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tInfContrl_InfoCntrol_ITEM">
+<xs:sequence>
+<xs:element name="LnNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="InfCntrlPerF" type="xs:string" minOccurs="0"/>
+<xs:element name="InfCntrlPer" type="xs:string" minOccurs="0"/>
+<xs:element name="InfCntrlPerON" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZPblcSrvcs_ITEM">
+<xs:sequence>
+<xs:element name="NmbrLn" type="xs:string" minOccurs="0"/>
+<xs:element name="SttTskPblcSrvc" type="xs:string" minOccurs="0"/>
+<xs:element name="PblcSrvcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="PblcSrvcUsrCtgr" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZIndexQuality_ITEM">
+<xs:sequence>
+<xs:element name="NmbrStrng" type="xs:string" minOccurs="0"/>
+<xs:element name="RecUniqNm" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICntntName1" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICntntName2" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICntntName3" type="xs:string" minOccurs="0"/>
+<xs:element name="KPISrvName1" type="xs:string" minOccurs="0"/>
+<xs:element name="KPISrvName2" type="xs:string" minOccurs="0"/>
+<xs:element name="NmbrSrl" type="xs:string" minOccurs="0"/>
+<xs:element name="KPINm" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIMsrngUnt" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIMeasUnitCD" type="xs:string" minOccurs="0"/>
+<xs:element name="KPINxtFnnclYr" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIFrstYrPlnnngPrd" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIScndYrPlnnngPrd" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIVlVldDvt" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZInfIndxVlm_ITEM">
+<xs:sequence>
+<xs:element name="StrngNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="RecUniqNm" type="xs:string" minOccurs="0"/>
+<xs:element name="CntntName1" type="xs:string" minOccurs="0"/>
+<xs:element name="CntntName2" type="xs:string" minOccurs="0"/>
+<xs:element name="CntntName3" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvName1" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvName2" type="xs:string" minOccurs="0"/>
+<xs:element name="IndxNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvcVlmNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvcUntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="VLMMeasUnitCD" type="xs:string" minOccurs="0"/>
+<xs:element name="VlmVlNxtFnnclYr" type="xs:string" minOccurs="0"/>
+<xs:element name="ServicAveraPriceCurrYear" type="xs:decimal" minOccurs="0"/>
+<xs:element name="VlmVlPlnnngFrstYr" type="xs:string" minOccurs="0"/>
+<xs:element name="ServicAveraPriceFirstYear" type="xs:decimal" minOccurs="0"/>
+<xs:element name="VlmVlPlnnngPrdScondYr" type="xs:string" minOccurs="0"/>
+<xs:element name="ServicAveraPriceSecYear" type="xs:decimal" minOccurs="0"/>
+<xs:element name="VolumeValidDeviat" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZInfNPA_ITEM">
+<xs:sequence>
+<xs:element name="NmbrStrng" type="xs:string" minOccurs="0"/>
+<xs:element name="NmbrIndx" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNPA" type="xs:string" minOccurs="0"/>
+<xs:element name="NmNPA" type="xs:string" minOccurs="0"/>
+<xs:element name="NmbrNPA" type="xs:string" minOccurs="0"/>
+<xs:element name="DtNPA" type="xs:string" minOccurs="0"/>
+<xs:element name="BdClmdNPA" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZInfOrdrNPA_ITEM">
+<xs:sequence>
+<xs:element name="NmbrStrng" type="xs:string" minOccurs="0"/>
+<xs:element name="NmbrIndx" type="xs:string" minOccurs="0"/>
+<xs:element name="TpNPA" type="xs:string" minOccurs="0"/>
+<xs:element name="NmNPA" type="xs:string" minOccurs="0"/>
+<xs:element name="NmbrNPA" type="xs:string" minOccurs="0"/>
+<xs:element name="DtNPA" type="xs:string" minOccurs="0"/>
+<xs:element name="BdClmdNPA" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZInfoOrdr_ITEM">
+<xs:sequence>
+<xs:element name="NmbrStrng" type="xs:string" minOccurs="0"/>
+<xs:element name="NmbrIndx" type="xs:string" minOccurs="0"/>
+<xs:element name="InfoWay" type="xs:string" minOccurs="0"/>
+<xs:element name="InfoContent" type="xs:string" minOccurs="0"/>
+<xs:element name="InfOrdRate" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZPublicWork_ITEM">
+<xs:sequence>
+<xs:element name="NmbrLn" type="xs:string" minOccurs="0"/>
+<xs:element name="PblcSrvcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SttTskPblcSrvc" type="xs:string" minOccurs="0"/>
+<xs:element name="PblcSrvcUsrCtgr" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZIndQualWrk_ITEM">
+<xs:sequence>
+<xs:element name="NmbrStrng" type="xs:string" minOccurs="0"/>
+<xs:element name="RecUniqNm" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICntntName1" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICntntName2" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICntntName3" type="xs:string" minOccurs="0"/>
+<xs:element name="KPISrvName1" type="xs:string" minOccurs="0"/>
+<xs:element name="KPISrvName2" type="xs:string" minOccurs="0"/>
+<xs:element name="NmbrSrl" type="xs:string" minOccurs="0"/>
+<xs:element name="KPINm" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIMsrngUnt" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIMeasUnitCD" type="xs:string" minOccurs="0"/>
+<xs:element name="KPINxtFnnclYr" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIFrstYrPlnnngPrd" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIScndYrPlnnngPrd" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIVlVldDvt" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZInfIndxVlmWrk_ITEM">
+<xs:sequence>
+<xs:element name="StrngNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="RecUniqNm" type="xs:string" minOccurs="0"/>
+<xs:element name="CntntName1" type="xs:string" minOccurs="0"/>
+<xs:element name="CntntName2" type="xs:string" minOccurs="0"/>
+<xs:element name="CntntName3" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvName1" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvName2" type="xs:string" minOccurs="0"/>
+<xs:element name="IndxNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvcVlmNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvcUntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="VLMMeasUnitCD" type="xs:string" minOccurs="0"/>
+<xs:element name="VlmVlNxtFnnclYr" type="xs:string" minOccurs="0"/>
+<xs:element name="VlmVlPlnnngFrstYr" type="xs:string" minOccurs="0"/>
+<xs:element name="VlmVlPlnnngPrdScondYr" type="xs:string" minOccurs="0"/>
+<xs:element name="VolumeValidDeviat" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tR_RGZPblcSrvcs_ITEM">
+<xs:sequence>
+<xs:element name="NmbrLn" type="xs:string" minOccurs="0"/>
+<xs:element name="PblcSrvcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SttTskPblcSrvc" type="xs:string" minOccurs="0"/>
+<xs:element name="PblcSrvcUsrCtgr" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tR_RGZIndexQuality_ITEM">
+<xs:sequence>
+<xs:element name="NmbrStrng" type="xs:string" minOccurs="0"/>
+<xs:element name="RecUniqNm" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICntntName1" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICntntName2" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICntntName3" type="xs:string" minOccurs="0"/>
+<xs:element name="KPISrvName1" type="xs:string" minOccurs="0"/>
+<xs:element name="KPISrvName2" type="xs:string" minOccurs="0"/>
+<xs:element name="NmbrSrl" type="xs:string" minOccurs="0"/>
+<xs:element name="KPINm" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIMsrngUnt" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIMeasUnitCD" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICrFnnclYr" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICrFnnclYrF" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIVlVldDvt" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIDlt" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIDltReason" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tR_RGZInfIndxVlm_ITEM">
+<xs:sequence>
+<xs:element name="NmbrStrng" type="xs:string" minOccurs="0"/>
+<xs:element name="RecUniqNm" type="xs:string" minOccurs="0"/>
+<xs:element name="CntntName1" type="xs:string" minOccurs="0"/>
+<xs:element name="CntntName2" type="xs:string" minOccurs="0"/>
+<xs:element name="CntntName3" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvName1" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvName2" type="xs:string" minOccurs="0"/>
+<xs:element name="IndxNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvcVlmNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvcUntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="VLMMeasUnitCD" type="xs:string" minOccurs="0"/>
+<xs:element name="VlmVlNxtFnnclYr" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICrFnnclYrF" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIVlVldDvt" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIDlt" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIDltReason" type="xs:string" minOccurs="0"/>
+<xs:element name="ServicAveraPriceCurrYear" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tR_RGZPublicWork_ITEM">
+<xs:sequence>
+<xs:element name="NmbrLn" type="xs:string" minOccurs="0"/>
+<xs:element name="PblcSrvcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SttTskPblcSrvc" type="xs:string" minOccurs="0"/>
+<xs:element name="PblcSrvcUsrCtgr" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tR_RGZIndQualWrk_ITEM">
+<xs:sequence>
+<xs:element name="NmbrStrng" type="xs:string" minOccurs="0"/>
+<xs:element name="RecUniqNm" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICntntName1" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICntntName2" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICntntName3" type="xs:string" minOccurs="0"/>
+<xs:element name="KPISrvName1" type="xs:string" minOccurs="0"/>
+<xs:element name="KPISrvName2" type="xs:string" minOccurs="0"/>
+<xs:element name="NmbrSrl" type="xs:string" minOccurs="0"/>
+<xs:element name="KPINm" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIMsrngUnt" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIMeasUnitCD" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICrFnnclYr" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICrFnnclYrF" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIVlVldDvt" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIDlt" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIDltReason" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tR_RGZInfIndxVlmWrk_ITEM">
+<xs:sequence>
+<xs:element name="StrngNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="RecUniqNm" type="xs:string" minOccurs="0"/>
+<xs:element name="CntntName1" type="xs:string" minOccurs="0"/>
+<xs:element name="CntntName2" type="xs:string" minOccurs="0"/>
+<xs:element name="CntntName3" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvName1" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvName2" type="xs:string" minOccurs="0"/>
+<xs:element name="IndxNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvcVlmNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvcUntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="VLMMeasUnitCD" type="xs:string" minOccurs="0"/>
+<xs:element name="KPICrFnnclYr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="KPICrFnnclYrF" type="xs:decimal" minOccurs="0"/>
+<xs:element name="KPIVlVldDvt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="KPIDlt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="KPIDltReason" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tD_OP_ITEM">
+<xs:sequence>
+<xs:element name="OrgnztnFllNm" type="xs:string"/>
+<xs:element name="OrganizationShortName" type="xs:string" minOccurs="0"/>
+<xs:element name="CnsldtdRgstrCd" type="xs:string"/>
+<xs:element name="KPP" type="xs:string"/>
+<xs:element name="TxAtrtRgstrtnDt" type="xs:string"/>
+<xs:element name="CntrNm" type="xs:string" minOccurs="0"/>
+<xs:element name="CntrCd" type="xs:string" minOccurs="0"/>
+<xs:element name="RssnFdrtnTrrtrlSbjctNm" type="xs:string" minOccurs="0"/>
+<xs:element name="RssnFdrtnTrrtrlSbjctCd" type="xs:string" minOccurs="0"/>
+<xs:element name="DstrctNm" type="xs:string" minOccurs="0"/>
+<xs:element name="LctnNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SttlmntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SttlmntCd" type="xs:string" minOccurs="0"/>
+<xs:element name="PlnnngStrctrElmntTp" type="xs:string" minOccurs="0"/>
+<xs:element name="StrtNtwrkObjctTp" type="xs:string" minOccurs="0"/>
+<xs:element name="ObjctAddrsTp" type="xs:string" minOccurs="0"/>
+<xs:element name="AprtmntTp" type="xs:string" minOccurs="0"/>
+<xs:element name="RGZPblcSrvcs" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZPblcSrvcs_ITEM" type="tns:tRGZPblcSrvcs_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="RGZPublicWrk" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="RGZPublicWrk_ITEM" type="tns:tRGZPublicWrk_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRGZPblcSrvcs_ITEM">
+<xs:sequence>
+<xs:element name="NmbrLn" type="xs:string" minOccurs="0"/>
+<xs:element name="RecUniqNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvcVlmNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvcUntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIMeasUnitCD" type="xs:string" minOccurs="0"/>
+<xs:element name="VlmVlNxtFnnclYr" type="xs:string" minOccurs="0"/>
+<xs:element name="ServicAveraPriceCurrYear" type="xs:decimal" minOccurs="0"/>
+<xs:element name="VlmVlPlnnngFrstYr" type="xs:string" minOccurs="0"/>
+<xs:element name="ServicAveraPriceFirstYear" type="xs:decimal" minOccurs="0"/>
+<xs:element name="VlmVlPlnnngPrdScondYr" type="xs:string" minOccurs="0"/>
+<xs:element name="ServicAveraPriceSecYear" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRGZPublicWrk_ITEM">
+<xs:sequence>
+<xs:element name="NmbrLn" type="xs:string" minOccurs="0"/>
+<xs:element name="RecUniqNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvcVlmNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SrvcUntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="KPIMeasUnitCD" type="xs:string" minOccurs="0"/>
+<xs:element name="VlmVlNxtFnnclYr" type="xs:string" minOccurs="0"/>
+<xs:element name="VlmVlPlnnngFrstYr" type="xs:string" minOccurs="0"/>
+<xs:element name="VlmVlPlnnngPrdScondYr" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tInfContrl_BaseInfCntr">
+<xs:sequence>
+<xs:element name="BaseInfCntr_ITEM" type="tns:tInfContrl_BaseInfCntr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZIndQualWrk">
+<xs:sequence>
+<xs:element name="RGZIndQualWrk_ITEM" type="tns:tI_RGZIndQualWrk_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZPblcSrvcs">
+<xs:sequence>
+<xs:element name="RGZPblcSrvcs_ITEM" type="tns:tI_RGZPblcSrvcs_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tR_RGZPblcSrvcs">
+<xs:sequence>
+<xs:element name="RGZPblcSrvcs_ITEM" type="tns:tR_RGZPblcSrvcs_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tR_RGZIndQualWrk">
+<xs:sequence>
+<xs:element name="RGZIndQualWrk_ITEM" type="tns:tR_RGZIndQualWrk_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZPublicWork">
+<xs:sequence>
+<xs:element name="RGZPublicWork_ITEM" type="tns:tI_RGZPublicWork_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZInfoOrdr">
+<xs:sequence>
+<xs:element name="RGZInfoOrdr_ITEM" type="tns:tI_RGZInfoOrdr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRGZInformationPublicService">
+<xs:sequence>
+<xs:element name="RGZInformationPublicService_ITEM" type="tns:tRGZInformationPublicService_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tImprntTsk_RGZRInfDlvrRprts">
+<xs:sequence>
+<xs:element name="RGZRInfDlvrRprts_ITEM" type="tns:tImprntTsk_RGZRInfDlvrRprts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZInfIndxVlmWrk">
+<xs:sequence>
+<xs:element name="RGZInfIndxVlmWrk_ITEM" type="tns:tI_RGZInfIndxVlmWrk_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tImprntTsk_RGZInfrRprts">
+<xs:sequence>
+<xs:element name="RGZInfrRprts_ITEM" type="tns:tImprntTsk_RGZInfrRprts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZInfOrdrNPA">
+<xs:sequence>
+<xs:element name="RGZInfOrdrNPA_ITEM" type="tns:tI_RGZInfOrdrNPA_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRGZPblcSrvcs">
+<xs:sequence>
+<xs:element name="RGZPblcSrvcs_ITEM" type="tns:tRGZPblcSrvcs_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZInfNPA">
+<xs:sequence>
+<xs:element name="RGZInfNPA_ITEM" type="tns:tI_RGZInfNPA_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRGZPublicWrk">
+<xs:sequence>
+<xs:element name="RGZPublicWrk_ITEM" type="tns:tRGZPublicWrk_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tD_OP">
+<xs:sequence>
+<xs:element name="OP_ITEM" type="tns:tD_OP_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZIndexQuality">
+<xs:sequence>
+<xs:element name="RGZIndexQuality_ITEM" type="tns:tI_RGZIndexQuality_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tDtlsOrgnztn_OKVED">
+<xs:sequence>
+<xs:element name="OKVED_ITEM" type="tns:tDtlsOrgnztn_OKVED_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tR_RGZInfIndxVlmWrk">
+<xs:sequence>
+<xs:element name="RGZInfIndxVlmWrk_ITEM" type="tns:tR_RGZInfIndxVlmWrk_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tR_RGZIndexQuality">
+<xs:sequence>
+<xs:element name="RGZIndexQuality_ITEM" type="tns:tR_RGZIndexQuality_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tInfContrl_InfoCntrol">
+<xs:sequence>
+<xs:element name="InfoCntrol_ITEM" type="tns:tInfContrl_InfoCntrol_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tI_RGZInfIndxVlm">
+<xs:sequence>
+<xs:element name="RGZInfIndxVlm_ITEM" type="tns:tI_RGZInfIndxVlm_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tR_RGZInfIndxVlm">
+<xs:sequence>
+<xs:element name="RGZInfIndxVlm_ITEM" type="tns:tR_RGZInfIndxVlm_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tR_RGZPublicWork">
+<xs:sequence>
+<xs:element name="RGZPublicWork_ITEM" type="tns:tR_RGZPublicWork_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tRGZFakeGUIDTable">
+<xs:sequence>
+<xs:element name="RGZFakeGUIDTable_ITEM" type="tns:tRGZFakeGUIDTable_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

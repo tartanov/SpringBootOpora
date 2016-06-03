@@ -1,0 +1,504 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xsd:schema xmlns="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1" xmlns:cc="http://www.otr.ru/ufos/ws/core/common/v1_1" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" jaxb:version="2.1" version="1.0">
+	<xsd:import namespace="http://www.otr.ru/ufos/ws/core/common/v1_1" schemaLocation="1.xsd"/>
+
+	<xsd:element name="listAttachmentsRequest" type="listAttachmentsRequest"/>
+	<xsd:element name="listAttachmentsResponse" type="listAttachmentsResponse"/>
+
+	<xsd:element name="getAttachmentRequest" type="getAttachmentRequest"/>
+	<xsd:element name="getAttachmentResponse" type="getAttachmentResponse"/>
+	<xsd:element name="attachmentNotFoundFault" type="cc:commonCoreFaultBean"/>
+
+	<xsd:element name="manageAttachmentsRequest" type="manageAttachmentsRequest"/>
+	<xsd:element name="manageAttachmentsResponse" type="manageAttachmentsResponse"/>
+	<xsd:element name="deletingAttachmentIsSignedFault" type="cc:commonCoreFaultBean"/>
+
+	<xsd:complexType name="listAttachmentsRequest">
+		<xsd:annotation>
+			<xsd:documentation>Запрос на получение списка вложений указанного документа.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:attribute name="guid" type="cc:guid" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Глобальный идентификатор документа, вложения которого нужно получить.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="listAttachmentsResponse">
+		<xsd:annotation>
+			<xsd:documentation>Ответ со списком вложений документа.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:annotation>
+				<xsd:appinfo>
+					<jaxb:property name="attachments"/>
+				</xsd:appinfo>
+			</xsd:annotation>
+
+			<xsd:element name="attachment" type="attachment" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="attachment">
+		<xsd:annotation>
+			<xsd:documentation>
+				Каждое вложение документа имеет атрибуты: 1. Глобальный
+				идентификатор вложения. 2. Mime-тип. 3. Наименование
+				файла, из которого вложение было загружено. 4. Дата
+				создания файла. 5. Размер содержимого вложения. 6. Путь
+				к файлу. 7. Комментарий к вложению. 8. Бизнес-тип
+				вложения. 9. Порядковый номер вложения в списке. 10.
+				Дата актуальности содержимого вложения. 11. Заголовок
+				вложения. 12. Название организации, в рамках которой
+				вложение было создано. 13. Имя пользователя - создателя
+				вложения. 14. Признак доступности вложения для
+				просмотра. 15. Статус вложения. Набор статусов зависит
+				от бизнес процессов документа и не стандартизован. 16.
+				Признак временного вложения, имеющего только локальное
+				значение. 17. Признак видимости вложения. Позволяет
+				работать с вложением как с системным, вспомогательным,
+				служебным. На формах оно не отображается.
+			</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="comment" type="xsd:string" minOccurs="0"
+				maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>
+						Комментарий к вложению.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="title" type="xsd:string" minOccurs="0"
+				maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>
+						Заголовок вложения.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="organization-creator" type="xsd:string"
+				minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>
+						Название организации, в рамках которой вложение
+						было создано.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="user-creator" type="xsd:string"
+				minOccurs="0" maxOccurs="1">
+				<xsd:annotation>
+					<xsd:documentation>
+						Имя пользователя - создателя вложения.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+
+		<xsd:attribute name="guid" type="cc:guid" use="required">
+			<xsd:annotation>
+				<xsd:documentation>
+					Глобальный идентификатор вложения.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="mime-type" type="xsd:token"
+			use="optional">
+			<xsd:annotation>
+				<xsd:documentation>
+					MIME-тип вложения.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="file-name" type="xsd:NCName"
+			use="optional">
+			<xsd:annotation>
+				<xsd:documentation>
+					Наименование файла.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="file-date" type="xsd:dateTime"
+			use="optional">
+			<xsd:annotation>
+				<xsd:documentation>
+					Дата создания файла.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="file-size" type="xsd:nonNegativeInteger"
+			use="optional">
+			<xsd:annotation>
+				<xsd:documentation>
+					Размер содержимого вложения.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="file-path" type="xsd:Name"
+			use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Путь к файлу.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="business-type" type="xsd:Name"
+			use="optional">
+			<xsd:annotation>
+				<xsd:documentation>
+					Бизнес-тип вложения.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="ordinal-number"
+			type="xsd:nonNegativeInteger" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>
+					Порядковый номер вложения. Поле обязательное, но в
+					случае создания нового вложения значение может быть
+					опущено и сгенерировано автоматически системой.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="actual-date" type="xsd:dateTime"
+			use="optional">
+			<xsd:annotation>
+				<xsd:documentation>
+					Дата актуальности содержимого вложения.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="viewable" type="xsd:boolean"
+			use="optional">
+			<xsd:annotation>
+				<xsd:documentation>
+					Признак доступности вложения для просмотра.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="status" type="xsd:Name" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>
+					Статус вложения. Набор статусов зависит от бизнес
+					процессов документа и не стандартизован.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="temporary" type="xsd:boolean"
+			use="optional" default="false">
+			<xsd:annotation>
+				<xsd:documentation>
+					Признак временного вложения, имеющего только
+					локальное значение.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="service" type="xsd:boolean" use="optional"
+			default="false">
+			<xsd:annotation>
+				<xsd:documentation>
+					Признак видимости вложения. Позволяет работать с
+					вложением как с системным, вспомогательным,
+					служебным. На формах оно не отображается.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="with-signature" type="xsd:boolean"></xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="getAttachmentRequest">
+		<xsd:annotation>
+			<xsd:documentation>Запрос на получение содержимого вложения по его глобальному идентификатору.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:attribute name="guid" type="cc:guid" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Глобальный идентификатор вложения, содержимое которого нужно получить.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="with-signature" type="xsd:boolean" default="false">
+			<xsd:annotation>
+				<xsd:documentation>Признак необходимости выгрузить вместе с вложением его подписи.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="with-all-attributes" type="xsd:boolean" default="false">
+			<xsd:annotation>
+				<xsd:documentation>
+					Признак необходимости выгрузить вместе с вложением все его атрибуты (по умолчанию выгружается только обязательный глобальный идентификатор).
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="getAttachmentResponse">
+		<xsd:annotation>
+			<xsd:documentation>Ответ с содержимым запрашиваемого вложения и подписями, если они запрашивались.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="attachment" type="attachmentWithContent"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="attachmentSignatures">
+		<xsd:annotation>
+			<xsd:documentation>Подписи вложения.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="signature" type="attachmentSignature" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="attachmentSignature">
+		<xsd:annotation>
+			<xsd:documentation>Подпись вложения.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="cipher-algorithm" type="cryptoAlgorithm">
+				<xsd:annotation>
+					<xsd:documentation>Крипто-алгоритм подписи.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="hash-algorithm" type="cryptoAlgorithm">
+				<xsd:annotation>
+					<xsd:documentation>Крипто-алгоритм хэша.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="cms-signed-data" type="xsd:base64Binary">
+				<xsd:annotation>
+					<xsd:documentation>Электронно-цифровая подпись.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="certifying-hash" type="xsd:base64Binary">
+				<xsd:annotation>
+					<xsd:documentation>Удостоверяющий хэш.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+
+		<xsd:attribute name="guid" type="cc:guid" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Глобальный идентификатор подписи.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="certificate-fingerprint" type="xsd:string" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Отпечаток сертификата.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="subject-cname" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>Имя подписанта.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="subject-title" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>Должность подписанта.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="subject-organization" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>Организация подписанта.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="local" type="xsd:boolean">
+			<xsd:annotation>
+				<xsd:documentation>ЭЦП сформировано в локальной системе.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="creation-date" type="xsd:dateTime">
+			<xsd:annotation>
+				<xsd:documentation>Дата создания ЭЦП/регистрации замещения в БД.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="creation-login" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>Уникальный идентификатор подписанта (логин).</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="advanced" type="xsd:boolean">
+			<xsd:annotation>
+				<xsd:documentation>Флаг УЭЦП.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="advancing-status">
+			<xsd:annotation>
+				<xsd:documentation>Статус дополнения до УЭЦП.</xsd:documentation>
+			</xsd:annotation>
+
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Not required"/>
+					<xsd:enumeration value="Required"/>
+					<xsd:enumeration value="Executing"/>
+					<xsd:enumeration value="Executed"/>
+					<xsd:enumeration value="Error"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="advancing-error-code" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>Код ошибки дополнения до УЭЦП.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="advancing-error-message" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>Текст сообщения об ошибке дополнения до УЭЦП.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="last-check-status">
+			<xsd:annotation>
+				<xsd:documentation>Статус последней проверки ЭЦП.</xsd:documentation>
+			</xsd:annotation>
+
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Not checked"/>
+					<xsd:enumeration value="Check success"/>
+					<xsd:enumeration value="Check unsuccess"/>
+					<xsd:enumeration value="Error"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="last-check-date" type="xsd:dateTime">
+			<xsd:annotation>
+				<xsd:documentation>Дата последней проверки ЭЦП.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="last-inspector-system-name" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>Системное наименование пользователя, который последним проверял подпись.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="sign-format" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>Формат подписи.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="username" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>Пользователь наложивший ЭП.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="cryptoAlgorithm">
+		<xsd:annotation>
+			<xsd:documentation>Крипто алгоритм.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="name" type="xsd:string"/>
+			<xsd:element name="description" type="xsd:string"/>
+			<xsd:element name="type">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Cipher"/>
+						<xsd:enumeration value="Sign"/>
+						<xsd:enumeration value="Hash"/>
+						<xsd:enumeration value="Arch"/>
+						<xsd:enumeration value="CheckSum"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="manageAttachmentsRequest">
+		<xsd:annotation>
+			<xsd:documentation>
+				Запрос на изменение списка вложений документа с указанным глобальным идентификатором: удаление или создание.
+				Операция обновления должна состоять из последовательного удаления имеющегося и создания нового вложения.
+				Попытка удалить подписанное вложение расценивается как ошибка.
+				С точки зрения декларативного жизненного цикла и политики редактирования документа изменения пользовательских вложений допустимо
+				только при соответствующей политике редактирования. А системные вложения (service=true) можно изменять всегда.
+			</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="adding-attachments" type="fullAttachmentListType" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Добавляемые вложения.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="deleting-attachments" type="deletingAttachmentList" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Удаляемые вложения.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+
+		<xsd:attribute name="document-guid" type="cc:guid" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Глобальный идентификатор документа, для которого нужно создать вложения.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="fullAttachmentListType">
+		<xsd:annotation>
+			<xsd:documentation>Список вложений (с атрибутами и содержимым).</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="attachment" type="attachmentWithContent" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Вложение, которое необходимо добавить.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="attachmentWithContent">
+		<xsd:annotation>
+			<xsd:documentation>Вложение с перечнем системных атрибутов и содержимым.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:complexContent>
+			<xsd:extension base="attachment">
+				<xsd:sequence>
+					<xsd:element name="content" type="xsd:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+					<xsd:element name="signatures" type="attachmentSignatures" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="deletingAttachmentList">
+		<xsd:annotation>
+			<xsd:documentation>Список глобальных идентификаторов вложений, которые необходимо удалить.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="guid" type="cc:guid" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Глобальный идентификатор вложения, которое необходимо удалить.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+
+		<xsd:attribute name="cascade-signatures" type="xsd:boolean" default="false">
+			<xsd:annotation>
+				<xsd:documentation><!--@formatter:off-->
+					Признак, указывающий на необходимость удалить подписи вложений.
+					<br/>
+					Значение по умолчанию -
+					<code>false</code>
+					- означает, что подписанные вложения удалять нельзя. В случае попытки это сделать будет
+					создана исключительная ситуация.
+					В случае значения признака
+					<code>true</code>
+					вложения удаляются вместе с подписями, если таковые имеются, без генерации ошибки.
+					<!--@formatter:on-->
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:complexType name="manageAttachmentsResponse">
+		<xsd:sequence/>
+	</xsd:complexType>
+</xsd:schema>

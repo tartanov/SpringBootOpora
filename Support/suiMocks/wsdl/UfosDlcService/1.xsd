@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xsd:schema xmlns="http://ufos.otr.ru/core/common/v1" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ufos.otr.ru/core/common/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" jaxb:version="2.1" version="1.0">
+	<xsd:element name="parameters" type="parameters"/>
+
+	<xsd:simpleType name="guid">
+		<xsd:annotation>
+			<xsd:documentation>Глобальный идентификатор. http://tools.ietf.org/html/rfc4122</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="parameters">
+		<xsd:annotation>
+			<xsd:documentation>Общий тип для перечисления произвольных параметров, состоящих из наименования и значения.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:sequence>
+			<xsd:element name="parameter" type="parameter" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="parameter">
+		<xsd:annotation>
+			<xsd:documentation>Параметр, характеризующийся обязательным наименованием и необязательным значением.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:attribute name="name" type="xsd:token" use="required"/>
+		<xsd:attribute name="value" type="xsd:string" use="optional"/>
+		<xsd:attribute name="type" type="fieldType" use="optional" default="STRING"/>
+	</xsd:complexType>
+
+	<xsd:simpleType name="fieldType">
+		<xsd:annotation>
+			<xsd:documentation>Тип поля, параметра - базовый тип в УФОС.</xsd:documentation>
+		</xsd:annotation>
+
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="STRING">
+				<xsd:annotation>
+					<xsd:documentation>Строка символов</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ENUM">
+				<xsd:annotation>
+					<xsd:documentation>Элемент перечисления</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TEXT">
+				<xsd:annotation>
+					<xsd:documentation>Большая строка символов</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BOOLEAN">
+				<xsd:annotation>
+					<xsd:documentation>Логический</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BYTE">
+				<xsd:annotation>
+					<xsd:documentation>Целое число со знаком (размерность ±2^7)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SHORT">
+				<xsd:annotation>
+					<xsd:documentation>Целое число со знаком (размерность ±2^15)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="INTEGER">
+				<xsd:annotation>
+					<xsd:documentation>Целое число со знаком (размерность ±2^31)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LONG">
+				<xsd:annotation>
+					<xsd:documentation>Целое число со знаком (размерность ±2^63)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DECIMAL">
+				<xsd:annotation>
+					<xsd:documentation>Число с фиксированной точностью (например, для процентов)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MONEY">
+				<xsd:annotation>
+					<xsd:documentation>Денежная величина</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CURRENCY">
+				<xsd:annotation>
+					<xsd:documentation>Код валюты по ISO 4217</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DATE">
+				<xsd:annotation>
+					<xsd:documentation>Дата (без времени)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DATETIME">
+				<xsd:annotation>
+					<xsd:documentation>Дата/время</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UUID">
+				<xsd:annotation>
+					<xsd:documentation>UUID - неизменный универсальный уникальный идентификатор</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

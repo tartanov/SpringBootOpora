@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/AcntTrnsctn/formular" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/AcntTrnsctn/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="AcntTrnsctn" type="tns:tAcntTrnsctn"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tAcntTrnsctn">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="Hdr_GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_DtTm" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_GUIDDc" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_DcTp" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_NmDC" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_NmbrDc" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_DtDc" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_DtAN" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_SctnCd" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_RegisterInformAccGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_RegisterInformAccDate" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_AcntTp" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_AcntTch" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_RlvncSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_ClcltnSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_bdjt" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_KBK" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_KndActvt" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_IndxLS" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_TOFKCd" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_Crct" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_SbrdntInstttns" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_TpBK" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_OKTMOCd" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_Rsrv" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_FAIP" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_Rsrv3" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_AmntDbt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AccntTrns_AmntKrdt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AccntTrns_SstmInfrmtn_CurrentYear" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_SstmInfrmtn_FirstPlanYear" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_SstmInfrmtn_SecondPlanYear" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_SstmInfrmtn_NextPlanYear" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_SstmInfrmtn_YearCalc" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns_SstmInfrmtn_Summ" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_ResultCheck" type="xs:string" minOccurs="0"/>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:schema>

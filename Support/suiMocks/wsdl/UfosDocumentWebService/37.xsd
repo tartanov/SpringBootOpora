@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_ApplCashFlow/formular" xmlns:ns3="http://www.roskazna.ru/eb/domain/common/entity" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_ApplCashFlow/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:element name="MSC_ApplCashFlow" type="tns:tMSC_ApplCashFlow"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_ApplCashFlow">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="ZR_RqstTp" type="ns2:tMSC_RqstTpComplex" minOccurs="0"/>
+<xs:element name="ZR_RqstNm" type="xs:string" minOccurs="0"/>
+<xs:element name="ZR_INN" type="xs:string" minOccurs="0"/>
+<xs:element name="ZR_DctDtISP" type="xs:string" minOccurs="0"/>
+<xs:element name="ZR_GUIDSV" type="xs:string" minOccurs="0"/>
+<xs:element name="ZR_OblgtNm" type="xs:string" minOccurs="0"/>
+<xs:element name="ZR_FAIPObjCd" type="xs:string" minOccurs="0"/>
+<xs:element name="ZR_AmntV" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ZR_AmntDc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ZR_TxprSts" type="xs:string" minOccurs="0"/>
+<xs:element name="ZR_KBK" type="xs:string" minOccurs="0"/>
+<xs:element name="ZR_IndxBsPmnt" type="xs:string" minOccurs="0"/>
+<xs:element name="ZR_IndxTxPrd" type="xs:string" minOccurs="0"/>
+<xs:element name="ZR_IndxNmDc" type="xs:string" minOccurs="0"/>
+<xs:element name="ZR_IndxDtDc" type="xs:string" minOccurs="0"/>
+<xs:element name="ZR_SgngDtPOD" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RegisterInformAccGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RwIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_HdIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RsltPrm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_TxtRsltPrm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_ExctnDt" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RjctnRsn" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RlvncSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="ZR_MSC_Infrmtn" type="ns3:tMSC_Infrmtn" minOccurs="0"/>
+<xs:element name="ZR_MSC_Cstmr" type="ns3:tMSC_Cstmr" minOccurs="0"/>
+<xs:element name="ZR_MSC_GRBS" type="ns3:tMSC_GRBS" minOccurs="0"/>
+<xs:element name="ZR_MSC_Orgnztn" type="ns3:tMSC_Orgnztn" minOccurs="0"/>
+<xs:element name="ZR_MSC_PrtExctn" type="ns3:tMSC_PrtExctn" minOccurs="0"/>
+<xs:element name="ZR_MSC_OKV" type="ns3:tMSC_OKV" minOccurs="0"/>
+<xs:element name="ZR_MSC_Pmnt" type="ns3:tMSC_Pmnt" minOccurs="0"/>
+<xs:element name="ZR_MSC_Cntrctr" type="ns3:tMSC_Cntrctr" minOccurs="0"/>
+<xs:element name="ZR_MSC_OKTMO" type="ns3:tMSC_OKTMO" minOccurs="0"/>
+<xs:element name="ZR_MSC_Hd" type="ns3:tMSC_Hd" minOccurs="0"/>
+<xs:element name="ZR_MSC_RspnExctr" type="ns3:tMSC_RspnExctr" minOccurs="0"/>
+<xs:element name="ZR_MSC_MrkOrFK" type="ns3:tMSC_MrkOrFK" minOccurs="0"/>
+<xs:element name="ZROSN" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ZROSN_ITEM" type="tns:tZROSN_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ZRST" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ZRST_ITEM" type="tns:tZRST_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="StmInfrmtn_TabSI" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TabSI_ITEM" type="tns:tStmInfrmtn_TabSI_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tZROSN_ITEM">
+<xs:sequence>
+<xs:element name="MSC_DcBs" type="ns3:tMSC_DcBs" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tZRST_ITEM">
+<xs:sequence>
+<xs:element name="MSC_FndsSrc" type="ns2:tMSC_FndsSrcComplex" minOccurs="0"/>
+<xs:element name="AmntCrrPrpsl" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AmntRb" type="xs:decimal" minOccurs="0"/>
+<xs:element name="PyPrps" type="xs:string" minOccurs="0"/>
+<xs:element name="Nt" type="xs:string" minOccurs="0"/>
+<xs:element name="MSC_KBKPyr" type="ns3:tMSC_KBK" minOccurs="0"/>
+<xs:element name="MSC_KBKRcpnt" type="ns3:tMSC_KBK" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tStmInfrmtn_TabSI_ITEM">
+<xs:sequence>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="AccountTransGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="SignUpdate" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tStmInfrmtn_TabSI">
+<xs:sequence>
+<xs:element name="TabSI_ITEM" type="tns:tStmInfrmtn_TabSI_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tZRST">
+<xs:sequence>
+<xs:element name="ZRST_ITEM" type="tns:tZRST_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tZROSN">
+<xs:sequence>
+<xs:element name="ZROSN_ITEM" type="tns:tZROSN_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

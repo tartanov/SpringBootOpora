@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_RcptPUR_EB/formular" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_RcptPUR_EB/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="MSC_RcptPUR_EB" type="tns:tMSC_RcptPUR_EB"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_RcptPUR_EB">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="RcptDtTm" type="xs:string" minOccurs="0"/>
+<xs:element name="RcrdsQnt" type="xs:long" minOccurs="0"/>
+<xs:element name="SndrCd" type="xs:string" minOccurs="0"/>
+<xs:element name="RcvrCd" type="xs:string" minOccurs="0"/>
+<xs:element name="RfrncCd" type="xs:string" minOccurs="0"/>
+<xs:element name="FlNm" type="xs:string" minOccurs="0"/>
+<xs:element name="RegisterInformAccGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="RegInfAccGUID_PIAO" type="xs:string" minOccurs="0"/>
+<xs:element name="Rslt" type="xs:string" minOccurs="0"/>
+<xs:element name="DscrptnGI" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_ChckSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="StmInfrmtn_RsltRgstr" type="xs:string" minOccurs="0"/>
+<xs:element name="PstnRslt" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="PstnRslt_ITEM" type="tns:tPstnRslt_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tPstnRslt_ITEM">
+<xs:sequence>
+<xs:element name="RwIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="RcrdsRslt" type="xs:string" minOccurs="0"/>
+<xs:element name="DscrptnRw" type="xs:string" minOccurs="0"/>
+<xs:element name="RwAcNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SI_RwPrcsSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="VltnErr" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="VltnErr_ITEM" type="tns:tVltnErr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tVltnErr_ITEM">
+<xs:sequence>
+<xs:element name="ErCd" type="xs:string" minOccurs="0"/>
+<xs:element name="ErTp" type="xs:string" minOccurs="0"/>
+<xs:element name="ErNm" type="xs:string" minOccurs="0"/>
+<xs:element name="Dscrptn" type="xs:string" minOccurs="0"/>
+<xs:element name="SI_PrcsSgn" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tPstnRslt">
+<xs:sequence>
+<xs:element name="PstnRslt_ITEM" type="tns:tPstnRslt_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tVltnErr">
+<xs:sequence>
+<xs:element name="VltnErr_ITEM" type="tns:tVltnErr_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

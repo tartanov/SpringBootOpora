@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_TOFKRegisterMonitor/formular" xmlns:ns3="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/entity" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_TOFKRegisterMonitor/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:element name="MSC_TOFKRegisterMonitor" type="tns:tMSC_TOFKRegisterMonitor"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_TOFKRegisterMonitor">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="RegisterQuantity0314" type="xs:string" minOccurs="0"/>
+<xs:element name="RegisterQuantity" type="xs:string" minOccurs="0"/>
+<xs:element name="Stmnfrmtn_RsltRgstr" type="xs:string" minOccurs="0"/>
+<xs:element name="Information" type="ns2:tMSC_Infrmtn" minOccurs="0"/>
+<xs:element name="ReceivInf" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ReceivInf_ITEM" type="tns:tReceivInf_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ReceivInf0314_ReceivInf" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ReceivInf_ITEM" type="tns:tReceivInf0314_ReceivInf_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tReceivInf_ITEM">
+<xs:sequence>
+<xs:element name="TOFKCd" type="xs:string" minOccurs="0"/>
+<xs:element name="TOFKNm" type="xs:string" minOccurs="0"/>
+<xs:element name="IndicatorState" type="ns3:tMSC_IndicatorStateComplex" minOccurs="0"/>
+<xs:element name="ProcessDateTime" type="xs:string" minOccurs="0"/>
+<xs:element name="RegisterState" type="xs:string" minOccurs="0"/>
+<xs:element name="RgstrTp" type="ns3:tMSC_RgstrTpComplex" minOccurs="0"/>
+<xs:element name="RegisterGUID" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tReceivInf0314_ReceivInf_ITEM">
+<xs:sequence>
+<xs:element name="TOFKCd" type="xs:string" minOccurs="0"/>
+<xs:element name="TOFKNm" type="xs:string" minOccurs="0"/>
+<xs:element name="IndicatorState" type="ns3:tMSC_IndicatorStateComplex" minOccurs="0"/>
+<xs:element name="ProcessDateTime" type="xs:string" minOccurs="0"/>
+<xs:element name="RegisterState" type="xs:string" minOccurs="0"/>
+<xs:element name="RgstrTp" type="ns3:tMSC_RgstrTpComplex" minOccurs="0"/>
+<xs:element name="RegisterGUID" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tReceivInf">
+<xs:sequence>
+<xs:element name="ReceivInf_ITEM" type="tns:tReceivInf_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tReceivInf0314_ReceivInf">
+<xs:sequence>
+<xs:element name="ReceivInf_ITEM" type="tns:tReceivInf0314_ReceivInf_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

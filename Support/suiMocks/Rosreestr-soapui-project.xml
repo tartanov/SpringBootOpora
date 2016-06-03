@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Rosreestr" resourceRoot="${projectDir}" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" id="8c82020d-9bf0-4bcf-8f7a-e282d3194734" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="soap1.1Binding" type="wsdl" bindingName="{urn:ws.request.pgu.sids.fccland.ru}soap1.1Binding" soapVersion="1_1" anonymous="optional" definition="file:/Users/abv/Work/GIT/NOT/workserver.wsdl" id="7eb2a3f2-4135-4ecd-8ea1-59afc9fe6820" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/abv/Work/GIT/NOT/workserver.wsdl"><con:part><con:url>file:/Users/abv/Work/GIT/NOT/workserver.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ExternalWS" targetNamespace="urn:ws.request.pgu.sids.fccland.ru" xmlns:http-conf="http://cxf.apache.org/transports/http/configuration" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:ws.request.pgu.sids.fccland.ru" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:ws.request.pgu.sids.fccland.ru" xmlns:event="urn:events.pgu.sids.fccland.ru" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="createRequest" type="tns:createRequestIn"/>
+      <xsd:element name="createRequestResponse" type="tns:createRequestOut"/>
+      <xsd:element name="getEvents" type="tns:getEventsIn"/>
+      <xsd:element name="getEventsResponse" type="tns:getEventsOut"/>
+      <xsd:element name="deleteEvents" type="tns:deleteEventsIn"/>
+      <xsd:element name="deleteEventsResponse" type="tns:deleteEventsOut"/>
+      <xsd:element name="loadEventDetails" type="tns:loadEventDetailsIn"/>
+      <xsd:element name="loadEventDetailsResponse" type="tns:loadEventDetailsOut"/>
+      <xsd:complexType name="createRequestIn">
+        <xsd:sequence>
+          <xsd:element name="region" type="xsd:string">
+            <xsd:annotation>
+              <xs:documentation>Код региона Код Расшифровка 02 респ. Башкортостан 16 респ. Татарстан 23 Краснодарский край 24 Красноярский край 38 Иркутская область 39 Калининградская область 40 Калужская область 42 Кемеровская область 43 Кировская область 52 Нижегородская область 61 Ростовская область 69 Тверская область</xs:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="okato" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation/>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="oktmo" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation/>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="requestData" ns1:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns1="http://www.w3.org/2005/05/xmlmime">
+            <xsd:annotation>
+              <xsd:documentation>"Портал услуг, требования по доработке учетных систем 1.4 и выше" описывает требования к пакету.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="requestType" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Приказ ВХ/МИН/00930/10 от 07.04.2010 Об установлении порядка предоставления сведений, внесённых в государственный кадастр недвижимости смотреть в схеме dRequest_Type.xsd</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="createRequestOut">
+        <xsd:sequence>
+          <xsd:element name="requestNumber" type="xsd:string"/>
+          <xsd:element name="status" type="tns:operationStatus"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="getEventsIn">
+        <xsd:sequence>
+          <xsd:element name="lastEventID" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>lastEventID идентификатор последнего полученного события В случае, если нам надо получить все события, необходимо указать пустую строку.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="getEventsOut">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="events" type="tns:eventStruct"/>
+          <xsd:element name="status" type="tns:operationStatus"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="deleteEventsIn">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="eventIDs" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="deleteEventsOut">
+        <xsd:sequence>
+          <xsd:element name="status" type="tns:operationStatus"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loadEventDetailsIn">
+        <xsd:sequence>
+          <xsd:element name="eventID" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loadEventDetailsOut">
+        <xsd:sequence>
+          <xsd:element name="detailsXML" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>status.xsd outdoc.xsd receipt.xsd</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="binary" ns1:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns1="http://www.w3.org/2005/05/xmlmime">
+            <xsd:annotation>
+              <xsd:documentation>для типа события 'STATUS' бинарника не будет</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="status" type="tns:operationStatus"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="eventStruct">
+        <xsd:sequence>
+          <xsd:element name="eventID" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Внешний идентификатор события</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="eventType" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Тип события STATUS OUTDOC RECEIPT ...</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="eventDate" type="xsd:dateTime"/>
+          <xsd:element name="requestNumber" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Номер заявки</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="operationStatus">
+        <xsd:sequence>
+          <xsd:element name="result" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:documentation>Результат выполнения</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="message" type="xsd:string">
+            <xsd:annotation>
+              <xsd:documentation>Зависит от результата выполнения true - OK false - подробное сообщение</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="loadEventDetailsOutMessage">
+    <wsdl:part element="tns:loadEventDetailsResponse" name="params"/>
+  </wsdl:message>
+  <wsdl:message name="loadEventDetailsInMessage">
+    <wsdl:part element="tns:loadEventDetails" name="params"/>
+  </wsdl:message>
+  <wsdl:message name="getEventsInMessage">
+    <wsdl:part element="tns:getEvents" name="params"/>
+  </wsdl:message>
+  <wsdl:message name="deleteEventsInMessage">
+    <wsdl:part element="tns:deleteEvents" name="params"/>
+  </wsdl:message>
+  <wsdl:message name="getEventsOutMessage">
+    <wsdl:part element="tns:getEventsResponse" name="params"/>
+  </wsdl:message>
+  <wsdl:message name="createRequestInMessage">
+    <wsdl:part element="tns:createRequest" name="params"/>
+  </wsdl:message>
+  <wsdl:message name="deleteEventsOutMessage">
+    <wsdl:part element="tns:deleteEventsResponse" name="params"/>
+  </wsdl:message>
+  <wsdl:message name="createRequestOutMessage">
+    <wsdl:part element="tns:createRequestResponse" name="params"/>
+  </wsdl:message>
+  <wsdl:portType name="ExternalSEI">
+    <wsdl:operation name="createRequest">
+      <wsdl:input message="tns:createRequestInMessage"/>
+      <wsdl:output message="tns:createRequestOutMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="getEvents">
+      <wsdl:input message="tns:getEventsInMessage"/>
+      <wsdl:output message="tns:getEventsOutMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEvents">
+      <wsdl:input message="tns:deleteEventsInMessage"/>
+      <wsdl:output message="tns:deleteEventsOutMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="loadEventDetails">
+      <wsdl:input message="tns:loadEventDetailsInMessage"/>
+      <wsdl:output message="tns:loadEventDetailsOutMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="soap1.1Binding" type="tns:ExternalSEI">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createRequest">
+      <soap:operation soapAction="urn:ws.request.pgu.sids.fccland.ru/createRequest"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEvents">
+      <soap:operation soapAction="urn:ws.request.pgu.sids.fccland.ru/getEvents"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEvents">
+      <soap:operation soapAction="urn:ws.request.pgu.sids.fccland.ru/deleteEvents"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadEventDetails">
+      <soap:operation soapAction="urn:ws.request.pgu.sids.fccland.ru/loadEventDetails"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExternalWS">
+    <wsdl:port binding="tns:soap1.1Binding" name="ExternalWSSoap1.1Port">
+      <soap:address location="http://10.129.224.45:8080/cxf/External"/>
+      <http-conf:client ReceiveTimeout="0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.129.224.45:8080/cxf/External</con:endpoint><con:endpoint>http://172.31.199.123:8889/cxf/External</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:ws.request.pgu.sids.fccland.ru/createRequest" name="createRequest" bindingOperationName="createRequest" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="2c52b7f0-1438-48e3-88cb-a5733418cae0"><con:settings/><con:call name="Request 1" id="1b015b42-d59d-47e7-bb07-5cecc1e13588"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.31.199.123:8889/cxf/External</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ws.request.pgu.sids.fccland.ru">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:createRequest>
+         <region>?</region>
+         <okato>/Request_Reestr/Folder[1]/Objects[1]/Object[1]/Location[1]/Code_OKATO[1]</okato>
+         <oktmo>?</oktmo>
+         <requestData>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</requestData>
+         <requestType>?</requestType>
+      </urn:createRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:ws.request.pgu.sids.fccland.ru/createRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="urn:ws.request.pgu.sids.fccland.ru/deleteEvents" name="deleteEvents" bindingOperationName="deleteEvents" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="9cf31a61-1f57-4a70-b9e9-1ff0c1d92a20"><con:settings/><con:call name="Request 1" id="67a4dd06-b2a5-472d-93de-451eef97196b"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.129.224.45:8080/cxf/External</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ws.request.pgu.sids.fccland.ru">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:deleteEvents>
+         <!--1 or more repetitions:-->
+         <eventIDs>?</eventIDs>
+      </urn:deleteEvents>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:ws.request.pgu.sids.fccland.ru/deleteEvents"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="urn:ws.request.pgu.sids.fccland.ru/getEvents" name="getEvents" bindingOperationName="getEvents" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="a4e8b822-f13c-430e-9f8b-9f0eae3d565f"><con:settings/><con:call name="Request 1" id="e6b84d05-26a0-4536-b59c-d21e21b11e52"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.129.224.45:8080/cxf/External</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ws.request.pgu.sids.fccland.ru">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:getEvents>
+         <lastEventID>?</lastEventID>
+      </urn:getEvents>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:ws.request.pgu.sids.fccland.ru/getEvents"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="urn:ws.request.pgu.sids.fccland.ru/loadEventDetails" name="loadEventDetails" bindingOperationName="loadEventDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="ce9ac5c6-32e8-4ef5-bd10-993ee7267272"><con:settings/><con:call name="Request 1" id="f97cf558-104d-40b8-8534-926a4c997075"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.129.224.45:8080/cxf/External</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ws.request.pgu.sids.fccland.ru">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:loadEventDetails xmlns:urn="urn:ws.request.pgu.sids.fccland.ru">
+         <eventID>11-22190</eventID>
+      </urn:loadEventDetails>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:ws.request.pgu.sids.fccland.ru/loadEventDetails"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService port="8089" path="/mocksoap1.1Binding" host="localhost" name="MockService 1" bindToHostOnly="false" docroot="" id="a495123f-94b3-4249-b117-6828e944107a"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="getEvents" interface="soap1.1Binding" operation="getEvents" id="5dea4c47-603f-4eac-90ac-6cbda3cac921"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" id="23405473-144b-4ccd-8d2e-a42962e1778b" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ws.request.pgu.sids.fccland.ru">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:getEventsResponse>
+         <!--Zero or more repetitions:-->
+         <events>
+            <eventID>bca0dfa9-287c-42eb-a79e-b68227756bf7/STATUS/0010/1335478113574</eventID>
+            <eventType>STATUS</eventType>
+            <eventDate>2012-04-26T05:07:09.000+07:00</eventDate>
+            <requestNumber>11-22190</requestNumber>
+         </events>
+         <events>
+            <eventID>11-22190/STATUS/001/1335478113121</eventID>
+            <eventType>STATUS</eventType>
+            <eventDate>2012-04-26T05:07:08.000+07:00</eventDate>
+            <requestNumber>11-22190</requestNumber>
+         </events>
+         <events>
+            <eventID>TmpGuid_b0081536-bbf5-4604-bdbb-e4f9c5fdfbb7/STATUS/000/1335478112554</eventID>
+            <eventType>STATUS</eventType>
+            <eventDate>2012-04-26T05:07:07.000+07:00</eventDate>
+            <requestNumber>11-22190</requestNumber>
+         </events>
+         <events>
+            <eventID>3e120054-4e86-4358-8f51-23f6b58043b3/STATUS/0010/1335478092508</eventID>
+            <eventType>STATUS</eventType>
+            <eventDate>2012-04-26T05:07:05.000+07:00</eventDate>
+            <requestNumber>11-22189</requestNumber>
+         </events>
+         <events>
+            <eventID>11-22189/STATUS/001/1335478092010</eventID>
+            <eventType>STATUS</eventType>
+            <eventDate>2012-04-26T05:07:04.000+07:00</eventDate>
+            <requestNumber>11-22189</requestNumber>
+         </events>
+         <events>
+            <eventID>TmpGuid_08d5bd02-2f04-4b85-be20-5a379b56f0f6/STATUS/000/1335478091723</eventID>
+            <eventType>STATUS</eventType>
+            <eventDate>2012-04-26T05:07:03.000+07:00</eventDate>
+            <requestNumber>11-22189</requestNumber>
+         </events>
+         <status>
+            <result>true</result>
+            <!--Optional:-->
+            <message></message>
+         </status>
+      </urn:getEventsResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:ws.request.pgu.sids.fccland.ru/getEvents"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="createRequest" interface="soap1.1Binding" operation="createRequest" id="55f7ba17-9f37-4f5e-b529-dbc0751def08"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" id="da567589-e257-4753-9a17-bc8c4f1c2bca" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ws.request.pgu.sids.fccland.ru">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:createRequestResponse>
+         <requestNumber>11-22190</requestNumber>
+         <status>
+            <result>true</result>
+         </status>
+      </urn:createRequestResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:ws.request.pgu.sids.fccland.ru/createRequest"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="loadEventDetails" interface="soap1.1Binding" operation="loadEventDetails" id="a1e83bf7-f4df-4fc0-b426-b716aca4b08c"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" id="d37a601a-41da-43c4-bfb8-572180efd7c1" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ws.request.pgu.sids.fccland.ru">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:loadEventDetailsResponse xmlns:urn="urn:ws.request.pgu.sids.fccland.ru">
+         <detailsXML><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?><status xmlns:ns2="urn:status.event.rdc.pgu.sids.fccland.ru"><requestNumber>11-22190</requestNumber><date>2012-04-26T02:08:33.121+04:00</date><code>001</code><message>Начало обработки</message></status>]]]]>><![CDATA[</detailsXML>
+         <!--Optional:-->
+         <binary></binary>
+         <status>
+            <result>true</result>
+            <!--Optional:-->
+            <message></message>
+         </status>
+      </urn:loadEventDetailsResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
+]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:ws.request.pgu.sids.fccland.ru/loadEventDetails"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="deleteEvents" interface="soap1.1Binding" operation="deleteEvents" id="9e801b66-b2a1-472a-afbc-867bcaf18683"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" id="e34615e9-3662-4be6-870d-eaf160d3a9a4" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ws.request.pgu.sids.fccland.ru">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:deleteEventsResponse>
+         <status>
+            <result>?</result>
+            <!--Optional:-->
+            <message>?</message>
+         </status>
+      </urn:deleteEventsResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:ws.request.pgu.sids.fccland.ru/deleteEvents"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions name="FRMSActionCallbackRouterService"
+	targetNamespace="http://www.otr.ru/opora/soa/adapter/rosreestr" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://www.otr.ru/opora/soa/adapter/rosreestr" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:wsdl1="urn:ws.request.pgu.sids.fccland.ru" xmlns:p="http://www.w3.org/2001/XMLSchema">
+
+	<wsp:Policy
+		xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+		wsu:Id="wsaddr_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+		<wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" />
+	</wsp:Policy>
+
+
+	
+	<wsdl:types>
+
+	
+    <xsd:schema xmlns="http://www.otr.ru/opora/soa/adapter/rosreestr" targetNamespace="http://www.otr.ru/opora/soa/adapter/rosreestr" 
+    elementFormDefault="qualified" 
+    xmlns:fcc="urn:ws.request.pgu.sids.fccland.ru" 
+    
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import schemaLocation="types.xsd" namespace="urn:ws.request.pgu.sids.fccland.ru"/>
+      
+
+			<xsd:complexType name="TAdapterRequest">
+				<xsd:sequence>
+					<xsd:element name="internalGuid" type="xsd:string" />
+					<xsd:element name="request" type="fcc:createRequestIn" />
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="TAdapterResponse">
+				<xsd:sequence>
+					<xsd:element name="internalGuid" type="xsd:string" />
+					<xsd:element name="request" type="fcc:createRequestOut" />
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="TAdapterResponseCallback">
+				<xsd:sequence>
+					<xsd:element name="internalGuid" type="xsd:string" />
+					<xsd:element name="request" type="fcc:loadEventDetailsOut" />
+					<xsd:element name="eventDetails" type="fcc:eventStruct" />
+				</xsd:sequence>
+			</xsd:complexType>
+    
+    
+           	<xsd:element name="AdapterRequest">
+           	<xsd:complexType>
+				<xsd:sequence>
+					<xsd:element name="internalGuid" type="xsd:string" />
+					<xsd:element name="request" type="fcc:createRequestIn" xmlns="urn:ws.request.pgu.sids.fccland.ru" form="unqualified"/>
+				</xsd:sequence>
+			</xsd:complexType>
+           	</xsd:element>
+           	
+			<xsd:element name="AdapterResponse" type="TAdapterResponse"></xsd:element>
+	<xsd:element name="AdapterResponseCallback" type="TAdapterResponseCallback"></xsd:element>
+
+	
+    </xsd:schema>
+        
+	</wsdl:types>
+
+
+	<wsdl:message name="CallbackMessage">
+		<wsdl:part name="callback" element="tns:AdapterResponseCallback" />
+	</wsdl:message>
+
+
+	<wsdl:message name="ResponseMessage">
+		<wsdl:part name="callback" element="tns:AdapterResponse" />
+	</wsdl:message>
+	
+	<wsdl:message name="RequestMessage">
+		<wsdl:part name="parameters" element="tns:AdapterRequest" />
+	</wsdl:message>
+
+
+
+	
+	
+	<wsdl:portType name="processcallback_ptt">
+		<wsdl:operation name="processCallback">
+			<wsdl:input message="tns:CallbackMessage" name="callback"/>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:portType name="processrequest_ptt">
+		<wsdl:operation name="createRequest">
+			<wsdl:input message="tns:RequestMessage" name="parameters"/>
+		<!-- 	<wsdl:output message="tns:ResponseMessage" name="callback"></wsdl:output> -->
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	
+
+	<wsdl:binding name="processcallback_pttBinding" type="tns:processcallback_ptt">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+			URI="#wsaddr_policy" wsdl:required="false" />
+		<wsdl:operation name="processCallback">
+			<soap:operation style="document" soapAction="processCallback" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:binding name="processrequest_pttBinding" type="tns:processrequest_ptt">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="createRequest">
+			<soap:operation style="document" soapAction="createRequest" />
+			<wsdl:input name="parameters">
+				<soap:body use="literal"  />
+			</wsdl:input>
+		<!-- 	<wsdl:output name="callback">
+				<soap:body use="literal"  />
+			</wsdl:output> -->
+		
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<!-- <wsdl:service name="SOAI_FRMSCallbackBPMInvoke">
+		<wsdl:port name="processrequest_pt" binding="tns:processrequest_pttBinding">
+			<soap:address
+				location="http://eb-exp-test-soa.otr.ru:8001/soa-infra/services/exp-func/EXPSOA_RS_UFOStoSRhelper/SOAI_FRMSCallbackBPMInvoke" />
+		</wsdl:port>
+	</wsdl:service> -->
+</wsdl:definitions>

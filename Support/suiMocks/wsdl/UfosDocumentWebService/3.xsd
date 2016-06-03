@@ -1,0 +1,895 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/REF_UBPandNUBP/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/REF_UBPandNUBP/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:element name="REF_UBPandNUBP" type="tns:tREF_UBPandNUBP"/>
+
+<xs:complexType name="tDICT_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="ORGCODE" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ORGVISIBILITY" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_UBPandNUBP">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string"/>
+<xs:element name="StartDateActive" type="xs:string"/>
+<xs:element name="EndDateActive" type="xs:string" minOccurs="0"/>
+<xs:element name="Status" type="ns2:tSystem_statusesComplex"/>
+<xs:element name="RecordNum" type="xs:string"/>
+<xs:element name="ControlNum" type="xs:string"/>
+<xs:element name="RegistryCode" type="xs:string"/>
+<xs:element name="SelfOrFKCode" type="xs:string" minOccurs="0"/>
+<xs:element name="OrgCode" type="xs:string"/>
+<xs:element name="MainOrgName" type="xs:string" minOccurs="0"/>
+<xs:element name="OrgOGRN" type="xs:string" minOccurs="0"/>
+<xs:element name="FullName" type="xs:string"/>
+<xs:element name="ShortName" type="xs:string" minOccurs="0"/>
+<xs:element name="OrgFirmName" type="xs:string" minOccurs="0"/>
+<xs:element name="OrgAltName" type="xs:string" minOccurs="0"/>
+<xs:element name="OrgINN" type="xs:string" minOccurs="0"/>
+<xs:element name="OrgKPP" type="xs:string" minOccurs="0"/>
+<xs:element name="FNSRegDate" type="xs:string" minOccurs="0"/>
+<xs:element name="OKOPFName" type="xs:string" minOccurs="0"/>
+<xs:element name="OKFSName" type="xs:string"/>
+<xs:element name="InstitutionID" type="xs:string" minOccurs="0"/>
+<xs:element name="UOCheck" type="xs:string" minOccurs="0"/>
+<xs:element name="PublishEPBS" type="xs:boolean" minOccurs="0"/>
+<xs:element name="SepDivOrgName" type="xs:string" minOccurs="0"/>
+<xs:element name="Sep_Div_Org" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_PostIndex" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_RegionKLADRCode_code" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_RegionCode_code" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_RegionType_code" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_RegionName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_AreaCode_code" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_AreaType_code" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_AreaName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_CityCode_code" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_CityType_code" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_CityName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_LocalCode_code" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_LocalType_code" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_LocalName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_StreetCode_code" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_StreetType_code" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_StreetName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_House" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_Building" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_Apartment" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_OKTMOName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_OrFKName" type="xs:string"/>
+<xs:element name="UBPAddress_OKSMCode_code" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_OKSMName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAddress_ForeignAddress" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPOGVandUchrPPO_OGVPPOTypeName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPOGVandUchrPPO_OGVPPOName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPOGVandUchrPPO_UchrPPOTypeName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPOGVandUchrPPO_UchrPPOName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPOGVandUchrPPO_IsUchr" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPParentOrg_RBSName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPParentOrg_KBKGlavaName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPOKCodes_OKOGUName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPOKCodes_OKPOCode" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPBudget_OrgBudgLevelName" type="xs:string"/>
+<xs:element name="UBPBudget_OrgBudgName" type="xs:string"/>
+<xs:element name="UBPBudget_KBKGlavaOrgName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPFormInfo_FormWayCode" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPFormInfo_FormWayName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPReorgInfo_ReorgDocName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPReorgInfo_ReorgDocNum" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPReorgInfo_ReorgDocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPReorgInfo_ReorgWayCode" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPReorgInfo_ReorgWayName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPReorgInfo_ReorgStartDate" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPReorgInfo_ReorgEndDate" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPAccInfo_AccManagement" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPOrgType_OrgTypeName" type="xs:string"/>
+<xs:element name="UBPOrgType_UchrezhTypeName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPUOInfo_UOName" type="xs:string"/>
+<xs:element name="UBPUOInfo_FOorOUGVFName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPContacts_OrgPhone" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPContacts_OrgSite" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPContacts_OrgEmail" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPIndicators_IsOGV" type="xs:boolean"/>
+<xs:element name="UBPIndicators_IsObosob" type="xs:boolean"/>
+<xs:element name="UBPIndicators_IsExcl" type="xs:boolean"/>
+<xs:element name="UBPIndicators_IsReorg" type="xs:boolean"/>
+<xs:element name="UBPClientCodes_PUBPCode" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPClientCodes_RUBPCode" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPClientCodes_NUBPCode" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPClientCodes_SPZCode" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPClientCodes_PGMUCode" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPOKATO_OKATOName" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPRequestInf_FirstReqNum" type="xs:string"/>
+<xs:element name="UBPRequestInf_FirstReqGUID" type="xs:string"/>
+<xs:element name="UBPRequestInf_FirstReqDate" type="xs:string"/>
+<xs:element name="UBPRequestInf_LastReqNum" type="xs:string"/>
+<xs:element name="UBPRequestInf_LastReqGUID" type="xs:string"/>
+<xs:element name="UBPRequestInf_LastReqDate" type="xs:string"/>
+<xs:element name="UBPRequestInf_UpdateReason" type="ns2:tReasons_of_updateComplex"/>
+<xs:element name="UBPRequestInf_UpdateNum" type="xs:int" minOccurs="0"/>
+<xs:element name="UBPStateDates_ContourTypeCode" type="ns2:tTypes_of_contourComplex"/>
+<xs:element name="UBPStateDates_EGRULUpdateDate" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPStateDates_EGRULDataUpdate" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPStateDates_DateInclusion" type="xs:string"/>
+<xs:element name="UBPStateDates_DateExclusion" type="xs:string" minOccurs="0"/>
+<xs:element name="UBPStateDates_OrgStatus" type="xs:string"/>
+<xs:element name="UBPUchrOrgans" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPUchrOrgans_ITEM" type="tns:tUBPUchrOrgans_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="OrganAuths" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="OrganAuths_ITEM" type="tns:tOrganAuths_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPOKVEDCodes" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPOKVEDCodes_ITEM" type="tns:tUBPOKVEDCodes_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPSignHeads" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPSignHeads_ITEM" type="tns:tUBPSignHeads_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPSuccessions" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPSuccessions_ITEM" type="tns:tUBPSuccessions_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPFKAccounts" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPFKAccounts_ITEM" type="tns:tUBPFKAccounts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPFOAccounts" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPFOAccounts_ITEM" type="tns:tUBPFOAccounts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPBankAccounts" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPBankAccounts_ITEM" type="tns:tUBPBankAccounts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPAuths" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPAuths_ITEM" type="tns:tUBPAuths_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPNUBPAuths" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPNUBPAuths_ITEM" type="tns:tUBPNUBPAuths_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPSPZAuths" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPSPZAuths_ITEM" type="tns:tUBPSPZAuths_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPPAuths" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPPAuths_ITEM" type="tns:tUBPPAuths_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPTransfAuthFO" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPTransfAuthFO_ITEM" type="tns:tUBPTransfAuthFO_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPAuthPubCust" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPAuthPubCust_ITEM" type="tns:tUBPAuthPubCust_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPAuthsExcPubOb" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPAuthsExcPubOb_ITEM" type="tns:tUBPAuthsExcPubOb_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UBPAuthsOrgBudg" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="UBPAuthsOrgBudg_ITEM" type="tns:tUBPAuthsOrgBudg_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="MainOrgCode" type="tns:tLpMainOrgCode" minOccurs="0"/>
+<xs:element name="OKOPFCode" type="tns:tLpOKOPFCode" minOccurs="0"/>
+<xs:element name="OKFSCode" type="tns:tLpOKFSCode" minOccurs="0"/>
+<xs:element name="UBPAddress_OKTMOCode" type="tns:tLpOKTMOCode" minOccurs="0"/>
+<xs:element name="UBPAddress_OrFKCode" type="tns:tLpOrFKCode" minOccurs="0"/>
+<xs:element name="UBPOGVandUchrPPO_OGVPPOTypeCode" type="tns:tLpOGVPPOTypeCode" minOccurs="0"/>
+<xs:element name="UBPOGVandUchrPPO_OGVPPOCode" type="tns:tLpOGVPPOCode" minOccurs="0"/>
+<xs:element name="UBPOGVandUchrPPO_UchrPPOTypeCode" type="tns:tLpUchrPPOTypeCode" minOccurs="0"/>
+<xs:element name="UBPOGVandUchrPPO_UchrPPOCode" type="tns:tLpUchrPPOCode" minOccurs="0"/>
+<xs:element name="UBPParentOrg_RBSCode" type="tns:tLpRBSCode" minOccurs="0"/>
+<xs:element name="UBPParentOrg_KBKGlavaCode" type="tns:tLpKBKGlavaCode" minOccurs="0"/>
+<xs:element name="UBPOKCodes_OKOGUCode" type="tns:tLpOKOGUCode" minOccurs="0"/>
+<xs:element name="UBPBudget_OrgBudgLevelCode" type="tns:tLpOrgBudgLevelCode" minOccurs="0"/>
+<xs:element name="UBPBudget_OrgBudgCode" type="tns:tLpOrgBudgCode" minOccurs="0"/>
+<xs:element name="UBPBudget_KBKGlavaOrg" type="tns:tLpKBKGlavaOrg" minOccurs="0"/>
+<xs:element name="UBPOrgType_OrgTypeCode" type="tns:tLpOrgTypeCode" minOccurs="0"/>
+<xs:element name="UBPOrgType_UchrezhTypeCode" type="tns:tLpUchrezhTypeCode" minOccurs="0"/>
+<xs:element name="UBPUOInfo_UOCode" type="tns:tLpUOCode" minOccurs="0"/>
+<xs:element name="UBPUOInfo_FOorOUGVFCode" type="tns:tLpFOorOUGVFCode" minOccurs="0"/>
+<xs:element name="UBPOKATO_OKATOCode" type="tns:tLpOKATOCode" minOccurs="0"/>
+<xs:element name="DICT_BASE" type="tns:tDICT_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tUBPUchrOrgans_ITEM">
+<xs:sequence>
+<xs:element name="OrganName" type="xs:string"/>
+<xs:element name="OrganCode" type="tns:tLpOrganCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpOrganCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tOrganAuths_ITEM">
+<xs:sequence>
+<xs:element name="AuthName" type="xs:string"/>
+<xs:element name="OrganCode" type="tns:tLpOrganAuthsOrganCode" minOccurs="0"/>
+<xs:element name="AuthCode" type="tns:tLpAuthCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpOrganAuthsOrganCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpAuthCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPOKVEDCodes_ITEM">
+<xs:sequence>
+<xs:element name="OKVEDName" type="xs:string" minOccurs="0"/>
+<xs:element name="OKVEDCode" type="tns:tLpOKVEDCode" minOccurs="0"/>
+<xs:element name="OKVEDTypeCode" type="tns:tLpOKVEDTypeCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpOKVEDCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOKVEDTypeCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPSignHeads_ITEM">
+<xs:sequence>
+<xs:element name="HeadSurname" type="xs:string" minOccurs="0"/>
+<xs:element name="HeadName" type="xs:string" minOccurs="0"/>
+<xs:element name="HeadMiddlename" type="xs:string" minOccurs="0"/>
+<xs:element name="HeadPost" type="xs:string" minOccurs="0"/>
+<xs:element name="HeadINN" type="xs:string" minOccurs="0"/>
+<xs:element name="HeadDocName" type="xs:string" minOccurs="0"/>
+<xs:element name="HeadDocNum" type="xs:string" minOccurs="0"/>
+<xs:element name="HeadDocDate" type="xs:string" minOccurs="0"/>
+<xs:element name="HeadSNILS" type="xs:string" minOccurs="0"/>
+<xs:element name="HeadPostFlaf" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPSuccessions_ITEM">
+<xs:sequence>
+<xs:element name="SuccOGRN" type="xs:string" minOccurs="0"/>
+<xs:element name="SuccName" type="xs:string" minOccurs="0"/>
+<xs:element name="SuccCode" type="tns:tLpSuccCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpSuccCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPFKAccounts_ITEM">
+<xs:sequence>
+<xs:element name="TOFKName" type="xs:string" minOccurs="0"/>
+<xs:element name="AccountTypeName" type="xs:string" minOccurs="0"/>
+<xs:element name="AccountNum" type="xs:string" minOccurs="0"/>
+<xs:element name="OpenDate" type="xs:string" minOccurs="0"/>
+<xs:element name="CloseDate" type="xs:string" minOccurs="0"/>
+<xs:element name="AccountStatus" type="xs:string" minOccurs="0"/>
+<xs:element name="ServiceOrFKName" type="xs:string" minOccurs="0"/>
+<xs:element name="RUBPCode_Acc" type="xs:string" minOccurs="0"/>
+<xs:element name="PUBPCode_Acc" type="xs:string" minOccurs="0"/>
+<xs:element name="NUBPCode_Acc" type="xs:string" minOccurs="0"/>
+<xs:element name="TOFKCode" type="tns:tLpTOFKCode" minOccurs="0"/>
+<xs:element name="TOFKOrgCode" type="tns:tLpTOFKOrgCode" minOccurs="0"/>
+<xs:element name="AccountType" type="tns:tLpAccountType" minOccurs="0"/>
+<xs:element name="ServiceOrFKCode" type="tns:tLpServiceOrFKCode" minOccurs="0"/>
+<xs:element name="BudgCode_Acc" type="tns:tLpBudgCode_Acc" minOccurs="0"/>
+<xs:element name="GlavaCode_Acc" type="tns:tLpGlavaCode_Acc" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpTOFKCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpTOFKOrgCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpAccountType">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpServiceOrFKCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpBudgCode_Acc">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpGlavaCode_Acc">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPFOAccounts_ITEM">
+<xs:sequence>
+<xs:element name="AccountTypeName" type="xs:string" minOccurs="0"/>
+<xs:element name="AccountNum" type="xs:string" minOccurs="0"/>
+<xs:element name="FOName" type="xs:string" minOccurs="0"/>
+<xs:element name="FOCode" type="tns:tLpFOCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpFOCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPBankAccounts_ITEM">
+<xs:sequence>
+<xs:element name="BankAccountNum" type="xs:string" minOccurs="0"/>
+<xs:element name="BankName" type="xs:string" minOccurs="0"/>
+<xs:element name="BankCorrAccount" type="xs:string" minOccurs="0"/>
+<xs:element name="BankBIK" type="tns:tLpBankBIK" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpBankBIK">
+<xs:sequence>
+<xs:element name="BIK" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPAuths_ITEM">
+<xs:sequence>
+<xs:element name="AuthName" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthStartDate" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthEndDate" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthStatus" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthCode" type="tns:tLpUBPAuthsAuthCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpUBPAuthsAuthCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPNUBPAuths_ITEM">
+<xs:sequence>
+<xs:element name="AuthName" type="xs:string"/>
+<xs:element name="AuthStartDate" type="xs:string"/>
+<xs:element name="AuthEndDate" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthBudgName" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthPPOName" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthKBKGlavaName" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthRegNum" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthStatus" type="xs:string"/>
+<xs:element name="AuthCode" type="tns:tLpUBPNUBPAuthsAuthCode" minOccurs="0"/>
+<xs:element name="AuthBudgCode" type="tns:tLpAuthBudgCode" minOccurs="0"/>
+<xs:element name="AuthPPOCode" type="tns:tLpAuthPPOCode" minOccurs="0"/>
+<xs:element name="AuthKBKGlavaCode" type="tns:tLpAuthKBKGlavaCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpUBPNUBPAuthsAuthCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpAuthBudgCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpAuthPPOCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpAuthKBKGlavaCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPSPZAuths_ITEM">
+<xs:sequence>
+<xs:element name="AuthName" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthStartDate" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthEndDate" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthStatus" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthCode" type="tns:tLpUBPSPZAuthsAuthCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpUBPSPZAuthsAuthCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPPAuths_ITEM">
+<xs:sequence>
+<xs:element name="AuthName" type="xs:string"/>
+<xs:element name="AuthStartDate" type="xs:string"/>
+<xs:element name="AuthEndDate" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthBudgName" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthBudgLevelName" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthKBKGlavaName" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthOrgName" type="xs:string"/>
+<xs:element name="AuthType" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthRegNum" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthStatus" type="xs:string"/>
+<xs:element name="AuthCode" type="tns:tLpUBPPAuthsAuthCode" minOccurs="0"/>
+<xs:element name="AuthBudgCode" type="tns:tLpUBPPAuthsAuthBudgCode" minOccurs="0"/>
+<xs:element name="AuthBudgLevelCode" type="tns:tLpAuthBudgLevelCode" minOccurs="0"/>
+<xs:element name="AuthKBKGlavaCode" type="tns:tLpUBPPAuthsAuthKBKGlavaCode" minOccurs="0"/>
+<xs:element name="AuthOrgCode" type="tns:tLpAuthOrgCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpUBPPAuthsAuthCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpUBPPAuthsAuthBudgCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpAuthBudgLevelCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpUBPPAuthsAuthKBKGlavaCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpAuthOrgCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPTransfAuthFO_ITEM">
+<xs:sequence>
+<xs:element name="AuthFOVillagesName" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthFOMunicipalName" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthStartDate" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthEndDate" type="xs:string" minOccurs="0"/>
+<xs:element name="OrgNum" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthFOVillagesCode" type="tns:tLpAuthFOVillagesCode" minOccurs="0"/>
+<xs:element name="AuthFOMunicipalCode" type="tns:tLpAuthFOMunicipalCode" minOccurs="0"/>
+<xs:element name="BudgetCode" type="tns:tLpBudgetCode" minOccurs="0"/>
+<xs:element name="GlavaCode" type="tns:tLpGlavaCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpAuthFOVillagesCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpAuthFOMunicipalCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpBudgetCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpGlavaCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPAuthPubCust_ITEM">
+<xs:sequence>
+<xs:element name="AuthStartDate" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthEndDate" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthPubClientCode" type="tns:tLpAuthPubClientCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpAuthPubClientCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPAuthsExcPubOb_ITEM">
+<xs:sequence>
+<xs:element name="AuthStartDate" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthEndDate" type="xs:string" minOccurs="0"/>
+<xs:element name="AuthExecPubObCode" type="tns:tLpAuthExecPubObCode" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpAuthExecPubObCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPAuthsOrgBudg_ITEM">
+<xs:sequence>
+<xs:element name="AuthStartDate" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLpMainOrgCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOKOPFCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOKFSCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOKTMOCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOrFKCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOGVPPOTypeCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOGVPPOCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpUchrPPOTypeCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpUchrPPOCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpRBSCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpKBKGlavaCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOKOGUCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOrgBudgLevelCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOrgBudgCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpKBKGlavaOrg">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOrgTypeCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpUchrezhTypeCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpUOCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpFOorOUGVFCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tLpOKATOCode">
+<xs:sequence>
+<xs:element name="Code" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="source" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tUBPTransfAuthFO">
+<xs:sequence>
+<xs:element name="UBPTransfAuthFO_ITEM" type="tns:tUBPTransfAuthFO_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPNUBPAuths">
+<xs:sequence>
+<xs:element name="UBPNUBPAuths_ITEM" type="tns:tUBPNUBPAuths_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPFKAccounts">
+<xs:sequence>
+<xs:element name="UBPFKAccounts_ITEM" type="tns:tUBPFKAccounts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPAuthsOrgBudg">
+<xs:sequence>
+<xs:element name="UBPAuthsOrgBudg_ITEM" type="tns:tUBPAuthsOrgBudg_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPUchrOrgans">
+<xs:sequence>
+<xs:element name="UBPUchrOrgans_ITEM" type="tns:tUBPUchrOrgans_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPFOAccounts">
+<xs:sequence>
+<xs:element name="UBPFOAccounts_ITEM" type="tns:tUBPFOAccounts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPPAuths">
+<xs:sequence>
+<xs:element name="UBPPAuths_ITEM" type="tns:tUBPPAuths_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPBankAccounts">
+<xs:sequence>
+<xs:element name="UBPBankAccounts_ITEM" type="tns:tUBPBankAccounts_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPAuthPubCust">
+<xs:sequence>
+<xs:element name="UBPAuthPubCust_ITEM" type="tns:tUBPAuthPubCust_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPSuccessions">
+<xs:sequence>
+<xs:element name="UBPSuccessions_ITEM" type="tns:tUBPSuccessions_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPAuthsExcPubOb">
+<xs:sequence>
+<xs:element name="UBPAuthsExcPubOb_ITEM" type="tns:tUBPAuthsExcPubOb_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPOKVEDCodes">
+<xs:sequence>
+<xs:element name="UBPOKVEDCodes_ITEM" type="tns:tUBPOKVEDCodes_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPSPZAuths">
+<xs:sequence>
+<xs:element name="UBPSPZAuths_ITEM" type="tns:tUBPSPZAuths_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tOrganAuths">
+<xs:sequence>
+<xs:element name="OrganAuths_ITEM" type="tns:tOrganAuths_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPAuths">
+<xs:sequence>
+<xs:element name="UBPAuths_ITEM" type="tns:tUBPAuths_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tUBPSignHeads">
+<xs:sequence>
+<xs:element name="UBPSignHeads_ITEM" type="tns:tUBPSignHeads_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,365 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/REF_EGRUL/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/REF_EGRUL/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:element name="REF_EGRUL" type="tns:tREF_EGRUL"/>
+
+<xs:complexType name="tDICT_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="ORGCODE" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ORGVISIBILITY" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_EGRUL">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="IDDok" type="xs:string" minOccurs="0"/>
+<xs:element name="OGRN" type="xs:string"/>
+<xs:element name="Timestamp" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="KPP" type="xs:string" minOccurs="0"/>
+<xs:element name="DtStartMNS" type="xs:string" minOccurs="0"/>
+<xs:element name="StartDateActive" type="xs:string"/>
+<xs:element name="EndDateActive" type="xs:string" minOccurs="0"/>
+<xs:element name="Status" type="ns2:tSystem_statusesComplex"/>
+<xs:element name="File_Name" type="xs:string" minOccurs="0"/>
+<xs:element name="ULName_DtStart" type="xs:string" minOccurs="0"/>
+<xs:element name="ULName_GRN" type="xs:string" minOccurs="0"/>
+<xs:element name="ULName_NameP" type="xs:string" minOccurs="0"/>
+<xs:element name="ULName_NameS" type="xs:string" minOccurs="0"/>
+<xs:element name="ULName_NameF" type="xs:string" minOccurs="0"/>
+<xs:element name="ULName_OPFSpr" type="xs:string" minOccurs="0"/>
+<xs:element name="ULName_KodOPF" type="xs:string" minOccurs="0"/>
+<xs:element name="ULName_NameOPF" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_DtStart" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_GRN" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_AddrInd" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_Indeks" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_RegionCode" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_KLADR" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_Dom" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_Korp" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_Kvart" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_RegionType" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_RegionName" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_RaionType" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_RaionName" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_GorodType" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_GorodName" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_NaspunktType" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_NaspunktName" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_StreetType" type="xs:string" minOccurs="0"/>
+<xs:element name="ULAddress_StreetName" type="xs:string" minOccurs="0"/>
+<xs:element name="ULStatus_DtStart" type="xs:string" minOccurs="0"/>
+<xs:element name="ULStatus_GRN" type="xs:string" minOccurs="0"/>
+<xs:element name="ULStatus_StatusID" type="xs:string" minOccurs="0"/>
+<xs:element name="ULStatus_NameStatus" type="xs:string" minOccurs="0"/>
+<xs:element name="ULStart_DtStart" type="xs:string" minOccurs="0"/>
+<xs:element name="ULStart_GRN" type="xs:string" minOccurs="0"/>
+<xs:element name="ULStart_DtReg" type="xs:string" minOccurs="0"/>
+<xs:element name="ULStart_VidRegID" type="xs:string" minOccurs="0"/>
+<xs:element name="ULStart_VidRegName" type="xs:string" minOccurs="0"/>
+<xs:element name="ULFinish_DtStart" type="xs:string" minOccurs="0"/>
+<xs:element name="ULFinish_GRN" type="xs:string" minOccurs="0"/>
+<xs:element name="ULFinish_DtReg" type="xs:string" minOccurs="0"/>
+<xs:element name="ULFinish_VidRegID" type="xs:string" minOccurs="0"/>
+<xs:element name="ULFinish_VidRegName" type="xs:string" minOccurs="0"/>
+<xs:element name="ULPredsh" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ULPredsh_ITEM" type="tns:tULPredsh_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ULPreem" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ULPreem_ITEM" type="tns:tULPreem_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ULRUL" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ULRUL_ITEM" type="tns:tULRUL_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ULUchrRF" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ULUchrRF_ITEM" type="tns:tULUchrRF_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ULDolgnFL" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ULDolgnFL_ITEM" type="tns:tULDolgnFL_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ULOb" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ULOb_ITEM" type="tns:tULOb_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ULOKVED" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ULOKVED_ITEM" type="tns:tULOKVED_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ULRegAct" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ULRegAct_ITEM" type="tns:tULRegAct_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ULRegActSvSv" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ULRegActSvSv_ITEM" type="tns:tULRegActSvSv_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ULRegNonAct" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ULRegNonAct_ITEM" type="tns:tULRegNonAct_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ULRegNonActSvSv" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="ULRegNonActSvSv_ITEM" type="tns:tULRegNonActSvSv_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DICT_BASE" type="tns:tDICT_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tULPredsh_ITEM">
+<xs:sequence>
+<xs:element name="DtStart" type="xs:string"/>
+<xs:element name="GRN" type="xs:string" minOccurs="0"/>
+<xs:element name="OGRNUL" type="xs:string"/>
+<xs:element name="NameP" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULPreem_ITEM">
+<xs:sequence>
+<xs:element name="DtStart" type="xs:string"/>
+<xs:element name="GRN" type="xs:string" minOccurs="0"/>
+<xs:element name="OGRNUL" type="xs:string"/>
+<xs:element name="NameP" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULRUL_ITEM">
+<xs:sequence>
+<xs:element name="DtStart" type="xs:string"/>
+<xs:element name="GRN" type="xs:string" minOccurs="0"/>
+<xs:element name="OGRNUL" type="xs:string"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="NameP" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULUchrRF_ITEM">
+<xs:sequence>
+<xs:element name="DtStart" type="xs:string"/>
+<xs:element name="GRN" type="xs:string" minOccurs="0"/>
+<xs:element name="VidUchr" type="xs:string"/>
+<xs:element name="SubCode" type="xs:string"/>
+<xs:element name="SubName" type="xs:string"/>
+<xs:element name="MOName" type="xs:string" minOccurs="0"/>
+<xs:element name="OGRNOGV" type="xs:string"/>
+<xs:element name="INN" type="xs:string" minOccurs="0"/>
+<xs:element name="NameP" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULDolgnFL_ITEM">
+<xs:sequence>
+<xs:element name="DtStart" type="xs:string"/>
+<xs:element name="GRN" type="xs:string" minOccurs="0"/>
+<xs:element name="VidDolgn" type="xs:string" minOccurs="0"/>
+<xs:element name="NaimVidDolgn" type="xs:string" minOccurs="0"/>
+<xs:element name="Dolgn" type="xs:string" minOccurs="0"/>
+<xs:element name="INN" type="xs:string"/>
+<xs:element name="Telefon" type="xs:string" minOccurs="0"/>
+<xs:element name="FamFl" type="xs:string"/>
+<xs:element name="NameFl" type="xs:string"/>
+<xs:element name="OtchFl" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULOb_ITEM">
+<xs:sequence>
+<xs:element name="DtStart" type="xs:string"/>
+<xs:element name="GRN" type="xs:string" minOccurs="0"/>
+<xs:element name="VidOb" type="xs:string"/>
+<xs:element name="NameP" type="xs:string"/>
+<xs:element name="Indeks" type="xs:string" minOccurs="0"/>
+<xs:element name="RegionCode" type="xs:string" minOccurs="0"/>
+<xs:element name="KLADR" type="xs:string" minOccurs="0"/>
+<xs:element name="Dom" type="xs:string" minOccurs="0"/>
+<xs:element name="Korp" type="xs:string" minOccurs="0"/>
+<xs:element name="Kvart" type="xs:string" minOccurs="0"/>
+<xs:element name="RegionType" type="xs:string" minOccurs="0"/>
+<xs:element name="RegionName" type="xs:string" minOccurs="0"/>
+<xs:element name="RaionType" type="xs:string" minOccurs="0"/>
+<xs:element name="RaionName" type="xs:string" minOccurs="0"/>
+<xs:element name="GorodType" type="xs:string" minOccurs="0"/>
+<xs:element name="GorodName" type="xs:string" minOccurs="0"/>
+<xs:element name="NaspunktType" type="xs:string" minOccurs="0"/>
+<xs:element name="NaspunktName" type="xs:string" minOccurs="0"/>
+<xs:element name="StreetType" type="xs:string" minOccurs="0"/>
+<xs:element name="StreetName" type="xs:string" minOccurs="0"/>
+<xs:element name="OKSMCode" type="xs:string" minOccurs="0"/>
+<xs:element name="OKSMName" type="xs:string" minOccurs="0"/>
+<xs:element name="ForeignAddress" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULOKVED_ITEM">
+<xs:sequence>
+<xs:element name="DtStart" type="xs:string"/>
+<xs:element name="GRN" type="xs:string" minOccurs="0"/>
+<xs:element name="Main" type="xs:string"/>
+<xs:element name="KodOKVED" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULRegAct_ITEM">
+<xs:sequence>
+<xs:element name="DtZap" type="xs:string"/>
+<xs:element name="GRN" type="xs:string"/>
+<xs:element name="IDZap" type="xs:string"/>
+<xs:element name="VidRegID" type="xs:string" minOccurs="0"/>
+<xs:element name="VidRegName" type="xs:string" minOccurs="0"/>
+<xs:element name="RegOrgID" type="xs:string" minOccurs="0"/>
+<xs:element name="RegOrgName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULRegActSvSv_ITEM">
+<xs:sequence>
+<xs:element name="DtZapParent" type="xs:string"/>
+<xs:element name="GRNParent" type="xs:string"/>
+<xs:element name="IDZapParent" type="xs:string"/>
+<xs:element name="DtZap" type="xs:string"/>
+<xs:element name="GRN" type="xs:string"/>
+<xs:element name="IDZap" type="xs:string"/>
+<xs:element name="SerSv" type="xs:string"/>
+<xs:element name="NumSv" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULRegNonAct_ITEM">
+<xs:sequence>
+<xs:element name="DtZap" type="xs:string"/>
+<xs:element name="GRN" type="xs:string"/>
+<xs:element name="IDZap" type="xs:string"/>
+<xs:element name="VidRegID" type="xs:string" minOccurs="0"/>
+<xs:element name="VidRegName" type="xs:string" minOccurs="0"/>
+<xs:element name="RegOrgID" type="xs:string" minOccurs="0"/>
+<xs:element name="RegOrgName" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULRegNonActSvSv_ITEM">
+<xs:sequence>
+<xs:element name="DtZapParent" type="xs:string"/>
+<xs:element name="GRNParent" type="xs:string"/>
+<xs:element name="IDZapParent" type="xs:string"/>
+<xs:element name="DtZap" type="xs:string"/>
+<xs:element name="GRN" type="xs:string"/>
+<xs:element name="IDZap" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULPredsh">
+<xs:sequence>
+<xs:element name="ULPredsh_ITEM" type="tns:tULPredsh_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULRUL">
+<xs:sequence>
+<xs:element name="ULRUL_ITEM" type="tns:tULRUL_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULOKVED">
+<xs:sequence>
+<xs:element name="ULOKVED_ITEM" type="tns:tULOKVED_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULDolgnFL">
+<xs:sequence>
+<xs:element name="ULDolgnFL_ITEM" type="tns:tULDolgnFL_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULRegAct">
+<xs:sequence>
+<xs:element name="ULRegAct_ITEM" type="tns:tULRegAct_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULPreem">
+<xs:sequence>
+<xs:element name="ULPreem_ITEM" type="tns:tULPreem_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULRegNonActSvSv">
+<xs:sequence>
+<xs:element name="ULRegNonActSvSv_ITEM" type="tns:tULRegNonActSvSv_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULOb">
+<xs:sequence>
+<xs:element name="ULOb_ITEM" type="tns:tULOb_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULRegNonAct">
+<xs:sequence>
+<xs:element name="ULRegNonAct_ITEM" type="tns:tULRegNonAct_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULUchrRF">
+<xs:sequence>
+<xs:element name="ULUchrRF_ITEM" type="tns:tULUchrRF_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tULRegActSvSv">
+<xs:sequence>
+<xs:element name="ULRegActSvSv_ITEM" type="tns:tULRegActSvSv_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

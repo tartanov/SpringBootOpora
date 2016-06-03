@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="UFOS_attachmentWebService_v1_1" resourceRoot="${projectDir}" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" id="baf00d4c-1788-4d36-bea6-6cd623cc4b56" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="documentAttachmentsBinding" type="wsdl" bindingName="{http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1}documentAttachmentsBinding" soapVersion="1_1" anonymous="optional" definition="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1?wsdl" id="2f598f9b-6f48-40ae-919c-524adf268c12" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1?wsdl"><con:part><con:url>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1?wsdl</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5.-->
+<wsdl:definitions targetNamespace="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1" name="documentAttachmentsService" xmlns="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1" xmlns:cc="http://www.otr.ru/ufos/ws/core/common/v1_1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1" schemaLocation="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1?xsd=2"/>
+      <xsd:import namespace="http://www.otr.ru/ufos/ws/core/common/v1_1" schemaLocation="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1?xsd=1"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="listAttachmentsReqMsg">
+    <wsdl:part name="parameters" element="listAttachmentsRequest"/>
+  </wsdl:message>
+  <wsdl:message name="listAttachmentsRespMsg">
+    <wsdl:part name="parameters" element="listAttachmentsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAttachmentReqMsg">
+    <wsdl:part name="parameters" element="getAttachmentRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getAttachmentRespMsg">
+    <wsdl:part name="parameters" element="getAttachmentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="manageAttachmentsReqMsg">
+    <wsdl:part name="parameters" element="manageAttachmentsRequest"/>
+  </wsdl:message>
+  <wsdl:message name="manageAttachmentsRespMsg">
+    <wsdl:part name="parameters" element="manageAttachmentsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="invalidGuidFault">
+    <wsdl:part name="fault" element="cc:invalidGuidFault"/>
+  </wsdl:message>
+  <wsdl:message name="documentNotFoundFault">
+    <wsdl:part name="fault" element="cc:documentNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="attachmentNotFoundFault">
+    <wsdl:part name="fault" element="attachmentNotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="deletingAttachmentIsSignedFault">
+    <wsdl:part name="fault" element="deletingAttachmentIsSignedFault"/>
+  </wsdl:message>
+  <wsdl:portType name="documentAttachmentsPort">
+    <wsdl:documentation>Сервис для работы с вложениями документа.</wsdl:documentation>
+    <wsdl:operation name="listAttachments">
+      <wsdl:documentation>Получение списка атрибутов вложений документа.</wsdl:documentation>
+      <wsdl:input message="listAttachmentsReqMsg"/>
+      <wsdl:output message="listAttachmentsRespMsg"/>
+      <wsdl:fault message="invalidGuidFault" name="invalidGuidFault"/>
+      <wsdl:fault message="documentNotFoundFault" name="documentNotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAttachment">
+      <wsdl:documentation>Получение содержимого вложения.</wsdl:documentation>
+      <wsdl:input message="getAttachmentReqMsg"/>
+      <wsdl:output message="getAttachmentRespMsg"/>
+      <wsdl:fault message="invalidGuidFault" name="invalidGuidFault"/>
+      <wsdl:fault message="attachmentNotFoundFault" name="attachmentNotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="manageAttachments">
+      <wsdl:documentation>Управление вложениями для указанного документа: создание и удаление.</wsdl:documentation>
+      <wsdl:input message="manageAttachmentsReqMsg"/>
+      <wsdl:output message="manageAttachmentsRespMsg"/>
+      <wsdl:fault message="invalidGuidFault" name="invalidGuidFault"/>
+      <wsdl:fault message="deletingAttachmentIsSignedFault" name="deletingAttachmentIsSignedFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="documentAttachmentsBinding" type="documentAttachmentsPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="listAttachments">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="invalidGuidFault">
+        <soap:fault name="invalidGuidFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="documentNotFoundFault">
+        <soap:fault name="documentNotFoundFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAttachment">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="invalidGuidFault">
+        <soap:fault name="invalidGuidFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="attachmentNotFoundFault">
+        <soap:fault name="attachmentNotFoundFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="manageAttachments">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="invalidGuidFault">
+        <soap:fault name="invalidGuidFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="deletingAttachmentIsSignedFault">
+        <soap:fault name="deletingAttachmentIsSignedFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="documentAttachmentsService">
+    <wsdl:port name="documentAttachmentsPortv1_1" binding="documentAttachmentsBinding">
+      <soap:address location="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1?xsd=2</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5.-->
+<xsd:schema targetNamespace="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" jaxb:version="2.1" version="1.0" xmlns="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1" xmlns:cc="http://www.otr.ru/ufos/ws/core/common/v1_1" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://www.otr.ru/ufos/ws/core/common/v1_1" schemaLocation="http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1?xsd=1"/>
+  <xsd:element name="listAttachmentsRequest" type="listAttachmentsRequest"/>
+  <xsd:element name="listAttachmentsResponse" type="listAttachmentsResponse"/>
+  <xsd:element name="getAttachmentRequest" type="getAttachmentRequest"/>
+  <xsd:element name="getAttachmentResponse" type="getAttachmentResponse"/>
+  <xsd:element name="attachmentNotFoundFault" type="cc:commonCoreFaultBean"/>
+  <xsd:element name="manageAttachmentsRequest" type="manageAttachmentsRequest"/>
+  <xsd:element name="manageAttachmentsResponse" type="manageAttachmentsResponse"/>
+  <xsd:element name="deletingAttachmentIsSignedFault" type="cc:commonCoreFaultBean"/>
+  <xsd:complexType name="listAttachmentsRequest">
+    <xsd:annotation>
+      <xsd:documentation>Запрос на получение списка вложений указанного документа.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="guid" type="cc:guid" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Глобальный идентификатор документа, вложения которого нужно получить.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="listAttachmentsResponse">
+    <xsd:annotation>
+      <xsd:documentation>Ответ со списком вложений документа.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:annotation>
+        <xsd:appinfo>
+          <jaxb:property name="attachments"/>
+        </xsd:appinfo>
+      </xsd:annotation>
+      <xsd:element name="attachment" type="attachment" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="attachment">
+    <xsd:annotation>
+      <xsd:documentation>Каждое вложение документа имеет атрибуты:
+				1. Глобальный идентификатор вложения.
+				2. Mime-тип.
+				3. Наименование файла, из которого вложение было загружено.
+				4. Дата создания файла.
+				5. Размер содержимого вложения.
+				6. Путь к файлу.
+				7. Комментарий к вложению.
+				8. Бизнес-тип вложения.
+				9. Порядковый номер вложения в списке.
+				10. Дата актуальности содержимого вложения.
+				11. Заголовок вложения.
+				12. Название организации, в рамках которой вложение было создано.
+				13. Имя пользователя - создателя вложения.
+				14. Признак доступности вложения для просмотра.
+				15. Статус вложения. Набор статусов зависит от бизнес процессов документа и не стандартизован.
+				16. Признак временного вложения, имеющего только локальное значение.
+				17. Признак видимости вложения. Позволяет работать с вложением как с системным, вспомогательным, служебным. На формах оно не отображается.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="comment" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Комментарий к вложению.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="title" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Заголовок вложения.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="organization-creator" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Название организации, в рамках которой вложение было создано.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="user-creator" type="xsd:string" minOccurs="0" maxOccurs="1">
+        <xsd:annotation>
+          <xsd:documentation>Имя пользователя - создателя вложения.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="guid" type="cc:guid" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Глобальный идентификатор вложения.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="mime-type" type="xsd:token" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>MIME-тип вложения.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="file-name" type="xsd:NCName" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Наименование файла.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="file-date" type="xsd:dateTime" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Дата создания файла.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="file-size" type="xsd:nonNegativeInteger" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Размер содержимого вложения.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="file-path" type="xsd:Name" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Путь к файлу.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="business-type" type="xsd:Name" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Бизнес-тип вложения.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="ordinal-number" type="xsd:nonNegativeInteger" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Порядковый номер вложения. Поле обязательное, но в случае создания нового вложения значение может быть опущено и
+					сгенерировано автоматически системой.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="actual-date" type="xsd:dateTime" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Дата актуальности содержимого вложения.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="viewable" type="xsd:boolean" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Признак доступности вложения для просмотра.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="status" type="xsd:Name" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Статус вложения. Набор статусов зависит от бизнес процессов документа и не стандартизован.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="temporary" type="xsd:boolean" use="optional" default="false">
+      <xsd:annotation>
+        <xsd:documentation>Признак временного вложения, имеющего только локальное значение.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="service" type="xsd:boolean" use="optional" default="false">
+      <xsd:annotation>
+        <xsd:documentation>Признак видимости вложения. Позволяет работать с вложением как с системным, вспомогательным, служебным. На формах оно не отображается.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="getAttachmentRequest">
+    <xsd:annotation>
+      <xsd:documentation>Запрос на получение содержимого вложения по его глобальному идентификатору.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="guid" type="cc:guid" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Глобальный идентификатор вложения, содержимое которого нужно получить.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="with-signature" type="xsd:boolean" default="false">
+      <xsd:annotation>
+        <xsd:documentation>Признак необходимости выгрузить вместе с вложением его подписи.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="with-all-attributes" type="xsd:boolean" default="false">
+      <xsd:annotation>
+        <xsd:documentation>Признак необходимости выгрузить вместе с вложением все его атрибуты (по умолчанию выгружается только обязательный глобальный идентификатор).</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="getAttachmentResponse">
+    <xsd:annotation>
+      <xsd:documentation>Ответ с содержимым запрашиваемого вложения и подписями, если они запрашивались.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="attachment" type="attachmentWithContent"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="attachmentSignatures">
+    <xsd:annotation>
+      <xsd:documentation>Подписи вложения.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="signature" type="attachmentSignature" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="attachmentSignature">
+    <xsd:annotation>
+      <xsd:documentation>Подпись вложения.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="cipher-algorithm" type="cryptoAlgorithm">
+        <xsd:annotation>
+          <xsd:documentation>Крипто-алгоритм подписи.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="hash-algorithm" type="cryptoAlgorithm">
+        <xsd:annotation>
+          <xsd:documentation>Крипто-алгоритм хэша.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="cms-signed-data" type="xsd:base64Binary">
+        <xsd:annotation>
+          <xsd:documentation>Электронно-цифровая подпись.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="certifying-hash" type="xsd:base64Binary">
+        <xsd:annotation>
+          <xsd:documentation>Удостоверяющий хэш.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="guid" type="cc:guid" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Глобальный идентификатор подписи.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="certificate-fingerprint" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Отпечаток сертификата.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="subject-cname" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Имя подписанта.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="subject-title" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Должность подписанта.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="subject-organization" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Организация подписанта.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="local" type="xsd:boolean">
+      <xsd:annotation>
+        <xsd:documentation>ЭЦП сформировано в локальной системе.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="creation-date" type="xsd:dateTime">
+      <xsd:annotation>
+        <xsd:documentation>Дата создания ЭЦП/регистрации замещения в БД.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="creation-login" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Уникальный идентификатор подписанта (логин).</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="advanced" type="xsd:boolean">
+      <xsd:annotation>
+        <xsd:documentation>Флаг УЭЦП.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="advancing-status">
+      <xsd:annotation>
+        <xsd:documentation>Статус дополнения до УЭЦП.</xsd:documentation>
+      </xsd:annotation>
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Not required"/>
+          <xsd:enumeration value="Required"/>
+          <xsd:enumeration value="Executing"/>
+          <xsd:enumeration value="Executed"/>
+          <xsd:enumeration value="Error"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+    <xsd:attribute name="advancing-error-code" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Код ошибки дополнения до УЭЦП.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="advancing-error-message" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Текст сообщения об ошибке дополнения до УЭЦП.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="last-check-status">
+      <xsd:annotation>
+        <xsd:documentation>Статус последней проверки ЭЦП.</xsd:documentation>
+      </xsd:annotation>
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Not checked"/>
+          <xsd:enumeration value="Check success"/>
+          <xsd:enumeration value="Check unsuccess"/>
+          <xsd:enumeration value="Error"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+    <xsd:attribute name="last-check-date" type="xsd:dateTime">
+      <xsd:annotation>
+        <xsd:documentation>Дата последней проверки ЭЦП.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="last-inspector-system-name" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Системное наименование пользователя, который последним проверял подпись.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="sign-format" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Формат подписи.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="username" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Пользователь наложивший ЭП.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="cryptoAlgorithm">
+    <xsd:annotation>
+      <xsd:documentation>Крипто алгоритм.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="name" type="xsd:string"/>
+      <xsd:element name="description" type="xsd:string"/>
+      <xsd:element name="type">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Cipher"/>
+            <xsd:enumeration value="Sign"/>
+            <xsd:enumeration value="Hash"/>
+            <xsd:enumeration value="Arch"/>
+            <xsd:enumeration value="CheckSum"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="manageAttachmentsRequest">
+    <xsd:annotation>
+      <xsd:documentation>Запрос на изменение списка вложений документа с указанным глобальным идентификатором: удаление или создание.
+				Операция обновления должна состоять из последовательного удаления имеющегося и создания нового вложения.
+				Попытка удалить подписанное вложение расценивается как ошибка.
+				С точки зрения декларативного жизненного цикла и политики редактирования документа изменения пользовательских вложений допустимо
+				только при соответствующей политике редактирования. А системные вложения (service=true) можно изменять всегда.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="adding-attachments" type="fullAttachmentListType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Добавляемые вложения.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="deleting-attachments" type="deletingAttachmentList" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Удаляемые вложения.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="document-guid" type="cc:guid" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Глобальный идентификатор документа, для которого нужно создать вложения.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="fullAttachmentListType">
+    <xsd:annotation>
+      <xsd:documentation>Список вложений (с атрибутами и содержимым).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="attachment" type="attachmentWithContent" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>Вложение, которое необходимо добавить.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="attachmentWithContent">
+    <xsd:annotation>
+      <xsd:documentation>Вложение с перечнем системных атрибутов и содержимым.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="attachment">
+        <xsd:sequence>
+          <xsd:element name="content" type="xsd:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+          <xsd:element name="signatures" type="attachmentSignatures" minOccurs="0"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="deletingAttachmentList">
+    <xsd:annotation>
+      <xsd:documentation>Список глобальных идентификаторов вложений, которые необходимо удалить.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="guid" type="cc:guid" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>Глобальный идентификатор вложения, которое необходимо удалить.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="cascade-signatures" type="xsd:boolean" default="false">
+      <xsd:annotation>
+        <xsd:documentation>
+          <!--@formatter:off-->
+          Признак, указывающий на необходимость удалить подписи вложений.
+          <br/>
+          Значение по умолчанию -
+          <code>false</code>
+          - означает, что подписанные вложения удалять нельзя. В случае попытки это сделать будет
+					создана исключительная ситуация.
+					В случае значения признака
+          <code>true</code>
+          вложения удаляются вместе с подписями, если таковые имеются, без генерации ошибки.
+          <!--@formatter:on-->
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="manageAttachmentsResponse">
+    <xsd:sequence/>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1?xsd=1</con:url><con:content><![CDATA[<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5.-->
+<xsd:schema targetNamespace="http://www.otr.ru/ufos/ws/core/common/v1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" jaxb:version="2.1" version="1.0" xmlns="http://www.otr.ru/ufos/ws/core/common/v1_1" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="invalidGuidFault" type="commonCoreFaultBean"/>
+  <xsd:element name="documentNotFoundFault" type="commonCoreFaultBean"/>
+  <xsd:complexType name="commonCoreFaultBean">
+    <xsd:annotation>
+      <xsd:documentation>Общая ошибка.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="message" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Сообщение об ошибке.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="timeStamp" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Время формирования ошибки.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="guid">
+    <xsd:annotation>
+      <xsd:documentation>Глобальный идентификатор. http://tools.ietf.org/html/rfc4122</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="parameters">
+    <xsd:annotation>
+      <xsd:documentation>Общий тип для перечисления произвольных параметров, состоящих из наименования и значения.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="parameter" type="parameter" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="parameter">
+    <xsd:annotation>
+      <xsd:documentation>Параметр, характеризующийся обязательным наименованием и необязательным значением.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="name" type="xsd:token" use="required"/>
+    <xsd:attribute name="value" type="xsd:string" use="optional"/>
+    <xsd:attribute name="type" type="fieldType" use="optional" default="STRING"/>
+  </xsd:complexType>
+  <xsd:simpleType name="fieldType">
+    <xsd:annotation>
+      <xsd:documentation>Тип поля, параметра - базовый тип в УФОС.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="STRING">
+        <xsd:annotation>
+          <xsd:documentation>Строка символов</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ENUM">
+        <xsd:annotation>
+          <xsd:documentation>Элемент перечисления</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TEXT">
+        <xsd:annotation>
+          <xsd:documentation>Большая строка символов</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BOOLEAN">
+        <xsd:annotation>
+          <xsd:documentation>Логический</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BYTE">
+        <xsd:annotation>
+          <xsd:documentation>Целое число со знаком (размерность ±2^7)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SHORT">
+        <xsd:annotation>
+          <xsd:documentation>Целое число со знаком (размерность ±2^15)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="INTEGER">
+        <xsd:annotation>
+          <xsd:documentation>Целое число со знаком (размерность ±2^31)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LONG">
+        <xsd:annotation>
+          <xsd:documentation>Целое число со знаком (размерность ±2^63)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DECIMAL">
+        <xsd:annotation>
+          <xsd:documentation>Число с фиксированной точностью (например, для процентов)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MONEY">
+        <xsd:annotation>
+          <xsd:documentation>Денежная величина</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CURRENCY">
+        <xsd:annotation>
+          <xsd:documentation>Код валюты по ISO 4217</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DATE">
+        <xsd:annotation>
+          <xsd:documentation>Дата (без времени)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DATETIME">
+        <xsd:annotation>
+          <xsd:documentation>Дата/время</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="UUID">
+        <xsd:annotation>
+          <xsd:documentation>UUID - неизменный универсальный уникальный идентификатор</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://eb-emc-test-ufos-jetty.otr.ru:18050/web-services/attachmentWebService_v1_1</con:endpoint><con:endpoint>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1</con:endpoint><con:endpoint>http://iMac-Artem.local:8080/sufdclient/web-services/attachmentWebService_v1_1</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="getAttachment" bindingOperationName="getAttachment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="7a594573-e5e4-4a59-bf80-2a1f9683f08a"><con:settings/><con:call name="Request 1" id="3f30d18e-b468-4f25-8694-7d2ef9e60fea"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@encode_attachments">false</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://iMac-Artem.local:8080/sufdclient/web-services/attachmentWebService_v1_1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:getAttachmentRequest guid="d6308785-087a-4b08-8744-d382f02c6e36"/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1/documentAttachmentsPort/getAttachmentRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="listAttachments" bindingOperationName="listAttachments" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="1528f439-b1fc-4612-8c09-b4c091048da8"><con:settings/><con:call name="Request 1" id="6d27c980-9d6c-4be2-b582-e87972cda79d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/sufdclient/web-services/attachmentWebService_v1_1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:listAttachmentsRequest guid=""/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1/documentAttachmentsPort/listAttachmentsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="manageAttachments" bindingOperationName="manageAttachments" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="a283123f-a1e7-41fc-8c53-43ca0e7e081b"><con:settings/><con:call name="Request 1" id="4ba61862-2571-4bdc-b62f-70fe8091e683"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:manageAttachmentsRequest document-guid="29a137fd-7743-4401-bba9-bbc5f97978cd">
+      
+      </v1:manageAttachmentsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1/documentAttachmentsPort/manageAttachmentsRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 2" id="75f4d7c0-7cd6-4b59-9d22-c6e68728b517"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="WsdlSettings@enable-mtom">false</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:manageAttachmentsRequest document-guid="12765E28-D374-5AD2-E053-CDC61FAC6F3B">
+         <!--Optional:-->
+         <v1:adding-attachments>
+            <!--1 or more repetitions:-->
+            <v1:attachment  file-name="test2" ordinal-number="1" >
+              
+              
+               <v1:content>cid:51443931095</v1:content>
+               <!--Optional:-->
+               
+            </v1:attachment>
+         </v1:adding-attachments>
+        
+         
+      </v1:manageAttachmentsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:attachment><con:name>error.log</con:name><con:contentType>application/octet-stream</con:contentType><con:size>456</con:size><con:contentId>error.log</con:contentId><con:part>51443931095</con:part><con:data>UEsDBBQACAAIAPeEhUcAAAAAAAAAAAAAAAAJAAAAZXJyb3IubG9n5c9BDsIgEAXQvacg7oF9jQujbeLGO4xA6ZAp0wCtPb5l0aSewe38/5M37WrcVJCjOAdYQBFEr+4EOb+4dDxH2+6NRhgeNcbiiDBow9Y9Y0Y/FO0sFk43U2tZd0wWo39AgfNnQHLbMOaS5i2PXtR7R7BwEj2nRsA0ERqoW73KqpBhGSWxAZL8Ds6U5PqLMFV13QxqN6iDQf0Y1MFwav/gxy9QSwcIHoJmt6EAAADIAQAAUEsBAhQAFAAIAAgA94SFRx6CZrehAAAAyAEAAAkAAAAAAAAAAAAAAAAAAAAAAGVycm9yLmxvZ1BLBQYAAAAAAQABADcAAADYAAAAAAA=</con:data><con:id>a7207f85-4b3d-48dd-97d4-993f0fe4f0b6</con:id></con:attachment><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1/documentAttachmentsPort/manageAttachmentsRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="Request 3" id="7210f3a2-896b-4c06-b3b9-82dc3ca2d8e3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://eb-exp-test-ufos.otr.ru:8889/sufdclient/web-services/attachmentWebService_v1_1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:manageAttachmentsRequest document-guid="?">
+         <!--Optional:-->
+         <v1:adding-attachments>
+            <!--1 or more repetitions:-->
+            <v1:attachment guid="?" mime-type="?" file-name="?" file-date="?" file-size="?" file-path="?" business-type="?" ordinal-number="?" actual-date="?" viewable="?" status="?" temporary="false" service="false">
+               <!--Optional:-->
+               <v1:comment>?</v1:comment>
+               <!--Optional:-->
+               <v1:title>?</v1:title>
+               <!--Optional:-->
+               <v1:organization-creator>?</v1:organization-creator>
+               <!--Optional:-->
+               <v1:user-creator>?</v1:user-creator>
+               <v1:content>cid:499661825708</v1:content>
+               <!--Optional:-->
+               <v1:signatures>
+                  <!--Zero or more repetitions:-->
+                  <v1:signature guid="?" certificate-fingerprint="?" subject-cname="?" subject-title="?" subject-organization="?" local="?" creation-date="?" creation-login="?" advanced="?" advancing-status="?" advancing-error-code="?" advancing-error-message="?" last-check-status="?" last-check-date="?" last-inspector-system-name="?" sign-format="?" username="?">
+                     <v1:cipher-algorithm>
+                        <v1:name>?</v1:name>
+                        <v1:description>?</v1:description>
+                        <v1:type>?</v1:type>
+                     </v1:cipher-algorithm>
+                     <v1:hash-algorithm>
+                        <v1:name>?</v1:name>
+                        <v1:description>?</v1:description>
+                        <v1:type>?</v1:type>
+                     </v1:hash-algorithm>
+                     <v1:cms-signed-data>cid:230447996084</v1:cms-signed-data>
+                     <v1:certifying-hash>cid:11560597478</v1:certifying-hash>
+                  </v1:signature>
+               </v1:signatures>
+            </v1:attachment>
+         </v1:adding-attachments>
+         <!--Optional:-->
+         <v1:deleting-attachments cascade-signatures="false">
+            <!--1 or more repetitions:-->
+            <v1:guid>?</v1:guid>
+         </v1:deleting-attachments>
+      </v1:manageAttachmentsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1/documentAttachmentsPort/manageAttachmentsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService port="8080" path="/" host="iMac-Artem.local" name="MockService 1" id="318c3600-f361-4d6f-9c94-06dbd0254577"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="listAttachments" interface="documentAttachmentsBinding" operation="listAttachments" id="23128d73-569e-4d01-b271-3ca92f4e2e76"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" id="b268174c-c1bb-46ea-882d-951a36af5a33" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:listAttachmentsResponse>
+         <!--Zero or more repetitions:-->
+         <v1:attachment guid="1" mime-type="?" file-name="?" file-date="?" file-size="?" file-path="?" business-type="TransportPackageXML" ordinal-number="?" actual-date="?" viewable="?" status="?" temporary="false" service="false">
+            <!--Optional:-->
+            <v1:comment>?</v1:comment>
+            <!--Optional:-->
+            <v1:title>?</v1:title>
+            <!--Optional:-->
+            <v1:organization-creator>?</v1:organization-creator>
+            <!--Optional:-->
+            <v1:user-creator>?</v1:user-creator>
+         </v1:attachment>
+         <v1:attachment guid="1" mime-type="?" file-name="?" file-date="?" file-size="?" file-path="?" business-type="TransportPackage" ordinal-number="?" actual-date="?" viewable="?" status="?" temporary="false" service="false">
+            <!--Optional:-->
+            <v1:comment>?</v1:comment>
+            <!--Optional:-->
+            <v1:title>?</v1:title>
+            <!--Optional:-->
+            <v1:organization-creator>?</v1:organization-creator>
+            <!--Optional:-->
+            <v1:user-creator>?</v1:user-creator>
+         </v1:attachment>
+      </v1:listAttachmentsResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1/documentAttachmentsPort/listAttachmentsResponse"/></con:response><con:response name="Response 2" encoding="UTF-8" id="24775316-af2b-485e-a1ce-688fcb199b19" httpResponseStatus="200"><con:settings/><con:responseContent/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1/documentAttachmentsPort/listAttachmentsResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:mockService port="8080" path="/sufdclient/web-services/attachmentWebService_v1_1" host="localhost" name="documentAttachmentsBinding MockService" id="bc437fd2-7fc8-4ad1-b908-08387f23aa44" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="getAttachment" interface="documentAttachmentsBinding" operation="getAttachment" id="fe35bca9-c6d1-4e3f-aa75-624ffffe56fb"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" useWsAddressing="false" id="f3b843de-6e3f-4850-99fe-e07415e43a6f" httpResponseStatus="200"><con:settings><con:setting id="WsdlSettings@enable-mtom">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockResponse@force_mtom">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockResponse@encode_attachments">true</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockResponse@disable-multipart-attachments">false</con:setting></con:settings><con:responseContent><![CDATA[<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:getAttachmentResponse xmlns:ns2="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1" xmlns="http://www.otr.ru/ufos/ws/core/common/v1_1">
+         <ns2:attachment>
+            <ns2:content>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJlcXVlc3RfUmVlc3RyPgogICA8ZURvY3VtZW50IENvZGVUeXBlPSIxMTIiIFZlcnNpb249IjA2IiBTdWJWZXJzaW9uPSIwNi43Ij4KICAgICAgPFNlbmRlciBLb2Q9IjAwLjAuNC4yMDAiCiAgICAgICAgIE5hbWU9ItCk0LXQtNC10YDQsNC70YzQvdCw0Y8g0YHQu9GD0LbQsdCwINCz0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90L7QuSDRgNC10LPQuNGB0YLRgNCw0YbQuNC4INC60LDQtNCw0YHRgtGA0LAg0Lgg0LrQsNGA0YLQvtCz0YDQsNGE0LjQuCIvPgogICA8L2VEb2N1bWVudD4KICAgPEZvbGRlcj4KICAgICAgPFRpdGxlPgogICAgICAgICA8UnVicmljPgogICAgICAgICAgICA8R1VJRD4zZWFjODQ4Ny00ZDRiLTQ0NDktYTU0MS05Y2M1N2RmNjY4ODc8L0dVSUQ+CiAgICAgICAgIDwvUnVicmljPgogICAgICA8L1RpdGxlPgogICAgICA8UmVxdWVzdHM+CiAgICAgICAgIDxSZXF1ZXN0IGlkPSIyOTdjNWE0Ny1iNTJmLTRiZjEtOTk0MS05ZDI2OGU0OGFhNzIiPgogICAgICAgICAgICA8VGl0bGU+CiAgICAgICAgICAgICAgIDxHVUlEPjc1MTA5YzY0LWFiOWUtNGU1ZC1hZjExLTViZjk0NWI0ZGQ2MzwvR1VJRD4KICAgICAgICAgICAgICAgPENvZGU+NTU4MTAyMTUwMDAwPC9Db2RlPgogICAgICAgICAgICAgICA8VmlzaXRfUHVycG9zZT42NTkwMDYwMDIwMDA8L1Zpc2l0X1B1cnBvc2U+CiAgICAgICAgICAgIDwvVGl0bGU+CiAgICAgICAgICAgIDxEZWNsYXJhbnRzPgogICAgICAgICAgICAgICA8RGVjbGFyYW50IGlkPSI4YjVmZmVmMS00ZDM4LTQ4N2ItOGJmNS00OTc3YzIzNzFhNjIiPgogICAgICAgICAgICAgICAgICA8RGVsaXZlcnk+CiAgICAgICAgICAgICAgICAgICAgIDxLaW5kX0RlbGl2ZXJ5Pjc4NTAwNDAwMDAwMDwvS2luZF9EZWxpdmVyeT4KICAgICAgICAgICAgICAgICAgICAgPFdheV9EZWxpdmVyeT4KICAgICAgICAgICAgICAgICAgICAgICAgPFJlY2lwaWVudD4wMTwvUmVjaXBpZW50PgogICAgICAgICAgICAgICAgICAgICAgICA8QWRkcmVzcz5hLnBhdmxvdmFAdGhwcm9tLnJ1PC9BZGRyZXNzPgogICAgICAgICAgICAgICAgICAgICA8L1dheV9EZWxpdmVyeT4KICAgICAgICAgICAgICAgICAgPC9EZWxpdmVyeT4KICAgICAgICAgICAgICAgICAgPE5lZWRfQ2VydGlmaWNhdGU+dHJ1ZTwvTmVlZF9DZXJ0aWZpY2F0ZT4KICAgICAgICAgICAgICAgPC9EZWNsYXJhbnQ+CiAgICAgICAgICAgIDwvRGVjbGFyYW50cz4KICAgICAgICAgICAgPE9iamVjdHM+CiAgICAgICAgICAgICAgIDxJRD4zN2FmMTEzOC1mMWIwLTQ3ZDItYmE3YS1jMmE3ZGVhNTFhZTI8L0lEPgogICAgICAgICAgICA8L09iamVjdHM+CiAgICAgICAgICAgIDxBcHBsaWVkX0RvY3VtZW50cz4KICAgICAgICAgICAgICAgPElEPjM3MDA4NzJkLTM1ZmItNGVkNy1iOGQyLTQ1ODY5YjkyYzgxMDwvSUQ+CiAgICAgICAgICAgICAgIDxJRD5mYjQyOTQzOS02ZmYyLTRlNDAtOTVkMi02ZjNkMzM1NmQ1MWY8L0lEPgogICAgICAgICAgICA8L0FwcGxpZWRfRG9jdW1lbnRzPgogICAgICAgICAgICA8UmVnaXN0cmF0aW9uRWxlbWVudHM+CiAgICAgICAgICAgICAgIDxSZWdpc3RyYXRpb25FbGVtZW50PgogICAgICAgICAgICAgICAgICA8UmVnaXN0cmF0aW9uX1JlY29yZD4KICAgICAgICAgICAgICAgICAgICAgPFJlY29yZF9OdW1iZXI+NjE6NDQ6MDA4MjYxNToxMTExINCy0YUuIOKEliA2MS85OTkvMDAxLzIwMTUtMzA2PC9SZWNvcmRfTnVtYmVyPgogICAgICAgICAgICAgICAgICAgICA8UmVjb3JkX0RhdGU+MjAxNS0xMS0wMjwvUmVjb3JkX0RhdGU+CiAgICAgICAgICAgICAgICAgIDwvUmVnaXN0cmF0aW9uX1JlY29yZD4KICAgICAgICAgICAgICAgICAgPElEPjg2OGIyZjIzLWUwMmItNGU3NS1iNzU0LTNlMzkyZmRmMzAxNzwvSUQ+CiAgICAgICAgICAgICAgIDwvUmVnaXN0cmF0aW9uRWxlbWVudD4KICAgICAgICAgICAgPC9SZWdpc3RyYXRpb25FbGVtZW50cz4KICAgICAgICAgICAgPEN1cnJlbnRfQ2hhbmdlcz4KICAgICAgICAgICAgICAgPFJlY29yZD4KICAgICAgICAgICAgICAgICAgPE9sZF9WYWx1ZT7QktC90LXRgdC10L3QvdCw0Y8g0LfQsNC/0LjRgdGMPC9PbGRfVmFsdWU+CiAgICAgICAgICAgICAgICAgIDxOZXdfVmFsdWU+0J/RgNCw0LLQuNC70YzQvdCw0Y8g0LfQsNC/0LjRgdGMPC9OZXdfVmFsdWU+CiAgICAgICAgICAgICAgIDwvUmVjb3JkPgogICAgICAgICAgICA8L0N1cnJlbnRfQ2hhbmdlcz4KICAgICAgICAgPC9SZXF1ZXN0PgogICAgICA8L1JlcXVlc3RzPgogICAgICA8RGVjbGFyYW50cz4KICAgICAgICAgPERlY2xhcmFudCBpZD0iOGI1ZmZlZjEtNGQzOC00ODdiLThiZjUtNDk3N2MyMzcxYTYyIiBkZWNsYXJhbnRfa2luZD0iMzU3MDAxMDAwMDAwIj4KICAgICAgICAgICAgPFBlcnNvbj4KICAgICAgICAgICAgICAgPEZJTz4KICAgICAgICAgICAgICAgICAgPFN1cm5hbWU+0KHQtdC80LXQvdC+0LI8L1N1cm5hbWU+CiAgICAgICAgICAgICAgICAgIDxGaXJzdD7QodC10LzQtdC9PC9GaXJzdD4KICAgICAgICAgICAgICAgICAgPFBhdHJvbnltaWM+0KHQtdC80LXQvdC+0LLQuNGHPC9QYXRyb255bWljPgogICAgICAgICAgICAgICA8L0ZJTz4KICAgICAgICAgICAgICAgPFBsYWNlX0JpcnRoLz4KICAgICAgICAgICAgICAgPERvY3VtZW50PgogICAgICAgICAgICAgICAgICA8Q29kZV9Eb2N1bWVudD4wMDgwMDEwMDEwMDA8L0NvZGVfRG9jdW1lbnQ+CiAgICAgICAgICAgICAgICAgIDxOYW1lPtCf0LDRgdC/0L7RgNGCINCz0YDQsNC20LTQsNC90LjQvdCwINCg0L7RgdGB0LjQudGB0LrQvtC5INCk0LXQtNC10YDQsNGG0LjQuDwvTmFtZT4KICAgICAgICAgICAgICAgICAgPFNlcmllcz4xMSAxMTwvU2VyaWVzPgogICAgICAgICAgICAgICAgICA8TnVtYmVyPjIyMjIyMjwvTnVtYmVyPgogICAgICAgICAgICAgICAgICA8RGF0ZT4yMDE1LTEwLTEyPC9EYXRlPgogICAgICAgICAgICAgICAgICA8SXNzdWVPcmdhbj7Rg9Cy0LQ8L0lzc3VlT3JnYW4+CiAgICAgICAgICAgICAgIDwvRG9jdW1lbnQ+CiAgICAgICAgICAgICAgIDxQaG9uZT4rNDUtNjUtNDYtMzItMTM8L1Bob25lPgogICAgICAgICAgICAgICA8U05JTFM+MTIxLTMyMC00MTIgNzY8L1NOSUxTPgogICAgICAgICAgICA8L1BlcnNvbj4KICAgICAgICAgPC9EZWNsYXJhbnQ+CiAgICAgIDwvRGVjbGFyYW50cz4KICAgICAgPE9iamVjdHM+CiAgICAgICAgIDxPYmplY3QgaWQ9IjM3YWYxMTM4LWYxYjAtNDdkMi1iYTdhLWMyYTdkZWE1MWFlMiI+CiAgICAgICAgICAgIDxOdW1iZXJfUmVnaXN0ZXIvPgogICAgICAgICAgICA8TmFtZT7Ql9C10LzQtdC70YzQvdGL0Lkg0YPRh9Cw0YHRgtC+0Lo8L05hbWU+CiAgICAgICAgICAgIDxMb2NhdGlvbj4KICAgICAgICAgICAgICAgPENvZGVfT0tBVE8+NDYwMDAwMDAwMDA8L0NvZGVfT0tBVE8+CiAgICAgICAgICAgICAgIDxDb2RlX0tMQURSPjUwMDAwMDAwMDAwMDA8L0NvZGVfS0xBRFI+CiAgICAgICAgICAgICAgIDxSZWdpb24+NTA8L1JlZ2lvbj4KICAgICAgICAgICAgICAgPExldmVsMSBUeXBlPSLQtCIgVmFsdWU9IjQ1Ii8+CiAgICAgICAgICAgICAgIDxBcGFydG1lbnQgVHlwZT0i0LrQsiIgVmFsdWU9IjEyIi8+CiAgICAgICAgICAgICAgIDxOb3RlPtGD0LsuINCY0LLQsNC90L7QstCwPC9Ob3RlPgogICAgICAgICAgICA8L0xvY2F0aW9uPgogICAgICAgICAgICA8T2JqX0tpbmQ+MDAyMDAxMDAxMDAwPC9PYmpfS2luZD4KICAgICAgICAgPC9PYmplY3Q+CiAgICAgIDwvT2JqZWN0cz4KICAgICAgPEFwcGxpZWRfRG9jdW1lbnRzPgogICAgICAgICA8QXBwbGllZF9Eb2N1bWVudCBpZD0iMzcwMDg3MmQtMzVmYi00ZWQ3LWI4ZDItNDU4NjliOTJjODEwIj4KICAgICAgICAgICAgPENvZGVfRG9jdW1lbnQ+MDA4MDAxMDAxMDAwPC9Db2RlX0RvY3VtZW50PgogICAgICAgICAgICA8U2VyaWVzPjQ1IDU1PC9TZXJpZXM+CiAgICAgICAgICAgIDxOdW1iZXI+NDU0NTQ1PC9OdW1iZXI+CiAgICAgICAgICAgIDxEYXRlPjIwMTUtMTAtMTI8L0RhdGU+CiAgICAgICAgICAgIDxJc3N1ZU9yZ2FuPtCy0YvQtDwvSXNzdWVPcmdhbj4KICAgICAgICAgICAgPEltYWdlcz4KICAgICAgICAgICAgICAgPEltYWdlIE5hbWU9IkZpbGVzL2RvYzUxMDcwNS5wZGYiLz4KICAgICAgICAgICAgPC9JbWFnZXM+CiAgICAgICAgICAgIDxRdWFudGl0eSBPcmlnaW5hbD0iMSIgT3JpZ2luYWxfU2hlZXQ9IjEiLz4KICAgICAgICAgPC9BcHBsaWVkX0RvY3VtZW50PgogICAgICAgICA8QXBwbGllZF9Eb2N1bWVudCBpZD0iZmI0Mjk0MzktNmZmMi00ZTQwLTk1ZDItNmYzZDMzNTZkNTFmIj4KICAgICAgICAgICAgPENvZGVfRG9jdW1lbnQ+NTU4MTAyMTUwMDAwPC9Db2RlX0RvY3VtZW50PgogICAgICAgICAgICA8TmFtZT7Ql9Cw0Y/QstC70LXQvdC40LUg0L4g0L/QvtCy0YLQvtGA0L3QvtC5INCy0YvQtNCw0YfQtSDQvdC+0LLQvtCz0L4g0YHQstC40LTQtdGC0LXQu9GM0YHRgtCy0LAg0L4g0LPQvtGB0YPQtNCw0YDRgdGC0LLQtdC90L3QvtC5INGA0LXQs9C40YHRgtGA0LDRhtC40Lgg0L/RgNCw0LLQsCwg0LLRi9C00LDRh9C1INC30LDQutC70LDQtNC90L7QuSwg0LLQvdC10YHQtdC90LjQuCDQuNC30LzQtdC90LXQvdC40Lkg0LIg0LfQsNC/0LjRgdGMINCV0LTQuNC90L7Qs9C+INCz0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90L7Qs9C+INGA0LXQtdGB0YLRgNCwINC/0YDQsNCyINC90LAg0L3QtdC00LLQuNC20LjQvNC+0LUg0LjQvNGD0YnQtdGB0YLQstC+INC4INGB0LTQtdC70L7QuiDRgSDQvdC40LwsINC40YHQv9GA0LDQstC70LXQvdC40Lgg0YLQtdGF0L3QuNGH0LXRgdC60L7QuSDQvtGI0LjQsdC60LgsINC/0L7Qs9Cw0YjQtdC90LjQuCDRgNC1PC9OYW1lPgogICAgICAgICAgICA8TnVtYmVyPtCR0J08L051bWJlcj4KICAgICAgICAgICAgPERhdGU+MjAxNi0wMi0yNjwvRGF0ZT4KICAgICAgICAgICAgPElzc3VlT3JnYW4vPgogICAgICAgICAgICA8SW1hZ2VzPgogICAgICAgICAgICAgICA8SW1hZ2UgTmFtZT0iRmlsZXMvYXBwX2ZiNDI5NDM5LTZmZjItNGU0MC05NWQyLTZmM2QzMzU2ZDUxZi54bWwiLz4KICAgICAgICAgICAgICAgPEltYWdlIE5hbWU9IkZpbGVzL2FwcF9mYjQyOTQzOS02ZmYyLTRlNDAtOTVkMi02ZjNkMzM1NmQ1MWYuaHRtbCIvPgogICAgICAgICAgICA8L0ltYWdlcz4KICAgICAgICAgICAgPFF1YW50aXR5IE9yaWdpbmFsPSIxIiBPcmlnaW5hbF9TaGVldD0iMSIvPgogICAgICAgICA8L0FwcGxpZWRfRG9jdW1lbnQ+CiAgICAgIDwvQXBwbGllZF9Eb2N1bWVudHM+CiAgICAgIDxQYXltZW50X0NhbGNfRGV0YWlscz4KICAgICAgICAgPFBheW1lbnRfQ2FsY19EZXRhaWwgZGVjbGFyYW50X2lkPSI4YjVmZmVmMS00ZDM4LTQ4N2ItOGJmNS00OTc3YzIzNzFhNjIiCiAgICAgICAgICAgIHJlZ2lzdHJhdGlvbl9lbGVtZW50X2lkPSI4NjhiMmYyMy1lMDJiLTRlNzUtYjc1NC0zZTM5MmZkZjMwMTciLz4KICAgICAgPC9QYXltZW50X0NhbGNfRGV0YWlscz4KICAgPC9Gb2xkZXI+CjwvUmVxdWVzdF9SZWVzdHI+Cg==</ns2:content>
+         	  <ns2:signatures>
+         	  	<ns2:signature>
+         	  		<ns2:cms-signed-data>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJlcXVlc3RfUmVlc3RyPgogICA8ZURvY3VtZW50IENvZGVUeXBlPSIxMTIiIFZlcnNpb249IjA2IiBTdWJWZXJzaW9uPSIwNi43Ij4KICAgICAgPFNlbmRlciBLb2Q9IjAwLjAuNC4yMDAiCiAgICAgICAgIE5hbWU9ItCk0LXQtNC10YDQsNC70YzQvdCw0Y8g0YHQu9GD0LbQsdCwINCz0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90L7QuSDRgNC10LPQuNGB0YLRgNCw0YbQuNC4INC60LDQtNCw0YHRgtGA0LAg0Lgg0LrQsNGA0YLQvtCz0YDQsNGE0LjQuCIvPgogICA8L2VEb2N1bWVudD4KICAgPEZvbGRlcj4KICAgICAgPFRpdGxlPgogICAgICAgICA8UnVicmljPgogICAgICAgICAgICA8R1VJRD4zZWFjODQ4Ny00ZDRiLTQ0NDktYTU0MS05Y2M1N2RmNjY4ODc8L0dVSUQ+CiAgICAgICAgIDwvUnVicmljPgogICAgICA8L1RpdGxlPgogICAgICA8UmVxdWVzdHM+CiAgICAgICAgIDxSZXF1ZXN0IGlkPSIyOTdjNWE0Ny1iNTJmLTRiZjEtOTk0MS05ZDI2OGU0OGFhNzIiPgogICAgICAgICAgICA8VGl0bGU+CiAgICAgICAgICAgICAgIDxHVUlEPjc1MTA5YzY0LWFiOWUtNGU1ZC1hZjExLTViZjk0NWI0ZGQ2MzwvR1VJRD4KICAgICAgICAgICAgICAgPENvZGU+NTU4MTAyMTUwMDAwPC9Db2RlPgogICAgICAgICAgICAgICA8VmlzaXRfUHVycG9zZT42NTkwMDYwMDIwMDA8L1Zpc2l0X1B1cnBvc2U+CiAgICAgICAgICAgIDwvVGl0bGU+CiAgICAgICAgICAgIDxEZWNsYXJhbnRzPgogICAgICAgICAgICAgICA8RGVjbGFyYW50IGlkPSI4YjVmZmVmMS00ZDM4LTQ4N2ItOGJmNS00OTc3YzIzNzFhNjIiPgogICAgICAgICAgICAgICAgICA8RGVsaXZlcnk+CiAgICAgICAgICAgICAgICAgICAgIDxLaW5kX0RlbGl2ZXJ5Pjc4NTAwNDAwMDAwMDwvS2luZF9EZWxpdmVyeT4KICAgICAgICAgICAgICAgICAgICAgPFdheV9EZWxpdmVyeT4KICAgICAgICAgICAgICAgICAgICAgICAgPFJlY2lwaWVudD4wMTwvUmVjaXBpZW50PgogICAgICAgICAgICAgICAgICAgICAgICA8QWRkcmVzcz5hLnBhdmxvdmFAdGhwcm9tLnJ1PC9BZGRyZXNzPgogICAgICAgICAgICAgICAgICAgICA8L1dheV9EZWxpdmVyeT4KICAgICAgICAgICAgICAgICAgPC9EZWxpdmVyeT4KICAgICAgICAgICAgICAgICAgPE5lZWRfQ2VydGlmaWNhdGU+dHJ1ZTwvTmVlZF9DZXJ0aWZpY2F0ZT4KICAgICAgICAgICAgICAgPC9EZWNsYXJhbnQ+CiAgICAgICAgICAgIDwvRGVjbGFyYW50cz4KICAgICAgICAgICAgPE9iamVjdHM+CiAgICAgICAgICAgICAgIDxJRD4zN2FmMTEzOC1mMWIwLTQ3ZDItYmE3YS1jMmE3ZGVhNTFhZTI8L0lEPgogICAgICAgICAgICA8L09iamVjdHM+CiAgICAgICAgICAgIDxBcHBsaWVkX0RvY3VtZW50cz4KICAgICAgICAgICAgICAgPElEPjM3MDA4NzJkLTM1ZmItNGVkNy1iOGQyLTQ1ODY5YjkyYzgxMDwvSUQ+CiAgICAgICAgICAgICAgIDxJRD5mYjQyOTQzOS02ZmYyLTRlNDAtOTVkMi02ZjNkMzM1NmQ1MWY8L0lEPgogICAgICAgICAgICA8L0FwcGxpZWRfRG9jdW1lbnRzPgogICAgICAgICAgICA8UmVnaXN0cmF0aW9uRWxlbWVudHM+CiAgICAgICAgICAgICAgIDxSZWdpc3RyYXRpb25FbGVtZW50PgogICAgICAgICAgICAgICAgICA8UmVnaXN0cmF0aW9uX1JlY29yZD4KICAgICAgICAgICAgICAgICAgICAgPFJlY29yZF9OdW1iZXI+NjE6NDQ6MDA4MjYxNToxMTExINCy0YUuIOKEliA2MS85OTkvMDAxLzIwMTUtMzA2PC9SZWNvcmRfTnVtYmVyPgogICAgICAgICAgICAgICAgICAgICA8UmVjb3JkX0RhdGU+MjAxNS0xMS0wMjwvUmVjb3JkX0RhdGU+CiAgICAgICAgICAgICAgICAgIDwvUmVnaXN0cmF0aW9uX1JlY29yZD4KICAgICAgICAgICAgICAgICAgPElEPjg2OGIyZjIzLWUwMmItNGU3NS1iNzU0LTNlMzkyZmRmMzAxNzwvSUQ+CiAgICAgICAgICAgICAgIDwvUmVnaXN0cmF0aW9uRWxlbWVudD4KICAgICAgICAgICAgPC9SZWdpc3RyYXRpb25FbGVtZW50cz4KICAgICAgICAgICAgPEN1cnJlbnRfQ2hhbmdlcz4KICAgICAgICAgICAgICAgPFJlY29yZD4KICAgICAgICAgICAgICAgICAgPE9sZF9WYWx1ZT7QktC90LXRgdC10L3QvdCw0Y8g0LfQsNC/0LjRgdGMPC9PbGRfVmFsdWU+CiAgICAgICAgICAgICAgICAgIDxOZXdfVmFsdWU+0J/RgNCw0LLQuNC70YzQvdCw0Y8g0LfQsNC/0LjRgdGMPC9OZXdfVmFsdWU+CiAgICAgICAgICAgICAgIDwvUmVjb3JkPgogICAgICAgICAgICA8L0N1cnJlbnRfQ2hhbmdlcz4KICAgICAgICAgPC9SZXF1ZXN0PgogICAgICA8L1JlcXVlc3RzPgogICAgICA8RGVjbGFyYW50cz4KICAgICAgICAgPERlY2xhcmFudCBpZD0iOGI1ZmZlZjEtNGQzOC00ODdiLThiZjUtNDk3N2MyMzcxYTYyIiBkZWNsYXJhbnRfa2luZD0iMzU3MDAxMDAwMDAwIj4KICAgICAgICAgICAgPFBlcnNvbj4KICAgICAgICAgICAgICAgPEZJTz4KICAgICAgICAgICAgICAgICAgPFN1cm5hbWU+0KHQtdC80LXQvdC+0LI8L1N1cm5hbWU+CiAgICAgICAgICAgICAgICAgIDxGaXJzdD7QodC10LzQtdC9PC9GaXJzdD4KICAgICAgICAgICAgICAgICAgPFBhdHJvbnltaWM+0KHQtdC80LXQvdC+0LLQuNGHPC9QYXRyb255bWljPgogICAgICAgICAgICAgICA8L0ZJTz4KICAgICAgICAgICAgICAgPFBsYWNlX0JpcnRoLz4KICAgICAgICAgICAgICAgPERvY3VtZW50PgogICAgICAgICAgICAgICAgICA8Q29kZV9Eb2N1bWVudD4wMDgwMDEwMDEwMDA8L0NvZGVfRG9jdW1lbnQ+CiAgICAgICAgICAgICAgICAgIDxOYW1lPtCf0LDRgdC/0L7RgNGCINCz0YDQsNC20LTQsNC90LjQvdCwINCg0L7RgdGB0LjQudGB0LrQvtC5INCk0LXQtNC10YDQsNGG0LjQuDwvTmFtZT4KICAgICAgICAgICAgICAgICAgPFNlcmllcz4xMSAxMTwvU2VyaWVzPgogICAgICAgICAgICAgICAgICA8TnVtYmVyPjIyMjIyMjwvTnVtYmVyPgogICAgICAgICAgICAgICAgICA8RGF0ZT4yMDE1LTEwLTEyPC9EYXRlPgogICAgICAgICAgICAgICAgICA8SXNzdWVPcmdhbj7Rg9Cy0LQ8L0lzc3VlT3JnYW4+CiAgICAgICAgICAgICAgIDwvRG9jdW1lbnQ+CiAgICAgICAgICAgICAgIDxQaG9uZT4rNDUtNjUtNDYtMzItMTM8L1Bob25lPgogICAgICAgICAgICAgICA8U05JTFM+MTIxLTMyMC00MTIgNzY8L1NOSUxTPgogICAgICAgICAgICA8L1BlcnNvbj4KICAgICAgICAgPC9EZWNsYXJhbnQ+CiAgICAgIDwvRGVjbGFyYW50cz4KICAgICAgPE9iamVjdHM+CiAgICAgICAgIDxPYmplY3QgaWQ9IjM3YWYxMTM4LWYxYjAtNDdkMi1iYTdhLWMyYTdkZWE1MWFlMiI+CiAgICAgICAgICAgIDxOdW1iZXJfUmVnaXN0ZXIvPgogICAgICAgICAgICA8TmFtZT7Ql9C10LzQtdC70YzQvdGL0Lkg0YPRh9Cw0YHRgtC+0Lo8L05hbWU+CiAgICAgICAgICAgIDxMb2NhdGlvbj4KICAgICAgICAgICAgICAgPENvZGVfT0tBVE8+NDYwMDAwMDAwMDA8L0NvZGVfT0tBVE8+CiAgICAgICAgICAgICAgIDxDb2RlX0tMQURSPjUwMDAwMDAwMDAwMDA8L0NvZGVfS0xBRFI+CiAgICAgICAgICAgICAgIDxSZWdpb24+NTA8L1JlZ2lvbj4KICAgICAgICAgICAgICAgPExldmVsMSBUeXBlPSLQtCIgVmFsdWU9IjQ1Ii8+CiAgICAgICAgICAgICAgIDxBcGFydG1lbnQgVHlwZT0i0LrQsiIgVmFsdWU9IjEyIi8+CiAgICAgICAgICAgICAgIDxOb3RlPtGD0LsuINCY0LLQsNC90L7QstCwPC9Ob3RlPgogICAgICAgICAgICA8L0xvY2F0aW9uPgogICAgICAgICAgICA8T2JqX0tpbmQ+MDAyMDAxMDAxMDAwPC9PYmpfS2luZD4KICAgICAgICAgPC9PYmplY3Q+CiAgICAgIDwvT2JqZWN0cz4KICAgICAgPEFwcGxpZWRfRG9jdW1lbnRzPgogICAgICAgICA8QXBwbGllZF9Eb2N1bWVudCBpZD0iMzcwMDg3MmQtMzVmYi00ZWQ3LWI4ZDItNDU4NjliOTJjODEwIj4KICAgICAgICAgICAgPENvZGVfRG9jdW1lbnQ+MDA4MDAxMDAxMDAwPC9Db2RlX0RvY3VtZW50PgogICAgICAgICAgICA8U2VyaWVzPjQ1IDU1PC9TZXJpZXM+CiAgICAgICAgICAgIDxOdW1iZXI+NDU0NTQ1PC9OdW1iZXI+CiAgICAgICAgICAgIDxEYXRlPjIwMTUtMTAtMTI8L0RhdGU+CiAgICAgICAgICAgIDxJc3N1ZU9yZ2FuPtCy0YvQtDwvSXNzdWVPcmdhbj4KICAgICAgICAgICAgPEltYWdlcz4KICAgICAgICAgICAgICAgPEltYWdlIE5hbWU9IkZpbGVzL2RvYzUxMDcwNS5wZGYiLz4KICAgICAgICAgICAgPC9JbWFnZXM+CiAgICAgICAgICAgIDxRdWFudGl0eSBPcmlnaW5hbD0iMSIgT3JpZ2luYWxfU2hlZXQ9IjEiLz4KICAgICAgICAgPC9BcHBsaWVkX0RvY3VtZW50PgogICAgICAgICA8QXBwbGllZF9Eb2N1bWVudCBpZD0iZmI0Mjk0MzktNmZmMi00ZTQwLTk1ZDItNmYzZDMzNTZkNTFmIj4KICAgICAgICAgICAgPENvZGVfRG9jdW1lbnQ+NTU4MTAyMTUwMDAwPC9Db2RlX0RvY3VtZW50PgogICAgICAgICAgICA8TmFtZT7Ql9Cw0Y/QstC70LXQvdC40LUg0L4g0L/QvtCy0YLQvtGA0L3QvtC5INCy0YvQtNCw0YfQtSDQvdC+0LLQvtCz0L4g0YHQstC40LTQtdGC0LXQu9GM0YHRgtCy0LAg0L4g0LPQvtGB0YPQtNCw0YDRgdGC0LLQtdC90L3QvtC5INGA0LXQs9C40YHRgtGA0LDRhtC40Lgg0L/RgNCw0LLQsCwg0LLRi9C00LDRh9C1INC30LDQutC70LDQtNC90L7QuSwg0LLQvdC10YHQtdC90LjQuCDQuNC30LzQtdC90LXQvdC40Lkg0LIg0LfQsNC/0LjRgdGMINCV0LTQuNC90L7Qs9C+INCz0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90L7Qs9C+INGA0LXQtdGB0YLRgNCwINC/0YDQsNCyINC90LAg0L3QtdC00LLQuNC20LjQvNC+0LUg0LjQvNGD0YnQtdGB0YLQstC+INC4INGB0LTQtdC70L7QuiDRgSDQvdC40LwsINC40YHQv9GA0LDQstC70LXQvdC40Lgg0YLQtdGF0L3QuNGH0LXRgdC60L7QuSDQvtGI0LjQsdC60LgsINC/0L7Qs9Cw0YjQtdC90LjQuCDRgNC1PC9OYW1lPgogICAgICAgICAgICA8TnVtYmVyPtCR0J08L051bWJlcj4KICAgICAgICAgICAgPERhdGU+MjAxNi0wMi0yNjwvRGF0ZT4KICAgICAgICAgICAgPElzc3VlT3JnYW4vPgogICAgICAgICAgICA8SW1hZ2VzPgogICAgICAgICAgICAgICA8SW1hZ2UgTmFtZT0iRmlsZXMvYXBwX2ZiNDI5NDM5LTZmZjItNGU0MC05NWQyLTZmM2QzMzU2ZDUxZi54bWwiLz4KICAgICAgICAgICAgICAgPEltYWdlIE5hbWU9IkZpbGVzL2FwcF9mYjQyOTQzOS02ZmYyLTRlNDAtOTVkMi02ZjNkMzM1NmQ1MWYuaHRtbCIvPgogICAgICAgICAgICA8L0ltYWdlcz4KICAgICAgICAgICAgPFF1YW50aXR5IE9yaWdpbmFsPSIxIiBPcmlnaW5hbF9TaGVldD0iMSIvPgogICAgICAgICA8L0FwcGxpZWRfRG9jdW1lbnQ+CiAgICAgIDwvQXBwbGllZF9Eb2N1bWVudHM+CiAgICAgIDxQYXltZW50X0NhbGNfRGV0YWlscz4KICAgICAgICAgPFBheW1lbnRfQ2FsY19EZXRhaWwgZGVjbGFyYW50X2lkPSI4YjVmZmVmMS00ZDM4LTQ4N2ItOGJmNS00OTc3YzIzNzFhNjIiCiAgICAgICAgICAgIHJlZ2lzdHJhdGlvbl9lbGVtZW50X2lkPSI4NjhiMmYyMy1lMDJiLTRlNzUtYjc1NC0zZTM5MmZkZjMwMTciLz4KICAgICAgPC9QYXltZW50X0NhbGNfRGV0YWlscz4KICAgPC9Gb2xkZXI+CjwvUmVxdWVzdF9SZWVzdHI+Cg==</ns2:cms-signed-data>
+         	  	</ns2:signature>	
+         	  </ns2:signatures>
+         </ns2:attachment>
+      </ns2:getAttachmentResponse>
+   </S:Body>
+</S:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1/documentAttachmentsPort/getAttachmentResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="listAttachments" interface="documentAttachmentsBinding" operation="listAttachments" id="4fa0d2f4-50f1-47a8-af58-51ad9dae884d"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" id="42063f06-99d6-489c-851a-1518fa1c25ea" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:listAttachmentsResponse>
+         <!--Zero or more repetitions:-->
+         <v1:attachment guid="1" with-signature="false" mime-type="xml" file-name="attachXML" file-date="?" file-size="?" file-path="?" business-type="TransportPackageXML" ordinal-number="?" actual-date="?" viewable="?" status="?" temporary="false" service="false">
+            <!--Optional:-->
+            <v1:comment>?</v1:comment>
+            <!--Optional:-->
+            <v1:title>?</v1:title>
+            <!--Optional:-->
+            <v1:organization-creator>?</v1:organization-creator>
+            <!--Optional:-->
+            <v1:user-creator>?</v1:user-creator>
+         </v1:attachment>
+         <v1:attachment guid="1" with-signature="true" mime-type="txt" file-name="attachTXT" file-date="?" file-size="?" file-path="?" business-type="TransportPackageXML" ordinal-number="?" actual-date="?" viewable="?" status="?" temporary="false" service="false">
+            <!--Optional:-->
+            <v1:comment>?</v1:comment>
+            <!--Optional:-->
+            <v1:title>?</v1:title>
+            <!--Optional:-->
+            <v1:organization-creator>?</v1:organization-creator>
+            <!--Optional:-->
+            <v1:user-creator>?</v1:user-creator>
+         </v1:attachment>
+         <v1:attachment guid="1" with-signature="true" mime-type="pdf" file-name="attachPDF" file-date="?" file-size="?" file-path="?" business-type="TransportPackage" ordinal-number="?" actual-date="?" viewable="?" status="?" temporary="false" service="false">
+            <!--Optional:-->
+            <v1:comment>?</v1:comment>
+            <!--Optional:-->
+            <v1:title>?</v1:title>
+            <!--Optional:-->
+            <v1:organization-creator>?</v1:organization-creator>
+            <!--Optional:-->
+            <v1:user-creator>?</v1:user-creator>
+         </v1:attachment>
+         <v1:attachment guid="1" with-signature="true" mime-type="jpg" file-name="attachJPG" file-date="?" file-size="?" file-path="?" business-type="MNEMONICS_FOR_SMEV_CONTAINER" ordinal-number="?" actual-date="?" viewable="?" status="?" temporary="false" service="false">
+            <!--Optional:-->
+            <v1:comment>?</v1:comment>
+            <!--Optional:-->
+            <v1:title>?</v1:title>
+            <!--Optional:-->
+            <v1:organization-creator>?</v1:organization-creator>
+            <!--Optional:-->
+            <v1:user-creator>?</v1:user-creator>
+         </v1:attachment>
+      </v1:listAttachmentsResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1/documentAttachmentsPort/listAttachmentsResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="manageAttachments" interface="documentAttachmentsBinding" operation="manageAttachments" id="d2ddd621-d591-46a2-9b75-c560a1295db5"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:defaultResponse>Response 1</con:defaultResponse><con:response name="Response 1" encoding="UTF-8" id="926effed-94f0-4604-8503-32c7cbf3ce28" httpResponseStatus="200"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:manageAttachmentsResponse/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1/documentAttachmentsPort/manageAttachmentsResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:properties/></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

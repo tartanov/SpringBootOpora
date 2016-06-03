@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_KontrolOstLS/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/entity" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_KontrolOstLS/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:element name="MSC_KontrolOstLS" type="tns:tMSC_KontrolOstLS"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tMSC_KontrolOstLS">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="AccountNum" type="xs:string" minOccurs="0"/>
+<xs:element name="GUIDInventory" type="xs:string" minOccurs="0"/>
+<xs:element name="MSC_Infrmtn" type="ns2:tMSC_Infrmtn" minOccurs="0"/>
+<xs:element name="InfAbBalLS" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="InfAbBalLS_ITEM" type="tns:tInfAbBalLS_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tInfAbBalLS_ITEM">
+<xs:sequence>
+<xs:element name="DatePA" type="xs:string" minOccurs="0"/>
+<xs:element name="BalanceBeginDay_BAStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceBeginDay_LBOStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceBeginDay_POFRStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceBeginDay_POFRStBlncCr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceBeginDay_BOStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceBeginDay_ACCStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceBeginDay_RECStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceBeginDay_PAYStBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceEndDay_BAEndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceEndDay_LBOEndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceEndDay_POFREndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceEndDay_POFREndBlncCr" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceEndDay_BOEndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceEndDay_ACCEndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceEndDay_RECEndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="BalanceEndDay_PAYEndBlnc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChangesDay_ChangesDayBA" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChangesDay_ChangesDayLBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChangesDay_ChangesPOFRexc" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChangesDay_ChangesDayPOFRrel" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChangesDay_AssignedDayBO" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChangesDay_TurnoverDayPA" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChangesDay_ReceiptsDay" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ChangesDay_PaymentsDay" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tInfAbBalLS">
+<xs:sequence>
+<xs:element name="InfAbBalLS_ITEM" type="tns:tInfAbBalLS_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

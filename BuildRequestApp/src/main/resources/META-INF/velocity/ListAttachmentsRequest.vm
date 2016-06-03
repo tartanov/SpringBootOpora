@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <v1:getAttachmentRequest guid="$headers.docGUID"/>
+    </soapenv:Body>
+</soapenv:Envelope>

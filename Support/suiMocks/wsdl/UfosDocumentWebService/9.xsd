@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/REF_OKEI/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/applied" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/REF_OKEI/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/applied" schemaLocation="12.xsd"/>
+
+<xs:element name="REF_OKEI" type="tns:tREF_OKEI"/>
+
+<xs:complexType name="tDICT_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="ORGCODE" type="xs:decimal" minOccurs="0"/>
+<xs:element name="ORGVISIBILITY" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tREF_OKEI">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="GUID" type="xs:string"/>
+<xs:element name="StartDateActive" type="xs:string"/>
+<xs:element name="EndDateActive" type="xs:string" minOccurs="0"/>
+<xs:element name="Status" type="ns2:tSystem_statusesComplex"/>
+<xs:element name="Code" type="xs:string"/>
+<xs:element name="Section" type="xs:string"/>
+<xs:element name="Subsection" type="ns2:tREF_OKEISubsectionsComplex"/>
+<xs:element name="Name" type="xs:string"/>
+<xs:element name="LocalSymbol" type="xs:string"/>
+<xs:element name="InternatSymbol" type="xs:string" minOccurs="0"/>
+<xs:element name="LocalName" type="xs:string"/>
+<xs:element name="InternatName" type="xs:string" minOccurs="0"/>
+<xs:element name="Comments" type="xs:string" minOccurs="0"/>
+<xs:element name="Clarification" type="xs:string" minOccurs="0"/>
+<xs:element name="LastChangeNum" type="xs:string"/>
+<xs:element name="LastChangeType" type="ns2:tREF_OKChangeTypesComplex"/>
+<xs:element name="ChangeDate" type="xs:string"/>
+<xs:element name="IntroductionDate" type="xs:string"/>
+<xs:element name="DICT_BASE" type="tns:tDICT_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:schema>

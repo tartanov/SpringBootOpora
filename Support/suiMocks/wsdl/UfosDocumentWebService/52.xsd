@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/AccntTrnsctn/formular" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/AccntTrnsctn/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="AccntTrnsctn" type="tns:tAccntTrnsctn"/>
+
+<xs:complexType name="tAccntTrns_ITEM">
+<xs:sequence>
+<xs:element name="IDRw" type="xs:string" minOccurs="0"/>
+<xs:element name="RlvncSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="bdjt" type="xs:string" minOccurs="0"/>
+<xs:element name="KBK" type="xs:string" minOccurs="0"/>
+<xs:element name="KndActvt" type="xs:string" minOccurs="0"/>
+<xs:element name="IndxLS" type="xs:string" minOccurs="0"/>
+<xs:element name="TOFKCd" type="xs:string" minOccurs="0"/>
+<xs:element name="Crct" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SbrdntInstttns" type="xs:string" minOccurs="0"/>
+<xs:element name="Cd" type="xs:string" minOccurs="0"/>
+<xs:element name="TpBK" type="xs:string" minOccurs="0"/>
+<xs:element name="OKTMOCd" type="xs:string" minOccurs="0"/>
+<xs:element name="Rsrv" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIP" type="xs:string" minOccurs="0"/>
+<xs:element name="Rsrv3" type="xs:string" minOccurs="0"/>
+<xs:element name="AmntDbt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AmntKrdt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_CurrentYear" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_FirstPlanYear" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_SecondPlanYear" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_NextPlanYear" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_YearCalc" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_Summ" type="xs:decimal" minOccurs="0"/>
+<xs:element name="GUIDDc" type="xs:string" minOccurs="0"/>
+<xs:element name="DcTp" type="xs:string" minOccurs="0"/>
+<xs:element name="SctnCd" type="xs:string" minOccurs="0"/>
+<xs:element name="RegisterInformAccGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="RulesOfCalculation" type="xs:string" minOccurs="0"/>
+<xs:element name="ExecutionDate" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntTp" type="xs:string" minOccurs="0"/>
+<xs:element name="AcntTch" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tAccntTrns">
+<xs:sequence>
+<xs:element name="AccntTrns_ITEM" type="tns:tAccntTrns_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tAccntTrnsctn">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="Hdr_GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_DtTm" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_GUIDDc" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_DcTp" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_NmDC" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_NmbrDc" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_DtDc" type="xs:string" minOccurs="0"/>
+<xs:element name="InfDc_DtAN" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_RegisterInformAccGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_ResultCheck" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="AccntTrns" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="AccntTrns_ITEM" type="tns:tAccntTrns_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:schema>

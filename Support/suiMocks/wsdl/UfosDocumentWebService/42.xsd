@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/InfrmtnDcmnt/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common/entity" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/InfrmtnDcmnt/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:element name="InfrmtnDcmnt" type="tns:tInfrmtnDcmnt"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tInfrmtnDcmnt">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="Hdr_DcTp" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_NmDC" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_NmbrDc" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_Amnt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="Hdr_DtRgsDc" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_GUIDDc" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_RgsterInfrmAccGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_RwIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_HdIDCd" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_RsltPrm" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_TxtRsltPrm" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_ExctnDt" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_RjctnRsn" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_RlvncSgn" type="xs:string" minOccurs="0"/>
+<xs:element name="SstmInfrmtn_ResultCheck" type="xs:string" minOccurs="0"/>
+<xs:element name="Hdr_MSC_Infrmtn" type="ns2:tMSC_Infrmtn" minOccurs="0"/>
+<xs:element name="PaymentDetails" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="PaymentDetails_ITEM" type="tns:tPaymentDetails_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="SstmInfrmtn_TabSI" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TabSI_ITEM" type="tns:tSstmInfrmtn_TabSI_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tPaymentDetails_ITEM">
+<xs:sequence>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="KBK" type="xs:string" minOccurs="0"/>
+<xs:element name="TargetCode" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIPObjCode" type="xs:string" minOccurs="0"/>
+<xs:element name="AmountDebit" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AmountCredit" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AccFeature" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tSstmInfrmtn_TabSI_ITEM">
+<xs:sequence>
+<xs:element name="AcntNm" type="xs:string" minOccurs="0"/>
+<xs:element name="AccountTransGUID" type="xs:string" minOccurs="0"/>
+<xs:element name="SignUpdate" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tSstmInfrmtn_TabSI">
+<xs:sequence>
+<xs:element name="TabSI_ITEM" type="tns:tSstmInfrmtn_TabSI_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tPaymentDetails">
+<xs:sequence>
+<xs:element name="PaymentDetails_ITEM" type="tns:tPaymentDetails_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

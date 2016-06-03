@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/SbsdTrnsfrInfrmtn/formular" xmlns:ns1="http://www.roskazna.ru/eb/domain/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/SbsdTrnsfrInfrmtn/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="SbsdTrnsfrInfrmtn" type="tns:tSbsdTrnsfrInfrmtn"/>
+
+<xs:complexType name="tDOC_BASE">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tSbsdTrnsfrInfrmtn">
+<xs:complexContent>
+<xs:extension base="ns1:tFormular">
+<xs:sequence>
+<xs:element name="GUIDASFK" type="xs:string" minOccurs="0"/>
+<xs:element name="ParentDocGuid1" type="xs:string" minOccurs="0"/>
+<xs:element name="TpCrct" type="xs:string" minOccurs="0"/>
+<xs:element name="UnqNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="CdTOFK" type="xs:string" minOccurs="0"/>
+<xs:element name="NmTOFK" type="xs:string" minOccurs="0"/>
+<xs:element name="regNumASFK" type="xs:string" minOccurs="0"/>
+<xs:element name="AccGuid" type="xs:string" minOccurs="0"/>
+<xs:element name="Infrmtn_GUID" type="xs:string" minOccurs="0"/>
+<xs:element name="Infrmtn_Lnk" type="xs:string" minOccurs="0"/>
+<xs:element name="Infrmtn_DcmntDt" type="xs:string"/>
+<xs:element name="Infrmtn_DcNmbr" type="xs:string"/>
+<xs:element name="Infrmtn_DcmntTp" type="xs:string"/>
+<xs:element name="UnqRgstrNmbr_RstrNmbr" type="xs:string" minOccurs="0"/>
+<xs:element name="UnqRgstrNmbr_DtOfInclsn" type="xs:string" minOccurs="0"/>
+<xs:element name="DtlsOfThPmntDcmnt" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="DtlsOfThPmntDcmnt_ITEM" type="tns:tDtlsOfThPmntDcmnt_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="DOC_BASE" type="tns:tDOC_BASE" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="tDtlsOfThPmntDcmnt_ITEM">
+<xs:sequence>
+<xs:element name="PmntDcmntNmbr" type="xs:string"/>
+<xs:element name="PmntDcmntDt" type="xs:string"/>
+<xs:element name="CrncCdOKV" type="xs:string"/>
+<xs:element name="CrncNmOKV" type="xs:string"/>
+<xs:element name="Rt" type="xs:decimal" minOccurs="0"/>
+<xs:element name="AmntInCrncy" type="xs:decimal"/>
+<xs:element name="AmntInRubles" type="xs:decimal"/>
+<xs:element name="nbLn" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tDtlsOfThPmntDcmnt">
+<xs:sequence>
+<xs:element name="DtlsOfThPmntDcmnt_ITEM" type="tns:tDtlsOfThPmntDcmnt_ITEM" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

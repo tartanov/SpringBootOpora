@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5. --><xs:schema xmlns:tns="http://www.roskazna.ru/eb/domain/MSC_Balance/formular" xmlns:ns2="http://www.roskazna.ru/eb/domain/common" xmlns:ns1="http://www.roskazna.ru/eb/domain/common/entity" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.roskazna.ru/eb/domain/MSC_Balance/formular">
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common/entity" schemaLocation="1.xsd"/>
+
+<xs:import namespace="http://www.roskazna.ru/eb/domain/common" schemaLocation="23.xsd"/>
+
+<xs:element name="MSC_Balance" type="tns:tMSC_Balance"/>
+
+<xs:complexType name="tMSC_Balance">
+<xs:complexContent>
+<xs:extension base="ns2:tFormular">
+<xs:sequence>
+<xs:element name="NumAcc" type="xs:string" minOccurs="0"/>
+<xs:element name="DtBlnc" type="xs:string" minOccurs="0"/>
+<xs:element name="UpdDt" type="xs:string" minOccurs="0"/>
+<xs:element name="KBK" type="xs:string" minOccurs="0"/>
+<xs:element name="GrTargetCode" type="xs:string" minOccurs="0"/>
+<xs:element name="FAIP" type="xs:string" minOccurs="0"/>
+<xs:element name="Year" type="xs:string" minOccurs="0"/>
+<xs:element name="NmCI" type="xs:string" minOccurs="0"/>
+<xs:element name="Smm" type="xs:decimal" minOccurs="0"/>
+<xs:element name="MSC_Infrmtn" type="ns1:tMSC_Infrmtn" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+</xs:schema>
