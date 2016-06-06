@@ -1,0 +1,5 @@
+<p:pushDocumentStateRequest guid="$headers.GUID" xmlns:p="http://ufos.otr.ru/ws/core/facade/document-life-cycle/v1_4" xmlns:p1="http://ufos.otr.ru/ws/core/common/v1_2" xmlns:p2="http://ufos.otr.ru/core/common/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <p:parameters>
+        <p2:parameter name="status_code" type="STRING" value="001"/>
+    </p:parameters>
+</p:pushDocumentStateRequest>

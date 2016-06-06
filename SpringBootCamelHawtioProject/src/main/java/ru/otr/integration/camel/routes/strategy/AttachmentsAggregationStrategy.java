@@ -1,4 +1,4 @@
-package ru.otr.integration.camel.routes;
+package ru.otr.integration.camel.routes.strategy;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.processor.aggregate.AggregationStrategy;

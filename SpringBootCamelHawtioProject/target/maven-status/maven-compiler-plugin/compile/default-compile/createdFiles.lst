@@ -1,4 +1,5 @@
 ru\otr\integration\MyHawioCamelSbootAppApplication.class
+ru\otr\integration\util\ZipHelper.class
+ru\otr\integration\camel\routes\strategy\AttachmentsAggregationStrategy.class
 ru\otr\integration\camel\routes\GetEventRouteBuilder.class
-ru\otr\integration\camel\routes\AttachmentsAggregationStrategy.class
 ru\otr\integration\MyHawioCamelSbootAppApplication$1.class

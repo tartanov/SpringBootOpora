@@ -1,3 +1,4 @@
-D:\IdeaProjects\SpringBootCamelHawtioProject\src\main\java\ru\otr\integration\camel\routes\AttachmentsAggregationStrategy.java
+D:\IdeaProjects\SpringBootCamelHawtioProject\src\main\java\ru\otr\integration\util\ZipHelper.java
+D:\IdeaProjects\SpringBootCamelHawtioProject\src\main\java\ru\otr\integration\camel\routes\strategy\AttachmentsAggregationStrategy.java
 D:\IdeaProjects\SpringBootCamelHawtioProject\src\main\java\ru\otr\integration\camel\routes\GetEventRouteBuilder.java
 D:\IdeaProjects\SpringBootCamelHawtioProject\src\main\java\ru\otr\integration\MyHawioCamelSbootAppApplication.java

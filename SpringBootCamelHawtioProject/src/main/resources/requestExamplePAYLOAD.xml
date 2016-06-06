@@ -1,3 +1,3 @@
 <body>
-    <ns3:dlc-action-event document-guid="e314bed0-7d52-40af-b5a2-40fd317abf6d" document-type="NOT_RRTR_RequestGKN" document-state="PREPARATION" operation-code="prepareToSend" xmlns:ns2="http://ufos.otr.ru/core/user-context/v1" xmlns="http://ufos.otr.ru/core/dlc/events/v1" xmlns:ns3="http://www.otr.ru/ufos/dlc/events"><ns3:parameters/></ns3:dlc-action-event>
+<ns3:dlc-action-event document-guid="e314bed0-7d52-40af-b5a2-40fd317abf6d" document-type="NOT_RRTR_RequestGKN" document-state="PREPARATION" operation-code="prepareToSend" xmlns:ns2="http://ufos.otr.ru/core/user-context/v1" xmlns="http://ufos.otr.ru/core/dlc/events/v1" xmlns:ns3="http://www.otr.ru/ufos/dlc/events"><ns3:parameters/></ns3:dlc-action-event>
 </body>
