@@ -1,0 +1,5 @@
+on the board:
+- joolokia agent
+- remote debugger using maven plugin
+- exposed throught servlet http endpoint, consumed in camel
+- java based sevlet registration
