@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<v1:getAttachmentRequest xmlns:v1="http://www.otr.ru/ufos/ws/core/facade/attachment/v1_1" guid="$headers.docGUID"/>
