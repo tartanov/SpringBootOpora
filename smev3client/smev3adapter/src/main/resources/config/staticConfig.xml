@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configures the Camel Context-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:cxf="http://camel.apache.org/schema/cxf"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring
+       http://camel.apache.org/schema/spring/camel-spring.xsd
+       http://camel.apache.org/schema/cxf
+       http://camel.apache.org/schema/cxf/camel-cxf.xsd">
+
+
+    <cxf:cxfEndpoint id="smevMessageExchangeService"
+                     address="http://localhost:8082/mockSMEVMessageExchangeSoap11Binding"
+                     wsdlURL="src/main/resources/wsdl/smev-message-exchange-service-1.1.wsdl"
+                     serviceName="s:SMEVMessageExchangeService"
+                     endpointName="s:SMEVMessageExchangeEndpoint"
+                     xmlns:s="urn://x-artefacts-smev-gov-ru/services/message-exchange/1.1">
+        <cxf:inInterceptors>
+            <bean class="org.apache.cxf.transport.common.gzip.GZIPInInterceptor" />
+        </cxf:inInterceptors>
+        <cxf:properties>
+            <entry key="dataFormat" value="PAYLOAD" />
+        </cxf:properties>
+    </cxf:cxfEndpoint>
+</beans>

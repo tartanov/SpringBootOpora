@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: ru.otr.integration.smev3client.ConfigserverApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.217 sec - in ru.otr.integration.smev3client.ConfigserverApplicationTests

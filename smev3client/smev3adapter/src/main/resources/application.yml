@@ -1,0 +1,12 @@
+server:
+   port: 8090
+
+dev:
+   operations:
+      - Ack
+      - GetIncomingQueueStatistics
+      - GetRequest
+      - GetStatus
+      - SendRequest
+      - SendResponse
+   namespace: urn://x-artefacts-smev-gov-ru/services/message-exchange/1.1
